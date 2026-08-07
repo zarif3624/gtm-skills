@@ -21,6 +21,7 @@ Read `.agents/gtm-context.md`, the account brief, prior messages, and meeting de
 6. Add follow-up prompts that ask for examples, frequency, consequence, and ownership.
 7. Plan what not to ask because it is already public, answered, irrelevant, or premature.
 8. Define a useful close: recap, gaps, and a possible next step. Keep proposed ownership and timing distinct from what the buyer accepts.
+9. Before the call, require the responsible meeting owner to confirm the objective, actual attendees and roles, and material account facts or mark them Unknown. Record what changed; an unverified invite or public signal is not approval to personalize more strongly.
 
 Use [the discovery plan template](assets/discovery-plan.md).
 
@@ -60,5 +61,6 @@ Produce:
 - proof or demo material to hold in reserve;
 - red flags and disqualification signals;
 - closing recap template and next-step standard.
+- pre-call verification gate for objective, attendees, account facts, responsible owner, and confirmation status.
 
 Keep the live question list short enough to listen. Put optional questions in a reserve section.

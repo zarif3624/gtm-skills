@@ -88,7 +88,7 @@
         "assets/icp.md",
         "references/scoring.md"
       ],
-      "package_sha256": "75ead790195caefeb52a41208a439514c56664a49b655dc434b009dc0dca67d2"
+      "package_sha256": "03b33e70421b9ae9e801e52363d493a7d2b0d60002b896ef26f28987ad3b00fb"
     },
     {
       "name": "design-sales-process",
@@ -204,7 +204,7 @@
         "agents/openai.yaml",
         "assets/deal-plan.md"
       ],
-      "package_sha256": "fd585365e87f71edb7197143defd75031c2deb9d05d5df5c2ec32fc5c9b5aaca"
+      "package_sha256": "e73427e71f6ba10b95f55336fc966b9bab8de6b8c8c91550825b11b9d1cda3b0"
     },
     {
       "name": "plan-partner-channel",
@@ -277,7 +277,7 @@
         "agents/openai.yaml",
         "assets/discovery-plan.md"
       ],
-      "package_sha256": "845316e098223d085078f3da0adc555a57230cea13e9179145e344e7c31952f4"
+      "package_sha256": "201fc56dfdbaf6599268fba5594a1c5e175880fc305783cad21e263a328a26b1"
     },
     {
       "name": "prepare-negotiation",

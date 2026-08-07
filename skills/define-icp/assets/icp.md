@@ -10,9 +10,9 @@
 
 ## Fit Criteria
 
-| Criterion | Observable signal | Rationale | Weight or importance | Evidence | Status |
-| --- | --- | --- | ---: | --- | --- |
-| | | | | | Verified / Inferred / Unknown |
+| Criterion | Observable signal | Rationale | Importance or approved weight | Evidence | Status |
+| --- | --- | --- | --- | --- | --- |
+| | | | Required / Important / Exploratory / Unknown, or approved numeric weight | | Verified / Inferred / Unknown |
 
 ## Disqualifiers
 
@@ -50,3 +50,11 @@
 | Hypothesis | Test | Sample | Success signal | Failure signal | Owner status | Review date or dependency status |
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown |
+
+## GTM Review Gate
+
+| Decision | Required authority | Owner status | Evidence or rationale | Approval status |
+| --- | --- | --- | --- | --- |
+| Disqualifiers and exception rules | Authorized GTM owner | Confirmed / Proposed / Unknown | | Approved / Proposed / Rejected / Unknown |
+| Scoring weights and tier thresholds, if applicable | Authorized GTM owner | Confirmed / Proposed / Unknown | Applicable calibration evidence or `Not scoreable` | Approved / Proposed / Rejected / Unknown |
+| Next segment test | Authorized GTM owner | Confirmed / Proposed / Unknown | | Approved / Proposed / Rejected / Unknown |

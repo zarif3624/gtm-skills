@@ -23,6 +23,7 @@ Read `.agents/gtm-context.md`, opportunity history, qualification assessment, ca
 8. Generate possible actions, then rank them by buyer value, information gained, and effort.
 9. Select the next three actions. Label suggested owners and timing as proposed unless the source confirms them.
 10. Define a stop or requalification condition so weak deals do not consume unlimited time.
+11. Before execution, require the authorized deal owner to approve internal resource use, confirm applicable commercial authority, and approve the channel and purpose of stakeholder outreach. Unknown authority or ownership keeps the action proposed; it does not authorize bypass or contact.
 
 Use [the deal plan template](assets/deal-plan.md).
 
@@ -50,6 +51,7 @@ Provide:
 - ranked next actions;
 - resources needed from the seller's team;
 - stop, hold, or requalification condition;
+- deal-owner execution gate for internal resources, commercial authority, and stakeholder outreach;
 - concise executive inspection summary.
 
 When the buying process needs coordination, pass the plan to `create-mutual-action-plan` and include only buyer-relevant milestones.

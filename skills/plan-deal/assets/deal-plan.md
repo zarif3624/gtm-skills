@@ -50,3 +50,11 @@
 ## Stop Or Requalification Condition
 
 -
+
+## Deal-Owner Execution Gate
+
+| Action class | Required decision | Authorized owner status | Approval status | Evidence or limitation |
+| --- | --- | --- | --- | --- |
+| Internal specialist or executive resources | Approve purpose, scope, and effort | Confirmed / Proposed / Unknown | Approved / Proposed / Rejected / Unknown | |
+| Commercial position or concession | Confirm applicable authority and boundaries | Confirmed / Proposed / Unknown | Approved / Proposed / Rejected / Unknown | |
+| Stakeholder outreach | Approve person or role, channel, purpose, and relationship path | Confirmed / Proposed / Unknown | Approved / Proposed / Rejected / Unknown | |

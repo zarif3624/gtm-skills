@@ -34,6 +34,14 @@
 - **Pause or disqualify if:**
 - **Do not assume:**
 
+## Pre-Call Verification Gate
+
+| Item | Current evidence | Responsible owner status | Confirmation status | Plan impact if unresolved |
+| --- | --- | --- | --- | --- |
+| Meeting objective | | Confirmed / Proposed / Unknown | Confirmed / Pending / Unknown | |
+| Actual attendees and roles | | Confirmed / Proposed / Unknown | Confirmed / Pending / Unknown | |
+| Material account facts used in the plan | | Confirmed / Proposed / Unknown | Confirmed / Pending / Unknown | |
+
 ## Close
 
 - Recap:
