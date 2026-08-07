@@ -17,7 +17,12 @@
         "partial": 0,
         "fail": 0
       },
-      "historical_runs": 6
+      "historical_runs": 6,
+      "definition_coverage": {
+        "definitions_total": 36,
+        "definitions_with_latest_result": 9,
+        "definitions_with_latest_pass": 9
+      }
     },
     "routing": {
       "reports_total": 4,
@@ -30,7 +35,9 @@
       "historical_runs": 3,
       "latest_case_counts": [
         28
-      ]
+      ],
+      "current_corpus_lineages": 1,
+      "current_corpus_passing_lineages": 1
     }
   }
 }

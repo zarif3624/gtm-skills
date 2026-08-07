@@ -51,8 +51,22 @@ def evidence_summary(
     return summary
 
 
+def latest_reports(
+    reports: dict[Path, dict[str, Any]], root: Path
+) -> list[dict[str, Any]]:
+    superseded = {
+        (root / report["supersedes"]).resolve()
+        for report in reports.values()
+        if report.get("supersedes")
+    }
+    return [report for path, report in reports.items() if path not in superseded]
+
+
 def build_summary(root: Path = ROOT) -> dict[str, Any]:
     routing = load_json(root / "evals" / "routing" / "cases.json")
+    definition_count = len(list((root / "evals" / "cases").glob("*.json"))) + len(
+        list((root / "evals" / "journeys").glob("*.json"))
+    )
     behavior_paths = sorted((root / "evals" / "results").rglob("*.json"))
     behavior_reports = {path.resolve(): load_json(path) for path in behavior_paths}
     routing_paths = sorted((root / "evals" / "routing" / "results").glob("*.json"))
@@ -61,6 +75,36 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
         for path in routing_paths
         if not path.name.endswith(".response.json")
     }
+    current_behavior = latest_reports(behavior_reports, root)
+    behavior_with_result = {
+        report["case_id"] for report in current_behavior if report.get("case_id")
+    }
+    behavior_with_pass = {
+        report["case_id"]
+        for report in current_behavior
+        if report.get("case_id") and report["summary"]["verdict"] == "pass"
+    }
+    current_routing = []
+    for report in latest_reports(routing_reports, root):
+        corpus_value = report.get("corpus_path")
+        if not isinstance(corpus_value, str):
+            continue
+        corpus_path = root / corpus_value
+        if load_json(corpus_path) == routing:
+            current_routing.append(report)
+    behavioral = evidence_summary(behavior_reports, root)
+    behavioral["definition_coverage"] = {
+        "definitions_total": definition_count,
+        "definitions_with_latest_result": len(behavior_with_result),
+        "definitions_with_latest_pass": len(behavior_with_pass),
+    }
+    routing_evidence = evidence_summary(
+        routing_reports, root, include_case_counts=True
+    )
+    routing_evidence["current_corpus_lineages"] = len(current_routing)
+    routing_evidence["current_corpus_passing_lineages"] = sum(
+        report["summary"]["verdict"] == "pass" for report in current_routing
+    )
     return {
         "schema_version": 1,
         "catalog": {
@@ -72,10 +116,8 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
             "reference_packs": count_directories(root / "reference-packs"),
         },
         "evidence": {
-            "behavioral": evidence_summary(behavior_reports, root),
-            "routing": evidence_summary(
-                routing_reports, root, include_case_counts=True
-            ),
+            "behavioral": behavioral,
+            "routing": routing_evidence,
         },
     }
 

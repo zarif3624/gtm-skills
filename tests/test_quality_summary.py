@@ -36,13 +36,20 @@ class QualitySummaryTests(unittest.TestCase):
             )
             prior = root / "evals" / "results" / "run" / "prior.json"
             prior.write_text(
-                json.dumps({"supersedes": None, "summary": {"verdict": "fail"}}),
+                json.dumps(
+                    {
+                        "case_id": "case",
+                        "supersedes": None,
+                        "summary": {"verdict": "fail"},
+                    }
+                ),
                 encoding="utf-8",
             )
             current = root / "evals" / "results" / "run" / "current.json"
             current.write_text(
                 json.dumps(
                     {
+                        "case_id": "case",
                         "supersedes": "evals/results/run/prior.json",
                         "summary": {"verdict": "pass"},
                     }
@@ -78,9 +85,21 @@ class QualitySummaryTests(unittest.TestCase):
             )
             self.assertEqual(result["evidence"]["behavioral"]["historical_runs"], 1)
             self.assertEqual(
+                result["evidence"]["behavioral"]["definition_coverage"],
+                {
+                    "definitions_total": 2,
+                    "definitions_with_latest_result": 1,
+                    "definitions_with_latest_pass": 1,
+                },
+            )
+            self.assertEqual(
                 result["evidence"]["routing"]["latest_verdicts"]["partial"], 1
             )
             self.assertEqual(result["evidence"]["routing"]["latest_case_counts"], [2])
+            self.assertEqual(result["evidence"]["routing"]["current_corpus_lineages"], 0)
+            self.assertEqual(
+                result["evidence"]["routing"]["current_corpus_passing_lineages"], 0
+            )
 
 
 if __name__ == "__main__":

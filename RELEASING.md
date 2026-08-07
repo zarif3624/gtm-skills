@@ -16,7 +16,7 @@ A release is a reviewed compatibility statement, not just a tag.
 ## Review
 
 - Confirm the README skill count, catalog, quickstart, reference packs, and local links.
-- Confirm `catalog.json` package digests and `quality-summary.json` evidence counts were generated from the release commit.
+- Confirm `catalog.json` package digests and `quality-summary.json` evidence counts, behavioral definition coverage, and current-corpus routing coverage were generated from the release commit.
 - Confirm each new or materially changed skill has an adversarial case and a clean-context forward test.
 - Confirm current results are distinguishable from historical failures.
 - Confirm no legal, security, compliance, model, or cross-client claim exceeds the recorded evidence.
