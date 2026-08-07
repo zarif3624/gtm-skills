@@ -22,6 +22,21 @@ class ReleaseManifestTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "must stay in the repository"):
                 MANIFEST.repository_file(root, "../outside.json", "response")
 
+    def test_directory_digest_includes_paths_and_contents(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            asset = root / "assets" / "one"
+            asset.mkdir(parents=True)
+            (asset / "a.txt").write_text("first\n", encoding="utf-8")
+            initial = MANIFEST.directory_sha256(asset, root)
+            (asset / "a.txt").write_text("second\n", encoding="utf-8")
+            changed_content = MANIFEST.directory_sha256(asset, root)
+            (asset / "a.txt").rename(asset / "b.txt")
+            changed_path = MANIFEST.directory_sha256(asset, root)
+
+            self.assertNotEqual(initial, changed_content)
+            self.assertNotEqual(changed_content, changed_path)
+
     def test_manifest_indexes_packages_and_only_latest_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -29,6 +44,14 @@ class ReleaseManifestTests(unittest.TestCase):
             routing = root / "evals" / "routing" / "results"
             behavior.mkdir(parents=True)
             routing.mkdir(parents=True)
+            for path in (
+                root / "evals" / "cases",
+                root / "evals" / "journeys",
+                root / "examples" / "example-one",
+                root / "reference-packs" / "pack-one",
+            ):
+                path.mkdir(parents=True)
+                (path / "asset.txt").write_text("asset\n", encoding="utf-8")
             (root / "catalog.json").write_text(
                 json.dumps(
                     {
@@ -116,6 +139,17 @@ class ReleaseManifestTests(unittest.TestCase):
                 len(result["generated_artifacts"]["catalog"]["sha256"]), 64
             )
             self.assertEqual(len(result["quality_policy"]["sha256"]), 64)
+            self.assertEqual(
+                len(result["supporting_assets"]["evaluation_definitions"]), 2
+            )
+            self.assertEqual(
+                result["supporting_assets"]["example_workspaces"][0]["name"],
+                "example-one",
+            )
+            self.assertEqual(
+                result["supporting_assets"]["reference_packs"][0]["name"],
+                "pack-one",
+            )
             self.assertEqual(
                 len(result["current_evidence"]["behavioral"][0]["response_sha256"]),
                 64,

@@ -26,6 +26,42 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def directory_sha256(path: Path, root: Path) -> str:
+    unresolved = path
+    path = path.resolve()
+    if not path.is_relative_to(root) or unresolved.is_symlink():
+        raise ValueError("release asset directory must stay in the repository without symbolic links")
+    if not path.is_dir():
+        raise ValueError(f"release asset directory does not exist: {unresolved}")
+    digest = hashlib.sha256()
+    for item in sorted(path.rglob("*")):
+        if item.is_symlink():
+            raise ValueError(f"release asset must not be a symbolic link: {item}")
+        if not item.is_file():
+            continue
+        relative = item.relative_to(path).as_posix().encode("utf-8")
+        digest.update(relative)
+        digest.update(b"\0")
+        digest.update(item.read_bytes())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
+def asset_directories(root: Path, parent: str) -> list[dict[str, str]]:
+    base = root / parent
+    if not base.is_dir() or base.is_symlink():
+        raise ValueError(f"release asset parent is invalid: {parent}")
+    return [
+        {
+            "name": path.name,
+            "path": path.relative_to(root).as_posix(),
+            "tree_sha256": directory_sha256(path, root),
+        }
+        for path in sorted(base.iterdir())
+        if path.is_dir()
+    ]
+
+
 def repository_file(root: Path, raw: Any, field: str) -> Path:
     if not isinstance(raw, str) or not raw.strip():
         raise ValueError(f"{field} must be a non-empty repository-relative path")
@@ -130,6 +166,18 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
             }
             for skill in catalog["skills"]
         ],
+        "supporting_assets": {
+            "evaluation_definitions": [
+                {
+                    "name": name,
+                    "path": f"evals/{name}",
+                    "tree_sha256": directory_sha256(root / "evals" / name, root),
+                }
+                for name in ("cases", "journeys")
+            ],
+            "example_workspaces": asset_directories(root, "examples"),
+            "reference_packs": asset_directories(root, "reference-packs"),
+        },
         "current_evidence": {"behavioral": behavior, "routing": routing},
     }
 
