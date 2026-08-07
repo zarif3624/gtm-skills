@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Business Case"
+  short_description: "Model buyer value without invented ROI"
+  default_prompt: "Use $build-business-case to create an evidence-based buyer business case."

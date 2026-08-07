@@ -86,6 +86,12 @@
       "excluded_skills": ["prepare-discovery"]
     },
     {
+      "id": "build-buyer-business-case",
+      "prompt": "Build a buyer-reviewable business case comparing the status quo and proposed change, with sourced assumptions, full costs, scenarios, sensitivity, and break-even analysis.",
+      "expected_skills": ["build-business-case"],
+      "excluded_skills": ["forecast-sales"]
+    },
+    {
       "id": "prepare-commercial-negotiation",
       "prompt": "Prepare packages, trades, approval boundaries, and a concession sequence for an upcoming pricing and contract negotiation.",
       "expected_skills": ["prepare-negotiation"],

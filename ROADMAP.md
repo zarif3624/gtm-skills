@@ -27,7 +27,7 @@ Targets are product goals, not claims about current performance. Publish measure
 
 ## Current Status — 2026-08-08
 
-The repository now has 22 focused skills, one isolated adversarial case per skill, eight cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and reproducible behavioral and blind-routing reports. The first recorded routing run selected the exact intended skill set for all 25 prompts, and five current behavioral scenarios pass in the recorded Codex lineage. These are bounded results, not a claim that every model, client, or untested behavior passes.
+The repository now has 23 focused skills, one isolated adversarial case per skill, eight cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and reproducible behavioral and blind-routing reports. The first recorded routing run selected the exact intended skill set for all 25 prompts in its frozen corpus, and five current behavioral scenarios pass in the recorded Codex lineage. These are bounded results, not a claim that every model, client, or untested behavior passes.
 
 The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
 
@@ -51,7 +51,7 @@ Current compatibility claims and unknowns are tracked in the [compatibility evid
 
 ## Phase 3: Complete The Revenue Learning Loop
 
-The first expansion set now includes sales-call analysis, win/loss analysis, territory planning, negotiation preparation, strategic account planning, and partner-channel planning. Further skills should be added only when a distinct job and adversarial evaluation justify the context and maintenance cost.
+The first expansion set now includes sales-call analysis, win/loss analysis, territory planning, negotiation preparation, strategic account planning, partner-channel planning, customer-outcome review, and buyer business-case development. Further skills should be added only when a distinct job and adversarial evaluation justify the context and maintenance cost.
 
 The next phase should test these workflows as a system: handoffs into qualification, coaching, positioning, ICP refinement, capacity review, deal governance, customer outcomes, and canonical pipeline attribution.
 

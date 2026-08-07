@@ -39,6 +39,7 @@ This project is deliberately:
 | Deal execution | [`plan-deal`](skills/plan-deal/) | Map stakeholders, risks, strategy, and next actions |
 | Deal execution | [`handle-objections`](skills/handle-objections/) | Diagnose objections and prepare honest responses |
 | Deal execution | [`prepare-demo`](skills/prepare-demo/) | Design a buyer-specific demo around outcomes |
+| Value engineering | [`build-business-case`](skills/build-business-case/) | Build inspectable value, cost, scenario, and break-even models |
 | Deal execution | [`prepare-negotiation`](skills/prepare-negotiation/) | Plan pricing and commercial negotiations within verified authority |
 | Buying process | [`create-mutual-action-plan`](skills/create-mutual-action-plan/) | Build a shared, buyer-owned decision plan |
 | Management | [`review-pipeline`](skills/review-pipeline/) | Find deal risk and prioritize actions across a pipeline |
@@ -63,7 +64,7 @@ gtm-context
     |                              |
     |                              `-- coach-sales-rep
     |                                                                |-- handle-objections
-    |                                                                |-- prepare-demo
+    |                                                                |-- prepare-demo -- build-business-case
     |                                                                |-- prepare-negotiation
     |                                                                `-- create-mutual-action-plan
     |
@@ -88,6 +89,7 @@ gtm-context
 | A transcript or call notes | Decisions, qualification changes, and coaching | `$analyze-sales-call`, then `$qualify-opportunity` |
 | Multiple calls, observations, and outcomes for one rep | A narrow developmental experiment | `$coach-sales-rep` |
 | A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
+| Outcome evidence, cost inputs, and an investment decision | An inspectable value model or budget case | `$build-business-case` |
 | Pricing, procurement, or contract requests | Packages, trades, and approval boundaries | `$prepare-negotiation` |
 | A CRM export or forecast call | Portfolio truth and revenue scenarios | `$review-pipeline`, then `$forecast-sales` |
 | A signed order and scattered deal history | A complete post-sale transfer | `$handoff-customer` |
@@ -175,7 +177,7 @@ Run the full dependency-free quality suite with:
 python3 scripts/check.py
 ```
 
-The suite checks all 22 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+The suite checks all 23 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
 ## Roadmap
 
