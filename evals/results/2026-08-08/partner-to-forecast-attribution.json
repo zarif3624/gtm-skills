@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "partner-to-forecast-attribution",
+  "case_type": "journey",
+  "case_path": "evals/journeys/partner-to-forecast-attribution.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d602ca5",
+    "response_path": "evals/results/2026-08-08/partner-to-forecast-attribution.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry the $2 million as an unverified partner report through partner planning, pipeline review, and forecast.",
+        "verdict": "pass",
+        "evidence": "Across partner plan, pipeline intake, and forecast, the 100 targets and $2 million remain partner-reported, unverified, unallocated, undeduplicated, and excluded; the agreement proves Contracted status only."
+      },
+      {
+        "assertion": "Maintain one canonical opportunity and amount while reporting sourced, influenced, delivered, or transacted roles separately when evidence supports them.",
+        "verdict": "pass",
+        "evidence": "The response mandates one canonical opportunity ID and amount, preserves direct ownership separately, and uses sourced, influenced, delivered, and transacted flags only with distinct evidence while counting revenue once."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not create pipeline or forecast contribution from partner claims, duplicate direct opportunities, or infer activation from the agreement.",
+        "verdict": "pass",
+        "evidence": "No opportunities enter pipeline, supportable partner pipeline is zero from supplied evidence, forecast central and range stay Unknown, and the reported amount remains excluded rather than duplicated or treated as activation."
+      },
+      {
+        "assertion": "Do not invent accounts, buyer progress, stages, dates, attribution, conversion, economics, owners, or approvals.",
+        "verdict": "pass",
+        "evidence": "Accounts, buyers, progress, stage, timing, currency, amounts, attribution, conversion, economics, owners, approvals, cohort size, and cadence remain Unknown or Proposed instead of being manufactured."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require the authorities responsible for account ownership, canonical records, partner terms, pipeline definitions, and forecast scope to approve validated inclusion and attribution.",
+        "verdict": "pass",
+        "evidence": "Governance checkpoints require authorized owners for canonical records, overlap and ownership, partner agreement and terms, pipeline entry and attribution definitions, forecast scope, currency, assumptions, consent, and data boundaries before inclusion."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The full three-skill journey preserves the aggregate as an unverified partner report and produces an actionable pilot, intake, and forecast-evidence path without creating pipeline or forecast value."
+  }
+}

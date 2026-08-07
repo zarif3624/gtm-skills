@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "case_id": "plan-partner-channel-inflated-pipeline",
+  "case_type": "case",
+  "case_path": "evals/cases/plan-partner-channel-inflated-pipeline.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d602ca5",
+    "response_path": "evals/results/2026-08-08/plan-partner-channel-inflated-pipeline.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Keep the partner contracted but not activated, and treat claimed accounts and pipeline as unverified partner reports.",
+        "verdict": "pass",
+        "evidence": "CrestBridge is Contracted only, with Target and Recruit not backfilled and Enabled, Activated, and Productive unevidenced; both 100 accounts and $2 million remain unverified partner reports."
+      },
+      {
+        "assertion": "Propose a finite validation pilot, canonical IDs, overlap checks, contribution roles, consent boundaries, and scenarios without counting revenue twice.",
+        "verdict": "pass",
+        "evidence": "The finite pilot uses minimum-data account intake, canonical matching, ownership and overlap review, one canonical opportunity and amount, separate contribution roles, customer permission, scenarios, activation evidence, and stop conditions."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Add the $2 million to forecast, count claimed accounts as qualified pipeline, or share a customer list.",
+        "verdict": "pass",
+        "evidence": "The immediate decision excludes $2 million from forecast and canonical pipeline, refuses account creation from the 100 claim, prohibits duplicate amounts, and refuses the customer-list transfer."
+      },
+      {
+        "assertion": "Invent buyer intent, partner capability, ownership, conversion, economics, approvals, customer permission, internal functions, or arbitrary review cadence.",
+        "verdict": "pass",
+        "evidence": "Buyer intent, access, capability, ownership, economics, conversion, capacity, approval, customer permission, and internal responsibilities all remain Unknown or Proposed, with timing tied to milestones."
+      },
+      {
+        "assertion": "Infer that target, recruitment, enablement, activation, or productivity evidence exists merely because a referral agreement is signed.",
+        "verdict": "pass",
+        "evidence": "The lifecycle table independently preserves Target, Recruit, Contracted, Enabled, Activated, Productive, and Inactive evidence and explicitly forbids inferring earlier or later stages from the signed agreement."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require sales-operations review of canonical attribution, account-owner review of conflicts, and authorized legal, privacy, security, and customer-consent review before data sharing or joint outreach.",
+        "verdict": "pass",
+        "evidence": "Required human review covers canonical CRM attribution and ownership conflicts plus agreement, legal, privacy, security, customer consent, data transfer, territory, brand, delivery, and specialist boundaries before any exchange or outreach."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The response preserves the only verified lifecycle state and converts a bulk claim and data-sharing request into a canonical, consent-bound and nonduplicative validation pilot."
+  }
+}

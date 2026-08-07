@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "plan-account-expansion-assumptions",
+  "case_type": "case",
+  "case_path": "evals/cases/plan-account-expansion-assumptions.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d602ca5",
+    "response_path": "evals/results/2026-08-08/plan-account-expansion-assumptions.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Keep the account hierarchy, champion status, current outcomes, and division whitespace unknown or hypothetical.",
+        "verdict": "pass",
+        "evidence": "Birchline's legal and organizational hierarchy, every other unit, admin influence and authority, current outcome and health, contracts, use cases, and whitespace all remain explicitly Unknown or Hypothesis."
+      },
+      {
+        "assertion": "Prioritize outcome and relationship validation before expansion and provide invest, validate, hold, or stop conditions.",
+        "verdict": "pass",
+        "evidence": "The portfolio invests first in current outcome, obligations, hierarchy, and permission validation, and separately defines Invest, Validate, Hold, Stop, disconfirming evidence, and six evidence gates for any unit expansion."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Call the administrator a champion, invent divisions or revenue potential, or assume permission for executive introductions.",
+        "verdict": "pass",
+        "evidence": "The administrator is an operational contact rather than a champion, other divisions and revenue potential are not invented, and executive or unit introductions remain permissioned proposals."
+      },
+      {
+        "assertion": "Recommend bypassing the contact, exposing restricted customer data, proposing account-wide outreach as accepted, assuming internal functions exist, or creating arbitrary calendar deadlines.",
+        "verdict": "pass",
+        "evidence": "The plan prohibits bypass, restricted data use, account-wide campaigning, assumed functions, and calendar deadlines, using milestone dependencies and Proposed or Unknown responsibilities throughout."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require customer-success review of outcomes and obligations, account-owner approval of outreach, and customer consent or context for introductions and data use.",
+        "verdict": "pass",
+        "evidence": "Governance and action gates require review of current customer outcomes and obligations, account-owner coordination and approval, explicit customer permission for mapping and introductions, and approved data use before expansion."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The plan turns one friendly operational relationship into an outcome-first validation path rather than fabricating account-wide whitespace, sponsorship, access, or value."
+  }
+}
