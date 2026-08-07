@@ -91,6 +91,21 @@
       "package_sha256": "75ead790195caefeb52a41208a439514c56664a49b655dc434b009dc0dca67d2"
     },
     {
+      "name": "design-sales-process",
+      "description": "Design, audit, or revise a B2B sales process and its CRM operating rules. Use for lifecycle and opportunity stages, entry and exit criteria, qualification gates, handoffs, recycling and disqualification paths, required fields, stage governance, service expectations, conversion measurement, or rollout plans without importing generic benchmarks as company truth.",
+      "display_name": "Design Sales Process",
+      "short_description": "Design evidence-based stages and governance",
+      "default_prompt": "Use $design-sales-process to design an evidence-based sales process.",
+      "path": "skills/design-sales-process",
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/sales-process.md",
+        "references/methods.md"
+      ],
+      "package_sha256": "f56b5d5cf4b78b31a57c8ff62b69328dc5118d00a5b6e28b2508f6f63cb03488"
+    },
+    {
       "name": "forecast-sales",
       "description": "Create, inspect, or explain a B2B sales forecast using CRM opportunities, historical conversion, pipeline changes, seller calls, or scenario assumptions. Use for commit and best-case calls, monthly or quarterly forecasting, forecast risk, rollups, coverage, sensitivity analysis, or explaining a forecast to leadership.",
       "display_name": "Forecast Sales",

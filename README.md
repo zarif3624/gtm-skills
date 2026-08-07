@@ -28,6 +28,7 @@ This project is deliberately:
 | Stage | Skill | Use it for |
 | --- | --- | --- |
 | Foundation | [`gtm-context`](skills/gtm-context/) | Create the shared product, market, sales-motion, and evidence context |
+| Operations | [`design-sales-process`](skills/design-sales-process/) | Design buyer-state stages, evidence gates, governance, and measurement |
 | Strategy | [`define-icp`](skills/define-icp/) | Define, test, and score an ideal customer profile |
 | Planning | [`plan-territories`](skills/plan-territories/) | Design fair, executable territories and capacity scenarios |
 | Targeting | [`research-account`](skills/research-account/) | Build a sourced account brief without inventing facts |
@@ -58,6 +59,8 @@ This project is deliberately:
 ```text
 gtm-context
     |
+    +-- design-sales-process -- review-pipeline -- forecast-sales
+    |
     +-- define-icp -- plan-territories
     |             `-- research-account -- plan-account
     |                                  `-- plan-prospecting -- write-outbound
@@ -84,6 +87,7 @@ gtm-context
 | What you have | What you need | Start with |
 | --- | --- | --- |
 | Product docs and scattered sales knowledge | Shared, reusable background | `$gtm-context` |
+| Inconsistent stages, fields, or handoffs | A buyer-state sales process and rollout plan | `$design-sales-process` |
 | Early customer evidence or a broad target market | A testable customer profile | `$define-icp` |
 | An account universe and coverage team | Territories, capacity, and assignment rules | `$plan-territories` |
 | A named account or upcoming first meeting | Evidence and a conversation plan | `$research-account`, then `$prepare-discovery` |
@@ -188,7 +192,7 @@ python3 scripts/check.py
 
 After changing a skill, eval definition, result, example, or reference pack, refresh committed metadata with `python3 scripts/update_generated.py` before running the suite.
 
-The suite checks all 23 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+The suite checks all 24 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
 ## Roadmap
 

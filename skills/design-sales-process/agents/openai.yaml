@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Sales Process"
+  short_description: "Design evidence-based stages and governance"
+  default_prompt: "Use $design-sales-process to design an evidence-based sales process."

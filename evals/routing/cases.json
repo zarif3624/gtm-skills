@@ -8,6 +8,12 @@
       "excluded_skills": ["define-icp"]
     },
     {
+      "id": "design-evidence-based-sales-process",
+      "prompt": "Design our opportunity stages, buyer-state entry and exit evidence, disqualification and recycling paths, CRM fields, governance, measurement, and rollout plan.",
+      "expected_skills": ["design-sales-process"],
+      "excluded_skills": ["review-pipeline"]
+    },
+    {
       "id": "derive-testable-icp",
       "prompt": "Analyze our small set of customers and losses to define a testable ideal customer profile with counterexamples and validation tests.",
       "expected_skills": ["define-icp"],
