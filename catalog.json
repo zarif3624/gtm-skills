@@ -263,7 +263,7 @@
         "agents/openai.yaml",
         "assets/demo-plan.md"
       ],
-      "package_sha256": "f64a29aa262d09973b7a43bbd82f4dbed90b8d2e433e6cdf5223a3d5d2c4e818"
+      "package_sha256": "3cc5a5350f50772127cf19088d4deef67fbefdcc391219c2a47122779d06db04"
     },
     {
       "name": "prepare-discovery",

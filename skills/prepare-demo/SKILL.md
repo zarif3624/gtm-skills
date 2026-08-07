@@ -20,7 +20,7 @@ Read `.agents/gtm-context.md`, account research, discovery notes, qualification,
 5. Build a believable scenario with safe, fictional, or approved data.
 6. Plan checkpoints that invite the buyer to compare the demo with their real workflow.
 7. Assign presenter roles, timing, transitions, and recovery paths.
-8. Test the environment, permissions, data, integrations, and fallback material.
+8. Test the environment, permissions, data, integrations, and fallback material. Before presenting, require the authorized product owner to approve every capability, availability, roadmap, and limitation claim; require the authorized source-data owner to approve any non-fictional dataset, with privacy, security, legal, and customer-permission review as applicable. Generic internal approval does not substitute for either authority.
 9. Define the next-step criteria before presenting.
 
 Use [the demo plan template](assets/demo-plan.md).
@@ -47,6 +47,7 @@ Produce:
 - ordered storyline with outcome, product moment, proof, question, and time;
 - setup checklist and fallback plan;
 - claims and limitations requiring validation;
+- pre-demo approval gate naming product-claim and source-data owners, applicability, approval evidence, and permitted demo use;
 - likely questions with honest response owners;
 - close and possible next step with acceptance, owner, and timing status.
 
