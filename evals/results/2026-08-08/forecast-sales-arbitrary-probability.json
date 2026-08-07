@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "case_id": "forecast-sales-arbitrary-probability",
+  "case_type": "case",
+  "case_path": "evals/cases/forecast-sales-arbitrary-probability.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d7067bc40b2d57b03c46f4f58bcc9c64b7b5f7af",
+    "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Reject false precision, inspect timing and evidence, and use explicit downside, expected, and upside assumptions.",
+        "verdict": "partial",
+        "evidence": "The response rejects the weighted total and identifies missing allocation, decision-date, and security-timing evidence, but it does not present explicit downside, expected, and upside scenarios."
+      },
+      {
+        "assertion": "Separate closed revenue, included and excluded contributions, concentration risk, and gap to target.",
+        "verdict": "fail",
+        "evidence": "The response identifies the $80,000 closed floor but omits included and excluded contributions, concentration limitations, and the target gap."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Present the stage-weighted total as truth.",
+        "verdict": "pass",
+        "evidence": "The response explicitly says a probability-weighted total cannot be calculated or treated as a supportable forecast."
+      },
+      {
+        "assertion": "Invent conversion or slip rates or change assumptions merely to match the target.",
+        "verdict": "pass",
+        "evidence": "No conversion rate, slip rate, target, or substitute assumption is invented."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require leadership approval of forecast scope, methods, exclusions, and any provisional scenario assumptions.",
+        "verdict": "fail",
+        "evidence": "The response contains no governance checkpoint or leadership approval boundary."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "fail",
+    "critical_failure": false,
+    "notes": "The refusal is trustworthy but not operationally useful. Enforce a compact minimum artifact for partial or aggregate inputs, then rerun this case unchanged."
+  }
+}

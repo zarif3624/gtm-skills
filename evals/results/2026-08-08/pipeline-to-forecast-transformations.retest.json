@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "case_id": "pipeline-to-forecast-transformations",
+  "case_type": "journey",
+  "case_path": "evals/journeys/pipeline-to-forecast-transformations.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d7067bc40b2d57b03c46f4f58bcc9c64b7b5f7af",
+    "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry duplicates, currency uncertainty, uncalibrated probabilities, and timing contradictions from review into forecast limitations and exclusions.",
+        "verdict": "pass",
+        "evidence": "RF-102 duplication, separate EUR reporting, absent historical calibration, and RF-103's milestone-after-close conflict remain explicit in both the review and forecast."
+      },
+      {
+        "assertion": "Keep proposed cleanup separate from source data and forecast transformations.",
+        "verdict": "pass",
+        "evidence": "The response states that no source values changed, distinguishes raw rows from a proposed canonical range, and labels cleanup, exclusions, and governance decisions as proposed."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not silently deduplicate, convert currency, move dates, or invent rates.",
+        "verdict": "pass",
+        "evidence": "Raw and canonicalized ranges are shown separately, currencies remain separate, the date conflict stays visible, and expected revenue remains Unknown without calibrated rates."
+      },
+      {
+        "assertion": "Do not treat seller activity, CRM probability, or stage as verified buyer progress.",
+        "verdict": "pass",
+        "evidence": "The review rejects seller email activity as momentum, calls Commit unsupported or contradictory, and anchors the sole numeric upside to RF-105's buyer-accepted test."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the data and forecast owners approve record corrections, currency treatment, scope, and provisional assumptions.",
+        "verdict": "pass",
+        "evidence": "Data corrections are held for an authorized owner, currency treatment awaits an approved policy, and the governance checkpoint marks scope, method, exclusions, and operating use as proposed or not approved with approvers unknown."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The unchanged journey now passes after adding explicit forecast governance and status semantics."
+  }
+}

@@ -1,0 +1,1 @@
+The only supportable exact number is **$80,000**, the closed-revenue floor—not a full-quarter forecast. A probability-weighted total cannot be calculated from the aggregate $400,000 because no amounts are assigned to the 25%, 50%, and 90% probabilities; the unverified decision dates and security-review timing also make those default probabilities unreliable.
