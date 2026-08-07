@@ -26,6 +26,18 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def repository_file(root: Path, raw: Any, field: str) -> Path:
+    if not isinstance(raw, str) or not raw.strip():
+        raise ValueError(f"{field} must be a non-empty repository-relative path")
+    unresolved = root / raw
+    path = unresolved.resolve()
+    if not path.is_relative_to(root) or unresolved.is_symlink():
+        raise ValueError(f"{field} must stay in the repository without symbolic links")
+    if not path.is_file():
+        raise ValueError(f"{field} does not exist: {raw}")
+    return path
+
+
 def latest_reports(
     reports: dict[Path, dict[str, Any]], root: Path
 ) -> list[tuple[Path, dict[str, Any]]]:
@@ -57,7 +69,9 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
 
     behavior = []
     for path, report in latest_reports(behavior_reports, root):
-        response_path = root / report["run"]["response_path"]
+        response_path = repository_file(
+            root, report["run"]["response_path"], "behavioral response_path"
+        )
         behavior.append(
             {
                 "case_id": report["case_id"],
@@ -74,8 +88,10 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
 
     routing = []
     for path, report in latest_reports(routing_reports, root):
-        corpus_path = root / report["corpus_path"]
-        response_path = root / report["run"]["response_path"]
+        corpus_path = repository_file(root, report["corpus_path"], "routing corpus_path")
+        response_path = repository_file(
+            root, report["run"]["response_path"], "routing response_path"
+        )
         routing.append(
             {
                 "lineage": report["run"]["lineage"],

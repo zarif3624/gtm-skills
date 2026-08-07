@@ -16,6 +16,12 @@ SPEC.loader.exec_module(MANIFEST)
 
 
 class ReleaseManifestTests(unittest.TestCase):
+    def test_repository_file_rejects_escape(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            with self.assertRaisesRegex(ValueError, "must stay in the repository"):
+                MANIFEST.repository_file(root, "../outside.json", "response")
+
     def test_manifest_indexes_packages_and_only_latest_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
