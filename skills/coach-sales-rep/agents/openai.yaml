@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coach Sales Rep"
+  short_description: "Build evidence-based sales coaching plans"
+  default_prompt: "Use $coach-sales-rep to build a focused evidence-based coaching plan."

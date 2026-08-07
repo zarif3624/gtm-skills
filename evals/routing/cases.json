@@ -62,6 +62,12 @@
       "excluded_skills": ["plan-deal"]
     },
     {
+      "id": "build-rep-coaching-plan",
+      "prompt": "Use these calls, manager observations, and deal outcomes to choose one evidence-based behavior experiment for the rep's next coaching cycle.",
+      "expected_skills": ["coach-sales-rep"],
+      "excluded_skills": ["analyze-sales-call"]
+    },
+    {
       "id": "plan-complex-deal",
       "prompt": "Build a strategy for this complex active deal covering stakeholders, competition, risks, proof, and prioritized actions.",
       "expected_skills": ["plan-deal"],

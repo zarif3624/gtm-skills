@@ -34,6 +34,7 @@ This project is deliberately:
 | Outreach | [`write-outbound`](skills/write-outbound/) | Write responsible, relevant multichannel outreach |
 | Discovery | [`prepare-discovery`](skills/prepare-discovery/) | Prepare questions, hypotheses, and a call plan |
 | Conversation | [`analyze-sales-call`](skills/analyze-sales-call/) | Extract evidence, decisions, next steps, and coaching from sales calls |
+| Enablement | [`coach-sales-rep`](skills/coach-sales-rep/) | Build focused coaching experiments from observable behavior |
 | Qualification | [`qualify-opportunity`](skills/qualify-opportunity/) | Assess evidence, gaps, and next validation steps |
 | Deal execution | [`plan-deal`](skills/plan-deal/) | Map stakeholders, risks, strategy, and next actions |
 | Deal execution | [`handle-objections`](skills/handle-objections/) | Diagnose objections and prepare honest responses |
@@ -169,7 +170,7 @@ Run the full dependency-free quality suite with:
 python3 scripts/check.py
 ```
 
-The suite checks all 20 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+The suite checks all 21 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
 ## Roadmap
 

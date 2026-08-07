@@ -6,7 +6,7 @@ The skills follow the [Agent Skills specification](https://agentskills.io/specif
 
 | Client or path | Discovery / installation evidence | Behavioral evidence | Current status |
 | --- | --- | --- | --- |
-| `skills` CLI against this repository | `npx -y skills add . --list` discovered all 20 skills locally | Not applicable | Verified locally on 2026-08-08 |
+| `skills` CLI against this repository | `npx -y skills add . --list` discovered all 21 skills locally | Not applicable | Verified locally on 2026-08-08 |
 | OpenAI Codex clean-context subagent | Skills loaded from their repository paths for isolated tests | Latest recorded pipeline→forecast journey and sparse forecast case pass; exact model identifier was unavailable | Limited evidence; see [result history](../evals/results/) |
 | Claude Code | Not recorded | Not recorded | Unknown / not yet tested |
 | Cursor | Not recorded | Not recorded | Unknown / not yet tested |
