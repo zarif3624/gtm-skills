@@ -41,10 +41,10 @@ Use [the pipeline review template](assets/pipeline-review.md). Provide:
 
 - data-quality warnings;
 - executive pipeline summary;
-- prioritized deal table with evidence, risk, action, owner, and date;
+- prioritized deal table with evidence, risk, action, and confirmed or proposed owner and timing status;
 - stage, age, and concentration patterns;
 - pipeline created and moved during the period when data supports it;
 - coaching questions, not scripted manager conclusions;
 - CRM cleanup list separated from selling actions.
 
-Do not silently overwrite CRM data. Propose corrections and show the evidence.
+Do not silently overwrite CRM data. Propose corrections and show the evidence. Do not invent ownership or deadlines; prefer milestone-relative timing and label suggestions as `Proposed` or `Unknown`.

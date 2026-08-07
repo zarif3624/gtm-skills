@@ -38,8 +38,8 @@ Use [the qualification template](assets/qualification-assessment.md). Provide:
 2. evidence matrix with status and source;
 3. contradictions and risk signals;
 4. missing evidence ranked by deal impact;
-5. next questions or actions, each with an owner;
+5. next questions or actions with confirmed or proposed owner and timing status;
 6. stage recommendation based on explicit exit criteria;
 7. concise CRM update that does not overstate certainty.
 
-Never convert absent evidence into a positive score. A buyer's willingness to meet is not proof of urgency, authority, or a funded decision.
+Never convert absent evidence into a positive score. A buyer's willingness to meet is not proof of urgency, authority, or a funded decision. Do not invent owners or deadlines; prefer a validation dependency and label suggestions as `Proposed` or `Unknown`.

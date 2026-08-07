@@ -6,7 +6,7 @@
 
 ## Data Quality
 
-| Issue | Records affected | Impact | Proposed correction | Owner |
+| Issue | Records affected | Impact | Proposed correction | Owner status |
 | --- | ---: | --- | --- | --- |
 | | | | | |
 
@@ -20,9 +20,9 @@
 
 ## Deal Priorities
 
-| Opportunity | Classification | Evidence | Primary risk or gap | Action | Owner | Date |
+| Opportunity | Classification | Evidence | Primary risk or gap | Action | Owner status | Date or dependency status |
 | --- | --- | --- | --- | --- | --- | --- |
-| | Act now / Validate / Hold / Remove / Monitor | | | | | |
+| | Act now / Validate / Hold / Remove / Monitor | | | | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown |
 
 ## Patterns
 

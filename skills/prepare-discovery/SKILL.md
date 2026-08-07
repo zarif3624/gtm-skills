@@ -20,7 +20,7 @@ Read `.agents/gtm-context.md`, the account brief, prior messages, and meeting de
 5. Select questions that move from current state to impact, desired outcome, decision process, and next step.
 6. Add follow-up prompts that ask for examples, frequency, consequence, and ownership.
 7. Plan what not to ask because it is already public, answered, irrelevant, or premature.
-8. Define a useful close: recap, gaps, mutual next step, owner, and date.
+8. Define a useful close: recap, gaps, and a possible next step. Keep proposed ownership and timing distinct from what the buyer accepts.
 
 Use [the discovery plan template](assets/discovery-plan.md).
 
@@ -42,6 +42,7 @@ Avoid interrogation, stacked questions, premature budget traps, and questions de
 - Never turn an unverified hypothesis into a leading question that pressures the buyer to agree.
 - Do not use sensitive personal information to create rapport or steer the conversation.
 - If discovery shows weak fit or no priority, make a respectful pause or disqualification an acceptable outcome.
+- Label suggested owners, next steps, and timing as `Proposed` or `Unknown`. Prefer milestone-relative timing until participants accept a date.
 
 ## Output
 

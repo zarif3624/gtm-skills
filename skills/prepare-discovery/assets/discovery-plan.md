@@ -38,5 +38,7 @@
 
 - Recap:
 - Open gaps:
-- Mutual next step:
-- Owner and date:
+- Proposed next step:
+- Buyer acceptance: Accepted / Not accepted / Unknown
+- Owner status: Confirmed / Proposed / Unknown
+- Date status: Confirmed / Proposed / Unknown

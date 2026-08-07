@@ -23,6 +23,7 @@ Create the shared source of truth at `.agents/gtm-context.md`. Keep it factual, 
 - Do not turn an aspiration into a customer fact.
 - Do not store credentials, raw personal data, or confidential customer details in shared context.
 - Treat frameworks as optional language, not evidence.
+- Label suggested owners, dates, thresholds, and process definitions as `Proposed` or `Unknown` until an authoritative source confirms them.
 
 ## Minimum Useful Context
 

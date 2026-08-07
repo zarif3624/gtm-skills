@@ -38,13 +38,13 @@
 
 ### Mutually Accepted
 
-| Action | Owner | Date | Evidence and locator |
+| Action | Owner and acceptance | Date and acceptance | Evidence and locator |
 | --- | --- | --- | --- |
 | | | | |
 
 ### Proposed Or Unconfirmed
 
-| Action | Proposed owner | Proposed date | Validation needed |
+| Action | Proposed owner status | Proposed date or dependency status | Validation needed |
 | --- | --- | --- | --- |
 | | | | |
 

@@ -19,7 +19,7 @@ Read `.agents/gtm-context.md`, contract or order scope, final proposal, discover
 4. Separate contracted commitments from seller statements and customer assumptions.
 5. Map stakeholders, roles, communication preferences, and decision history.
 6. Capture implementation prerequisites, integrations, security, data, change-management, and adoption risks.
-7. Identify immediate actions with owners and dates.
+7. Identify immediate actions. Preserve confirmed owners and dates; label suggested responsibility and timing as proposed or unknown.
 8. Ask the receiving owner to confirm gaps before the customer kickoff.
 
 Use [the handoff template](assets/customer-handoff.md).
@@ -31,6 +31,7 @@ Use [the handoff template](assets/customer-handoff.md).
 - Do not expose irrelevant call transcripts, private seller commentary, or sensitive personal data.
 - Do not ask the customer to repeat information already captured unless validation is necessary.
 - Escalate conflicts between the contract, proposal, and verbal expectations.
+- Do not assume the receiving function, implementation owner, first-30-day dates, or kickoff commitments. Prefer milestone-relative sequencing until owners accept timing.
 
 ## Output
 

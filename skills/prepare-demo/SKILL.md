@@ -32,6 +32,7 @@ Use [the demo plan template](assets/demo-plan.md).
 - Do not expose real customer or personal data.
 - Do not promise performance, security, compliance, or implementation outcomes without approved evidence.
 - If the product cannot meet a required outcome, surface the gap and its implication.
+- Label suggested presenter roles, owners, dates, success criteria, and next steps as `Proposed` or `Unknown`. Do not convert interest during a demo into buyer acceptance.
 
 ## Output
 
@@ -43,6 +44,6 @@ Produce:
 - setup checklist and fallback plan;
 - claims and limitations requiring validation;
 - likely questions with honest response owners;
-- close and mutual next step.
+- close and possible next step with acceptance, owner, and timing status.
 
 Keep the main storyline within the allotted time and reserve optional branches for attendee-specific questions.

@@ -21,7 +21,7 @@
 - Data:
 - Permissions:
 - Integrations:
-- Presenter roles:
+- Presenter roles and status: Confirmed / Proposed / Unknown
 - Backup path:
 
 ## Claims To Validate
@@ -32,4 +32,6 @@
 
 - Success criteria recap:
 - Open questions:
-- Mutual next step, owner, and date:
+- Proposed next step:
+- Buyer acceptance: Accepted / Not accepted / Unknown
+- Owner and timing status: Confirmed / Proposed / Unknown

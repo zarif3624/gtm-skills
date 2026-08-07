@@ -47,6 +47,6 @@
 
 ## Validation Plan
 
-| Hypothesis | Test | Sample | Success signal | Failure signal | Owner | Review date |
+| Hypothesis | Test | Sample | Success signal | Failure signal | Owner status | Review date or dependency status |
 | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | |
+| | | | | | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown |

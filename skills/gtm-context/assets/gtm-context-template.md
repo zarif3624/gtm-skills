@@ -72,9 +72,9 @@
 
 ## Unknowns And Active Hypotheses
 
-| Item | Status | How to validate | Owner |
+| Item | Status | How to validate | Owner status |
 | --- | --- | --- | --- |
-| | Unknown / Hypothesis | | |
+| | Unknown / Hypothesis | | Confirmed / Proposed / Unknown |
 
 ## Changelog
 

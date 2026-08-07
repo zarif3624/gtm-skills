@@ -21,7 +21,7 @@ Read `.agents/gtm-context.md`, opportunity history, qualification assessment, ca
 6. Identify alternatives: competitor, internal build, delay, or no decision.
 7. List risks by likelihood and impact. Include contradictory evidence.
 8. Generate possible actions, then rank them by buyer value, information gained, and effort.
-9. Select the next three actions with owners and dates.
+9. Select the next three actions. Label suggested owners and timing as proposed unless the source confirms them.
 10. Define a stop or requalification condition so weak deals do not consume unlimited time.
 
 Use [the deal plan template](assets/deal-plan.md).
@@ -32,6 +32,7 @@ Use [the deal plan template](assets/deal-plan.md).
 - Do not infer authority from seniority alone.
 - Treat missing stakeholder access as a risk, not an invitation to bypass the current contact.
 - Never encourage deception, manufactured consensus, or pressure through personal information.
+- Prefer milestone-relative timing to arbitrary calendar dates. Keep seller proposals separate from buyer-accepted actions.
 
 ## Output
 

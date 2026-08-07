@@ -2,7 +2,7 @@
 
 **Close date:**
 **Contract or order source:**
-**Receiving owner:**
+**Receiving responsibility and owner status:** Confirmed / Proposed / Unknown
 
 ## Customer Summary
 
@@ -16,19 +16,19 @@
 
 ## Outcomes And Success
 
-| Desired outcome | Measure | Baseline | Target | Date | Evidence |
+| Desired outcome | Measure | Baseline | Target | Date status | Evidence |
 | --- | --- | --- | --- | --- | --- |
 | | | Unknown | Unknown | | |
 
 ## Stakeholders
 
-| Person or role | Responsibility | Desired outcome | Concern | Engagement note |
+| Person or role | Responsibility | Desired outcome | Concern | Evidence status |
 | --- | --- | --- | --- | --- |
 | | | | | |
 
 ## Commitments And Expectations
 
-| Item | Contracted / Approved / Discussed / Assumed | Owner | Status or action |
+| Item | Contracted / Approved / Discussed / Assumed | Owner status | Status or action |
 | --- | --- | --- | --- |
 | | | | |
 
@@ -42,9 +42,9 @@
 
 ## First 30 Days
 
-| Milestone | Owner | Date | Completion evidence |
-| --- | --- | --- | --- |
-| | | | |
+| Milestone | Owner status | Date or dependency status | Completion evidence | Customer status |
+| --- | --- | --- | --- | --- |
+| | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown | | Accepted / Proposed / Unknown |
 
 ## Open Questions
 

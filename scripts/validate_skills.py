@@ -18,6 +18,7 @@ MARKDOWN_LINK_RE = re.compile(r"\]\(([^)]+)\)")
 OPENAI_FIELD_RE = re.compile(r'^  ([a-z_]+): "([^"]*)"$')
 RESOURCE_DIRS = ("assets", "references", "scripts")
 REQUIRED_INTERFACE_FIELDS = {"display_name", "short_description", "default_prompt"}
+BARE_CONTROL_FIELD_RE = re.compile(r"\|\s*(Owner|Date|Deadline|Approval)\s*\|", re.IGNORECASE)
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str, list[str]]:
@@ -105,6 +106,14 @@ def validate_resources(path: Path, text: str) -> list[str]:
             relative = resource.relative_to(path).as_posix()
             if relative not in linked and relative not in text:
                 errors.append(f"unreferenced bundled resource: {relative}")
+            if folder_name == "assets" and resource.suffix.lower() == ".md":
+                asset_text = resource.read_text(encoding="utf-8")
+                bare_field = BARE_CONTROL_FIELD_RE.search(asset_text)
+                if bare_field:
+                    errors.append(
+                        f"ambiguous {bare_field.group(1).lower()} field in {relative}; "
+                        "include confirmed, proposed, accepted, or unknown status"
+                    )
     return errors
 
 
@@ -178,6 +187,30 @@ def validate_catalog(skill_dirs: list[Path]) -> list[str]:
     return errors
 
 
+def validate_document_links(path: Path, repository_root: Path) -> list[str]:
+    """Validate local links in repository-facing Markdown documents."""
+    errors: list[str] = []
+    text = path.read_text(encoding="utf-8")
+    root = repository_root.resolve()
+    for relative in local_links(text):
+        target = (path.parent / relative).resolve()
+        if not target.is_relative_to(root):
+            errors.append(f"{path.name} link escapes repository: {relative}")
+        elif not target.exists():
+            errors.append(f"{path.name} has broken local link: {relative}")
+    return errors
+
+
+def validate_repository_docs() -> list[str]:
+    documents = list(ROOT.glob("*.md"))
+    documents.extend((ROOT / ".github").rglob("*.md"))
+    documents.extend((ROOT / "evals").glob("*.md"))
+    errors: list[str] = []
+    for document in sorted(set(documents)):
+        errors.extend(validate_document_links(document, ROOT))
+    return errors
+
+
 def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     if not SKILLS.is_dir():
         return {}, ["skills directory is missing"]
@@ -185,7 +218,9 @@ def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     if not skill_dirs:
         return {}, ["no skills found"]
     results = {skill_dir.name: validate_skill(skill_dir) for skill_dir in skill_dirs}
-    return results, validate_catalog(skill_dirs)
+    repository_errors = validate_catalog(skill_dirs)
+    repository_errors.extend(validate_repository_docs())
+    return results, repository_errors
 
 
 def main(argv: list[str] | None = None) -> int:

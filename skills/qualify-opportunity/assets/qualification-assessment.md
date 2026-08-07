@@ -24,9 +24,9 @@
 
 ## Highest-Impact Gaps
 
-| Rank | Missing evidence | Deal implication | Smallest validation action | Owner | Date |
+| Rank | Missing evidence | Deal implication | Smallest validation action | Owner status | Date or dependency status |
 | ---: | --- | --- | --- | --- | --- |
-| 1 | | | | | |
+| 1 | | | | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown |
 
 ## Stage Recommendation
 

@@ -44,4 +44,4 @@ Use [the ICP template](assets/icp.md). Produce:
 7. **Unknowns**: highest-value data to collect next.
 8. **Validation plan**: a small test with success and failure criteria.
 
-Avoid invented market sizes and unsupported conversion benchmarks. A useful ICP can be wrong later; it must be clear enough to test now.
+Avoid invented market sizes and unsupported conversion benchmarks. Label suggested test owners and timing as `Proposed` or `Unknown`, and prefer milestone dependencies to arbitrary dates. A useful ICP can be wrong later; it must be clear enough to test now.

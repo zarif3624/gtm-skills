@@ -102,6 +102,34 @@ Produce a test artifact.
             errors = VALIDATOR.validate_skill(skill)
             self.assertIn("default_prompt must explicitly mention $test-skill", errors)
 
+    def test_asset_control_fields_require_status(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            skill = self.make_skill(Path(temp))
+            asset = skill / "assets" / "plan.md"
+            asset.parent.mkdir()
+            asset.write_text("| Action | Owner | Date |\n| --- | --- | --- |\n", encoding="utf-8")
+            skill_file = skill / "SKILL.md"
+            skill_file.write_text(
+                skill_file.read_text(encoding="utf-8").replace(
+                    "Read [the guide]", "Use [the plan](assets/plan.md). Read [the guide]"
+                ),
+                encoding="utf-8",
+            )
+            errors = VALIDATOR.validate_skill(skill)
+            self.assertIn(
+                "ambiguous owner field in assets/plan.md; include confirmed, proposed, "
+                "accepted, or unknown status",
+                errors,
+            )
+
+    def test_repository_document_links_are_checked(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            document = root / "README.md"
+            document.write_text("Read [the missing guide](docs/missing.md).\n", encoding="utf-8")
+            errors = VALIDATOR.validate_document_links(document, root)
+            self.assertEqual(errors, ["README.md has broken local link: docs/missing.md"])
+
 
 if __name__ == "__main__":
     unittest.main()

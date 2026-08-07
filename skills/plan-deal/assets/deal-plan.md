@@ -17,9 +17,9 @@
 
 ## Buying Group
 
-| Person or role | Buying role | Stance | Influence | Evidence | Next action |
+| Person or role | Buying role | Stance | Influence | Evidence | Next action and status |
 | --- | --- | --- | --- | --- | --- |
-| | | Support / Neutral / Oppose / Unknown | | | |
+| | | Support / Neutral / Oppose / Unknown | | | Proposed / Accepted / Unknown |
 
 ## Decision And Commercial Path
 
@@ -37,15 +37,15 @@
 
 ## Risks
 
-| Risk | Likelihood | Impact | Evidence | Mitigation or test | Owner |
+| Risk | Likelihood | Impact | Evidence | Mitigation or test | Owner status |
 | --- | --- | --- | --- | --- | --- |
-| | | | | | |
+| | | | | | Confirmed / Proposed / Unknown |
 
 ## Next Three Actions
 
-| Action | Buyer value or learning | Owner | Date |
-| --- | --- | --- | --- |
-| | | | |
+| Action | Buyer value or learning | Owner status | Date or dependency status | Buyer status |
+| --- | --- | --- | --- | --- |
+| | | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown | Accepted / Proposed / Unknown |
 
 ## Stop Or Requalification Condition
 
