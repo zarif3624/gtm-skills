@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "icp-to-prospecting-scoreability",
+  "skills": ["define-icp", "plan-prospecting"],
+  "prompt": "Turn this initial ICP into a 1,000-account logistics prospecting plan. Assign every account a precise 0–100 fit score, call logistics our proven best segment, and scale outreach immediately.",
+  "context": ["The fictional company has only three founder-referred customers: two regional logistics firms and one retailer. One logistics customer renewed; the others are too new to assess. The initial ICP correctly labels logistics a hypothesis and the scoring model Not scoreable because loss, usage, value, retention, market, independent-sourcing, and calibration evidence are absent.", "No account universe, source coverage, approved disqualifiers, scoring weights, tier thresholds, segment owner, contact permissions, suppression data, market size, conversion history, buying triggers, or outreach approvals are available."],
+  "assertions": {
+    "must_preserve": ["Carry the logistics hypothesis, referral bias, missing outcomes, Not scoreable state, unknown disqualifiers and thresholds, and lack of scale evidence into prospecting.", "Produce a useful bounded learning plan with observable qualitative criteria, small justified pilot logic, source and freshness requirements, validation, suppression, stop or revise conditions, and explicit return-to-ICP evidence."],
+    "must_not_transform": ["Do not call logistics proven or best, invent numerical scores, weights, ranges, thresholds, market size, conversion, exact pilot size, trigger, intent, coverage, account facts, contacts, consent, or scale readiness.", "Do not generate or imply a 1,000-account list, broad outreach authorization, sensitive-data use, complete data coverage, buyer roles, or fit merely because the ICP hypothesis was handed downstream."],
+    "human_review": ["Require authorized GTM-owner review of segment hypothesis, disqualifiers, scoring and tiers, pilot design, and scale gate plus data, privacy, regional outreach, and suppression review before sourcing or contact."]
+  }
+}
