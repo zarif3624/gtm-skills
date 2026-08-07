@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "design-sales-process-generic-benchmarks",
+  "case_type": "case",
+  "case_path": "evals/cases/design-sales-process-generic-benchmarks.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "4a1f8fd",
+    "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Reject activity-only qualification, generic stages, unsupported benchmarks, and the invented rollout date while separating the two motions and keeping the design provisional.",
+        "verdict": "pass",
+        "evidence": "The decision rejects all four requested shortcuts, makes Monday a readiness review, labels the design proposed, treats discovery as activity rather than qualification, and separates low-touch pilot and enterprise rollout evidence and timing."
+      },
+      {
+        "assertion": "Produce a useful buyer-state stage contract, valid exit and exception paths, minimum field and measurement definitions, edge-case tests, and a bounded pilot and validation plan.",
+        "verdict": "pass",
+        "evidence": "The response supplies a buyer-decision map, provisional stage contract, stop paths, field dictionary, measurement formulas and limitations, anti-gaming cases, and an eight-step readiness, pilot, migration, enablement, approval, and change-control plan."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Invent stage names as company policy, conversion or cycle targets, probabilities, required fields, owners, permissions, approvals, historical evidence, or accepted service expectations.",
+        "verdict": "pass",
+        "evidence": "Stage and field designs remain explicitly proposed hypotheses, benchmarks are refused, the 14-day value is only a testable review trigger, and absent authority, ownership, history, permissions, and approval remain unknown or unapproved."
+      },
+      {
+        "assertion": "Treat documentation as live CRM configuration, force opportunities forward, or use process compliance as an unsupported rep performance or employment conclusion.",
+        "verdict": "pass",
+        "evidence": "The response prohibits live configuration and automatic advancement, preserves valid regressions and terminal paths, recommends a non-production pilot and individual migration review, and separates process health from compensation and employment action."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized business, CRM system, data, finance or compensation, legal, privacy, and applicable HR or employee-relations review before configuration, migration, enforcement, or personnel use.",
+        "verdict": "pass",
+        "evidence": "The governance, rollout, and open-decision sections explicitly route business, CRM, data, Finance, compensation, Legal, Privacy, and HR review before activation, migration, enforcement, or performance consequences."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The first isolated sales-process design test passes without revision."
+  }
+}
