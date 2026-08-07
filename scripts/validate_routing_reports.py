@@ -127,11 +127,15 @@ def validate_report(path: Path, root: Path = ROOT) -> list[str]:
         prior_path, prior_errors = resolve_path(supersedes, "supersedes", root)
         errors.extend(prior_errors)
         if prior_path:
+            if not prior_path.is_relative_to(
+                (root / "evals" / "routing" / "results").resolve()
+            ):
+                errors.append("supersedes must stay under evals/routing/results")
+            if prior_path == path.resolve():
+                errors.append("a routing report cannot supersede itself")
             prior, prior_load_errors = load_json(prior_path)
             errors.extend(f"superseded report {error}" for error in prior_load_errors)
             if prior:
-                if prior.get("corpus_path") != report.get("corpus_path"):
-                    errors.append("superseded report must use the same corpus_path")
                 prior_run = prior.get("run")
                 if not isinstance(prior_run, dict) or not isinstance(run, dict) or prior_run.get("lineage") != run.get("lineage"):
                     errors.append("superseded report must have the same run.lineage")
@@ -152,13 +156,32 @@ def main() -> int:
     reports = sorted(RESULTS.glob("*.json")) if RESULTS.is_dir() else []
     reports = [path for path in reports if not path.name.endswith(".response.json")]
     failures = 0
+    valid_reports: dict[Path, dict[str, Any]] = {}
     for path in reports:
         errors = validate_report(path)
         failures += bool(errors)
         print(f"{'FAIL' if errors else 'PASS'} {path.relative_to(RESULTS)}")
         for error in errors:
             print(f"  - {error}")
+        if not errors:
+            report, _ = load_json(path)
+            if report:
+                valid_reports[path.resolve()] = report
     print(f"\nValidated {len(reports)} routing reports; {failures} invalid.")
+    superseded = {
+        (ROOT / report["supersedes"]).resolve()
+        for report in valid_reports.values()
+        if report.get("supersedes")
+    }
+    latest = [report for path, report in valid_reports.items() if path not in superseded]
+    verdicts = {"pass": 0, "partial": 0, "fail": 0}
+    for report in latest:
+        verdicts[report["summary"]["verdict"]] += 1
+    print(
+        f"Latest by lineage: {len(latest)} reports; {verdicts['pass']} pass, "
+        f"{verdicts['partial']} partial, {verdicts['fail']} fail."
+    )
+    print(f"Historical routing runs retained: {len(valid_reports) - len(latest)}.")
     return 1 if failures else 0
 
 

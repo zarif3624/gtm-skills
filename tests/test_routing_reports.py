@@ -135,6 +135,35 @@ class RoutingReportTests(unittest.TestCase):
             errors = VALIDATOR.validate_report(report_path, root)
             self.assertTrue(any("summary must match computed" in error for error in errors))
 
+    def test_new_corpus_can_supersede_prior_in_same_lineage(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report_path = self.make_repository(root)
+            prior_path = report_path.parent / "prior.json"
+            prior_path.write_text(
+                json.dumps(
+                    {
+                        "corpus_path": "evals/routing/corpora/older.json",
+                        "run": {"lineage": "test-lineage"},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            report["supersedes"] = "evals/routing/results/prior.json"
+            report_path.write_text(json.dumps(report), encoding="utf-8")
+            self.assertEqual(VALIDATOR.validate_report(report_path, root), [])
+
+    def test_report_cannot_supersede_itself(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report_path = self.make_repository(root)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            report["supersedes"] = "evals/routing/results/run.json"
+            report_path.write_text(json.dumps(report), encoding="utf-8")
+            errors = VALIDATOR.validate_report(report_path, root)
+            self.assertIn("a routing report cannot supersede itself", errors)
+
     def test_out_of_order_or_duplicate_response_fails(self) -> None:
         errors = VALIDATOR.validate_response(
             {"selections": list(reversed(response()["selections"]))},

@@ -23,4 +23,4 @@ python3 scripts/create_routing_report.py \
   --output evals/routing/results/2026-08-08.json
 ```
 
-The report is calculated from the immutable hidden-corpus snapshot and raw response. Never edit or reuse a snapshot after a run; create a new one when the live corpus changes. `pass` requires the exact smallest intended skill set for every case. Selecting extra non-excluded skills is `partial`; missing an expected skill or selecting an explicitly excluded neighbor is `fail`.
+The report is calculated from the immutable hidden-corpus snapshot and raw response. Never edit or reuse a snapshot after a run; create a new one when the live corpus changes. Use `--supersedes` to link the new report to the prior report in the same agent-and-model lineage, including when the corpus version changes. `pass` requires the exact smallest intended skill set for every case. Selecting extra non-excluded skills is `partial`; missing an expected skill or selecting an explicitly excluded neighbor is `fail`.

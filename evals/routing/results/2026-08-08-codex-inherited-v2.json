@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "corpus_path": "evals/routing/corpora/2026-08-08-v2.json",
-  "supersedes": null,
+  "supersedes": "evals/routing/results/2026-08-08-codex-inherited.json",
   "run": {
     "agent": "Codex clean-context subagent",
     "model": "Inherited Codex model; exact identifier unavailable",
