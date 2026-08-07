@@ -26,7 +26,7 @@ Read [the positioning methods](references/methods.md) when building claim ladder
 7. Create one core message and a small number of pillars, each with audience relevance, evidence, proof status, and likely objection.
 8. Adapt by role, segment, or motion only when evidence supports a meaningful difference. Preserve the common truth across variants.
 9. Design a bounded message test with one primary variable, audience and delivery controls, success and failure signals, and downstream quality measures.
-10. Route claims for product, customer, brand, legal, privacy, security, commercial, and regional review before broad or external use.
+10. Build a review matrix that names product, customer proof, brand, legal, privacy, security, commercial, and regional review, marks each `Required`, `Not applicable`, or `Unknown`, and preserves the responsible owner's status. Omission never means a review is not applicable.
 
 ## Guardrails
 
@@ -56,6 +56,6 @@ Produce:
 - objection and disconfirming-evidence map;
 - bounded message test and measurement plan;
 - claims to avoid or hold;
-- human-review matrix and handoff notes for `write-outbound`, `prepare-demo`, or `build-business-case` when relevant.
+- human-review matrix that explicitly accounts for every review area above, plus handoff notes for `write-outbound`, `prepare-demo`, or `build-business-case` when relevant.
 
 Label the artifact `Proposed` until the responsible owners approve its claims and intended use.

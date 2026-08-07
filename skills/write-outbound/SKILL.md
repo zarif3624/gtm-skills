@@ -17,6 +17,8 @@ Read `.agents/gtm-context.md` and any account brief. Identify:
 - available proof;
 - channel, relationship, region, and sequence goal.
 
+When an upstream positioning or message brief exists, carry forward each claim's evidence, limitation, approval, and hold status. Channel adaptation can shorten a claim; it cannot strengthen, revive, or imply one that the upstream brief held.
+
 If personalization evidence is weak, use transparent role or segment relevance instead of pretending to know the person.
 
 ## Message Method
@@ -33,6 +35,7 @@ Keep one primary idea per message. Vary the reason to reply across a sequence; d
 ## Guardrails
 
 - Never invent referrals, shared connections, customer names, quotes, results, intent signals, or observations.
+- Never convert a positioning hypothesis, held claim, capability, or test result into verified pain, proof, differentiation, customer value, or realized outcome.
 - Never conceal identity or impersonate a human who did not send the message.
 - Avoid false scarcity, fake deadlines, guilt, fear, or misleading `Re:` and `Fwd:` subjects.
 - Do not claim compliance with outreach laws. Flag consent, identification, suppression, and opt-out requirements for human review.
@@ -54,7 +57,8 @@ Use [the outbound plan template](assets/outbound-plan.md). Provide:
 3. sequence table with timing, channel, purpose, and copy;
 4. subject-line options when email is used;
 5. personalization fields with approved fallbacks;
-6. stop conditions and human-review checks;
-7. one test variable and success measure.
+6. stop conditions and a review matrix that explicitly accounts for product, brand, customer proof, legal, privacy, security, regional outreach, suppression, and commercial review as `Required`, `Not applicable`, or `Unknown`;
+7. one test variable and success measure;
+8. upstream claim handoff showing what remained approved, proposed, held, or unknown.
 
 Do not optimize only for opens or replies. Prefer qualified conversations, positive replies, and low complaint rates.

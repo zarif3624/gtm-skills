@@ -2,6 +2,12 @@
 
 Before launching scaled outreach, have a responsible human verify:
 
+- product accuracy and the exact scope of every capability claim;
+- brand language, category framing, and approved sender representation;
+- customer-proof permission, applicability, scope, and recency;
+- legal review for outcome, comparison, ranking, trust, and other material claims;
+- privacy and security review for contact data, personalization sources, transfers, access, retention, and any security representation;
+- commercial approval for offers, pricing, promises, and seller guidance;
 - the lawful basis, consent, identification, and unsubscribe requirements that apply to each region and channel;
 - the source and permitted use of contact data;
 - suppression lists and opt-out propagation;
@@ -9,6 +15,8 @@ Before launching scaled outreach, have a responsible human verify:
 - message accuracy, proof, and personalization fallbacks;
 - volume, frequency, quiet hours, and stop conditions;
 - data retention and deletion requirements.
+
+Record each review area as `Required`, `Not applicable`, or `Unknown`, with owner status and the claim or operation it covers. Do not treat an omitted review as not applicable.
 
 Channel notes:
 

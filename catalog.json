@@ -118,7 +118,7 @@
         "assets/positioning-brief.md",
         "references/methods.md"
       ],
-      "package_sha256": "43f501ad40599a10696fe43be376500bc81fd3aabd779086ad99d24ad39488e3"
+      "package_sha256": "9d55f49408fc5ac12f574faad74c83ff4b2207f8271b2ea33b25b877de6c3e5c"
     },
     {
       "name": "forecast-sales",
@@ -366,7 +366,7 @@
         "assets/outbound-plan.md",
         "references/responsible-outbound.md"
       ],
-      "package_sha256": "6905e1390698ade84134374b83f6848ea97c6b1b9b317460afc6db853bce0425"
+      "package_sha256": "9352e136dbfd82652f8f22ea6b1511f5ead8f14991ed0579f3c12552d48d87a0"
     }
   ]
 }
