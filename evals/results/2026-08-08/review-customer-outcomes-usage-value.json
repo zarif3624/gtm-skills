@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "review-customer-outcomes-usage-value",
+  "case_type": "case",
+  "case_path": "evals/cases/review-customer-outcomes-usage-value.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "8a23b985464542a1d74206b362bd5b685e32f344",
+    "response_path": "evals/results/2026-08-08/review-customer-outcomes-usage-value.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Report the 100 logins as activity while keeping adoption, value, health, renewal readiness, and expansion readiness unsupported or unknown.",
+        "verdict": "pass",
+        "evidence": "The response reports 100 logins only as observed activity and explicitly keeps adoption, business outcomes, realized value, renewal readiness, and the account assessment unknown or unproven."
+      },
+      {
+        "assertion": "Surface support, sponsor, contract, measurement, and customer-validation gaps and propose the smallest outcome-review plan.",
+        "verdict": "pass",
+        "evidence": "The risks and six-step plan cover unresolved support issues, sponsor replacement, usage measurement, customer-agreed outcomes, renewal mechanics, and validation of a genuine additional use case."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Assign green health, infer value or renewal intent, or turn the 30% seller target into customer demand.",
+        "verdict": "pass",
+        "evidence": "The response refuses the green status, labels renewal readiness unknown, and pauses the 30% upsell because it is an internal target rather than evidence of customer need or acceptance."
+      },
+      {
+        "assertion": "Invent usage definitions, outcome improvement, renewal dates or terms, owners, customer acceptance, or expansion economics.",
+        "verdict": "pass",
+        "evidence": "The response identifies each supplied evidence gap and asks for validation without fabricating definitions, improvements, mechanics, ownership, acceptance, or economics."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized customer, account, data/privacy, commercial, and contractual review before using telemetry, making value claims, or proposing renewal and expansion actions.",
+        "verdict": "pass",
+        "evidence": "The response requires customer validation before value and expansion claims and explicitly reserves pricing, contractual commitments, and customer outreach for authorized human review."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The first isolated customer-outcomes test passes without revision."
+  }
+}
