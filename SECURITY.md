@@ -21,7 +21,7 @@ Material risks include:
 
 ## Repository Controls
 
-The local quality suite rejects symbolic links in the repository, scans common text formats for several live-credential shapes, validates local resource boundaries, and checks examples for email-like identifiers. These controls reduce common mistakes; they are not a complete secret scanner, malware scanner, or security audit.
+The local quality suite rejects symbolic links in the repository, scans common text formats for several live-credential shapes, validates local resource boundaries, checks examples for email-like identifiers, and verifies deterministic skill-package digests in `catalog.json`. These controls reduce common mistakes and make reviewed package changes visible; they are not a complete secret scanner, signature system, malware scanner, or security audit.
 
 Before contributing or using real data:
 

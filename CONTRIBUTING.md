@@ -16,9 +16,10 @@ Thanks for helping make AI-assisted sales more useful and trustworthy.
 3. Include only `name` and `description` in YAML frontmatter.
 4. Put detailed frameworks in `references/` and reusable output templates in `assets/`.
 5. Keep `SKILL.md` below 500 lines.
-6. Add the skill to the catalog in `README.md`.
+6. Add the skill to the human catalog in `README.md`.
 7. Add a fictional, adversarial case in `evals/cases/` that targets the most consequential failure mode.
-8. Run `python3 scripts/check.py`.
+8. Run `python3 scripts/update_generated.py` to refresh `catalog.json` and `quality-summary.json`.
+9. Run `python3 scripts/check.py`.
 
 For a substantial behavior change, follow the [forward-test protocol](evals/README.md) and add a finalized evidence report when the result should be published.
 
@@ -44,3 +45,5 @@ Use the repository's [evidence and status contract](docs/evidence-contract.md) w
 ## Pull Requests
 
 Keep pull requests focused. Explain the user problem, show an example input and output, and note how you tested the skill. Do not include a preferred eval answer beside a case; preserve clean forward testing. By contributing, you agree that your work is licensed under the MIT License.
+
+Generated catalog or quality-summary changes must accompany the source change that caused them. Do not edit their counts, metadata, or hashes by hand.

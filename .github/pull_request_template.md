@@ -18,6 +18,7 @@ Describe the old and new behavior. Include a fictional or redacted example promp
 - [ ] I added or updated an adversarial eval case for a behavior change.
 - [ ] I kept facts, inferences, and unknowns distinct.
 - [ ] I checked bundled resources and UI metadata.
+- [ ] I refreshed and reviewed generated catalog and quality-summary changes.
 - [ ] I ran `python3 scripts/check.py` successfully.
 - [ ] I forward-tested substantial behavior changes in a clean context and recorded the agent, model, date, and result below.
 
