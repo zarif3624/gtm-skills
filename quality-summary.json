@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "catalog": {
+    "skills": 23,
+    "isolated_cases": 23,
+    "journey_cases": 9,
+    "current_routing_cases": 26,
+    "example_workspaces": 1,
+    "reference_packs": 1
+  },
+  "evidence": {
+    "behavioral": {
+      "reports_total": 10,
+      "latest_total": 6,
+      "latest_verdicts": {
+        "pass": 6,
+        "partial": 0,
+        "fail": 0
+      },
+      "historical_runs": 4
+    },
+    "routing": {
+      "reports_total": 2,
+      "latest_total": 1,
+      "latest_verdicts": {
+        "pass": 1,
+        "partial": 0,
+        "fail": 0
+      },
+      "historical_runs": 1
+    }
+  }
+}

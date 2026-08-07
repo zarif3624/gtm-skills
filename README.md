@@ -166,6 +166,8 @@ Every contribution should preserve these rules:
 
 The [evidence and status contract](docs/evidence-contract.md) defines the vocabulary and the handoff invariants behind these rules.
 
+Current catalog and evaluation counts are published in [`quality-summary.json`](quality-summary.json). The validation suite fails when that snapshot no longer matches the repository, preventing release notes from quietly outliving the evidence.
+
 ## Contributing
 
 Contributions are welcome, especially from working sellers, founders, RevOps operators, and customer success teams. See [CONTRIBUTING.md](CONTRIBUTING.md) for the quality bar and validation steps.
