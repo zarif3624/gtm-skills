@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "research-to-account-whitespace",
+  "case_type": "journey",
+  "case_path": "evals/journeys/research-to-account-whitespace.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "69863f6",
+    "response_path": "evals/results/2026-08-08/research-to-account-whitespace.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry unknown hierarchy, outcomes, relationships, and priorities from research into the account plan.",
+        "verdict": "pass",
+        "evidence": "The account plan repeats hierarchy, contract scope, outcomes, renewal health, priorities, role coverage, and broader relationships as Unknown, limiting the operational scope to the verified small team and administrator."
+      },
+      {
+        "assertion": "Keep all unverified divisions and use cases as whitespace hypotheses with validation actions and disconfirming evidence.",
+        "verdict": "pass",
+        "evidence": "Every adjacent-team, other-division, deeper-adoption, and account-wide idea remains a Whitespace hypothesis with explicit validation actions and evidence that would disconfirm it."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not convert company size, one user relationship, or current use into account-wide demand, champion status, or permission for outreach.",
+        "verdict": "pass",
+        "evidence": "The response says the word Group proves no hierarchy, current use proves no expansion demand, and support-call attendance proves neither champion status nor authority; broader contact requires permission and coordinated ownership."
+      },
+      {
+        "assertion": "Do not invent expansion value, budgets, opportunities, usage, customer health, owners, or dates.",
+        "verdict": "pass",
+        "evidence": "No expansion revenue, budget, opportunity, usage depth, health conclusion, accepted owner, or calendar commitment is created; unsupported values and assignments are explicitly Unknown, Proposed, or held."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require customer-success review of outcomes and obligations plus account-owner and customer context before broader outreach or data use.",
+        "verdict": "pass",
+        "evidence": "The first actions require an internal outcomes, renewal, support, and obligation review, followed by an account-owner-coordinated customer outcome review and customer permission before broader outreach or data use."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The journey preserves the sparse research boundary through account planning, turns whitespace into falsifiable hypotheses, and applies an explicit customer-success, relationship-owner, permission, and data-use gate."
+  }
+}
