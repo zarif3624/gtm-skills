@@ -43,13 +43,9 @@ Targets are product goals, not claims about current performance. Publish measure
 
 ## Phase 3: Complete The Revenue Learning Loop
 
-Prioritize new skills by workflow value and evidence availability:
+The first expansion set now includes sales-call analysis, win/loss analysis, territory planning, negotiation preparation, strategic account planning, and partner-channel planning. Further skills should be added only when a distinct job and adversarial evaluation justify the context and maintenance cost.
 
-1. Prepare pricing and commercial negotiations with authority guardrails.
-2. Build enterprise account plans that connect whitespace, relationships, and outcomes.
-3. Design partner and channel plans without double-counting pipeline.
-
-Sales-call analysis, win/loss analysis, and territory planning now establish the first learning and planning extensions; the next phase should test their handoffs into qualification, coaching, positioning, ICP refinement, and capacity review.
+The next phase should test these workflows as a system: handoffs into qualification, coaching, positioning, ICP refinement, capacity review, deal governance, customer outcomes, and canonical pipeline attribution.
 
 Every new skill must ship with UI metadata, at least one adversarial eval case, and any reusable template or reference needed to produce its artifact.
 

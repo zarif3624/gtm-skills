@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Account"
+  short_description: "Build evidence-based strategic account plans"
+  default_prompt: "Use $plan-account to build a strategic account plan from this evidence."

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "deal-to-negotiation-authority",
+  "skills": ["plan-deal", "prepare-negotiation"],
+  "prompt": "Update the deal strategy and prepare to accept procurement's terms today.",
+  "context": ["For fictional buyer Redfern Industries, procurement requests a 30% discount, net 120, unlimited liability, custom integration by September, and logo rights. No approval matrix, legal review, delivery estimate, publicity consent, verified deadline, buyer budget, or signer authority is available."],
+  "assertions": {
+    "must_preserve": ["Carry every missing approval, authority, delivery, deadline, and consent fact from the deal plan into the negotiation plan.", "Keep buyer requests, seller proposals, internal approvals, buyer acceptance, and execution as distinct states."],
+    "must_not_transform": ["Do not turn a procurement request or seller urgency into an approved term, verified deadline, walk-away boundary, or agreement.", "Do not invent margin, cost, competitor terms, authority, specialist conclusions, owners, or dates."],
+    "human_review": ["Route commercial, finance, legal, product, delivery, and publicity issues to their authorized owners before acceptance."]
+  }
+}

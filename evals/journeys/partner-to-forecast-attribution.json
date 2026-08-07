@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "partner-to-forecast-attribution",
+  "skills": ["plan-partner-channel", "review-pipeline", "forecast-sales"],
+  "prompt": "Build the partner plan, add its opportunities to pipeline, and update the forecast.",
+  "context": ["Fictional partner CrestBridge reports 100 target accounts and $2 million in pipeline. Only a referral agreement is confirmed. Account list, buyer actions, canonical opportunity IDs, qualification, ownership, overlap, attribution policy, economics, and activation are unknown."],
+  "assertions": {
+    "must_preserve": ["Carry the $2 million as an unverified partner report through partner planning, pipeline review, and forecast.", "Maintain one canonical opportunity and amount while reporting sourced, influenced, delivered, or transacted roles separately when evidence supports them."],
+    "must_not_transform": ["Do not create pipeline or forecast contribution from partner claims, duplicate direct opportunities, or infer activation from the agreement.", "Do not invent accounts, buyer progress, stages, dates, attribution, conversion, economics, owners, or approvals."],
+    "human_review": ["Require the authorities responsible for account ownership, canonical records, partner terms, pipeline definitions, and forecast scope to approve validated inclusion and attribution."]
+  }
+}

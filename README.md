@@ -27,6 +27,7 @@ This project is deliberately:
 | Strategy | [`define-icp`](skills/define-icp/) | Define, test, and score an ideal customer profile |
 | Planning | [`plan-territories`](skills/plan-territories/) | Design fair, executable territories and capacity scenarios |
 | Targeting | [`research-account`](skills/research-account/) | Build a sourced account brief without inventing facts |
+| Account strategy | [`plan-account`](skills/plan-account/) | Connect footprint, relationships, whitespace, and investments |
 | Targeting | [`plan-prospecting`](skills/plan-prospecting/) | Turn an ICP into a focused account and contact plan |
 | Outreach | [`write-outbound`](skills/write-outbound/) | Write responsible, relevant multichannel outreach |
 | Discovery | [`prepare-discovery`](skills/prepare-discovery/) | Prepare questions, hypotheses, and a call plan |
@@ -35,11 +36,13 @@ This project is deliberately:
 | Deal execution | [`plan-deal`](skills/plan-deal/) | Map stakeholders, risks, strategy, and next actions |
 | Deal execution | [`handle-objections`](skills/handle-objections/) | Diagnose objections and prepare honest responses |
 | Deal execution | [`prepare-demo`](skills/prepare-demo/) | Design a buyer-specific demo around outcomes |
+| Deal execution | [`prepare-negotiation`](skills/prepare-negotiation/) | Plan pricing and commercial negotiations within verified authority |
 | Buying process | [`create-mutual-action-plan`](skills/create-mutual-action-plan/) | Build a shared, buyer-owned decision plan |
 | Management | [`review-pipeline`](skills/review-pipeline/) | Find deal risk and prioritize actions across a pipeline |
 | Management | [`forecast-sales`](skills/forecast-sales/) | Produce an auditable forecast with assumptions and scenarios |
 | Post-sale | [`handoff-customer`](skills/handoff-customer/) | Transfer promises, goals, risks, and context to customer success |
 | Learning | [`analyze-win-loss`](skills/analyze-win-loss/) | Find decision patterns across wins, losses, and no-decisions |
+| Ecosystem | [`plan-partner-channel`](skills/plan-partner-channel/) | Design and test referral, reseller, services, and co-sell motions |
 
 ## How The Skills Work Together
 
@@ -49,18 +52,22 @@ This project is deliberately:
 gtm-context
     |
     +-- define-icp -- plan-territories
-    |             `-- research-account -- plan-prospecting -- write-outbound
+    |             `-- research-account -- plan-account
+    |                                  `-- plan-prospecting -- write-outbound
     |
     +-- prepare-discovery -- analyze-sales-call -- qualify-opportunity -- plan-deal
     |                                                                |-- handle-objections
     |                                                                |-- prepare-demo
+    |                                                                |-- prepare-negotiation
     |                                                                `-- create-mutual-action-plan
     |
     +-- review-pipeline -- forecast-sales
     |
     +-- handoff-customer
     |
-    `-- analyze-win-loss
+    +-- analyze-win-loss
+    |
+    `-- plan-partner-channel
 ```
 
 ## Choose A Starting Point
@@ -71,11 +78,14 @@ gtm-context
 | Early customer evidence or a broad target market | A testable customer profile | `$define-icp` |
 | An account universe and coverage team | Territories, capacity, and assignment rules | `$plan-territories` |
 | A named account or upcoming first meeting | Evidence and a conversation plan | `$research-account`, then `$prepare-discovery` |
+| A strategic account with multiple teams or opportunities | A durable account-wide investment plan | `$plan-account` |
 | A transcript or call notes | Decisions, qualification changes, and coaching | `$analyze-sales-call`, then `$qualify-opportunity` |
 | A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
+| Pricing, procurement, or contract requests | Packages, trades, and approval boundaries | `$prepare-negotiation` |
 | A CRM export or forecast call | Portfolio truth and revenue scenarios | `$review-pipeline`, then `$forecast-sales` |
 | A signed order and scattered deal history | A complete post-sale transfer | `$handoff-customer` |
 | Closed opportunities, decision notes, or buyer interviews | Repeatable win/loss learning | `$analyze-win-loss` |
+| A partner idea, agreement, or reported channel pipeline | A testable, deduplicated partner motion | `$plan-partner-channel` |
 
 Skills accept partial information. Give the agent the strongest source material you have and the decision or artifact you need; the skill should label important gaps and continue.
 

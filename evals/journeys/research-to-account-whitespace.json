@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "research-to-account-whitespace",
+  "skills": ["research-account", "plan-account"],
+  "prompt": "Research this strategic customer and create an expansion account plan.",
+  "context": ["Fictional customer Birchline Group has one small team using the product and an administrator who attends support calls. Account hierarchy, divisions, usage, outcomes, renewal health, priorities, broader relationships, and expansion interest are unknown."],
+  "assertions": {
+    "must_preserve": ["Carry unknown hierarchy, outcomes, relationships, and priorities from research into the account plan.", "Keep all unverified divisions and use cases as whitespace hypotheses with validation actions and disconfirming evidence."],
+    "must_not_transform": ["Do not convert company size, one user relationship, or current use into account-wide demand, champion status, or permission for outreach.", "Do not invent expansion value, budgets, opportunities, usage, customer health, owners, or dates."],
+    "human_review": ["Require customer-success review of outcomes and obligations plus account-owner and customer context before broader outreach or data use."]
+  }
+}

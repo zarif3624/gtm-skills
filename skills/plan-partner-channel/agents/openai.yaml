@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Partner Channel"
+  short_description: "Design evidence-based partner channel motions"
+  default_prompt: "Use $plan-partner-channel to design and test this partner or channel motion."

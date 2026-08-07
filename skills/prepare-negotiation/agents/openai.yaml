@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Negotiation"
+  short_description: "Prepare evidence-based commercial negotiations"
+  default_prompt: "Use $prepare-negotiation to build a principled commercial negotiation plan."
