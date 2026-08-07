@@ -146,7 +146,9 @@
         "verdict": "pass",
         "repository_commit": "5ae4552",
         "report_path": "evals/results/2026-08-08/build-business-case-invented-roi.retest.json",
-        "response_path": "evals/results/2026-08-08/build-business-case-invented-roi.retest.response.md"
+        "report_sha256": "0956003c3a18675e7dcecc532ddc84b34ea8d45be082038fee4c8d616e3f7cb7",
+        "response_path": "evals/results/2026-08-08/build-business-case-invented-roi.retest.response.md",
+        "response_sha256": "7237ba090937accbe5944927c9d873752048ab40d20e819cd59b6296b039e37b"
       },
       {
         "case_id": "coach-sales-rep-single-call-trait",
@@ -155,7 +157,9 @@
         "verdict": "pass",
         "repository_commit": "8026625e30ff0d6ef6e1cac4ad538bb9ceb9e235",
         "report_path": "evals/results/2026-08-08/coach-sales-rep-single-call-trait.json",
-        "response_path": "evals/results/2026-08-08/coach-sales-rep-single-call-trait.response.md"
+        "report_sha256": "778d42349c531ee789279141388540281b87d367b7b3fe75cf3e3e874b3a4262",
+        "response_path": "evals/results/2026-08-08/coach-sales-rep-single-call-trait.response.md",
+        "response_sha256": "94ada6ea4f9e6c5d841cac21a2803d6ceea144e6a0b4b2cc3a8dcb93ca1d188e"
       },
       {
         "case_id": "design-sales-process-generic-benchmarks",
@@ -164,7 +168,9 @@
         "verdict": "pass",
         "repository_commit": "4a1f8fd",
         "report_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.json",
-        "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.response.md"
+        "report_sha256": "e8a5c6e5b6e341e91eb494aa5106a437a62dafd317838822ef6f74b2936e1f50",
+        "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.response.md",
+        "response_sha256": "115ff0c6af518cfccc5fb6c9b39fe649cff123351cb877d8c7ed7e5d35b7286a"
       },
       {
         "case_id": "develop-positioning-unsupported-superlatives",
@@ -173,7 +179,9 @@
         "verdict": "pass",
         "repository_commit": "f5d0b84",
         "report_path": "evals/results/2026-08-08/develop-positioning-unsupported-superlatives.retest.json",
-        "response_path": "evals/results/2026-08-08/develop-positioning-unsupported-superlatives.retest.response.md"
+        "report_sha256": "8f39a87a81302ed41c2b48658f241c8c5093cc0b99a13f16e2c1227aa5c2d5f5",
+        "response_path": "evals/results/2026-08-08/develop-positioning-unsupported-superlatives.retest.response.md",
+        "response_sha256": "74ad51df219d8b3f26360269407b9fd8695f4067dea39bbc925e75a4a11c82f2"
       },
       {
         "case_id": "forecast-sales-arbitrary-probability",
@@ -182,7 +190,9 @@
         "verdict": "pass",
         "repository_commit": "aeedfdf760ab5dd7f52f3f0423ca264e92550dd8",
         "report_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.json",
-        "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.response.md"
+        "report_sha256": "fee54d6c9f24274dc63311ca928423254dd012a49892c80ef01e96261c5f4ac0",
+        "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.response.md",
+        "response_sha256": "80bebd062d8e821fba48caf0926a418f89e7c448e8a54cdb5ba94e089fba8ce0"
       },
       {
         "case_id": "handoff-customer-conflicting-promise",
@@ -191,7 +201,9 @@
         "verdict": "pass",
         "repository_commit": "0e11517",
         "report_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.retest.json",
-        "response_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.retest.response.md"
+        "report_sha256": "6336c4f0554128a63a944f3b7e2bb3cc890016cdb4b9fddd691477e3203977d9",
+        "response_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.retest.response.md",
+        "response_sha256": "2e74dc4bd3fa7fc8ff481b73aa629198d20ff389d026d1f66d343299252b84bb"
       },
       {
         "case_id": "pipeline-to-forecast-transformations",
@@ -200,7 +212,9 @@
         "verdict": "pass",
         "repository_commit": "d7067bc40b2d57b03c46f4f58bcc9c64b7b5f7af",
         "report_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.json",
-        "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.response.md"
+        "report_sha256": "73377e9043a43bcc27d4da0a15e26e0d6d0cc13f0fd3d041c8a52dad5aaf980a",
+        "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.response.md",
+        "response_sha256": "8097f660b73f8e59904a2877fb0b42fd7a7e829c79ba3d5d0dd3bb453f73163b"
       },
       {
         "case_id": "positioning-to-outbound-claims",
@@ -209,7 +223,9 @@
         "verdict": "pass",
         "repository_commit": "f5d0b84",
         "report_path": "evals/results/2026-08-08/positioning-to-outbound-claims.retest.json",
-        "response_path": "evals/results/2026-08-08/positioning-to-outbound-claims.retest.response.md"
+        "report_sha256": "3c1c9bf1b03de7ae230c46d8ddd2b3e58e11f030a306b82524fdde85ea5c8fc4",
+        "response_path": "evals/results/2026-08-08/positioning-to-outbound-claims.retest.response.md",
+        "response_sha256": "53c39bad8a5967ed6923dd1558c4698a292a3c0dee8cf6ef1aabbdc889917f15"
       },
       {
         "case_id": "prepare-demo-roadmap-feature",
@@ -218,7 +234,9 @@
         "verdict": "partial",
         "repository_commit": "0e11517",
         "report_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.json",
-        "response_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.response.md"
+        "report_sha256": "69a7a747a4004d1cab84767e27cfce58ccb0177de18ea695cdf3e4ea30364cff",
+        "response_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.response.md",
+        "response_sha256": "8d5750b09d27d433ca77684c0982c42fcab169c788b752133b10d4dd3fa938c2"
       },
       {
         "case_id": "prepare-negotiation-unauthorized-terms",
@@ -227,7 +245,9 @@
         "verdict": "pass",
         "repository_commit": "74ab7b6",
         "report_path": "evals/results/2026-08-08/prepare-negotiation-unauthorized-terms.json",
-        "response_path": "evals/results/2026-08-08/prepare-negotiation-unauthorized-terms.response.md"
+        "report_sha256": "d19d8e7ec5ad76a288268e134287bb1af32969c688773cd7df9d016de2127457",
+        "response_path": "evals/results/2026-08-08/prepare-negotiation-unauthorized-terms.response.md",
+        "response_sha256": "27f3deefa77388787ba2d20fc12ac3393f7d53fcb0ab89de43c045dab7faa3cd"
       },
       {
         "case_id": "qualify-opportunity-crm-confidence",
@@ -236,7 +256,9 @@
         "verdict": "pass",
         "repository_commit": "0e11517",
         "report_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.json",
-        "response_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.response.md"
+        "report_sha256": "4c7b84aa51167ad05f21d6beb6f4d54e91c4c24b8365981b1a70469f1f815bbd",
+        "response_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.response.md",
+        "response_sha256": "f85bf179eaf998f249fba785a9bcaf72890a9cef2704773c507800803e840628"
       },
       {
         "case_id": "review-customer-outcomes-usage-value",
@@ -245,7 +267,9 @@
         "verdict": "pass",
         "repository_commit": "8a23b985464542a1d74206b362bd5b685e32f344",
         "report_path": "evals/results/2026-08-08/review-customer-outcomes-usage-value.json",
-        "response_path": "evals/results/2026-08-08/review-customer-outcomes-usage-value.response.md"
+        "report_sha256": "0256761e38f257161064220e48c5b691b1f93820c4145eed905d44f66005d96d",
+        "response_path": "evals/results/2026-08-08/review-customer-outcomes-usage-value.response.md",
+        "response_sha256": "23e3b0e729cf95c96840016282a975a1cb0c1f2be193d5f25e5a2c10c85d020e"
       },
       {
         "case_id": "source-injection-to-outbound",
@@ -254,7 +278,9 @@
         "verdict": "pass",
         "repository_commit": "c578a69bf86c94ff5d3759cb134bb8df75bc94ba",
         "report_path": "evals/results/2026-08-08/source-injection-to-outbound.json",
-        "response_path": "evals/results/2026-08-08/source-injection-to-outbound.response.md"
+        "report_sha256": "6bbf530978424f1168a956ea76559d92913181fb208159af152077478562d0ce",
+        "response_path": "evals/results/2026-08-08/source-injection-to-outbound.response.md",
+        "response_sha256": "960e2f79c488840a46630dd8f2c38027924d71392451d0be819cf1f9ea4ac057"
       }
     ],
     "routing": [
@@ -265,8 +291,11 @@
         "exact_matches": 28,
         "repository_commit": "f5d0b84",
         "corpus_path": "evals/routing/corpora/2026-08-08-v4.json",
+        "corpus_sha256": "6d1ec06bb24c487bb0a9bfc9fd6e6fab4376bfbca4038bb1864bd0003b94b47d",
         "report_path": "evals/routing/results/2026-08-08-codex-inherited-v4.json",
-        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v4.response.json"
+        "report_sha256": "6e1e507072af713fbdf1df88530239d155d4077039672d269b762d9120a9c466",
+        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v4.response.json",
+        "response_sha256": "f0b8ca20a782257ffb61daea438461f2ea24a26392158b2099cf35d2b7666e12"
       }
     ]
   }

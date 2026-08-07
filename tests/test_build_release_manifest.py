@@ -56,6 +56,7 @@ class ReleaseManifestTests(unittest.TestCase):
                 encoding="utf-8",
             )
             current = behavior / "current.json"
+            (behavior / "current.md").write_text("Current response.\n", encoding="utf-8")
             current.write_text(
                 json.dumps(
                     {
@@ -73,6 +74,10 @@ class ReleaseManifestTests(unittest.TestCase):
                 encoding="utf-8",
             )
             route = routing / "route.json"
+            (routing / "route.response.json").write_text("{}\n", encoding="utf-8")
+            corpus = root / "evals" / "routing" / "corpora" / "test.json"
+            corpus.parent.mkdir(parents=True)
+            corpus.write_text("{}\n", encoding="utf-8")
             route.write_text(
                 json.dumps(
                     {
@@ -102,6 +107,13 @@ class ReleaseManifestTests(unittest.TestCase):
             self.assertEqual(len(result["current_evidence"]["routing"]), 1)
             self.assertEqual(
                 len(result["generated_artifacts"]["catalog"]["sha256"]), 64
+            )
+            self.assertEqual(
+                len(result["current_evidence"]["behavioral"][0]["response_sha256"]),
+                64,
+            )
+            self.assertEqual(
+                len(result["current_evidence"]["routing"][0]["corpus_sha256"]), 64
             )
 
 

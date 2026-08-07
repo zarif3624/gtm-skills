@@ -16,7 +16,7 @@ A release is a reviewed compatibility statement, not just a tag.
 ## Review
 
 - Confirm the README skill count, catalog, quickstart, reference packs, and local links.
-- Confirm `release-manifest.json` binds the current `catalog.json` package digests to `quality-summary.json`, behavioral definition coverage, current-corpus routing coverage, and latest report paths.
+- Confirm `release-manifest.json` binds the current `catalog.json` package digests to `quality-summary.json`, behavioral definition coverage, current-corpus routing coverage, and SHA-256 digests for the latest reports, raw responses, and routing corpora.
 - Confirm each new or materially changed skill has an adversarial case and a clean-context forward test.
 - Confirm current results are distinguishable from historical failures.
 - Confirm no legal, security, compliance, model, or cross-client claim exceeds the recorded evidence.

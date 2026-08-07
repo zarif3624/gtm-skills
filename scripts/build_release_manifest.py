@@ -57,6 +57,7 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
 
     behavior = []
     for path, report in latest_reports(behavior_reports, root):
+        response_path = root / report["run"]["response_path"]
         behavior.append(
             {
                 "case_id": report["case_id"],
@@ -65,12 +66,16 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
                 "verdict": report["summary"]["verdict"],
                 "repository_commit": report["run"]["repository_commit"],
                 "report_path": path.relative_to(root).as_posix(),
+                "report_sha256": sha256(path),
                 "response_path": report["run"]["response_path"],
+                "response_sha256": sha256(response_path),
             }
         )
 
     routing = []
     for path, report in latest_reports(routing_reports, root):
+        corpus_path = root / report["corpus_path"]
+        response_path = root / report["run"]["response_path"]
         routing.append(
             {
                 "lineage": report["run"]["lineage"],
@@ -79,8 +84,11 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
                 "exact_matches": report["summary"]["exact_matches"],
                 "repository_commit": report["run"]["repository_commit"],
                 "corpus_path": report["corpus_path"],
+                "corpus_sha256": sha256(corpus_path),
                 "report_path": path.relative_to(root).as_posix(),
+                "report_sha256": sha256(path),
                 "response_path": report["run"]["response_path"],
+                "response_sha256": sha256(response_path),
             }
         )
 
