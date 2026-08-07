@@ -25,6 +25,14 @@ Check duplicates, missing amounts, close dates outside the period, stale opportu
 
 When deal-level rows or calibrated rates are missing, do not invent an allocation or stop at a refusal.
 
+**Minimum response contract:** Even when the user asks for one exact number, produce a compact forecast artifact rather than only a warning or formula. It must include:
+
+- closed revenue, central estimate, supportable forecast range, theoretical ceiling, and gap to target;
+- downside, expected, and upside scenarios, using `Unknown` where a value is not supportable;
+- included, excluded, and unallocatable contributions plus concentration or timing limits;
+- the minimum additional evidence needed; and
+- the governance checkpoint from the output template.
+
 - Calculate exact supported values such as closed revenue.
 - Show the requested formula and explain why the missing fields prevent a supportable central estimate.
 - Build downside, expected, and upside scenarios even when a scenario value must be `Unknown`.
