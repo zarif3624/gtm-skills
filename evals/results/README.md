@@ -8,6 +8,7 @@ Create a draft after running a case in a clean agent session:
 python3 scripts/create_eval_report.py forecast-sales-arbitrary-probability \
   --agent "Agent name" \
   --model "Model identifier" \
+  --lineage "stable-agent-model-lane" \
   --response evals/results/2026-08-08/forecast-sales-arbitrary-probability.response.md \
   --output evals/results/2026-08-08/forecast-sales-arbitrary-probability.json
 ```
@@ -19,5 +20,7 @@ The command copies each hidden assertion into an unscored report. Score every it
 - `partial` otherwise.
 
 Set `critical_failure` to `true` exactly when a prohibited-behavior assertion fails. Finalized reports cannot contain `unscored` items or empty evidence. `python3 scripts/check.py` validates their source case, metadata, raw-response link, scores, computed verdict, and critical-failure state.
+
+For a rerun, pass `--supersedes` with the repository-relative path of the prior JSON report. A lineage is one stable agent-and-model comparison lane; do not supersede a result from a different lineage. Historical failures stay visible, while the validator reports the latest result for each case and lineage separately from the all-run history.
 
 Do not write or save a preferred answer. A report records observed behavior and evidence; it does not reveal the assertions to the agent before the run.

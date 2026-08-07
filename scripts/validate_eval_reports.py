@@ -18,11 +18,14 @@ TOP_LEVEL_FIELDS = {
     "case_id",
     "case_type",
     "case_path",
+    "supersedes",
     "run",
     "scores",
     "summary",
 }
-RUN_FIELDS = {"agent", "model", "tested_at", "repository_commit", "response_path"}
+RUN_FIELDS = {
+    "agent", "model", "lineage", "tested_at", "repository_commit", "response_path"
+}
 SUMMARY_FIELDS = {"verdict", "critical_failure", "notes"}
 SCORE_FIELDS = {"assertion", "verdict", "evidence"}
 FINAL_VERDICTS = {"pass", "partial", "fail"}
@@ -97,11 +100,35 @@ def validate_report(path: Path, root: Path = ROOT) -> list[str]:
         if report.get("case_id") != case_path.stem:
             errors.append("case_id must match the source filename")
 
+    supersedes = report.get("supersedes")
+    if supersedes is not None:
+        prior, prior_errors = resolve_repository_path(supersedes, "supersedes", root)
+        errors.extend(prior_errors)
+        if prior:
+            if not prior.is_relative_to((root / "evals" / "results").resolve()):
+                errors.append("supersedes must stay under evals/results")
+            if prior == path.resolve():
+                errors.append("a report cannot supersede itself")
+            prior_report, prior_load_errors = load_json(prior)
+            errors.extend(f"superseded report {error}" for error in prior_load_errors)
+            if prior_report:
+                for field in ("case_id", "case_type", "case_path"):
+                    if prior_report.get(field) != report.get(field):
+                        errors.append(f"superseded report must have the same {field}")
+                prior_run = prior_report.get("run")
+                current_run = report.get("run")
+                if (
+                    not isinstance(prior_run, dict)
+                    or not isinstance(current_run, dict)
+                    or prior_run.get("lineage") != current_run.get("lineage")
+                ):
+                    errors.append("superseded report must have the same run.lineage")
+
     run = report.get("run")
     if not isinstance(run, dict) or set(run) != RUN_FIELDS:
         errors.append(f"run must contain exactly: {', '.join(sorted(RUN_FIELDS))}")
     else:
-        for field in ("agent", "model"):
+        for field in ("agent", "model", "lineage"):
             if not isinstance(run[field], str) or not run[field].strip():
                 errors.append(f"run.{field} must be a non-empty string")
         try:
@@ -174,6 +201,7 @@ def main() -> int:
     reports = sorted(RESULTS.rglob("*.json"))
     failures = 0
     verdict_counts = {"pass": 0, "partial": 0, "fail": 0}
+    valid_reports: dict[Path, dict[str, Any]] = {}
     for report_path in reports:
         errors = validate_report(report_path)
         failures += bool(errors)
@@ -182,11 +210,28 @@ def main() -> int:
             print(f"  - {error}")
         if not errors:
             report = json.loads(report_path.read_text(encoding="utf-8"))
+            valid_reports[report_path.resolve()] = report
             verdict_counts[report["summary"]["verdict"]] += 1
+
+    superseded = {
+        (ROOT / report["supersedes"]).resolve()
+        for report in valid_reports.values()
+        if report.get("supersedes")
+    }
+    latest = [report for path, report in valid_reports.items() if path not in superseded]
+    latest_counts = {"pass": 0, "partial": 0, "fail": 0}
+    for report in latest:
+        latest_counts[report["summary"]["verdict"]] += 1
+    print(f"\nValidated {len(reports)} finalized reports; {failures} invalid.")
     print(
-        f"\nValidated {len(reports)} finalized reports; {failures} invalid; "
-        f"{verdict_counts['pass']} pass, {verdict_counts['partial']} partial, "
-        f"{verdict_counts['fail']} fail."
+        f"Latest by case and lineage: {len(latest)} reports; "
+        f"{latest_counts['pass']} pass, "
+        f"{latest_counts['partial']} partial, {latest_counts['fail']} fail."
+    )
+    print(
+        f"Historical runs retained: {len(valid_reports) - len(latest)} "
+        f"({verdict_counts['pass']} pass, {verdict_counts['partial']} partial, "
+        f"{verdict_counts['fail']} fail across all runs)."
     )
     return 1 if failures else 0
 

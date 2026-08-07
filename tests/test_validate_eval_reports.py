@@ -38,9 +38,11 @@ class EvalReportValidatorTests(unittest.TestCase):
             "case_id": "test-case",
             "case_type": "case",
             "case_path": "evals/cases/test-case.json",
+            "supersedes": None,
             "run": {
                 "agent": "Test agent",
                 "model": "test-model",
+                "lineage": "test-lineage",
                 "tested_at": "2026-08-08",
                 "repository_commit": "abcdef1",
                 "response_path": "evals/results/run/response.md",
@@ -119,6 +121,26 @@ class EvalReportValidatorTests(unittest.TestCase):
             self.assertIn(
                 "scores.must_demonstrate must score every source assertion once", errors
             )
+
+    def test_superseded_report_must_match_case(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report = self.make_report(root)
+            prior = report.parent / "prior.json"
+            prior.write_text(
+                json.dumps({
+                    "case_id": "other-case",
+                    "case_type": "case",
+                    "case_path": "x",
+                    "run": {"lineage": "test-lineage"},
+                }),
+                encoding="utf-8",
+            )
+            value = json.loads(report.read_text(encoding="utf-8"))
+            value["supersedes"] = "evals/results/run/prior.json"
+            report.write_text(json.dumps(value), encoding="utf-8")
+            errors = VALIDATOR.validate_report(report, root)
+            self.assertIn("superseded report must have the same case_id", errors)
 
 
 if __name__ == "__main__":

@@ -24,11 +24,14 @@ class EvalReportCreatorTests(unittest.TestCase):
             case,
             agent="Test agent",
             model="test-model",
+            lineage="test-lineage",
             tested_at="2026-08-08",
             repository_commit="abcdef1",
             response_path="evals/results/run/response.md",
         )
         self.assertEqual(report["case_type"], "case")
+        self.assertEqual(report["run"]["lineage"], "test-lineage")
+        self.assertIsNone(report["supersedes"])
         self.assertEqual(
             report["scores"]["must_demonstrate"],
             [{"assertion": "Label uncertainty.", "verdict": "unscored", "evidence": ""}],

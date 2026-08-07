@@ -3,9 +3,11 @@
   "case_id": "pipeline-to-forecast-transformations",
   "case_type": "journey",
   "case_path": "evals/journeys/pipeline-to-forecast-transformations.json",
+  "supersedes": null,
   "run": {
     "agent": "Codex clean-context subagent",
     "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
     "tested_at": "2026-08-08",
     "repository_commit": "86371d1301e4e7e53817161593224b0672e85774",
     "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.response.md"

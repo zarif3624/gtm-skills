@@ -3,56 +3,56 @@
   "case_id": "forecast-sales-arbitrary-probability",
   "case_type": "case",
   "case_path": "evals/cases/forecast-sales-arbitrary-probability.json",
-  "supersedes": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.json",
+  "supersedes": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.retest.json",
   "run": {
     "agent": "Codex clean-context subagent",
     "model": "Inherited Codex model; exact identifier unavailable",
     "lineage": "codex-inherited",
     "tested_at": "2026-08-08",
-    "repository_commit": "4bb46896b668ab909427973d35954fc00ac92772",
-    "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.retest.response.md"
+    "repository_commit": "aeedfdf760ab5dd7f52f3f0423ca264e92550dd8",
+    "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.response.md"
   },
   "scores": {
     "must_demonstrate": [
       {
         "assertion": "Reject false precision, inspect timing and evidence, and use explicit downside, expected, and upside assumptions.",
         "verdict": "pass",
-        "evidence": "The response rejects the exact weighted total, exposes timing and milestone gaps, and provides explicit downside, expected, and upside rows."
+        "evidence": "The response rejects an exact result, explains the missing allocation and uncalibrated defaults, identifies decision-date and security timing risks, and states downside, expected, and upside."
       },
       {
         "assertion": "Separate closed revenue, included and excluded contributions, concentration risk, and gap to target.",
         "verdict": "pass",
-        "evidence": "The response separates $80,000 closed, $400,000 unallocatable, formal exclusions, unquantified concentration and slip risk, and an Unknown target gap."
+        "evidence": "The response separates $80,000 closed, $400,000 unallocatable, no quantifiable exclusions, two-large-deal timing concentration, and an Unknown target gap."
       }
     ],
     "must_avoid": [
       {
         "assertion": "Present the stage-weighted total as truth.",
         "verdict": "pass",
-        "evidence": "The mechanical weighted range is explicitly described as not being a forecast."
+        "evidence": "The response gives only the requested formula and says it cannot be completed supportably."
       },
       {
         "assertion": "Invent conversion or slip rates or change assumptions merely to match the target.",
         "verdict": "pass",
-        "evidence": "No conversion or slip rates are invented, and both central estimate and target gap remain Unknown."
+        "evidence": "No rates or target assumptions are invented; the central estimate and gap stay Unknown."
       },
       {
         "assertion": "Label the all-open-pipeline theoretical ceiling as a supportable forecast-range endpoint or plausible upside.",
-        "verdict": "fail",
-        "evidence": "The response labels $80,000–$480,000 a supportable outcome range while also identifying $480,000 as the all-open-pipeline theoretical ceiling."
+        "verdict": "pass",
+        "evidence": "The response reports the supportable forecast range and upside as Unknown and labels $480,000 only as the theoretical ceiling."
       }
     ],
     "human_review": [
       {
         "assertion": "Require leadership approval of forecast scope, methods, exclusions, and any provisional scenario assumptions.",
         "verdict": "pass",
-        "evidence": "The governance checkpoint marks scope, currency, method, exclusions, scenarios, and operating use unapproved or unknown and requires forecast-owner confirmation."
+        "evidence": "The governance checkpoint marks scope, method, timing treatment, exclusions, and operating use unapproved, with approver unknown."
       }
     ]
   },
   "summary": {
-    "verdict": "fail",
-    "critical_failure": true,
-    "notes": "The minimum artifact now works, but the ceiling is mislabeled as a supportable range endpoint. Keep forecast range Unknown when the only upper bound is theoretical."
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The unchanged sparse-data case passes after the minimum artifact and theoretical-ceiling guardrails were added."
   }
 }

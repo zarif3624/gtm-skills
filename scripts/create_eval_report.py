@@ -42,9 +42,11 @@ def build_report(
     *,
     agent: str,
     model: str,
+    lineage: str,
     tested_at: str,
     repository_commit: str,
     response_path: str,
+    supersedes: str | None = None,
 ) -> dict[str, Any]:
     case_type = "case" if case_path.parent.name == "cases" else "journey"
     scores = {
@@ -59,9 +61,11 @@ def build_report(
         "case_id": case["id"],
         "case_type": case_type,
         "case_path": case_path.relative_to(ROOT).as_posix(),
+        "supersedes": supersedes,
         "run": {
             "agent": agent,
             "model": model,
+            "lineage": lineage,
             "tested_at": tested_at,
             "repository_commit": repository_commit,
             "response_path": response_path,
@@ -80,8 +84,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("case_id", help="evaluation case or journey id")
     parser.add_argument("--agent", required=True, help="agent or runtime name")
     parser.add_argument("--model", required=True, help="model identifier")
+    parser.add_argument(
+        "--lineage", required=True, help="stable comparison lane, such as codex-gpt-5"
+    )
     parser.add_argument("--response", required=True, help="repository-relative raw response path")
     parser.add_argument("--output", required=True, type=Path, help="draft report path")
+    parser.add_argument(
+        "--supersedes", help="repository-relative prior report replaced by this run"
+    )
     parser.add_argument("--tested-at", default=date.today().isoformat(), help="ISO test date")
     parser.add_argument("--commit", default=current_commit(), help="tested repository commit")
     args = parser.parse_args(argv)
@@ -93,9 +103,11 @@ def main(argv: list[str] | None = None) -> int:
             case,
             agent=args.agent,
             model=args.model,
+            lineage=args.lineage,
             tested_at=args.tested_at,
             repository_commit=args.commit,
             response_path=args.response,
+            supersedes=args.supersedes,
         )
     except (OSError, ValueError, json.JSONDecodeError, KeyError) as error:
         print(f"FAIL {error}", file=sys.stderr)
