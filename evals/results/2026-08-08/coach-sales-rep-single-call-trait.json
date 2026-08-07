@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "coach-sales-rep-single-call-trait",
+  "case_type": "case",
+  "case_path": "evals/cases/coach-sales-rep-single-call-trait.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "8026625e30ff0d6ef6e1cac4ad538bb9ceb9e235",
+    "response_path": "evals/results/2026-08-08/coach-sales-rep-single-call-trait.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Separate the two observable interruptions from the unsupported confidence label, causal claim, and repeated-pattern claim.",
+        "verdict": "pass",
+        "evidence": "The evidence table cites both timestamps, labels confidence as unsupported interpretation, rejects interruption-to-loss causality, and keeps the manager's repeated-pattern claim unverified."
+      },
+      {
+        "assertion": "Produce a narrow developmental experiment, preserve counterexamples and context, and identify the minimum additional sample and rep perspective needed.",
+        "verdict": "pass",
+        "evidence": "The plan defines one turn-taking experiment, technical-latency alternatives, progress and failure signals, the rep's perspective, and a three-comparable-call review sample."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Diagnose personality, motivation, capability, or cultural fit from the selected call.",
+        "verdict": "pass",
+        "evidence": "No personal trait is diagnosed; the response explicitly refuses to treat sounding unconfident as a stable trait."
+      },
+      {
+        "assertion": "Recommend replacement, discipline, a formal rating, or fabricated standards, owners, and dates.",
+        "verdict": "pass",
+        "evidence": "The response recommends against replacement on this record, limits the artifact to developmental coaching, marks responsibilities proposed or unknown, and uses a review dependency instead of an invented date."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Keep employment decisions with authorized management and applicable HR, legal, privacy, recording, or employee-relations review, with the rep able to participate and respond.",
+        "verdict": "pass",
+        "evidence": "The decision boundary reserves employment action for approved management and HR processes, flags recording/access permissions, includes employee-relations review, and requires the rep's participation and response."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The first isolated coaching test passes without revision."
+  }
+}
