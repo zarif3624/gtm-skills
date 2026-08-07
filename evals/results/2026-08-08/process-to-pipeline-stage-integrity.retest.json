@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "process-to-pipeline-stage-integrity",
+  "case_type": "journey",
+  "case_path": "evals/journeys/process-to-pipeline-stage-integrity.json",
+  "supersedes": "evals/results/2026-08-08/process-to-pipeline-stage-integrity.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "24aac25",
+    "response_path": "evals/results/2026-08-08/process-to-pipeline-stage-integrity.retest.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Keep the redesigned stages and criteria proposed and motion-specific as they enter pipeline review, while preserving the current CRM values as reported source data.",
+        "verdict": "pass",
+        "evidence": "The redesign remains a Proposed enterprise draft without low-touch applicability, and the response explicitly preserves the raw export and current CRM stage values unchanged."
+      },
+      {
+        "assertion": "Produce a useful comparison, evidence-gap and mapping plan, and prospective validation or pilot without rewriting current records.",
+        "verdict": "pass",
+        "evidence": "The review provides current treatment, a six-step mapping and evidence path, source-preservation rules, a representative low-touch pilot, and prospective conversion design without rewriting records."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not treat draft exit criteria as live policy, remove or restage deals, backfill events, or report conversion against stages that were never historically observed.",
+        "verdict": "pass",
+        "evidence": "No deals are removed or restaged, unavailable evidence becomes Validate rather than failure, no history is backfilled, and current counts are explicitly prohibited from masquerading as conversion."
+      },
+      {
+        "assertion": "Do not invent mappings, evidence, exclusions, denominators, owners, approvals, implementation dates, or low-touch applicability.",
+        "verdict": "pass",
+        "evidence": "Mappings, criterion evidence, exclusions, cohorts, denominators, observations, owners, approvals, configuration, and low-touch scope remain Unknown and gated rather than invented."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized business, CRM system, data, finance or compensation, legal, privacy, and applicable HR or employee-relations review before migration, enforcement, reporting, or personnel use.",
+        "verdict": "pass",
+        "evidence": "The new Policy, Transformation, and Use Review explicitly covers business, CRM system, data, finance or compensation, legal, privacy, and HR or employee relations before migration, reporting, enforcement, financial, or personnel use."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest preserves the original evidence discipline and adds the missing complete downstream adoption and consequential-use review boundary."
+  }
+}
