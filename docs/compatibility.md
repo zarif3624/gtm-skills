@@ -7,6 +7,7 @@ The skills follow the [Agent Skills specification](https://agentskills.io/specif
 | Client or path | Discovery / installation evidence | Behavioral evidence | Current status |
 | --- | --- | --- | --- |
 | `skills` CLI against this repository | `npx -y skills add . --list` discovered all 22 skills locally | Not applicable | Verified locally on 2026-08-08 |
+| Repository quality tools | CI exercises the dependency-free suite on the oldest and newest supported Python lines (3.10 and 3.14) | Local suite passed on Python 3.9.6; CI results remain authoritative for supported lines | Configured; verify the two CI jobs on every change |
 | OpenAI Codex clean-context subagent | Skills loaded from their repository paths for isolated tests | Latest recorded pipeline→forecast journey and sparse forecast case pass; exact model identifier was unavailable | Limited evidence; see [result history](../evals/results/) |
 | Claude Code | Not recorded | Not recorded | Unknown / not yet tested |
 | Cursor | Not recorded | Not recorded | Unknown / not yet tested |
@@ -25,3 +26,5 @@ For each client and model lineage:
 6. Publish failures as failures; do not infer compatibility from format validation alone.
 
 Compatibility evidence expires when the client, model, skill commit, or installation mechanism materially changes. A prior pass is a baseline, not a permanent guarantee.
+
+The repository scripts target supported CPython 3.10 through 3.14 and use only the standard library. The CI boundary jobs are the support claim; an incidental pass on an older local interpreter does not extend that support window.
