@@ -53,4 +53,4 @@ Scenarios are named input sets, not implied probabilities. Vary the few uncertai
 
 ## Validation And Approval
 
-For each decision-driving unknown, identify the smallest measurement, customer confirmation, source document, or finance review needed. Keep authoring, customer validation, finance review, and approval as separate statuses. Pricing, contractual scope, accounting treatment, tax, legal claims, and public use require their authorized owners.
+For each decision-driving unknown, identify the smallest measurement, customer confirmation, source document, or finance review needed. Keep authoring, customer validation, finance review, and approval as separate statuses. Pricing, contractual scope, delivery feasibility, accounting treatment, tax, legal claims, and public use require their authorized owners. Show customer, finance, commercial, delivery, legal, tax, and accounting review explicitly; use `Unknown` when applicability or ownership has not been established.

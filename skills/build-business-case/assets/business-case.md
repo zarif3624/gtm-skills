@@ -73,3 +73,15 @@
 ## Calculation Appendix
 
 [Show formulas, units, source locators, rounding, and dated transformations.]
+
+## Human Review
+
+| Review domain | Applicability | Owner status | Trigger or question | Review status |
+| --- | --- | --- | --- | --- |
+| Customer validation | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |
+| Finance | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |
+| Commercial | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |
+| Delivery | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |
+| Legal | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |
+| Tax | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |
+| Accounting | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | | Not started / In review / Complete / Unknown |

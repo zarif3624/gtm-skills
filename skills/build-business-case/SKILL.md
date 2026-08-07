@@ -27,6 +27,7 @@ Read [the business-case methods](references/methods.md) before calculating ROI, 
 8. Identify the inputs that drive the decision with sensitivity or break-even analysis.
 9. Surface non-financial outcomes, material risks, excluded effects, and value-realization dependencies.
 10. Define the smallest buyer-owned validation plan and the approvals required before the case is used externally or for a commitment.
+11. Route customer, finance, commercial, delivery, legal, tax, and accounting review explicitly. Mark each `Required`, `Not applicable`, or `Unknown`; never omit a review domain merely because its applicability is unclear.
 
 ## Guardrails
 
@@ -56,6 +57,7 @@ Produce:
 - sensitivity and break-even analysis;
 - risks, non-financial considerations, and disconfirming evidence;
 - buyer validation and approval plan;
+- human-review matrix covering customer, finance, commercial, delivery, legal, tax, and accounting applicability, owner, trigger, and status;
 - appendix with calculations and source locators.
 
 Do not label the case approved or customer validated unless an authoritative source confirms that status.
