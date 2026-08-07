@@ -224,6 +224,7 @@ def validate_repository_docs() -> list[str]:
     documents.extend((ROOT / ".github").rglob("*.md"))
     documents.extend((ROOT / "evals").glob("*.md"))
     documents.extend((ROOT / "examples").rglob("*.md"))
+    documents.extend((ROOT / "reference-packs").rglob("*.md"))
     errors: list[str] = []
     for document in sorted(set(documents)):
         errors.extend(validate_document_links(document, ROOT))

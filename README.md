@@ -136,6 +136,10 @@ Start with the artifact you need; `.agents/gtm-context.md` is helpful, not requi
 
 Use the [RelayFox fictional workspace](examples/relayfox/) to try conversation analysis, qualification, pipeline review, forecasting, and win/loss learning with a coherent set of safe source files. The example deliberately contains ambiguity and dirty data so you can inspect whether evidence and unknowns survive each handoff.
 
+## Bring Your Own CRM Export
+
+Use the [generic CRM handoff pack](reference-packs/generic-crm/) to map pipeline data without silently changing source records. It includes CSV templates, lineage and status fields, a dated currency-policy template, and a matching JSON Schema for structured integrations. No CRM vendor is required.
+
 ## Trust Standard
 
 Every contribution should preserve these rules:
@@ -159,7 +163,7 @@ Run the full dependency-free quality suite with:
 python3 scripts/check.py
 ```
 
-The suite checks all 20 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, and the fictional example data. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+The suite checks all 20 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
 ## Roadmap
 
