@@ -45,6 +45,26 @@ def valid_journey() -> dict[str, object]:
     }
 
 
+def valid_routing() -> dict[str, object]:
+    return {
+        "schema_version": 1,
+        "cases": [
+            {
+                "id": "choose-first-skill",
+                "prompt": "Complete the first workflow.",
+                "expected_skills": ["first-skill"],
+                "excluded_skills": ["second-skill"],
+            },
+            {
+                "id": "choose-second-skill",
+                "prompt": "Complete the second workflow.",
+                "expected_skills": ["second-skill"],
+                "excluded_skills": ["first-skill"],
+            },
+        ],
+    }
+
+
 class EvalValidatorTests(unittest.TestCase):
     def write_case(self, root: Path, case: dict[str, object]) -> Path:
         path = root / "test-case.json"
@@ -95,6 +115,27 @@ class EvalValidatorTests(unittest.TestCase):
             path.write_text(json.dumps(journey), encoding="utf-8")
             errors = VALIDATOR.validate_journey(path, {"first-skill"})
             self.assertIn("skills must not contain duplicates", errors)
+
+    def test_valid_routing_corpus_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "routing.json"
+            path.write_text(json.dumps(valid_routing()), encoding="utf-8")
+            covered, errors = VALIDATOR.validate_routing(
+                path, {"first-skill", "second-skill"}
+            )
+            self.assertEqual(errors, [])
+            self.assertEqual(covered, {"first-skill", "second-skill"})
+
+    def test_routing_expected_and_excluded_must_not_overlap(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            routing = valid_routing()
+            routing["cases"][0]["excluded_skills"] = ["first-skill"]  # type: ignore[index]
+            path = Path(temp) / "routing.json"
+            path.write_text(json.dumps(routing), encoding="utf-8")
+            _covered, errors = VALIDATOR.validate_routing(
+                path, {"first-skill", "second-skill"}
+            )
+            self.assertIn("cases[1] expects and excludes: first-skill", errors)
 
 
 if __name__ == "__main__":

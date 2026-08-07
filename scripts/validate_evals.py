@@ -13,12 +13,15 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 CASES = ROOT / "evals" / "cases"
 JOURNEYS = ROOT / "evals" / "journeys"
+ROUTING = ROOT / "evals" / "routing" / "cases.json"
 SKILLS = ROOT / "skills"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 TOP_LEVEL_FIELDS = {"schema_version", "id", "skill", "risk", "prompt", "context", "assertions"}
 ASSERTION_FIELDS = {"must_demonstrate", "must_avoid", "human_review"}
 JOURNEY_FIELDS = {"schema_version", "id", "skills", "prompt", "context", "assertions"}
 JOURNEY_ASSERTION_FIELDS = {"must_preserve", "must_not_transform", "human_review"}
+ROUTING_TOP_FIELDS = {"schema_version", "cases"}
+ROUTING_CASE_FIELDS = {"id", "prompt", "expected_skills", "excluded_skills"}
 
 
 def nonempty_strings(value: Any) -> bool:
@@ -117,6 +120,56 @@ def validate_journey(path: Path, skill_names: set[str]) -> list[str]:
     return errors
 
 
+def validate_routing(path: Path, skill_names: set[str]) -> tuple[set[str], list[str]]:
+    if path.is_symlink():
+        return set(), ["routing corpus must not be a symbolic link"]
+    try:
+        corpus = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        return set(), [f"invalid JSON: {error}"]
+    if not isinstance(corpus, dict):
+        return set(), ["routing corpus must be a JSON object"]
+    errors: list[str] = []
+    if set(corpus) != ROUTING_TOP_FIELDS:
+        errors.append(f"routing fields must be exactly: {', '.join(sorted(ROUTING_TOP_FIELDS))}")
+    if corpus.get("schema_version") != 1:
+        errors.append("schema_version must be 1")
+    cases = corpus.get("cases")
+    if not isinstance(cases, list) or not cases:
+        return set(), errors + ["cases must be a non-empty list"]
+
+    covered: set[str] = set()
+    seen_ids: set[str] = set()
+    for index, case in enumerate(cases, start=1):
+        prefix = f"cases[{index}]"
+        if not isinstance(case, dict) or set(case) != ROUTING_CASE_FIELDS:
+            errors.append(f"{prefix} fields must be exactly: {', '.join(sorted(ROUTING_CASE_FIELDS))}")
+            continue
+        case_id = case["id"]
+        if not isinstance(case_id, str) or not ID_RE.fullmatch(case_id):
+            errors.append(f"{prefix}.id must use lowercase letters, digits, and hyphens")
+        elif case_id in seen_ids:
+            errors.append(f"duplicate routing id: {case_id}")
+        else:
+            seen_ids.add(case_id)
+        if not isinstance(case["prompt"], str) or not case["prompt"].strip():
+            errors.append(f"{prefix}.prompt must be a non-empty string")
+        expected = case["expected_skills"]
+        excluded = case["excluded_skills"]
+        for field, value in (("expected_skills", expected), ("excluded_skills", excluded)):
+            if not nonempty_strings(value) or len(value) != len(set(value)):
+                errors.append(f"{prefix}.{field} must be a non-empty unique list of skills")
+            elif unknown := sorted(set(value) - skill_names):
+                errors.append(f"{prefix}.{field} has unknown skills: {', '.join(unknown)}")
+        if isinstance(expected, list) and isinstance(excluded, list):
+            overlap = sorted(set(expected) & set(excluded))
+            if overlap:
+                errors.append(f"{prefix} expects and excludes: {', '.join(overlap)}")
+            if all(isinstance(item, str) for item in expected):
+                covered.update(set(expected) & skill_names)
+    return covered, errors
+
+
 def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     repository_errors: list[str] = []
     if not CASES.is_dir():
@@ -152,6 +205,16 @@ def run_validation() -> tuple[dict[str, list[str]], list[str]]:
             results[f"journeys/{journey_file.name}"] = validate_journey(
                 journey_file, skill_names
             )
+    if not ROUTING.is_file():
+        repository_errors.append("evals/routing/cases.json is missing")
+    else:
+        routing_coverage, routing_errors = validate_routing(ROUTING, skill_names)
+        results["routing/cases.json"] = routing_errors
+        missing_routing = sorted(skill_names - routing_coverage)
+        if missing_routing:
+            repository_errors.append(
+                f"skills without a routing case: {', '.join(missing_routing)}"
+            )
     return results, repository_errors
 
 
@@ -166,7 +229,7 @@ def main() -> int:
         print("FAIL eval coverage")
         for error in repository_errors:
             print(f"  - {error}")
-    print(f"\nValidated {len(results)} eval cases; {failed} failed.")
+    print(f"\nValidated {len(results)} eval definition files; {failed} failed.")
     return 1 if failed else 0
 
 

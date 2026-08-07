@@ -2,6 +2,8 @@
 
 The cases in `evals/cases/` test whether each skill remains useful under realistic ambiguity and pressure. The cases in `evals/journeys/` test whether evidence, uncertainty, decisions, and commitments keep their meaning across adjacent skills. They are intentionally fictional and focus on failure modes that structural validation cannot catch.
 
+The contrastive corpus in `evals/routing/` tests whether natural requests select the intended skill and avoid a plausible neighboring skill. It includes both single-skill and composed-workflow prompts. Run routing tests without exposing expected or excluded skill names to the agent or router.
+
 ## Case Design
 
 Every case defines:
