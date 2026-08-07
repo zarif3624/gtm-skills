@@ -1,0 +1,27 @@
+name: Skill problem
+description: Report unclear, unsafe, or ineffective skill behavior
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: input
+    attributes:
+      label: Skill
+      placeholder: research-account
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Prompt and context
+      description: Use fictional or redacted data only.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Better behavior
+    validations:
+      required: true

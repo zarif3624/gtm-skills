@@ -1,0 +1,4 @@
+interface:
+  display_name: "Handle Objections"
+  short_description: "Diagnose and respond to sales objections"
+  default_prompt: "Use $handle-objections to prepare responses to these objections."

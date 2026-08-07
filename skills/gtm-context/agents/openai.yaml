@@ -1,0 +1,4 @@
+interface:
+  display_name: "GTM Context"
+  short_description: "Build the shared context for every sales workflow"
+  default_prompt: "Use $gtm-context to create our shared sales and GTM context."

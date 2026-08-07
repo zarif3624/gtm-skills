@@ -1,0 +1,38 @@
+# Contributing
+
+Thanks for helping make AI-assisted sales more useful and trustworthy.
+
+## Before You Start
+
+- Open an issue for a new skill or a substantial workflow change.
+- Keep each skill focused on one recognizable job.
+- Do not submit copied proprietary playbooks, customer data, credentials, or confidential examples.
+- Use fictional companies and contacts in examples.
+
+## Add A Skill
+
+1. Create `skills/<skill-name>/SKILL.md`.
+2. Use lowercase letters, digits, and hyphens for the directory and `name`.
+3. Include only `name` and `description` in YAML frontmatter.
+4. Put detailed frameworks in `references/` and reusable output templates in `assets/`.
+5. Keep `SKILL.md` below 500 lines.
+6. Add the skill to the catalog in `README.md`.
+7. Run `python3 scripts/validate_skills.py`.
+
+## Quality Bar
+
+A skill should:
+
+- State when it triggers in the frontmatter description.
+- Read `.agents/gtm-context.md` when shared context is relevant.
+- Work with partial information and name important gaps.
+- Separate verified facts, inferences, and unknowns.
+- Produce a defined, practical artifact.
+- Avoid unsupported benchmarks and universal claims.
+- Preserve buyer agency and avoid deceptive or coercive tactics.
+- Include edge cases, stop conditions, and human-review points where risk is meaningful.
+- Stay tool-agnostic unless the skill is explicitly for one system.
+
+## Pull Requests
+
+Keep pull requests focused. Explain the user problem, show an example input and output, and note how you tested the skill. By contributing, you agree that your work is licensed under the MIT License.

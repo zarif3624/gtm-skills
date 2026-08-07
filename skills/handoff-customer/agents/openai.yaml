@@ -1,0 +1,4 @@
+interface:
+  display_name: "Handoff Customer"
+  short_description: "Transfer deal context into customer success"
+  default_prompt: "Use $handoff-customer to create a complete sales-to-success handoff."

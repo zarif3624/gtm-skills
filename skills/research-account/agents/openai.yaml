@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Account"
+  short_description: "Research accounts without inventing facts"
+  default_prompt: "Use $research-account to prepare an evidence-backed account brief."

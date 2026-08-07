@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define ICP"
+  short_description: "Define and score an evidence-based ICP"
+  default_prompt: "Use $define-icp to define and score our ideal customer profile."

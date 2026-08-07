@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Demo"
+  short_description: "Plan demos around buyer outcomes"
+  default_prompt: "Use $prepare-demo to plan a buyer-specific product demo."

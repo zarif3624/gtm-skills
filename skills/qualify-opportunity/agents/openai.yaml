@@ -1,0 +1,4 @@
+interface:
+  display_name: "Qualify Opportunity"
+  short_description: "Qualify opportunities with useful evidence"
+  default_prompt: "Use $qualify-opportunity to assess this opportunity and its gaps."

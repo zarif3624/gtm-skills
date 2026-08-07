@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Outbound"
+  short_description: "Write relevant, responsible outbound sequences"
+  default_prompt: "Use $write-outbound to draft a relevant outbound sequence."

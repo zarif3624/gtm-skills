@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Deal"
+  short_description: "Map stakeholders, risks, and next actions"
+  default_prompt: "Use $plan-deal to build a practical strategy for this deal."

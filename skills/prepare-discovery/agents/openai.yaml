@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Discovery"
+  short_description: "Prepare and structure sales discovery"
+  default_prompt: "Use $prepare-discovery to prepare for my next discovery call."

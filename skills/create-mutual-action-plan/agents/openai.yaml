@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Mutual Action Plan"
+  short_description: "Create a buyer-owned path to a decision"
+  default_prompt: "Use $create-mutual-action-plan to build a mutual action plan for this deal."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Forecast Sales"
+  short_description: "Build an auditable sales forecast"
+  default_prompt: "Use $forecast-sales to create an evidence-based revenue forecast."

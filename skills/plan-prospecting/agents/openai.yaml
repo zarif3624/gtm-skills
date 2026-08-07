@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Prospecting"
+  short_description: "Build a focused prospecting plan and list"
+  default_prompt: "Use $plan-prospecting to build a focused prospecting plan."
