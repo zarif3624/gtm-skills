@@ -21,6 +21,7 @@ def summary(passes: int = 3, partial: int = 0) -> dict[str, object]:
                 "definition_coverage": {
                     "definitions_with_latest_result": 3,
                     "definitions_with_latest_pass": passes,
+                    "missing_latest_result_ids": [],
                 },
                 "latest_verdicts": {"pass": passes, "partial": partial, "fail": 0},
             },
@@ -44,6 +45,7 @@ def policy() -> dict[str, object]:
             "current_corpus_passing_lineages": 1,
         },
         "maximums": {
+            "behavioral_definitions_missing_latest_result": 0,
             "latest_behavioral_partial": 0,
             "latest_behavioral_fail": 0,
             "latest_routing_partial": 0,
@@ -63,6 +65,14 @@ class QualityPolicyTests(unittest.TestCase):
     def test_new_partial_fails(self) -> None:
         errors = VALIDATOR.validate_policy(policy(), summary(partial=1))
         self.assertTrue(any("exceeded the reviewed maximum" in error for error in errors))
+
+    def test_uncovered_definition_fails_even_when_absolute_floor_passes(self) -> None:
+        observed = summary()
+        observed["evidence"]["behavioral"]["definition_coverage"][
+            "missing_latest_result_ids"
+        ] = ["new-definition"]
+        errors = VALIDATOR.validate_policy(policy(), observed)
+        self.assertTrue(any("missing_latest_result" in error for error in errors))
 
 
 if __name__ == "__main__":

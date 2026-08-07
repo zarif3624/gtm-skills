@@ -21,6 +21,7 @@ MINIMUM_FIELDS = {
     "current_corpus_passing_lineages",
 }
 MAXIMUM_FIELDS = {
+    "behavioral_definitions_missing_latest_result",
     "latest_behavioral_partial",
     "latest_behavioral_fail",
     "latest_routing_partial",
@@ -53,6 +54,9 @@ def observed_values(summary: dict[str, Any]) -> dict[str, int]:
         "current_corpus_passing_lineages": routing[
             "current_corpus_passing_lineages"
         ],
+        "behavioral_definitions_missing_latest_result": len(
+            coverage["missing_latest_result_ids"]
+        ),
         "latest_behavioral_partial": behavioral["latest_verdicts"]["partial"],
         "latest_behavioral_fail": behavioral["latest_verdicts"]["fail"],
         "latest_routing_partial": routing["latest_verdicts"]["partial"],
