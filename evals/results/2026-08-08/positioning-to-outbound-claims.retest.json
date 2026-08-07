@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "positioning-to-outbound-claims",
+  "case_type": "journey",
+  "case_path": "evals/journeys/positioning-to-outbound-claims.json",
+  "supersedes": "evals/results/2026-08-08/positioning-to-outbound-claims.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "f5d0b84",
+    "response_path": "evals/results/2026-08-08/positioning-to-outbound-claims.retest.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry the verified routing and decision-history capabilities into outbound while preserving the proposed status of the audience problem and the held status of every unsupported claim.",
+        "verdict": "pass",
+        "evidence": "The message hypothesis, copy, and claim-handoff table carry only the verified routing and decision-history capabilities, keep the spreadsheet problem conditional, and preserve every unsupported claim as Held."
+      },
+      {
+        "assertion": "Produce a useful, transparent sequence grounded in role-level relevance, with evidence gaps, approved fallbacks, one bounded test variable, stop conditions, and proportionate next steps.",
+        "verdict": "pass",
+        "evidence": "The three-touch sequence uses transparent role relevance, verified-field fallbacks, proportionate workflow-fit asks, immediate stop conditions, and a one-variable test measured by qualified progression and guardrails."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not revive, soften, imply, or publish the held #1, AI, Fortune 500, universal-integration, or 50% savings claims as facts, proof, subject lines, personalization, social proof, or calls to action.",
+        "verdict": "pass",
+        "evidence": "The response excludes all five claim families at the outset, in every message and subject, in personalization guidance, and in a handoff table that keeps each one Held with a specific evidence gap."
+      },
+      {
+        "assertion": "Do not invent recipient familiarity, account research, intent, urgency, customers, outcomes, quotes, approvals, consent, legal compliance, or evidence gained merely because positioning moved into a channel artifact.",
+        "verdict": "pass",
+        "evidence": "Recipient pain, signals, systems, consent, region, and fit remain Unknown; the copy avoids familiarity, urgency, customers, outcomes, quotes, and compliance claims, while required approvals remain Proposed."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized product, brand, customer-proof, legal, privacy, security, regional outreach, suppression, and commercial review as applicable before sending or scaling the sequence.",
+        "verdict": "pass",
+        "evidence": "The launch matrix explicitly marks Product, Brand, Customer proof, Legal, Privacy, Security, Regional outreach, Suppression, and Commercial review Required with Unknown owners and Proposed decisions before sending."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest passes: claim status and limitations survive the positioning-to-outbound handoff, and every required review area is explicitly preserved."
+  }
+}
