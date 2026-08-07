@@ -38,6 +38,7 @@ This project is deliberately:
 | Management | [`review-pipeline`](skills/review-pipeline/) | Find deal risk and prioritize actions across a pipeline |
 | Management | [`forecast-sales`](skills/forecast-sales/) | Produce an auditable forecast with assumptions and scenarios |
 | Post-sale | [`handoff-customer`](skills/handoff-customer/) | Transfer promises, goals, risks, and context to customer success |
+| Learning | [`analyze-win-loss`](skills/analyze-win-loss/) | Find decision patterns across wins, losses, and no-decisions |
 
 ## How The Skills Work Together
 
@@ -55,7 +56,9 @@ gtm-context
     |
     +-- review-pipeline -- forecast-sales
     |
-    `-- handoff-customer
+    +-- handoff-customer
+    |
+    `-- analyze-win-loss
 ```
 
 ## Choose A Starting Point
@@ -69,6 +72,7 @@ gtm-context
 | A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
 | A CRM export or forecast call | Portfolio truth and revenue scenarios | `$review-pipeline`, then `$forecast-sales` |
 | A signed order and scattered deal history | A complete post-sale transfer | `$handoff-customer` |
+| Closed opportunities, decision notes, or buyer interviews | Repeatable win/loss learning | `$analyze-win-loss` |
 
 Skills accept partial information. Give the agent the strongest source material you have and the decision or artifact you need; the skill should label important gaps and continue.
 

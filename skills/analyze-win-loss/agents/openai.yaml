@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Win Loss"
+  short_description: "Find evidence-backed win and loss patterns"
+  default_prompt: "Use $analyze-win-loss to analyze these outcomes and recommend what to test next."

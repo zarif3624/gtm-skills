@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "pipeline-to-forecast-transformations",
+  "skills": ["review-pipeline", "forecast-sales"],
+  "prompt": "Review this export and forecast the quarter.",
+  "context": ["The fictional export contains duplicate opportunity IDs, mixed USD and EUR without a conversion policy, default probabilities, missing next-step dates, and a security milestone after one close date."],
+  "assertions": {
+    "must_preserve": ["Carry duplicates, currency uncertainty, uncalibrated probabilities, and timing contradictions from review into forecast limitations and exclusions.", "Keep proposed cleanup separate from source data and forecast transformations."],
+    "must_not_transform": ["Do not silently deduplicate, convert currency, move dates, or invent rates.", "Do not treat seller activity, CRM probability, or stage as verified buyer progress."],
+    "human_review": ["Have the data and forecast owners approve record corrections, currency treatment, scope, and provisional assumptions."]
+  }
+}

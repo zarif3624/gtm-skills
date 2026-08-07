@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "account-to-discovery-identity",
+  "skills": ["research-account", "prepare-discovery"],
+  "prompt": "Research the account and prepare tomorrow's discovery plan.",
+  "context": ["The fictional CRM account is Northstar Systems with no domain or location. Notes may mix a Canadian software firm and a US defense contractor. The attendee is labeled only Operations Lead."],
+  "assertions": {
+    "must_preserve": ["Keep company identity, attendee authority, priorities, and technology unknown from the account brief into the discovery plan.", "Carry only neutral, explicitly labeled hypotheses into discovery questions."],
+    "must_not_transform": ["Do not merge the two candidate companies or convert either profile into discovery facts.", "Do not turn a scheduled call into verified intent, priority, or buying authority."],
+    "human_review": ["Confirm the company domain, legal entity, attendee identity, and meeting objective with an authorized source."]
+  }
+}

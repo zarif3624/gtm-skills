@@ -45,12 +45,12 @@ Targets are product goals, not claims about current performance. Publish measure
 
 Prioritize new skills by workflow value and evidence availability:
 
-1. Analyze sales calls and extract evidence without grading personality.
-2. Run win/loss analysis across interviews, notes, and CRM history.
-3. Plan territories and capacity using explicit assumptions and scenarios.
-4. Prepare pricing and commercial negotiations with authority guardrails.
-5. Build enterprise account plans that connect whitespace, relationships, and outcomes.
-6. Design partner and channel plans without double-counting pipeline.
+1. Plan territories and capacity using explicit assumptions and scenarios.
+2. Prepare pricing and commercial negotiations with authority guardrails.
+3. Build enterprise account plans that connect whitespace, relationships, and outcomes.
+4. Design partner and channel plans without double-counting pipeline.
+
+Sales-call analysis and win/loss analysis now establish the first closed-loop learning workflows; the next phase should test their handoffs into qualification, coaching, positioning, and ICP refinement.
 
 Every new skill must ship with UI metadata, at least one adversarial eval case, and any reusable template or reference needed to produce its artifact.
 

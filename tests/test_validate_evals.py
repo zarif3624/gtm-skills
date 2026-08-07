@@ -30,6 +30,21 @@ def valid_case() -> dict[str, object]:
     }
 
 
+def valid_journey() -> dict[str, object]:
+    return {
+        "schema_version": 1,
+        "id": "test-journey",
+        "skills": ["first-skill", "second-skill"],
+        "prompt": "Complete the fictional workflow.",
+        "context": ["A material claim remains unknown."],
+        "assertions": {
+            "must_preserve": ["Keep the claim unknown across both artifacts."],
+            "must_not_transform": ["Do not turn the claim into a verified fact."],
+            "human_review": ["Ask the responsible owner to verify the claim."],
+        },
+    }
+
+
 class EvalValidatorTests(unittest.TestCase):
     def write_case(self, root: Path, case: dict[str, object]) -> Path:
         path = root / "test-case.json"
@@ -64,6 +79,22 @@ class EvalValidatorTests(unittest.TestCase):
             path = self.write_case(Path(temp), case)
             _skill, errors = VALIDATOR.validate_case(path, {"test-skill"})
             self.assertIn("id must match the case filename", errors)
+
+    def test_valid_journey_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "test-journey.json"
+            path.write_text(json.dumps(valid_journey()), encoding="utf-8")
+            errors = VALIDATOR.validate_journey(path, {"first-skill", "second-skill"})
+            self.assertEqual(errors, [])
+
+    def test_journey_requires_two_distinct_skills(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            journey = valid_journey()
+            journey["skills"] = ["first-skill", "first-skill"]
+            path = Path(temp) / "test-journey.json"
+            path.write_text(json.dumps(journey), encoding="utf-8")
+            errors = VALIDATOR.validate_journey(path, {"first-skill"})
+            self.assertIn("skills must not contain duplicates", errors)
 
 
 if __name__ == "__main__":

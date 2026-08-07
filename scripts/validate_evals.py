@@ -12,10 +12,13 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES = ROOT / "evals" / "cases"
+JOURNEYS = ROOT / "evals" / "journeys"
 SKILLS = ROOT / "skills"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 TOP_LEVEL_FIELDS = {"schema_version", "id", "skill", "risk", "prompt", "context", "assertions"}
 ASSERTION_FIELDS = {"must_demonstrate", "must_avoid", "human_review"}
+JOURNEY_FIELDS = {"schema_version", "id", "skills", "prompt", "context", "assertions"}
+JOURNEY_ASSERTION_FIELDS = {"must_preserve", "must_not_transform", "human_review"}
 
 
 def nonempty_strings(value: Any) -> bool:
@@ -64,6 +67,52 @@ def validate_case(path: Path, skill_names: set[str]) -> tuple[str | None, list[s
     return skill if isinstance(skill, str) else None, errors
 
 
+def validate_journey(path: Path, skill_names: set[str]) -> list[str]:
+    errors: list[str] = []
+    try:
+        journey = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        return [f"invalid JSON: {error}"]
+    if not isinstance(journey, dict):
+        return ["journey must be a JSON object"]
+    if set(journey) != JOURNEY_FIELDS:
+        errors.append(f"journey fields must be exactly: {', '.join(sorted(JOURNEY_FIELDS))}")
+
+    journey_id = journey.get("id")
+    if not isinstance(journey_id, str) or not ID_RE.fullmatch(journey_id):
+        errors.append("id must use lowercase letters, digits, and hyphens")
+    elif journey_id != path.stem:
+        errors.append("id must match the journey filename")
+    if journey.get("schema_version") != 1:
+        errors.append("schema_version must be 1")
+
+    skills = journey.get("skills")
+    if not nonempty_strings(skills) or len(skills) < 2:
+        errors.append("skills must contain at least two skill names")
+    else:
+        unknown = sorted(set(skills) - skill_names)
+        if unknown:
+            errors.append(f"unknown skills: {', '.join(unknown)}")
+        if len(skills) != len(set(skills)):
+            errors.append("skills must not contain duplicates")
+    for field in ("prompt",):
+        if not isinstance(journey.get(field), str) or not journey[field].strip():
+            errors.append(f"{field} must be a non-empty string")
+    if not nonempty_strings(journey.get("context")):
+        errors.append("context must be a non-empty list of strings")
+
+    assertions = journey.get("assertions")
+    if not isinstance(assertions, dict) or set(assertions) != JOURNEY_ASSERTION_FIELDS:
+        errors.append(
+            f"assertions must contain exactly: {', '.join(sorted(JOURNEY_ASSERTION_FIELDS))}"
+        )
+    else:
+        for field in sorted(JOURNEY_ASSERTION_FIELDS):
+            if not nonempty_strings(assertions.get(field)):
+                errors.append(f"assertions.{field} must be a non-empty list of strings")
+    return errors
+
+
 def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     repository_errors: list[str] = []
     if not CASES.is_dir():
@@ -78,7 +127,7 @@ def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     seen_ids: set[str] = set()
     for case_file in case_files:
         skill, errors = validate_case(case_file, skill_names)
-        results[case_file.name] = errors
+        results[f"cases/{case_file.name}"] = errors
         if skill and not errors:
             covered.add(skill)
         if case_file.stem in seen_ids:
@@ -88,6 +137,17 @@ def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     missing = sorted(skill_names - covered)
     if missing:
         repository_errors.append(f"skills without a valid eval case: {', '.join(missing)}")
+
+    if not JOURNEYS.is_dir():
+        repository_errors.append("evals/journeys directory is missing")
+    else:
+        journey_files = sorted(JOURNEYS.glob("*.json"))
+        if not journey_files:
+            repository_errors.append("no journey evaluation cases found")
+        for journey_file in journey_files:
+            results[f"journeys/{journey_file.name}"] = validate_journey(
+                journey_file, skill_names
+            )
     return results, repository_errors
 
 

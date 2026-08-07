@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "deal-to-handoff-promise",
+  "skills": ["plan-deal", "create-mutual-action-plan", "handoff-customer"],
+  "prompt": "Turn the deal history into a buyer plan and final implementation handoff.",
+  "context": ["For fictional buyer Pine Health, the order covers standard onboarding. A seller said a custom integration should be easy, but no approved scope, owner, or date exists. The buyer expects a 30-day launch, which neither contract nor implementation confirms."],
+  "assertions": {
+    "must_preserve": ["Keep the integration as an unapproved seller statement and the 30-day launch as an unconfirmed customer expectation in every artifact.", "Carry the conflict, authoritative contract scope, validation owner, and implementation risk into handoff."],
+    "must_not_transform": ["Do not create a mutual milestone or delivery commitment from the seller statement or buyer expectation.", "Do not hide the scope conflict to make the handoff appear complete."],
+    "human_review": ["Escalate integration scope and launch feasibility to authorized sales, product, and implementation owners before buyer acceptance or kickoff."]
+  }
+}

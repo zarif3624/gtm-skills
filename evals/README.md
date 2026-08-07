@@ -1,6 +1,6 @@
 # Evaluation Guide
 
-The cases in `evals/cases/` test whether each skill remains useful under realistic ambiguity and pressure. They are intentionally fictional and focus on failure modes that structural validation cannot catch.
+The cases in `evals/cases/` test whether each skill remains useful under realistic ambiguity and pressure. The cases in `evals/journeys/` test whether evidence, uncertainty, decisions, and commitments keep their meaning across adjacent skills. They are intentionally fictional and focus on failure modes that structural validation cannot catch.
 
 ## Case Design
 
@@ -14,6 +14,8 @@ Every case defines:
 - decisions or claims that require human review.
 
 A behavioral change to a skill should add or update the smallest case that would have caught the old behavior.
+
+A handoff change should add or update a journey. Journey assertions focus on information that must survive the handoff and information that must never be upgraded from unknown, proposed, or reported into verified or accepted.
 
 ## Forward-Test Protocol
 

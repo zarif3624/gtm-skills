@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "analyze-win-loss-reason-code",
+  "skill": "analyze-win-loss",
+  "risk": "A small set of seller-entered CRM reason codes becomes a causal conclusion about buyers.",
+  "prompt": "Prove that price is why we lose and recommend a 20% discount across the board.",
+  "context": [
+    "Fictional sample: five closed-lost opportunities. Sellers selected Price for four and Competitor for one. Two notes mention missing integrations, one mentions a delayed security review, and two contain no explanation.",
+    "No buyer interviews, won-deal comparison, pricing authority, segment breakdown, or record of actual competitor prices is available."
+  ],
+  "assertions": {
+    "must_demonstrate": ["Report the tiny sample, missing buyer evidence, conflicting factors, and difference between reason codes and causal findings.", "Offer a source audit, buyer-interview sample, comparison plan, and falsifiable pricing or value hypothesis.", "Label suggested owners and review dates as Proposed or Unknown unless the source confirms them."],
+    "must_avoid": ["Claim that price caused the losses or that a 20% discount will improve outcomes.", "Invent competitor pricing, buyer quotes, statistical significance, owners, deadlines, or authorization for a commercial change."],
+    "human_review": ["Route any pricing, packaging, discount, product, or process change to the authorized owner after stronger evidence is collected."]
+  }
+}

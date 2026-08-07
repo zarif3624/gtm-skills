@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "call-to-deal-budget",
+  "skills": ["analyze-sales-call", "qualify-opportunity", "plan-deal"],
+  "prompt": "Analyze the call, update qualification, and create the deal plan.",
+  "context": ["In the fictional transcript, the seller says budget sounds approved. The buyer says finance still needs to check. The seller proposes September; the buyer agrees only to review a plan. Participant authority is unknown."],
+  "assertions": {
+    "must_preserve": ["Keep finance approval, authority, and September timing unknown through call analysis, qualification, and deal planning.", "Preserve plan review as the only accepted buyer action."],
+    "must_not_transform": ["Do not upgrade seller language into buyer evidence, full qualification, champion status, or a verified close date.", "Do not describe proposed seller actions as mutual progress."],
+    "human_review": ["Require the deal owner to validate finance approval, participant roles, decision process, and any target date."]
+  }
+}
