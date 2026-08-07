@@ -25,6 +25,7 @@ class ReferencePackValidatorTests(unittest.TestCase):
 
     def test_repository_pack_passes(self) -> None:
         self.assertEqual(VALIDATOR.validate_generic_pack(), [])
+        self.assertEqual(VALIDATOR.validate_evidence_pack(), [])
 
     def test_header_drift_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -45,6 +46,21 @@ class ReferencePackValidatorTests(unittest.TestCase):
             schema_path.write_text(json.dumps(schema), encoding="utf-8")
             errors = VALIDATOR.validate_generic_pack(pack)
             self.assertIn("opportunity schema must define a closed object", errors)
+
+    def test_evidence_template_and_schema_must_stay_aligned(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            pack = Path(temp) / "evidence-ledger"
+            pack.mkdir()
+            for source in VALIDATOR.EVIDENCE.iterdir():
+                if source.is_file():
+                    (pack / source.name).write_bytes(source.read_bytes())
+            template = pack / "evidence-ledger-template.csv"
+            template.write_text("claim_id,claim\n", encoding="utf-8")
+            errors = VALIDATOR.validate_evidence_pack(pack)
+            self.assertIn(
+                "evidence-ledger-template.csv header does not match its canonical contract",
+                errors,
+            )
 
 
 if __name__ == "__main__":

@@ -151,6 +151,10 @@ Use the [RelayFox fictional workspace](examples/relayfox/) to try conversation a
 
 Use the [generic CRM handoff pack](reference-packs/generic-crm/) to map pipeline data without silently changing source records. It includes CSV templates, lineage and status fields, a dated currency-policy template, and a matching JSON Schema for structured integrations. No CRM vendor is required.
 
+## Preserve Evidence Across Tools
+
+Use the [evidence and action ledger pack](reference-packs/evidence-ledger/) when claims, actions, approvals, or commitments need to move between agents, spreadsheets, CRMs, and internal tools. Its matching CSV and JSON contracts keep evidence, source lineage, transformations, buyer acceptance, approval, and completion on separate axes.
+
 ## Trust Standard
 
 Every contribution should preserve these rules:

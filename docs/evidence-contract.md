@@ -69,3 +69,7 @@ Across skills and systems:
 6. Source restrictions and sensitivity do not disappear at handoff.
 
 When a downstream artifact needs a stronger state than its input supports, keep the current state and name the validation step.
+
+## Portable Records
+
+The vendor-neutral [evidence and action ledger pack](../reference-packs/evidence-ledger/) provides matching CSV headers and closed JSON Schemas for these rules. Use it when a workflow needs structured handoffs across agents, spreadsheets, CRMs, or internal tools. The schemas validate vocabulary and shape; they do not verify the underlying claims or authorize access.

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zarif3624/gtm-skills/reference-packs/evidence-ledger/action-record.schema.json",
+  "title": "GTM Action And Commitment Record",
+  "description": "One proposed or observed action with independent actor, timing, buyer, approval, and completion states.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["action_id", "subject_id", "action", "actor_status", "timing_status", "buyer_status", "approval_status", "completion_status"],
+  "properties": {
+    "action_id": {"type": "string", "minLength": 1},
+    "subject_id": {"type": "string", "minLength": 1},
+    "action": {"type": "string", "minLength": 1},
+    "actor_id": {"type": ["string", "null"]},
+    "actor_status": {"enum": ["Confirmed", "Proposed", "Unknown"]},
+    "timing": {"type": ["string", "null"]},
+    "timing_status": {"enum": ["Confirmed", "Proposed", "Accepted", "Unknown"]},
+    "buyer_status": {"enum": ["Proposed", "Accepted", "Rejected", "Completed", "Unknown"]},
+    "approval_status": {"enum": ["Approved", "Proposed", "Rejected", "Unknown"]},
+    "completion_status": {"enum": ["Completed", "Not completed", "Unknown"]},
+    "source_locator": {"type": ["string", "null"]},
+    "source_date": {"type": ["string", "null"], "format": "date"},
+    "access_classification": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  }
+}

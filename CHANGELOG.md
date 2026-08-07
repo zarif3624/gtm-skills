@@ -13,6 +13,7 @@ All notable project changes are documented here. The project uses semantic versi
 - A drift-checked machine-readable quality summary for catalog, coverage, and current evidence counts.
 - A validated RelayFox end-to-end fictional workspace for transcript, qualification, pipeline, forecast, and learning workflows.
 - A vendor-neutral CRM handoff pack with CSV templates, transformation governance, currency policy, and a matching JSON Schema.
+- A vendor-neutral evidence and action ledger pack with matching CSV and JSON contracts for portable claim and commitment status.
 - Ten-minute quickstart, evidence/status contract, compatibility evidence matrix, product roadmap, contribution templates, and expanded security policy.
 
 ### Changed

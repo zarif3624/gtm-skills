@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zarif3624/gtm-skills/reference-packs/evidence-ledger/evidence-record.schema.json",
+  "title": "GTM Evidence Record",
+  "description": "One scoped claim with evidence, lineage, transformation, validation, and access status.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "subject_id", "claim", "claim_type", "evidence_status"],
+  "properties": {
+    "claim_id": {"type": "string", "minLength": 1},
+    "subject_id": {"type": "string", "minLength": 1},
+    "claim": {"type": "string", "minLength": 1},
+    "claim_type": {"enum": ["Fact", "Buyer statement", "Seller statement", "Metric", "Assumption", "Decision", "Commitment", "Risk", "Other"]},
+    "evidence_status": {"enum": ["Verified", "Reported", "Inferred", "Hypothesis", "Unknown", "Contradicted"]},
+    "source_locator": {"type": ["string", "null"]},
+    "source_date": {"type": ["string", "null"], "format": "date"},
+    "as_of_date": {"type": ["string", "null"], "format": "date"},
+    "scope": {"type": ["string", "null"]},
+    "attribution": {"type": ["string", "null"]},
+    "transformation": {"type": ["string", "null"]},
+    "transformation_status": {"enum": ["Proposed", "Approved", "Rejected", "Unknown", null]},
+    "validation_owner_id": {"type": ["string", "null"]},
+    "validation_status": {"enum": ["Not started", "In progress", "Verified", "Rejected", "Unknown", null]},
+    "access_classification": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  }
+}
