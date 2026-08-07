@@ -178,6 +178,8 @@ The quality foundation and first workflow expansion are in place. The next prior
 
 See the [full product roadmap](ROADMAP.md) for priorities, measures, and deliberate non-goals.
 
+Release history and the evidence-gated publication checklist are in [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md).
+
 ## License
 
 [MIT](LICENSE). Use, adapt, and contribute back.

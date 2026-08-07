@@ -1,0 +1,43 @@
+name: Evaluation regression
+description: Report a routing, behavioral, handoff, or compatibility regression
+title: "[Eval]: "
+labels: [bug, evaluation]
+body:
+  - type: input
+    attributes:
+      label: Case or routing ID
+      placeholder: pipeline-to-forecast-transformations
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Client, model, and version
+      description: Use exact identifiers when available; otherwise state what is unknown.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Skill commit
+      placeholder: Full Git commit
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Observed behavior
+      description: Use fictional or safely redacted input and the smallest useful response excerpt.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Assertion or routing failure
+      description: Which required behavior was missing, or which prohibited behavior appeared?
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Data safety
+      options:
+        - label: I removed credentials, sensitive personal data, and unauthorized confidential content.
+          required: true
+        - label: I did not publish hidden assertions to the tested agent before the run.
+          required: true
