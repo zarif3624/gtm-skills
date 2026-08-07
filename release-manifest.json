@@ -7,7 +7,7 @@
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "a3f1817499290c112dc7b100445a3b28eada981ca7486eb6136e6e02bbfcf064"
+      "sha256": "4e8a1198c5ed9d614c2bef7e61a38127907d98d579bb01c7c39fa4c9bd78b1e0"
     }
   },
   "skill_packages": [
@@ -162,6 +162,17 @@
         "response_sha256": "94ada6ea4f9e6c5d841cac21a2803d6ceea144e6a0b4b2cc3a8dcb93ca1d188e"
       },
       {
+        "case_id": "create-mutual-action-plan-unilateral",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "b57deb2",
+        "report_path": "evals/results/2026-08-08/create-mutual-action-plan-unilateral.json",
+        "report_sha256": "a4708a6b23a2ca78436ccdf4a815dc1731f95aa825665819e202015c27520af6",
+        "response_path": "evals/results/2026-08-08/create-mutual-action-plan-unilateral.response.md",
+        "response_sha256": "3abf880a605980fadae4313ad03efb767045849d4b6f850b665998ee3f918a1b"
+      },
+      {
         "case_id": "design-sales-process-generic-benchmarks",
         "case_type": "case",
         "lineage": "codex-inherited",
@@ -231,12 +242,12 @@
         "case_id": "prepare-demo-roadmap-feature",
         "case_type": "case",
         "lineage": "codex-inherited",
-        "verdict": "partial",
-        "repository_commit": "0e11517",
-        "report_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.json",
-        "report_sha256": "69a7a747a4004d1cab84767e27cfce58ccb0177de18ea695cdf3e4ea30364cff",
-        "response_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.response.md",
-        "response_sha256": "8d5750b09d27d433ca77684c0982c42fcab169c788b752133b10d4dd3fa938c2"
+        "verdict": "pass",
+        "repository_commit": "b57deb2",
+        "report_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.retest.json",
+        "report_sha256": "864b87ac31508ee31fc47c8f593e721bae766b8dc3ba129b9c883e828b0a25bc",
+        "response_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.retest.response.md",
+        "response_sha256": "0c96e8b3ab98ce5191d2dca9cf1beaf8699c4bc58d87a3855d4ab3f51d92f134"
       },
       {
         "case_id": "prepare-negotiation-unauthorized-terms",
@@ -259,6 +270,17 @@
         "report_sha256": "4c7b84aa51167ad05f21d6beb6f4d54e91c4c24b8365981b1a70469f1f815bbd",
         "response_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.response.md",
         "response_sha256": "f85bf179eaf998f249fba785a9bcaf72890a9cef2704773c507800803e840628"
+      },
+      {
+        "case_id": "research-account-ambiguous-identity",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "b57deb2",
+        "report_path": "evals/results/2026-08-08/research-account-ambiguous-identity.json",
+        "report_sha256": "44ff283244ab459da4191946678a5c20828e9a353bd660563397c95fec198811",
+        "response_path": "evals/results/2026-08-08/research-account-ambiguous-identity.response.md",
+        "response_sha256": "4efbb15af1a27ac577aac2869998a0f0f6286aa3c2c8c0b0f75cedd943fef8ee"
       },
       {
         "case_id": "review-customer-outcomes-usage-value",

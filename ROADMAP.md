@@ -27,7 +27,7 @@ Targets are product goals, not claims about current performance. Publish measure
 
 ## Current Status — 2026-08-08
 
-The repository now has 25 focused skills, one isolated adversarial case per skill, eleven cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and reproducible behavioral and blind-routing reports. The latest recorded routing run selected the exact intended skill set for all 28 prompts in its frozen corpus, and nine current behavioral scenarios pass in the recorded Codex lineage. These are bounded results tied to their frozen corpus and tested commits, not a claim that every model, client, or untested behavior passes.
+The repository now has 25 focused skills, one isolated adversarial case per skill, eleven cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, three portable reference packs, and reproducible behavioral and blind-routing reports. The latest recorded routing run selected the exact intended skill set for all 28 prompts in its frozen corpus, and fifteen current behavioral scenarios pass in the recorded Codex lineage. These are bounded results tied to their frozen corpus and tested commits, not a claim that every model, client, or untested behavior passes.
 
 The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
 
@@ -60,7 +60,7 @@ Every new skill must ship with UI metadata, at least one adversarial eval case, 
 ## Phase 4: Prove Portability And Operational Fit
 
 - Publish tested end-to-end workflow examples using fictional data.
-- Add opt-in reference packs for common CRM field models and CSV handoffs.
+- Extend the opt-in CRM, evidence/action, and structured-context reference packs only when a tested interchange need justifies new fields.
 - Document import and export boundaries without making a CRM mandatory.
 - Test installation, routing, and behavior across multiple skills-compatible agents and stable model lineages.
 - Version releases and publish evidence-backed compatibility notes.

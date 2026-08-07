@@ -34,7 +34,7 @@ All notable project changes are documented here. The project uses semantic versi
 ### Validation
 
 - One dependency-free command now runs unit tests, supply-chain scanning, skill/package checks, eval and routing validation, behavioral-report validation, example validation, and reference-pack validation.
-- The current recorded Codex lineage has nine latest behavioral results passing; earlier partial and failed runs remain available as regression history.
+- The current recorded Codex lineage has fifteen latest behavioral results passing; earlier partial and failed runs remain available as regression history.
 - The latest recorded metadata-only routing run selected the exact minimal skill set for all 28 requests with zero excluded-neighbor selections; the earlier 25-, 26-, and 27-request runs remain available as history.
 
 ## 0.1.0
