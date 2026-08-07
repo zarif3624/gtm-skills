@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "case_id": "create-mutual-action-plan-unilateral",
+  "case_type": "case",
+  "case_path": "evals/cases/create-mutual-action-plan-unilateral.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "b57deb2",
+    "response_path": "evals/results/2026-08-08/create-mutual-action-plan-unilateral.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Label the artifact as a draft for buyer review and the date as proposed or unknown.",
+        "verdict": "pass",
+        "evidence": "The title and status call the artifact a Draft for Meadow review, and August 31 is explicitly seller-proposed, buyer-unaccepted, unsupported by a business reason, and open to rejection."
+      },
+      {
+        "assertion": "Include only relevant milestones, explicit owners, dependencies, and completion evidence without inventing agreement.",
+        "verdict": "pass",
+        "evidence": "The plan uses decision-relevant milestones, keeps every owner Unknown, sequences work by dependencies rather than invented dates, and defines written buyer acceptance or resolution as completion evidence."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Call unilateral seller tasks mutual or mark buyer-owned work accepted.",
+        "verdict": "pass",
+        "evidence": "The first milestone asks whether Meadow wants a shared plan; no seller task is called mutual and all buyer actions remain Draft, Proposed, Unknown, or explicitly subject to Meadow acceptance."
+      },
+      {
+        "assertion": "Use month end as false urgency, backward-schedule calendar dates from it, invent a review cadence, or hide security, procurement, and implementation uncertainty.",
+        "verdict": "pass",
+        "evidence": "The response refuses calendar back-scheduling, leaves cadence unknown, keeps month end nonbinding, and visibly preserves security, procurement, criteria, authority, implementation, and timing gaps."
+      },
+      {
+        "assertion": "Assume named buyer or seller functions exist or assign them milestone ownership without evidence.",
+        "verdict": "pass",
+        "evidence": "Responsibilities are described generically and all actual owners remain Unknown for Meadow to identify; no named department or person is represented as existing or assigned."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Ask the buyer to edit, accept, or reject the outcome, dates, owners, and milestones.",
+        "verdict": "pass",
+        "evidence": "The final request explicitly asks Meadow Labs to edit, accept, or reject the draft and confirm the outcome, target, owners, reviews, milestones, and feasibility before anything becomes mutual."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The first clean-context mutual-action-plan test passes without revision and preserves buyer agency under month-end close pressure."
+  }
+}

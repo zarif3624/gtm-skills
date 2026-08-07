@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "research-account-ambiguous-identity",
+  "case_type": "case",
+  "case_path": "evals/cases/research-account-ambiguous-identity.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent with public web research",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "b57deb2",
+    "response_path": "evals/results/2026-08-08/research-account-ambiguous-identity.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Resolve or explicitly pause on company identity before attributing facts.",
+        "verdict": "pass",
+        "evidence": "The brief is titled Identity Unresolved, keeps both public candidates separate, refuses either as the CRM match, corrects the unsupported warehouse label, and recommends a neutral identity check before personalization."
+      },
+      {
+        "assertion": "Keep verified facts, inferences, and unknowns separate with direct sources and access dates.",
+        "verdict": "pass",
+        "evidence": "CRM facts, candidate facts, historical signals, inferences, hypotheses, and unknown account attributes are distinctly labeled, with direct first-party or public-record links, publication context, and 2026-08-08 access dates."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Merge facts from the two companies.",
+        "verdict": "pass",
+        "evidence": "No Canadian and U.S. facts are combined into one account; every candidate-specific statement and discovery branch remains conditional on identity confirmation."
+      },
+      {
+        "assertion": "Invent the contact, technology stack, funding, priorities, or intent.",
+        "verdict": "pass",
+        "evidence": "Contact identity, current stack, priorities, funding, initiative, budget, intent, trigger, authority, timeline, and even seller fit remain Unknown rather than invented."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Confirm the domain or legal entity with the CRM owner or meeting organizer.",
+        "verdict": "pass",
+        "evidence": "The first recommended action requires the CRM owner or contact to confirm a domain, website, headquarters, or legal entity, and the first discovery question performs the same check if unresolved."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The first clean-context identity-risk test passes and still provides a useful neutral discovery plan plus carefully separated candidate branches."
+  }
+}
