@@ -3,16 +3,16 @@
   "generated_artifacts": {
     "catalog": {
       "path": "catalog.json",
-      "sha256": "badbb0172edfb6da8e9d8f8517af3e885473ea6c65545f270c149c45eda3329c"
+      "sha256": "76aa1f0db126c78fa9fee36da6413edc06d7a60321b5efd19f50745bea9affd8"
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "4e8a1198c5ed9d614c2bef7e61a38127907d98d579bb01c7c39fa4c9bd78b1e0"
+      "sha256": "aef3ef82341dabb9c03b8f7a279d0abfa8d58e3792930b79a80fa3397fa4658a"
     }
   },
   "quality_policy": {
     "path": "quality-policy.json",
-    "sha256": "5e2564d8ac47a9cf19bba28b44f4ea3e4faf02cd2c8427703cc21825a2d310f3"
+    "sha256": "a5e66e8ec1b1dddd20737ee23c68fe8879cc649f4a3c663b9fe5b0eb5598c9bd"
   },
   "skill_packages": [
     {
@@ -43,7 +43,7 @@
     {
       "name": "define-icp",
       "path": "skills/define-icp",
-      "package_sha256": "75ead790195caefeb52a41208a439514c56664a49b655dc434b009dc0dca67d2"
+      "package_sha256": "03b33e70421b9ae9e801e52363d493a7d2b0d60002b896ef26f28987ad3b00fb"
     },
     {
       "name": "design-sales-process",
@@ -83,7 +83,7 @@
     {
       "name": "plan-deal",
       "path": "skills/plan-deal",
-      "package_sha256": "fd585365e87f71edb7197143defd75031c2deb9d05d5df5c2ec32fc5c9b5aaca"
+      "package_sha256": "e73427e71f6ba10b95f55336fc966b9bab8de6b8c8c91550825b11b9d1cda3b0"
     },
     {
       "name": "plan-partner-channel",
@@ -108,7 +108,7 @@
     {
       "name": "prepare-discovery",
       "path": "skills/prepare-discovery",
-      "package_sha256": "845316e098223d085078f3da0adc555a57230cea13e9179145e344e7c31952f4"
+      "package_sha256": "201fc56dfdbaf6599268fba5594a1c5e175880fc305783cad21e263a328a26b1"
     },
     {
       "name": "prepare-negotiation",
@@ -177,6 +177,17 @@
         "response_sha256": "3abf880a605980fadae4313ad03efb767045849d4b6f850b665998ee3f918a1b"
       },
       {
+        "case_id": "define-icp-small-sample",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "669f66d",
+        "report_path": "evals/results/2026-08-08/define-icp-small-sample.retest.json",
+        "report_sha256": "8fa4bb104a7af64b3551d0c8aa8e30dbfe019fb90f871d8ef9bb8facc0189c3b",
+        "response_path": "evals/results/2026-08-08/define-icp-small-sample.retest.response.md",
+        "response_sha256": "93c91989c4d2e735baeaab6b5a3105347bf42b1d7da45b405353520548c8cfd1"
+      },
+      {
         "case_id": "design-sales-process-generic-benchmarks",
         "case_type": "case",
         "lineage": "codex-inherited",
@@ -221,6 +232,17 @@
         "response_sha256": "2e74dc4bd3fa7fc8ff481b73aa629198d20ff389d026d1f66d343299252b84bb"
       },
       {
+        "case_id": "icp-to-prospecting-scoreability",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "bf61207",
+        "report_path": "evals/results/2026-08-08/icp-to-prospecting-scoreability.json",
+        "report_sha256": "3d130a04dc8fcbcfd4e83a63dfc9ee07ea4000e52b4ddd20acc9e9cee06296b5",
+        "response_path": "evals/results/2026-08-08/icp-to-prospecting-scoreability.response.md",
+        "response_sha256": "7998d29212533a6e688fc6630c9f289d6a573e193c4d2923223d2bef4d946834"
+      },
+      {
         "case_id": "pipeline-to-forecast-transformations",
         "case_type": "journey",
         "lineage": "codex-inherited",
@@ -230,6 +252,39 @@
         "report_sha256": "73377e9043a43bcc27d4da0a15e26e0d6d0cc13f0fd3d041c8a52dad5aaf980a",
         "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.response.md",
         "response_sha256": "8097f660b73f8e59904a2877fb0b42fd7a7e829c79ba3d5d0dd3bb453f73163b"
+      },
+      {
+        "case_id": "plan-deal-friendly-contact",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "669f66d",
+        "report_path": "evals/results/2026-08-08/plan-deal-friendly-contact.retest.json",
+        "report_sha256": "c31160bece1493e79939c56ab47b809854d3cdaa3a488064f785002d7f608e43",
+        "response_path": "evals/results/2026-08-08/plan-deal-friendly-contact.retest.response.md",
+        "response_sha256": "1338535560869c6da8250fdafc624d12b699f1dde4324f9e422d5348d2782c6e"
+      },
+      {
+        "case_id": "plan-prospecting-sensitive-data",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "bf61207",
+        "report_path": "evals/results/2026-08-08/plan-prospecting-sensitive-data.json",
+        "report_sha256": "1d2fc74c65c38224d61f6e783c3771749de7ad72b2da7fafb97218fa417cb697",
+        "response_path": "evals/results/2026-08-08/plan-prospecting-sensitive-data.response.md",
+        "response_sha256": "3162d6af8c925b4b345ab39864f8838d61456df05a2690793da741ff4ebaabda"
+      },
+      {
+        "case_id": "plan-territories-equal-counts",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "bf61207",
+        "report_path": "evals/results/2026-08-08/plan-territories-equal-counts.json",
+        "report_sha256": "bcf9a38c4918c054d843d757752811eed07e0fd7f102dd952256997cbd08a4a3",
+        "response_path": "evals/results/2026-08-08/plan-territories-equal-counts.response.md",
+        "response_sha256": "afcda701690458a9ec29c59f6e15c7c67fc97024f66f89a0f78de6382bd8ba99"
       },
       {
         "case_id": "positioning-to-outbound-claims",
@@ -252,6 +307,17 @@
         "report_sha256": "864b87ac31508ee31fc47c8f593e721bae766b8dc3ba129b9c883e828b0a25bc",
         "response_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.retest.response.md",
         "response_sha256": "0c96e8b3ab98ce5191d2dca9cf1beaf8699c4bc58d87a3855d4ab3f51d92f134"
+      },
+      {
+        "case_id": "prepare-discovery-leading-hypotheses",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "669f66d",
+        "report_path": "evals/results/2026-08-08/prepare-discovery-leading-hypotheses.retest.json",
+        "report_sha256": "1a2b82ff7c02e358a1dc264e6804d41bc59fedcb7b7812dbdd26ba0a59dbea75",
+        "response_path": "evals/results/2026-08-08/prepare-discovery-leading-hypotheses.retest.response.md",
+        "response_sha256": "f6b870565b86614a750a0bde602a448af1e7636d2c5214f374c19d9fb9f99bf0"
       },
       {
         "case_id": "prepare-negotiation-unauthorized-terms",

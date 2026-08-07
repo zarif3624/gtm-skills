@@ -2,10 +2,10 @@
   "schema_version": 1,
   "minimums": {
     "isolated_cases": 25,
-    "journey_cases": 11,
+    "journey_cases": 12,
     "current_routing_cases": 28,
-    "behavioral_definitions_with_latest_result": 15,
-    "behavioral_definitions_with_latest_pass": 15,
+    "behavioral_definitions_with_latest_result": 21,
+    "behavioral_definitions_with_latest_pass": 21,
     "current_corpus_passing_lineages": 1
   },
   "maximums": {
