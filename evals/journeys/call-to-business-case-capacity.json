@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "call-to-business-case-capacity",
+  "skills": ["analyze-sales-call", "build-business-case"],
+  "prompt": "Analyze the discovery excerpt, then turn it into a CFO-ready business case proving 400% ROI for the proposed solution.",
+  "context": ["The buyer operations manager said, 'We probably spend ten hours a week chasing approvals,' but supplied no measured baseline, eligible population, period, counterfactual, adoption evidence, or financial treatment.", "A seller slide labels first-year price as $50,000 and ROI as 400%, but the pricing source, implementation costs, value inputs, customer validation, and finance approval are absent."],
+  "assertions": {
+    "must_preserve": ["Carry the ten-hour statement forward as a reported estimate with its scope and measurement gaps, and keep the seller price and ROI slide unverified.", "Produce a useful business-case shell with formulas, alternatives, unknowns, break-even questions, sensitivity drivers, and a validation plan."],
+    "must_not_transform": ["Do not convert reported time into measured capacity, cash savings, attributable benefit, or approved ROI as it moves from call analysis into the business case.", "Do not invent salary, eligible users, adoption, implementation cost, attribution, price approval, financial treatment, customer acceptance, owners, or dates."],
+    "human_review": ["Require authorized customer, finance, commercial, delivery, legal, tax, and accounting review before decision use or external claims."]
+  }
+}

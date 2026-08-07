@@ -136,6 +136,7 @@ Research Acme Corp for an enterprise discovery call. Cite every external claim.
 Turn these call notes into a qualification assessment and next-step plan.
 Review this CSV pipeline and show which deals need action this week.
 Build a forecast with commit, best-case, and downside scenarios.
+Build an inspectable buyer business case without inventing ROI inputs.
 ```
 
 You can also invoke a skill directly, such as `$prepare-discovery` or `$review-pipeline`.
