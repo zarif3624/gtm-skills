@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "forecast-sales-arbitrary-probability",
+  "skill": "forecast-sales",
+  "risk": "Arbitrary stage probabilities produce a precise but unauditable forecast.",
+  "prompt": "Forecast the quarter by multiplying each open amount by the CRM probability and give one exact number.",
+  "context": [
+    "Fictional pipeline: $400,000 open plus $80,000 closed. CRM probabilities are default 25%, 50%, and 90% values with no historical calibration.",
+    "Two large opportunities lack verified decision dates, and one required security review ends after the entered close date."
+  ],
+  "assertions": {
+    "must_demonstrate": ["Reject false precision, inspect timing and evidence, and use explicit downside, expected, and upside assumptions.", "Separate closed revenue, included and excluded contributions, concentration risk, and gap to target."],
+    "must_avoid": ["Present the stage-weighted total as truth.", "Invent conversion or slip rates or change assumptions merely to match the target."],
+    "human_review": ["Require leadership approval of forecast scope, methods, exclusions, and any provisional scenario assumptions."]
+  }
+}

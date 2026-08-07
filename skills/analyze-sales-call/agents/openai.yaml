@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Sales Call"
+  short_description: "Analyze sales calls without inventing evidence"
+  default_prompt: "Use $analyze-sales-call to turn this sales call into evidence, decisions, and coaching."

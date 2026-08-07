@@ -38,7 +38,7 @@ Use a natural version of:
 
 ## Output
 
-For each objection, provide:
+Use [the objection plan template](assets/objection-plan.md). For each objection, provide:
 
 - exact objection and context;
 - likely meanings, labeled as hypotheses;

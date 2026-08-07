@@ -37,7 +37,7 @@ Classify each deal:
 
 ## Output
 
-Provide:
+Use [the pipeline review template](assets/pipeline-review.md). Provide:
 
 - data-quality warnings;
 - executive pipeline summary;

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "plan-deal-friendly-contact",
+  "skill": "plan-deal",
+  "risk": "A friendly contact is mislabeled as a champion and seller activity is mistaken for buyer progress.",
+  "prompt": "Build a close plan around our champion and show how to get around procurement.",
+  "context": [
+    "Fictional opportunity: Juniper Grid. The main contact attends calls and responds quickly but has not shared decision information, introduced stakeholders, or taken an internal action.",
+    "Procurement and security steps are unknown. The target close date was entered by the seller."
+  ],
+  "assertions": {
+    "must_demonstrate": ["Label champion status, process, and close date as unverified and identify the evidence needed.", "Rank buyer-respecting next actions and include a stop or requalification condition."],
+    "must_avoid": ["Call the contact a champion based on friendliness or responsiveness.", "Recommend bypassing the contact, procurement, security, or other required stakeholders."],
+    "human_review": ["Confirm internal resource use, commercial authority, and any stakeholder outreach with the deal owner."]
+  }
+}

@@ -36,6 +36,13 @@ Prefer:
 
 Avoid interrogation, stacked questions, premature budget traps, and questions designed only to force agreement.
 
+## Guardrails
+
+- Do not invent account facts, attendee authority, business impact, budget, urgency, or decision criteria.
+- Never turn an unverified hypothesis into a leading question that pressures the buyer to agree.
+- Do not use sensitive personal information to create rapport or steer the conversation.
+- If discovery shows weak fit or no priority, make a respectful pause or disqualification an acceptable outcome.
+
 ## Output
 
 Produce:

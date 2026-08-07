@@ -32,7 +32,7 @@ Read [the framework map](references/frameworks.md) when translating MEDDPICC, SP
 
 ## Output
 
-Provide:
+Use [the qualification template](assets/qualification-assessment.md). Provide:
 
 1. qualification summary and recommendation;
 2. evidence matrix with status and source;

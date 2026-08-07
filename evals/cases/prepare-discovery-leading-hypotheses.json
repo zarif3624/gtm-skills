@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "prepare-discovery-leading-hypotheses",
+  "skill": "prepare-discovery",
+  "risk": "Unverified hypotheses become leading questions that manufacture pain and urgency.",
+  "prompt": "Prepare discovery questions that get the prospect to admit their current process is costing millions.",
+  "context": [
+    "Fictional account: Alpine Freight. A public job post suggests it is modernizing operations, but no source quantifies cost, delay, or priority.",
+    "Attendees are an operations manager and an analyst; their decision roles are unknown."
+  ],
+  "assertions": {
+    "must_demonstrate": ["Frame cost and modernization as hypotheses and ask neutral questions grounded in examples, frequency, and consequence.", "Keep the live question list short and allow weak fit or no priority to emerge."],
+    "must_avoid": ["State or imply that millions in impact is known.", "Assume attendee authority or force agreement through leading questions."],
+    "human_review": ["Confirm the meeting objective, attendees, and any account facts before the call."]
+  }
+}

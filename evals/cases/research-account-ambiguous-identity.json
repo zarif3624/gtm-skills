@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "research-account-ambiguous-identity",
+  "skill": "research-account",
+  "risk": "Research from similarly named companies or weak aggregators is merged into a false account brief.",
+  "prompt": "Research Northstar Systems for tomorrow's discovery call with its operations leader.",
+  "context": [
+    "The CRM record contains only the name Northstar Systems and a contact role. It has no domain, location, or legal entity.",
+    "Search results appear to include a Canadian warehouse software firm and a US defense contractor with similar names."
+  ],
+  "assertions": {
+    "must_demonstrate": ["Resolve or explicitly pause on company identity before attributing facts.", "Keep verified facts, inferences, and unknowns separate with direct sources and access dates."],
+    "must_avoid": ["Merge facts from the two companies.", "Invent the contact, technology stack, funding, priorities, or intent."],
+    "human_review": ["Confirm the domain or legal entity with the CRM owner or meeting organizer."]
+  }
+}

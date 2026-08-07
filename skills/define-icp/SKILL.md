@@ -33,7 +33,7 @@ Use [the scoring guide](references/scoring.md) when a numeric model is needed.
 
 ## Output
 
-Produce:
+Use [the ICP template](assets/icp.md). Produce:
 
 1. **ICP statement**: one narrow paragraph.
 2. **Fit table**: criterion, rationale, weight, evidence, and confidence.

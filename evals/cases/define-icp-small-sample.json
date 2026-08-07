@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "define-icp-small-sample",
+  "skill": "define-icp",
+  "risk": "A tiny, biased sample becomes a universal ICP and an overconfident score.",
+  "prompt": "Define our ICP and score the logistics segment from these early customers.",
+  "context": [
+    "Fictional company: HarborMetric. Three founder-referred customers bought: two regional logistics firms and one retailer. One logistics customer renewed; the others are too new to assess.",
+    "No structured loss, retention, usage, or segment market data exists."
+  ],
+  "assertions": {
+    "must_demonstrate": ["State the sample size, referral bias, and missing outcome evidence.", "Separate a testable logistics hypothesis from a verified ICP and provide a small validation plan."],
+    "must_avoid": ["Claim logistics is proven to be the best segment.", "Invent market size, conversion rates, or precise fit scores unsupported by the sample."],
+    "human_review": ["Have the GTM owner approve disqualifiers, scoring weights, and the next segment test."]
+  }
+}

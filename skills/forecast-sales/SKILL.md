@@ -21,6 +21,17 @@ Read `.agents/gtm-context.md`. Confirm:
 
 Check duplicates, missing amounts, close dates outside the period, stale opportunities, inconsistent currencies, unsupported stages, and required milestones after the close date. Report exclusions and transformations.
 
+## Partial Or Aggregate Data
+
+When deal-level rows or calibrated rates are missing, do not invent an allocation or stop at a refusal.
+
+- Calculate exact supported values such as closed revenue.
+- Show the requested formula and explain why the missing fields prevent a supportable central estimate.
+- Build downside, expected, and upside scenarios even when a scenario value must be `Unknown`.
+- Use closed revenue as a supported floor when appropriate. Label the all-open-pipeline value as a theoretical ceiling, not an upside forecast.
+- List the minimum deal-level fields or historical inputs needed to replace `Unknown` values.
+- Keep timing, concentration, and milestone contradictions visible even when they cannot be quantified.
+
 ## Build The Forecast
 
 Use the simplest method supported by the data. Read [forecast methods](references/methods.md).
@@ -35,7 +46,7 @@ Use the simplest method supported by the data. Read [forecast methods](reference
 
 ## Output
 
-Provide:
+Use [the forecast template](assets/forecast.md). Provide:
 
 - as-of date and scope;
 - forecast range and central estimate;
@@ -47,4 +58,4 @@ Provide:
 - data-quality limitations;
 - actions that improve outcomes separated from actions that improve forecast accuracy.
 
-Never present a stage-weighted total as precise truth. Never infer missing historical rates. Use ranges when uncertainty is material.
+Never present a stage-weighted total as precise truth. Never infer missing historical rates. Use ranges when uncertainty is material, and use `Unknown` when even a supportable range is not available.

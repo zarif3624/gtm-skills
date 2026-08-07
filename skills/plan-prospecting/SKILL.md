@@ -29,7 +29,7 @@ Turn an ICP into a finite, explainable prospecting plan. Optimize for learning a
 
 ## Output
 
-Produce a prospecting plan with:
+Use [the prospecting plan template](assets/prospecting-plan.md). Produce a prospecting plan with:
 
 - objective and success metric;
 - target segment and exclusions;

@@ -43,7 +43,7 @@ Read [channel and review guidance](references/responsible-outbound.md) for highe
 
 ## Output
 
-Provide:
+Use [the outbound plan template](assets/outbound-plan.md). Provide:
 
 1. audience and message hypothesis;
 2. evidence used and missing;

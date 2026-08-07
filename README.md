@@ -1,5 +1,8 @@
 # GTM Skills for AI Agents
 
+[![Validate skills](https://github.com/zarif3624/gtm-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zarif3624/gtm-skills/actions/workflows/validate.yml)
+[![skills.sh](https://skills.sh/b/zarif3624/gtm-skills)](https://skills.sh/zarif3624/gtm-skills)
+
 Open-source sales and go-to-market skills for AI agents. Built for founders, sellers, RevOps teams, and customer-facing operators who want useful sales work without fabricated research, fake personalization, or mystery forecasts.
 
 Works with OpenAI Codex, Claude Code, Cursor, Windsurf, and other agents that support the [Agent Skills specification](https://agentskills.io).
@@ -26,6 +29,7 @@ This project is deliberately:
 | Targeting | [`plan-prospecting`](skills/plan-prospecting/) | Turn an ICP into a focused account and contact plan |
 | Outreach | [`write-outbound`](skills/write-outbound/) | Write responsible, relevant multichannel outreach |
 | Discovery | [`prepare-discovery`](skills/prepare-discovery/) | Prepare questions, hypotheses, and a call plan |
+| Conversation | [`analyze-sales-call`](skills/analyze-sales-call/) | Extract evidence, decisions, next steps, and coaching from sales calls |
 | Qualification | [`qualify-opportunity`](skills/qualify-opportunity/) | Assess evidence, gaps, and next validation steps |
 | Deal execution | [`plan-deal`](skills/plan-deal/) | Map stakeholders, risks, strategy, and next actions |
 | Deal execution | [`handle-objections`](skills/handle-objections/) | Diagnose objections and prepare honest responses |
@@ -44,17 +48,37 @@ gtm-context
     |
     +-- define-icp -- research-account -- plan-prospecting -- write-outbound
     |
-    +-- prepare-discovery -- qualify-opportunity -- plan-deal
-    |                                         |-- handle-objections
-    |                                         |-- prepare-demo
-    |                                         `-- create-mutual-action-plan
+    +-- prepare-discovery -- analyze-sales-call -- qualify-opportunity -- plan-deal
+    |                                                                |-- handle-objections
+    |                                                                |-- prepare-demo
+    |                                                                `-- create-mutual-action-plan
     |
     +-- review-pipeline -- forecast-sales
     |
     `-- handoff-customer
 ```
 
+## Choose A Starting Point
+
+| What you have | What you need | Start with |
+| --- | --- | --- |
+| Product docs and scattered sales knowledge | Shared, reusable background | `$gtm-context` |
+| Early customer evidence or a broad target market | A testable customer profile | `$define-icp` |
+| A named account or upcoming first meeting | Evidence and a conversation plan | `$research-account`, then `$prepare-discovery` |
+| A transcript or call notes | Decisions, qualification changes, and coaching | `$analyze-sales-call`, then `$qualify-opportunity` |
+| A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
+| A CRM export or forecast call | Portfolio truth and revenue scenarios | `$review-pipeline`, then `$forecast-sales` |
+| A signed order and scattered deal history | A complete post-sale transfer | `$handoff-customer` |
+
+Skills accept partial information. Give the agent the strongest source material you have and the decision or artifact you need; the skill should label important gaps and continue.
+
 ## Install
+
+Preview the available skills:
+
+```bash
+npx skills add zarif3624/gtm-skills --list
+```
 
 Install every skill:
 
@@ -65,7 +89,7 @@ npx skills add zarif3624/gtm-skills
 Install selected skills:
 
 ```bash
-npx skills add zarif3624/gtm-skills --skill gtm-context research-account prepare-discovery
+npx skills add zarif3624/gtm-skills --skill gtm-context --skill research-account --skill prepare-discovery
 ```
 
 Or clone and copy them into a project:
@@ -89,6 +113,8 @@ Build a forecast with commit, best-case, and downside scenarios.
 
 You can also invoke a skill directly, such as `$prepare-discovery` or `$review-pipeline`.
 
+Start with the artifact you need; `.agents/gtm-context.md` is helpful, not required. When it is missing, each skill should use the evidence you provide, label consequential gaps, and continue. Create it with `$gtm-context` when you want consistent background across repeated workflows.
+
 ## Trust Standard
 
 Every contribution should preserve these rules:
@@ -107,14 +133,9 @@ Contributions are welcome, especially from working sellers, founders, RevOps ope
 
 ## Roadmap
 
-- Sales call coaching and transcript analysis
-- Territory planning and capacity modeling
-- Account planning for enterprise deals
-- Pricing and commercial negotiation
-- Partner and channel sales
-- Win/loss analysis
-- CRM-specific reference packs and import/export helpers
-- Evaluation fixtures that test skills against realistic sales scenarios
+The near-term priority is to make quality measurable: realistic eval cases, consistent evidence contracts, stronger validation, and tested handoffs between skills. Then the collection will expand into call analysis, win/loss, territory planning, commercial negotiation, enterprise account planning, and partner sales.
+
+See the [full product roadmap](ROADMAP.md) for priorities, measures, and deliberate non-goals.
 
 ## License
 

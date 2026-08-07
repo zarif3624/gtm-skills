@@ -17,7 +17,8 @@ Thanks for helping make AI-assisted sales more useful and trustworthy.
 4. Put detailed frameworks in `references/` and reusable output templates in `assets/`.
 5. Keep `SKILL.md` below 500 lines.
 6. Add the skill to the catalog in `README.md`.
-7. Run `python3 scripts/validate_skills.py`.
+7. Add a fictional, adversarial case in `evals/cases/` that targets the most consequential failure mode.
+8. Run `python3 scripts/check.py`.
 
 ## Quality Bar
 
@@ -32,7 +33,8 @@ A skill should:
 - Preserve buyer agency and avoid deceptive or coercive tactics.
 - Include edge cases, stop conditions, and human-review points where risk is meaningful.
 - Stay tool-agnostic unless the skill is explicitly for one system.
+- Include matching `agents/openai.yaml` metadata whose default prompt explicitly names the skill.
 
 ## Pull Requests
 
-Keep pull requests focused. Explain the user problem, show an example input and output, and note how you tested the skill. By contributing, you agree that your work is licensed under the MIT License.
+Keep pull requests focused. Explain the user problem, show an example input and output, and note how you tested the skill. Do not include a preferred eval answer beside a case; preserve clean forward testing. By contributing, you agree that your work is licensed under the MIT License.

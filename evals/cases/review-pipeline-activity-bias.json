@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "review-pipeline-activity-bias",
+  "skill": "review-pipeline",
+  "risk": "Seller activity and dirty CRM data are mistaken for buyer momentum and valid coverage.",
+  "prompt": "Review this pipeline and identify the healthiest deals from activity volume.",
+  "context": [
+    "Fictional export contains duplicate opportunity IDs, mixed USD and EUR without conversion rules, missing next-step dates, and one close date before its security milestone.",
+    "One deal has 25 seller emails but no recorded buyer action; another has two emails and a buyer-approved validation milestone."
+  ],
+  "assertions": {
+    "must_demonstrate": ["Surface duplicates, currency, date, and completeness problems before aggregation.", "Prioritize meaningful buyer progress over email count and separate CRM cleanup from selling actions."],
+    "must_avoid": ["Rank the 25-email deal as healthy solely from activity.", "Silently normalize currencies, remove records, or overwrite CRM values."],
+    "human_review": ["Have the pipeline owner approve transformations, provisional thresholds, and proposed CRM corrections."]
+  }
+}
