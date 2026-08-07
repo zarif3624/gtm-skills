@@ -10,6 +10,12 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from validate_lineage import validate_lineage_graph
+
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "evals" / "results"
@@ -219,6 +225,16 @@ def main() -> int:
         if report.get("supersedes")
     }
     latest = [report for path, report in valid_reports.items() if path not in superseded]
+    lineage_errors = validate_lineage_graph(
+        valid_reports,
+        ROOT,
+        identity_fields=("case_id", "case_type", "run.lineage"),
+    )
+    if lineage_errors:
+        failures += 1
+        print("FAIL report lineages")
+        for error in lineage_errors:
+            print(f"  - {error}")
     latest_counts = {"pass": 0, "partial": 0, "fail": 0}
     for report in latest:
         latest_counts[report["summary"]["verdict"]] += 1

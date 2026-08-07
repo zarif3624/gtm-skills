@@ -15,6 +15,7 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 from create_routing_report import calculate_summary
+from validate_lineage import validate_lineage_graph
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -168,6 +169,14 @@ def main() -> int:
             if report:
                 valid_reports[path.resolve()] = report
     print(f"\nValidated {len(reports)} routing reports; {failures} invalid.")
+    lineage_errors = validate_lineage_graph(
+        valid_reports, ROOT, identity_fields=("run.lineage",)
+    )
+    if lineage_errors:
+        failures += 1
+        print("FAIL routing report lineages")
+        for error in lineage_errors:
+            print(f"  - {error}")
     superseded = {
         (ROOT / report["supersedes"]).resolve()
         for report in valid_reports.values()
