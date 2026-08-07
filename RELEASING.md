@@ -19,6 +19,7 @@ A release is a reviewed compatibility statement, not just a tag.
 - Confirm `release-manifest.json` binds the current `catalog.json` package digests to `quality-summary.json`, behavioral definition coverage, current-corpus routing coverage, and SHA-256 digests for the latest reports, raw responses, and routing corpora.
 - Confirm each new or materially changed skill has an adversarial case and a clean-context forward test.
 - Confirm current results are distinguishable from historical failures.
+- Confirm `quality-policy.json` still expresses the intended release floor; lowering a threshold requires explicit review and rationale.
 - Confirm no legal, security, compliance, model, or cross-client claim exceeds the recorded evidence.
 - Review the repository security scan and bundled resources from the release commit.
 

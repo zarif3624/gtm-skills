@@ -184,7 +184,7 @@ Every contribution should preserve these rules:
 
 The [evidence and status contract](docs/evidence-contract.md) defines the vocabulary and the handoff invariants behind these rules.
 
-Current catalog, evaluation counts, behavioral definition coverage, and current-corpus routing coverage are published in [`quality-summary.json`](quality-summary.json). The validation suite fails when that snapshot no longer matches the repository, preventing release notes from quietly outliving the evidence or a growing case library from hiding untested scenarios.
+Current catalog, evaluation counts, behavioral definition coverage, and current-corpus routing coverage are published in [`quality-summary.json`](quality-summary.json). Reviewed minimums and zero-regression limits live in [`quality-policy.json`](quality-policy.json), so refreshing generated counts cannot silently make a loss of passing coverage acceptable.
 
 ## Contributing
 
