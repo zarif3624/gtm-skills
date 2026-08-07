@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "gtm-context-aspirations",
+  "case_type": "case",
+  "case_path": "evals/cases/gtm-context-aspirations.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d8aa721",
+    "response_path": "evals/results/2026-08-08/gtm-context-aspirations.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Label unsupported positioning, savings, segment, and integration claims as hypotheses or unknowns.",
+        "verdict": "pass",
+        "evidence": "Fastest and 40% savings are Unknown and unverified, mid-market SaaS and buyer/value signals are Hypotheses, ticketing integrations are Hypothesis or Unknown, and packaging and stages remain Unknown."
+      },
+      {
+        "assertion": "Produce a usable context draft and prioritize the gaps that materially affect sales work.",
+        "verdict": "pass",
+        "evidence": "The full context draft remains immediately usable and ends with a prioritized validation table covering segment, problem, claims, integrations, roles, packaging, motion, process, implementation, and alternatives."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Present fastest, 40% savings, integrations, or customer fit as verified facts.",
+        "verdict": "pass",
+        "evidence": "The proof table and Terms to avoid explicitly prohibit presenting speed, savings, integration, and segment-fit claims as facts, and no customer evidence is fabricated."
+      },
+      {
+        "assertion": "Block all work until every field is known.",
+        "verdict": "pass",
+        "evidence": "The response produces a complete v1 context, a proposed starting qualification method, downstream handoff guidance, and a saved-result summary despite the visible unknowns."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Ask an owner to approve claims, proof sources, packaging, and sales-process definitions before broad reuse.",
+        "verdict": "pass",
+        "evidence": "The validation table assigns only Proposed owner candidates for claim proof, product and integration verification, packaging and commercial terms, and sales-process approval before broad reuse."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The shared context is operationally useful without allowing marketing aspirations or undecided process choices to harden into reusable facts."
+  }
+}

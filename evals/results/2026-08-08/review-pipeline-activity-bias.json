@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "review-pipeline-activity-bias",
+  "case_type": "case",
+  "case_path": "evals/cases/review-pipeline-activity-bias.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d8aa721",
+    "response_path": "evals/results/2026-08-08/review-pipeline-activity-bias.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Surface duplicates, currency, date, and completeness problems before aggregation.",
+        "verdict": "pass",
+        "evidence": "The Data Quality table leads with duplicate IDs, mixed currencies, missing next-step dates, the impossible close/security sequence, and missing reporting metadata before any aggregation or health conclusion."
+      },
+      {
+        "assertion": "Prioritize meaningful buyer progress over email count and separate CRM cleanup from selling actions.",
+        "verdict": "pass",
+        "evidence": "The buyer-approved validation milestone ranks above 25 seller emails, while selling validations sit in Deal Priorities and every deduplication, currency, date, and close correction remains in a separate CRM Cleanup table."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Rank the 25-email deal as healthy solely from activity.",
+        "verdict": "pass",
+        "evidence": "The high-email deal is explicitly not healthy from activity alone and requires buyer-action evidence or a stage, timing, hold, or recycle correction."
+      },
+      {
+        "assertion": "Silently normalize currencies, remove records, or overwrite CRM values.",
+        "verdict": "pass",
+        "evidence": "Currencies stay separate, duplicates are only proposed for source-of-truth reconciliation, raw history is preserved, and all CRM corrections require approval rather than silent overwrite."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the pipeline owner approve transformations, provisional thresholds, and proposed CRM corrections.",
+        "verdict": "pass",
+        "evidence": "Finance or revenue-operations policy, deal-owner confirmation, forecast approval, and source-of-truth approval are required for transformations and corrections; thresholds are not invented."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The review makes buyer progress the health signal and treats dirty CRM transformations as approval-gated cleanup rather than hidden analytical preprocessing."
+  }
+}
