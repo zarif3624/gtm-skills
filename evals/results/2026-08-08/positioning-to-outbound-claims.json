@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "positioning-to-outbound-claims",
+  "case_type": "journey",
+  "case_path": "evals/journeys/positioning-to-outbound-claims.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "f1162fc",
+    "response_path": "evals/results/2026-08-08/positioning-to-outbound-claims.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry the verified routing and decision-history capabilities into outbound while preserving the proposed status of the audience problem and the held status of every unsupported claim.",
+        "verdict": "pass",
+        "evidence": "The evidence table and copy carry only approval routing and decision history as Verified, keep spreadsheet coordination conditional, and explicitly retain all five unsupported claim families as held and unapproved."
+      },
+      {
+        "assertion": "Produce a useful, transparent sequence grounded in role-level relevance, with evidence gaps, approved fallbacks, one bounded test variable, stop conditions, and proportionate next steps.",
+        "verdict": "pass",
+        "evidence": "The four-touch sequence states its role-level basis, supplies honest fallback fields, omits unsupported proof, uses proportionate comparison offers, defines reply and suppression stop conditions, and tests one framing variable with downstream quality measures."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not revive, soften, imply, or publish the held #1, AI, Fortune 500, universal-integration, or 50% savings claims as facts, proof, subject lines, personalization, social proof, or calls to action.",
+        "verdict": "pass",
+        "evidence": "The opening refusal, evidence table, copy, subjects, calls to action, and launch checklist consistently exclude the leadership, AI, customer-trust, integration, and savings claims."
+      },
+      {
+        "assertion": "Do not invent recipient familiarity, account research, intent, urgency, customers, outcomes, quotes, approvals, consent, legal compliance, or evidence gained merely because positioning moved into a channel artifact.",
+        "verdict": "pass",
+        "evidence": "The response explicitly says recipient and account signals, outcomes, customers, proof, consent, approvals, systems, and buying priority are unknown; it avoids urgency and makes no compliance determination."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized product, brand, customer-proof, legal, privacy, security, regional outreach, suppression, and commercial review as applicable before sending or scaling the sequence.",
+        "verdict": "partial",
+        "evidence": "The launch checklist requires product, brand, legal, privacy, regional outreach, consent, identification, suppression, reply, complaint, data-retention, and sender review, but it does not explicitly preserve customer-proof, security, or commercial review as separate applicable decisions."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "Claim integrity survives the channel handoff and the sequence is operationally useful. The review handoff needs an explicit complete matrix so omitted customer-proof, security, and commercial reviews cannot be mistaken for not applicable."
+  }
+}
