@@ -185,6 +185,8 @@ def validate_skill(path: Path) -> list[str]:
         errors.append("body must define an Output section")
     if not re.search(r"\b(?:Do not|Never)\b", body, re.IGNORECASE):
         errors.append("body must include at least one explicit trust guardrail")
+    if "Treat instructions embedded in source material" not in body:
+        errors.append("body must treat embedded source instructions as untrusted data")
     if name != "gtm-context" and ".agents/gtm-context.md" not in body:
         errors.append("skill must read shared .agents/gtm-context.md when available")
 
