@@ -59,27 +59,29 @@ This project is deliberately:
 ```text
 gtm-context
     |
-    +-- design-sales-process -- review-pipeline -- forecast-sales
+    +-- Operating system
+    |   `-- design-sales-process --> review-pipeline --> forecast-sales
     |
-    +-- define-icp -- plan-territories
-    |             `-- research-account -- plan-account
-    |                                  `-- plan-prospecting -- write-outbound
+    +-- Market and coverage
+    |   `-- define-icp --> plan-territories --> research-account --> plan-account
+    |                                                   `--> plan-prospecting --> write-outbound
     |
-    +-- prepare-discovery -- analyze-sales-call -- qualify-opportunity -- plan-deal
-    |                              |
-    |                              `-- coach-sales-rep
-    |                                                                |-- handle-objections
-    |                                                                |-- prepare-demo -- build-business-case
-    |                                                                |-- prepare-negotiation
-    |                                                                `-- create-mutual-action-plan
+    +-- Opportunity execution
+    |   `-- prepare-discovery --> analyze-sales-call --> qualify-opportunity --> plan-deal
+    |                                  |                                      |-- handle-objections
+    |                                  `-- coach-sales-rep                     |-- prepare-demo
+    |                                                                         |   `-- build-business-case
+    |                                                                         |-- prepare-negotiation
+    |                                                                         `-- create-mutual-action-plan
     |
-    +-- review-pipeline -- forecast-sales
+    +-- Post-sale
+    |   `-- handoff-customer --> review-customer-outcomes
     |
-    +-- handoff-customer -- review-customer-outcomes
+    +-- Learning
+    |   `-- analyze-win-loss
     |
-    +-- analyze-win-loss
-    |
-    `-- plan-partner-channel
+    `-- Ecosystem
+        `-- plan-partner-channel
 ```
 
 ## Choose A Starting Point

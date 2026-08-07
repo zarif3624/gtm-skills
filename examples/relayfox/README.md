@@ -27,6 +27,14 @@ Use $review-pipeline to review examples/relayfox/pipeline.csv using examples/rel
 
 Inspect whether duplicate records, currency uncertainty, stale dates, missing buyer actions, and the security-timing contradiction survive the handoff into forecasting.
 
+## Try The Sales Process Workflow
+
+```text
+Use $design-sales-process with examples/relayfox/gtm-context.md and examples/relayfox/pipeline.csv to propose the smallest evidence-based process improvement. Treat the current stages as reported inputs, not validated policy, and do not invent conversion benchmarks, service expectations, or historical stage events.
+```
+
+The example is too small and incomplete to validate a full stage model. A useful result should diagnose the present evidence gaps, propose buyer-state criteria and valid stop paths, and design a prospective pilot rather than rewriting current records.
+
 ## Try The Learning Workflow
 
 ```text

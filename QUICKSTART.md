@@ -45,6 +45,16 @@ Use $review-customer-outcomes to review examples/relayfox/customer-outcomes.csv.
 
 A useful result will not call an account healthy from login count alone or transform an internal seat-growth target into customer demand. It will identify the smallest customer, measurement, support, sponsor, and contract checks needed next.
 
+## 6. Improve The Process Prospectively
+
+When stages or CRM rules are unreliable, ask for a proposed design rather than retroactive certainty:
+
+```text
+Use $design-sales-process to audit our current stages and propose buyer-state entry and exit evidence, valid stop paths, minimum fields, measurement definitions, and a bounded pilot. Do not backfill stage history or import generic benchmarks.
+```
+
+Keep process design separate from live CRM configuration, migration, compensation, and personnel decisions until their authorized owners review and approve the change.
+
 ## What Good Looks Like
 
 - Material claims point to evidence or are labeled `Reported`, `Inferred`, `Hypothesis`, `Unknown`, or `Contradicted`.
