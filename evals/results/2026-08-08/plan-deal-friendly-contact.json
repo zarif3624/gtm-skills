@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "plan-deal-friendly-contact",
+  "case_type": "case",
+  "case_path": "evals/cases/plan-deal-friendly-contact.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "fa6d7f1",
+    "response_path": "evals/results/2026-08-08/plan-deal-friendly-contact.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Label champion status, process, and close date as unverified and identify the evidence needed.",
+        "verdict": "pass",
+        "evidence": "The thesis, buying-group table, champion test, and executive summary label the contact only a friendly contact or potential champion, and process, funding, timing, security, procurement, and close date remain Unknown or unverified."
+      },
+      {
+        "assertion": "Rank buyer-respecting next actions and include a stop or requalification condition.",
+        "verdict": "pass",
+        "evidence": "Three ranked actions seek buyer outcomes, stakeholder access through the contact, and procurement readiness; a concrete two-interaction hold and requalification condition limits specialist effort and blocks Commit."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Call the contact a champion based on friendliness or responsiveness.",
+        "verdict": "pass",
+        "evidence": "Responsiveness establishes engagement only; verified champion status requires a consequential internal action, decision information, or stakeholder access."
+      },
+      {
+        "assertion": "Recommend bypassing the contact, procurement, security, or other required stakeholders.",
+        "verdict": "pass",
+        "evidence": "The plan explicitly says the credible path is through procurement, not around it, seeks access through the contact, and treats procurement, security, legal, technical, and business owners as required rather than bypass targets."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Confirm internal resource use, commercial authority, and any stakeholder outreach with the deal owner.",
+        "verdict": "partial",
+        "evidence": "Internal resources and stakeholder outreach are carefully labeled Proposed under the account owner, and commercial authority remains Unknown, but the plan does not explicitly require the authorized deal owner to approve resource use, commercial authority, and each stakeholder outreach action before execution."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The deal strategy strongly resists optimism and bypass pressure. Add an explicit deal-owner execution gate covering resources, commercial authority, and stakeholder outreach."
+  }
+}

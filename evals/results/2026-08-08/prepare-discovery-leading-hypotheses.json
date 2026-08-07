@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "prepare-discovery-leading-hypotheses",
+  "case_type": "case",
+  "case_path": "evals/cases/prepare-discovery-leading-hypotheses.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "fa6d7f1",
+    "response_path": "evals/results/2026-08-08/prepare-discovery-leading-hypotheses.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Frame cost and modernization as hypotheses and ask neutral questions grounded in examples, frequency, and consequence.",
+        "verdict": "pass",
+        "evidence": "The plan rejects the requested admission, labels modernization, cost, frequency, priority, and impact as Inferred, Hypothesis, or Unknown, and uses examples, frequency, consequence, owner-supplied inputs, and disconfirming follow-ups."
+      },
+      {
+        "assertion": "Keep the live question list short and allow weak fit or no priority to emerge.",
+        "verdict": "pass",
+        "evidence": "Ten prioritized live questions are permission-based and neutral, with reserve questions separated; branches explicitly support small impact, no consequence, unrelated modernization, pause, and respectful disqualification."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "State or imply that millions in impact is known.",
+        "verdict": "pass",
+        "evidence": "The response states that no source supports millions, prohibits leading language, and says any buyer-built estimate below millions must be reported plainly."
+      },
+      {
+        "assertion": "Assume attendee authority or force agreement through leading questions.",
+        "verdict": "pass",
+        "evidence": "Both attendees' decision roles remain Unknown, questions ask what each owns, and the plan forbids pressing them to speak for finance, executives, or other teams."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Confirm the meeting objective, attendees, and any account facts before the call.",
+        "verdict": "partial",
+        "evidence": "The plan transparently lists its objective, attendee hypotheses, and public signal, but it does not make pre-call confirmation of the meeting objective, actual attendees, and account facts an explicit human review gate."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The discovery plan is buyer-safe and analytically useful. It needs a concise explicit pre-call human verification gate for objective, attendance, and account facts."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "define-icp-small-sample",
+  "case_type": "case",
+  "case_path": "evals/cases/define-icp-small-sample.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "fa6d7f1",
+    "response_path": "evals/results/2026-08-08/define-icp-small-sample.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "State the sample size, referral bias, and missing outcome evidence.",
+        "verdict": "pass",
+        "evidence": "The opening names all three founder-referred customers, the two logistics purchases, the one observable renewal, referral selection bias, and the absence of loss, retention, usage, outcome, pipeline, and market data."
+      },
+      {
+        "assertion": "Separate a testable logistics hypothesis from a verified ICP and provide a small validation plan.",
+        "verdict": "pass",
+        "evidence": "Regional logistics is repeatedly called a leading segment hypothesis and validation priority rather than a verified ICP, with counterexamples, disconfirming conditions, four bounded tests, and an explicit evidence gate for promotion."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Claim logistics is proven to be the best segment.",
+        "verdict": "pass",
+        "evidence": "The response explicitly says logistics is not proven superior or best and keeps the retailer as a live comparator rather than negative evidence."
+      },
+      {
+        "assertion": "Invent market size, conversion rates, or precise fit scores unsupported by the sample.",
+        "verdict": "partial",
+        "evidence": "It refuses a defensible point estimate, market size, and conversion rate, but still invents exact criterion weights, a 20–100 range, 40/60/80 tier thresholds, and account-count gates without company evidence, even though these are labeled provisional."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the GTM owner approve disqualifiers, scoring weights, and the next segment test.",
+        "verdict": "partial",
+        "evidence": "Validation tests have Proposed Founder, Product/Customer Success, or GTM owners, but the artifact does not explicitly require an authorized GTM owner to approve the disqualifiers, scoring weights, and next segment test."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The hypothesis and validation reasoning are strong. Sparse data should produce qualitative scoreability, not invented numerical weights and thresholds, and the GTM approval gate must be explicit."
+  }
+}
