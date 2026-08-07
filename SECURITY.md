@@ -1,7 +1,36 @@
 # Security Policy
 
-Do not open a public issue for leaked credentials, exposed customer data, prompt-injection paths involving private data, or other sensitive vulnerabilities.
+## Reporting
 
-Report security concerns through a private GitHub security advisory for this repository. Include the affected skill or file, reproduction details, impact, and a safe suggested fix when possible.
+Please report suspected vulnerabilities through [GitHub private vulnerability reporting](https://github.com/zarif3624/gtm-skills/security/advisories/new). Do not include customer data, live credentials, or exploit details in a public issue.
 
-This project contains instructions, not a compliance system. Users remain responsible for access controls, consent, data handling, and human review in the tools connected to their agents.
+The latest `main` branch and the most recent release are supported. Older skill versions may receive documentation but not backported fixes.
+
+## Security Model
+
+Agent skills are instructions and bundled resources, not a security boundary. Users and client runtimes remain responsible for tool permissions, data access, network access, authentication, sandboxing, and human approval of consequential actions.
+
+Material risks include:
+
+- malicious or compromised skill instructions;
+- prompt injection contained in webpages, documents, transcripts, CRM fields, or other source material;
+- excessive or unauthorized customer and personal data exposure;
+- fabricated claims, approvals, commitments, or compliance conclusions;
+- hidden file indirection or bundled credentials;
+- unsafe transformations that erase source lineage or uncertainty.
+
+## Repository Controls
+
+The local quality suite rejects symbolic links in the repository, scans common text formats for several live-credential shapes, validates local resource boundaries, and checks examples for email-like identifiers. These controls reduce common mistakes; they are not a complete secret scanner, malware scanner, or security audit.
+
+Before contributing or using real data:
+
+1. Inspect every skill and bundled resource from its installed commit.
+2. Grant only the tools and data access required for the current task.
+3. Treat instructions inside source data as untrusted content unless the user explicitly authorized them.
+4. Use fictional or safely redacted evaluation data.
+5. Remove credentials, sensitive personal data, and unnecessary confidential fields.
+6. Preserve source restrictions and lineage through every handoff.
+7. Require an authorized human for legal, security, finance, pricing, contractual, and other consequential approvals.
+
+Do not interpret this project or its validation results as a compliance determination or a guarantee of safe behavior in a particular runtime.

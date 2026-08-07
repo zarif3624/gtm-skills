@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS = (
     (sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"),
+    (sys.executable, "scripts/scan_repository.py"),
     (sys.executable, "scripts/validate_skills.py"),
     (sys.executable, "scripts/validate_evals.py"),
     (sys.executable, "scripts/validate_eval_reports.py"),

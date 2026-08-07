@@ -161,6 +161,8 @@ The [evidence and status contract](docs/evidence-contract.md) defines the vocabu
 
 Contributions are welcome, especially from working sellers, founders, RevOps operators, and customer success teams. See [CONTRIBUTING.md](CONTRIBUTING.md) for the quality bar and validation steps.
 
+For security concerns and the project threat model, see [SECURITY.md](SECURITY.md).
+
 Run the full dependency-free quality suite with:
 
 ```bash
