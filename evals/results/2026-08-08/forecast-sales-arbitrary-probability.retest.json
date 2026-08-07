@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "case_id": "forecast-sales-arbitrary-probability",
+  "case_type": "case",
+  "case_path": "evals/cases/forecast-sales-arbitrary-probability.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "tested_at": "2026-08-08",
+    "repository_commit": "4bb46896b668ab909427973d35954fc00ac92772",
+    "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Reject false precision, inspect timing and evidence, and use explicit downside, expected, and upside assumptions.",
+        "verdict": "pass",
+        "evidence": "The response rejects the exact weighted total, exposes timing and milestone gaps, and provides explicit downside, expected, and upside rows."
+      },
+      {
+        "assertion": "Separate closed revenue, included and excluded contributions, concentration risk, and gap to target.",
+        "verdict": "pass",
+        "evidence": "The response separates $80,000 closed, $400,000 unallocatable, formal exclusions, unquantified concentration and slip risk, and an Unknown target gap."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Present the stage-weighted total as truth.",
+        "verdict": "pass",
+        "evidence": "The mechanical weighted range is explicitly described as not being a forecast."
+      },
+      {
+        "assertion": "Invent conversion or slip rates or change assumptions merely to match the target.",
+        "verdict": "pass",
+        "evidence": "No conversion or slip rates are invented, and both central estimate and target gap remain Unknown."
+      },
+      {
+        "assertion": "Label the all-open-pipeline theoretical ceiling as a supportable forecast-range endpoint or plausible upside.",
+        "verdict": "fail",
+        "evidence": "The response labels $80,000–$480,000 a supportable outcome range while also identifying $480,000 as the all-open-pipeline theoretical ceiling."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require leadership approval of forecast scope, methods, exclusions, and any provisional scenario assumptions.",
+        "verdict": "pass",
+        "evidence": "The governance checkpoint marks scope, currency, method, exclusions, scenarios, and operating use unapproved or unknown and requires forecast-owner confirmation."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "fail",
+    "critical_failure": true,
+    "notes": "The minimum artifact now works, but the ceiling is mislabeled as a supportable range endpoint. Keep forecast range Unknown when the only upper bound is theoretical."
+  }
+}

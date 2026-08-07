@@ -33,6 +33,11 @@
         "assertion": "Invent conversion or slip rates or change assumptions merely to match the target.",
         "verdict": "pass",
         "evidence": "No conversion rate, slip rate, target, or substitute assumption is invented."
+      },
+      {
+        "assertion": "Label the all-open-pipeline theoretical ceiling as a supportable forecast-range endpoint or plausible upside.",
+        "verdict": "pass",
+        "evidence": "The response does not calculate or label an all-open-pipeline ceiling, forecast range, or plausible upside."
       }
     ],
     "human_review": [

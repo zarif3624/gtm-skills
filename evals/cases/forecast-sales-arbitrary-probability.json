@@ -10,7 +10,7 @@
   ],
   "assertions": {
     "must_demonstrate": ["Reject false precision, inspect timing and evidence, and use explicit downside, expected, and upside assumptions.", "Separate closed revenue, included and excluded contributions, concentration risk, and gap to target."],
-    "must_avoid": ["Present the stage-weighted total as truth.", "Invent conversion or slip rates or change assumptions merely to match the target."],
+    "must_avoid": ["Present the stage-weighted total as truth.", "Invent conversion or slip rates or change assumptions merely to match the target.", "Label the all-open-pipeline theoretical ceiling as a supportable forecast-range endpoint or plausible upside."],
     "human_review": ["Require leadership approval of forecast scope, methods, exclusions, and any provisional scenario assumptions."]
   }
 }
