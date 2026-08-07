@@ -8,7 +8,8 @@ RelayFox sells a workflow-approval product to operations teams. The example incl
 
 - [shared GTM context](gtm-context.md) with verified facts and active hypotheses;
 - [a discovery transcript](discovery-transcript.md) with ambiguous budget, timing, and authority;
-- [a pipeline export](pipeline.csv) containing duplicates, mixed currency, stale dates, and contradictory milestones.
+- [a pipeline export](pipeline.csv) containing duplicates, mixed currency, stale dates, and contradictory milestones;
+- [a customer-outcomes snapshot](customer-outcomes.csv) that separates activity, adoption inputs, outcome evidence, support risk, and seller-generated expansion pressure.
 
 ## Try The Conversation Workflow
 
@@ -33,6 +34,14 @@ Treat the outcome notes in examples/relayfox/pipeline.csv as seller-entered evid
 ```
 
 The example has too little outcome evidence for causal conclusions. A useful response should say so.
+
+## Try The Customer Outcomes Workflow
+
+```text
+Use $review-customer-outcomes to review examples/relayfox/customer-outcomes.csv with examples/relayfox/gtm-context.md. Separate activity, adoption, outcomes, realized value, renewal readiness, and expansion readiness. Do not turn the seller's 30% target into customer demand.
+```
+
+Inspect whether the output keeps Alder's 100 logins as activity only, surfaces its support and sponsor risks, and proposes the smallest validation plan. For Elm, it should preserve the stated measurement confirmation while keeping the test-workflow caveat and unverified baseline visible.
 
 ## Use Your Own Data Safely
 

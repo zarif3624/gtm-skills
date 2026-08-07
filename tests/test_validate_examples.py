@@ -39,6 +39,26 @@ class ExampleValidatorTests(unittest.TestCase):
         }
         row = ",".join(values[field] for field in sorted(VALIDATOR.REQUIRED_PIPELINE_FIELDS))
         (pack / "pipeline.csv").write_text(f"{header}\n{row}\n", encoding="utf-8")
+        outcome_header = ",".join(sorted(VALIDATOR.REQUIRED_OUTCOME_FIELDS))
+        outcome_values = {field: "" for field in VALIDATOR.REQUIRED_OUTCOME_FIELDS}
+        outcome_values.update(
+            {
+                "account_id": "AC-1",
+                "account_name": "Fictional Co",
+                "period_start": "2026-07-01",
+                "period_end": "2026-07-31",
+                "login_count": "100",
+                "support_status": "Unknown",
+                "sponsor_status": "Unknown",
+                "renewal_status": "Unknown",
+            }
+        )
+        outcome_row = ",".join(
+            outcome_values[field] for field in sorted(VALIDATOR.REQUIRED_OUTCOME_FIELDS)
+        )
+        (pack / "customer-outcomes.csv").write_text(
+            f"{outcome_header}\n{outcome_row}\n", encoding="utf-8"
+        )
         return pack
 
     def test_valid_pack_passes(self) -> None:
@@ -64,6 +84,28 @@ class ExampleValidatorTests(unittest.TestCase):
             errors = VALIDATOR.validate_pack(pack)
             self.assertEqual(
                 errors, ["example path must not be a symbolic link: linked.txt"]
+            )
+
+    def test_invalid_customer_outcome_measure_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            pack = self.make_pack(Path(temp))
+            path = pack / "customer-outcomes.csv"
+            text = path.read_text(encoding="utf-8").replace(",100,", ",-1,")
+            path.write_text(text, encoding="utf-8")
+            errors = VALIDATOR.validate_pack(pack)
+            self.assertTrue(
+                any("customer-outcomes row 2 has a negative login_count" in error for error in errors)
+            )
+
+    def test_extra_customer_outcome_column_fails_without_crashing(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            pack = self.make_pack(Path(temp))
+            path = pack / "customer-outcomes.csv"
+            text = path.read_text(encoding="utf-8").rstrip() + ",extra\n"
+            path.write_text(text, encoding="utf-8")
+            errors = VALIDATOR.validate_pack(pack)
+            self.assertIn(
+                "customer-outcomes row 2 has the wrong number of columns", errors
             )
 
 

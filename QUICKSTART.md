@@ -35,6 +35,16 @@ Remove credentials, sensitive personal data, and confidential content the agent 
 
 Map the smallest approved export with the [generic CRM handoff pack](reference-packs/generic-crm/). Keep the raw snapshot immutable. Ask for pipeline review before forecasting so duplicates, currencies, date contradictions, and missing buyer evidence survive the handoff.
 
+## 5. Review Customer Outcomes Without Overclaiming
+
+Try the fictional post-sale snapshot:
+
+```text
+Use $review-customer-outcomes to review examples/relayfox/customer-outcomes.csv. Keep activity, adoption, outcomes, realized value, renewal readiness, and expansion readiness separate.
+```
+
+A useful result will not call an account healthy from login count alone or transform an internal seat-growth target into customer demand. It will identify the smallest customer, measurement, support, sponsor, and contract checks needed next.
+
 ## What Good Looks Like
 
 - Material claims point to evidence or are labeled `Reported`, `Inferred`, `Hypothesis`, `Unknown`, or `Contradicted`.

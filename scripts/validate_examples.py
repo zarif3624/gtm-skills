@@ -13,7 +13,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAMPLES = ROOT / "examples"
-REQUIRED_FILES = {"README.md", "gtm-context.md", "discovery-transcript.md", "pipeline.csv"}
+REQUIRED_FILES = {
+    "README.md",
+    "gtm-context.md",
+    "discovery-transcript.md",
+    "pipeline.csv",
+    "customer-outcomes.csv",
+}
 REQUIRED_PIPELINE_FIELDS = {
     "opportunity_id",
     "account_name",
@@ -28,17 +34,40 @@ REQUIRED_PIPELINE_FIELDS = {
     "forecast_category",
     "notes",
 }
+REQUIRED_OUTCOME_FIELDS = {
+    "account_id",
+    "account_name",
+    "period_start",
+    "period_end",
+    "eligible_users",
+    "active_users",
+    "login_count",
+    "workflow_events",
+    "outcome_metric",
+    "baseline_value",
+    "current_value",
+    "target_value",
+    "support_status",
+    "sponsor_status",
+    "renewal_date",
+    "renewal_status",
+    "customer_validation",
+    "expansion_signal",
+    "notes",
+}
 EMAIL_RE = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE)
 TIMESTAMP_RE = re.compile(r"^\[\d{2}:\d{2}\]", re.MULTILINE)
 
 
-def validate_date(value: str, field: str, row_number: int) -> list[str]:
+def validate_date(
+    value: str, field: str, row_number: int, source: str = "pipeline"
+) -> list[str]:
     if not value:
         return []
     try:
         date.fromisoformat(value)
     except ValueError:
-        return [f"pipeline row {row_number} has invalid {field}: {value}"]
+        return [f"{source} row {row_number} has invalid {field}: {value}"]
     return []
 
 
@@ -77,6 +106,9 @@ def validate_pack(path: Path) -> list[str]:
     if not rows:
         errors.append("pipeline.csv must contain at least one record")
     for row_number, row in enumerate(rows, start=2):
+        if None in row or any(value is None for value in row.values()):
+            errors.append(f"pipeline row {row_number} has the wrong number of columns")
+            continue
         if not row["opportunity_id"] or not row["account_name"]:
             errors.append(f"pipeline row {row_number} is missing identity fields")
         try:
@@ -90,6 +122,48 @@ def validate_pack(path: Path) -> list[str]:
         errors.extend(validate_date(row["next_step_date"], "next_step_date", row_number))
         if EMAIL_RE.search(" ".join(row.values())):
             errors.append(f"pipeline row {row_number} contains an email-like identifier")
+
+    with (path / "customer-outcomes.csv").open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        fields = set(reader.fieldnames or [])
+        if fields != REQUIRED_OUTCOME_FIELDS:
+            errors.append("customer-outcomes.csv fields do not match the required example schema")
+            return errors
+        outcome_rows = list(reader)
+    if not outcome_rows:
+        errors.append("customer-outcomes.csv must contain at least one record")
+    for row_number, row in enumerate(outcome_rows, start=2):
+        if None in row or any(value is None for value in row.values()):
+            errors.append(
+                f"customer-outcomes row {row_number} has the wrong number of columns"
+            )
+            continue
+        if not row["account_id"] or not row["account_name"]:
+            errors.append(f"customer-outcomes row {row_number} is missing identity fields")
+        for field in ("period_start", "period_end", "renewal_date"):
+            errors.extend(validate_date(row[field], field, row_number, "customer-outcomes"))
+        for field in (
+            "eligible_users",
+            "active_users",
+            "login_count",
+            "workflow_events",
+            "baseline_value",
+            "current_value",
+            "target_value",
+        ):
+            if not row[field]:
+                continue
+            try:
+                if Decimal(row[field]) < 0:
+                    errors.append(
+                        f"customer-outcomes row {row_number} has a negative {field}"
+                    )
+            except InvalidOperation:
+                errors.append(f"customer-outcomes row {row_number} has an invalid {field}")
+        if EMAIL_RE.search(" ".join(row.values())):
+            errors.append(
+                f"customer-outcomes row {row_number} contains an email-like identifier"
+            )
     return errors
 
 
