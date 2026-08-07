@@ -1,18 +1,18 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "generated_artifacts": {
     "catalog": {
       "path": "catalog.json",
-      "sha256": "76aa1f0db126c78fa9fee36da6413edc06d7a60321b5efd19f50745bea9affd8"
+      "sha256": "790313c1e93f921febce5e7e82ab725d58fa2fe458d4fb33d64591bab65867c7"
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "aef3ef82341dabb9c03b8f7a279d0abfa8d58e3792930b79a80fa3397fa4658a"
+      "sha256": "9c1e7600a75f03e0284750851b70b84e303856894b163dfc6e969bd9b74caf90"
     }
   },
   "quality_policy": {
     "path": "quality-policy.json",
-    "sha256": "a5e66e8ec1b1dddd20737ee23c68fe8879cc649f4a3c663b9fe5b0eb5598c9bd"
+    "sha256": "6b1d0fbc5d00bc90d040947a20bf85e047d31ca4cfe56f80e5da21cb3d44f8d6"
   },
   "skill_packages": [
     {
@@ -48,7 +48,7 @@
     {
       "name": "design-sales-process",
       "path": "skills/design-sales-process",
-      "package_sha256": "f56b5d5cf4b78b31a57c8ff62b69328dc5118d00a5b6e28b2508f6f63cb03488"
+      "package_sha256": "6ab6af18fa66941fb211656847a50bc99201de3598c6b9bd121bc06c873a6cf5"
     },
     {
       "name": "develop-positioning",
@@ -133,7 +133,7 @@
     {
       "name": "review-pipeline",
       "path": "skills/review-pipeline",
-      "package_sha256": "85dae22c2949529494b5090790de259e421509c70a39b64d0bfca48620b914b5"
+      "package_sha256": "2773aa590e94b34edf90cbc0ee4d988cf67abea7a9fa5b3d2c2ae0a9114fd982"
     },
     {
       "name": "write-outbound",
@@ -141,8 +141,79 @@
       "package_sha256": "9352e136dbfd82652f8f22ea6b1511f5ead8f14991ed0579f3c12552d48d87a0"
     }
   ],
+  "supporting_assets": {
+    "evaluation_definitions": [
+      {
+        "name": "cases",
+        "path": "evals/cases",
+        "tree_sha256": "59869595cc3ab50330ae41fda7f8bfaa1ef354ba58733df3b4ccd741c546d8f4"
+      },
+      {
+        "name": "journeys",
+        "path": "evals/journeys",
+        "tree_sha256": "b789611282239dc13d69ff725d776ead461562a6413879bd3e612d54ca11df08"
+      }
+    ],
+    "example_workspaces": [
+      {
+        "name": "relayfox",
+        "path": "examples/relayfox",
+        "tree_sha256": "2c278892f6b06e00359357911c10bd204fdea0cce16a441787609a644b26e244"
+      }
+    ],
+    "reference_packs": [
+      {
+        "name": "evidence-ledger",
+        "path": "reference-packs/evidence-ledger",
+        "tree_sha256": "4670b6b74c0795f68abfab2119a5ede4cb78e929fe8bc4ec9cca741c495caaa5"
+      },
+      {
+        "name": "generic-crm",
+        "path": "reference-packs/generic-crm",
+        "tree_sha256": "9533115cdf798974c33630004bee54dae153005bbefe97fe06bb768f43c1b0ee"
+      },
+      {
+        "name": "structured-gtm-context",
+        "path": "reference-packs/structured-gtm-context",
+        "tree_sha256": "818d69198818529fd2d6d527d6242473dcc0e358b77424a107c62f55e5fb958f"
+      }
+    ]
+  },
   "current_evidence": {
     "behavioral": [
+      {
+        "case_id": "account-to-discovery-identity",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d775674",
+        "report_path": "evals/results/2026-08-08/account-to-discovery-identity.json",
+        "report_sha256": "7f882ba21311f901a9171baf5be68b85c179dc1c0f85ef980d6c0dd761699d9b",
+        "response_path": "evals/results/2026-08-08/account-to-discovery-identity.response.md",
+        "response_sha256": "ec80b4b813dfc856ede52792965fcd583e6a1deb76cdc693caa0ff78a84f602c"
+      },
+      {
+        "case_id": "analyze-sales-call-attribution",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "55eca83",
+        "report_path": "evals/results/2026-08-08/analyze-sales-call-attribution.json",
+        "report_sha256": "9afb93f46b8a7218abaef0a9bdf7488750cc102ce93b99671001e0212f468145",
+        "response_path": "evals/results/2026-08-08/analyze-sales-call-attribution.response.md",
+        "response_sha256": "414b39ec79f76885bd256ef33d0ae00e44194e4ee3c495be27b1aa713e3107a3"
+      },
+      {
+        "case_id": "analyze-win-loss-reason-code",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "55eca83",
+        "report_path": "evals/results/2026-08-08/analyze-win-loss-reason-code.json",
+        "report_sha256": "58b13e9836121f376e69174ea31386aa5b5424326efcd8be79d46c2ee8f5efc1",
+        "response_path": "evals/results/2026-08-08/analyze-win-loss-reason-code.response.md",
+        "response_sha256": "8ab7658ebf993ba8ea67827229554e6f4d70d5b988250d654a65d39cb1f9a6c2"
+      },
       {
         "case_id": "build-business-case-invented-roi",
         "case_type": "case",
@@ -153,6 +224,28 @@
         "report_sha256": "0956003c3a18675e7dcecc532ddc84b34ea8d45be082038fee4c8d616e3f7cb7",
         "response_path": "evals/results/2026-08-08/build-business-case-invented-roi.retest.response.md",
         "response_sha256": "7237ba090937accbe5944927c9d873752048ab40d20e819cd59b6296b039e37b"
+      },
+      {
+        "case_id": "call-to-business-case-capacity",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d775674",
+        "report_path": "evals/results/2026-08-08/call-to-business-case-capacity.json",
+        "report_sha256": "44b7d403571292641d86461e9f20063c0a0b07876a1b06611334f3c550eb82a4",
+        "response_path": "evals/results/2026-08-08/call-to-business-case-capacity.response.md",
+        "response_sha256": "3f9cc314b0fe6e88c4430a8e158d2a48fc510911c7f8cd9c33dc2558f0e93aa4"
+      },
+      {
+        "case_id": "call-to-deal-budget",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d775674",
+        "report_path": "evals/results/2026-08-08/call-to-deal-budget.json",
+        "report_sha256": "ac40771d738fd871cb737e7eca46ec414b947c05bc8a54ac7545ef6199ca361c",
+        "response_path": "evals/results/2026-08-08/call-to-deal-budget.response.md",
+        "response_sha256": "a9d0f29307d469553dc1faf99c6c89dee67d14481d327a43d300cfcb1eba59c3"
       },
       {
         "case_id": "coach-sales-rep-single-call-trait",
@@ -175,6 +268,28 @@
         "report_sha256": "a4708a6b23a2ca78436ccdf4a815dc1731f95aa825665819e202015c27520af6",
         "response_path": "evals/results/2026-08-08/create-mutual-action-plan-unilateral.response.md",
         "response_sha256": "3abf880a605980fadae4313ad03efb767045849d4b6f850b665998ee3f918a1b"
+      },
+      {
+        "case_id": "deal-to-handoff-promise",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "becca20",
+        "report_path": "evals/results/2026-08-08/deal-to-handoff-promise.json",
+        "report_sha256": "7f273a9363bd9e06abcf7c6e4ae8bf6de15b2c7287d75d6be03e6424723d9805",
+        "response_path": "evals/results/2026-08-08/deal-to-handoff-promise.response.md",
+        "response_sha256": "ee7c30415e882304f0df402dba4beacf8ebaec36af33d12e53cf5219567a6d90"
+      },
+      {
+        "case_id": "deal-to-negotiation-authority",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "becca20",
+        "report_path": "evals/results/2026-08-08/deal-to-negotiation-authority.json",
+        "report_sha256": "280a998b8e982cace4af79562d9b63c032af62df2e158410bb16f64634a8486f",
+        "response_path": "evals/results/2026-08-08/deal-to-negotiation-authority.response.md",
+        "response_sha256": "4d08ea8963d2d83200c16c8b2c611dfe00253651d248570f04ac49504d6bb34b"
       },
       {
         "case_id": "define-icp-small-sample",
@@ -221,6 +336,28 @@
         "response_sha256": "80bebd062d8e821fba48caf0926a418f89e7c448e8a54cdb5ba94e089fba8ce0"
       },
       {
+        "case_id": "gtm-context-aspirations",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d8aa721",
+        "report_path": "evals/results/2026-08-08/gtm-context-aspirations.json",
+        "report_sha256": "a406b9837d19c1cb383fa9bd38971d7ebef6ccb65ce7fcb485e07289c1e083d7",
+        "response_path": "evals/results/2026-08-08/gtm-context-aspirations.response.md",
+        "response_sha256": "3b401c26c3d04d25517cfe6decbd3de93a63f9070817dd2d19fef43dca6bb783"
+      },
+      {
+        "case_id": "handle-objections-unauthorized-discount",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "55eca83",
+        "report_path": "evals/results/2026-08-08/handle-objections-unauthorized-discount.json",
+        "report_sha256": "bfb6c7616d6345f1132310d77b07ea50b267623bc6fa9ccec9d9389466857324",
+        "response_path": "evals/results/2026-08-08/handle-objections-unauthorized-discount.response.md",
+        "response_sha256": "1aa2c7368b5a147c5d330383732ccff40ac7b678faa59512a2c799926ee13a43"
+      },
+      {
         "case_id": "handoff-customer-conflicting-promise",
         "case_type": "case",
         "lineage": "codex-inherited",
@@ -243,6 +380,17 @@
         "response_sha256": "7998d29212533a6e688fc6630c9f289d6a573e193c4d2923223d2bef4d946834"
       },
       {
+        "case_id": "partner-to-forecast-attribution",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d602ca5",
+        "report_path": "evals/results/2026-08-08/partner-to-forecast-attribution.json",
+        "report_sha256": "db861df2d8cd8bac0dbc2205a907c3274a64b3e64d671ab77482f3550defd98f",
+        "response_path": "evals/results/2026-08-08/partner-to-forecast-attribution.response.md",
+        "response_sha256": "cbac821822c662cfee56fb6bbd887949b4c0f8852c7aa4bea4b256b494182175"
+      },
+      {
         "case_id": "pipeline-to-forecast-transformations",
         "case_type": "journey",
         "lineage": "codex-inherited",
@@ -254,6 +402,17 @@
         "response_sha256": "8097f660b73f8e59904a2877fb0b42fd7a7e829c79ba3d5d0dd3bb453f73163b"
       },
       {
+        "case_id": "plan-account-expansion-assumptions",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d602ca5",
+        "report_path": "evals/results/2026-08-08/plan-account-expansion-assumptions.json",
+        "report_sha256": "f763ba6c0a42e9f86bb6e99515be28e13c73f7ca1cf08de3c57a787501efbfd8",
+        "response_path": "evals/results/2026-08-08/plan-account-expansion-assumptions.response.md",
+        "response_sha256": "cd890b53d187d1dac33113efc2b1c624717cca0a2a18d8962f9a6cd079866a76"
+      },
+      {
         "case_id": "plan-deal-friendly-contact",
         "case_type": "case",
         "lineage": "codex-inherited",
@@ -263,6 +422,17 @@
         "report_sha256": "c31160bece1493e79939c56ab47b809854d3cdaa3a488064f785002d7f608e43",
         "response_path": "evals/results/2026-08-08/plan-deal-friendly-contact.retest.response.md",
         "response_sha256": "1338535560869c6da8250fdafc624d12b699f1dde4324f9e422d5348d2782c6e"
+      },
+      {
+        "case_id": "plan-partner-channel-inflated-pipeline",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d602ca5",
+        "report_path": "evals/results/2026-08-08/plan-partner-channel-inflated-pipeline.json",
+        "report_sha256": "6002354223a295557bc95b8f4199eeb751ef183bbcc0ba48b08f5b4d4c050e6a",
+        "response_path": "evals/results/2026-08-08/plan-partner-channel-inflated-pipeline.response.md",
+        "response_sha256": "f31d1c56145b0f250a7713e47e94e4bb72f1eeb88a5b3c5dc07f68833607f5c4"
       },
       {
         "case_id": "plan-prospecting-sensitive-data",
@@ -331,6 +501,17 @@
         "response_sha256": "27f3deefa77388787ba2d20fc12ac3393f7d53fcb0ab89de43c045dab7faa3cd"
       },
       {
+        "case_id": "process-to-pipeline-stage-integrity",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "24aac25",
+        "report_path": "evals/results/2026-08-08/process-to-pipeline-stage-integrity.retest.json",
+        "report_sha256": "af865bb0c64c8091ba821577f90574bb6d871bf8179acec1e495db3307a55975",
+        "response_path": "evals/results/2026-08-08/process-to-pipeline-stage-integrity.retest.response.md",
+        "response_sha256": "2086bb98b47a673028fe94c0297335dc560760402954c8723a700fc9135539b1"
+      },
+      {
         "case_id": "qualify-opportunity-crm-confidence",
         "case_type": "case",
         "lineage": "codex-inherited",
@@ -353,6 +534,17 @@
         "response_sha256": "4efbb15af1a27ac577aac2869998a0f0f6286aa3c2c8c0b0f75cedd943fef8ee"
       },
       {
+        "case_id": "research-to-account-whitespace",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "69863f6",
+        "report_path": "evals/results/2026-08-08/research-to-account-whitespace.json",
+        "report_sha256": "8894f605a29be1b87b7b029af708185d09f9157e04d37dbd0f18cdcf419b24ea",
+        "response_path": "evals/results/2026-08-08/research-to-account-whitespace.response.md",
+        "response_sha256": "f0495658218a0c44fd04d17cc041974bffc41a4a4d66f6061039f9f60e824756"
+      },
+      {
         "case_id": "review-customer-outcomes-usage-value",
         "case_type": "case",
         "lineage": "codex-inherited",
@@ -364,6 +556,17 @@
         "response_sha256": "23e3b0e729cf95c96840016282a975a1cb0c1f2be193d5f25e5a2c10c85d020e"
       },
       {
+        "case_id": "review-pipeline-activity-bias",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d8aa721",
+        "report_path": "evals/results/2026-08-08/review-pipeline-activity-bias.json",
+        "report_sha256": "da187e84ac8a85907969e2d33509682e0c87e9da220cdcc50e978c16ea1b1418",
+        "response_path": "evals/results/2026-08-08/review-pipeline-activity-bias.response.md",
+        "response_sha256": "98467ff49e7e40563d07147d398f91cd7bf361183b4c701fd7600b574cd4ef31"
+      },
+      {
         "case_id": "source-injection-to-outbound",
         "case_type": "journey",
         "lineage": "codex-inherited",
@@ -373,6 +576,17 @@
         "report_sha256": "6bbf530978424f1168a956ea76559d92913181fb208159af152077478562d0ce",
         "response_path": "evals/results/2026-08-08/source-injection-to-outbound.response.md",
         "response_sha256": "960e2f79c488840a46630dd8f2c38027924d71392451d0be819cf1f9ea4ac057"
+      },
+      {
+        "case_id": "write-outbound-fabricated-referral",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d8aa721",
+        "report_path": "evals/results/2026-08-08/write-outbound-fabricated-referral.json",
+        "report_sha256": "7811dc7778f4dff254e43d7be94d3ecc79ba19c9c9594346838879d7558e9ce2",
+        "response_path": "evals/results/2026-08-08/write-outbound-fabricated-referral.response.md",
+        "response_sha256": "142d7fb31dbb19fcfd036591aa00bcf06d5134cf1d7b4e98cdbebca93072ae39"
       }
     ],
     "routing": [

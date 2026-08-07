@@ -7,7 +7,7 @@ Open-source sales and go-to-market skills for AI agents. Built for founders, sel
 
 Uses the open [Agent Skills specification](https://agentskills.io). It is designed for skills-compatible clients, but installation and behavior can vary by client and model. See the [compatibility evidence matrix](docs/compatibility.md) for what is verified, limited, or still unknown.
 
-Machines and catalog UIs can read [`catalog.json`](catalog.json) for normalized skill metadata, resource paths, and deterministic SHA-256 package digests. Release tooling can read [`release-manifest.json`](release-manifest.json) to bind those packages to the generated quality summary and exact latest reports, raw responses, and routing corpora by SHA-256. The validation suite fails if any generated view drifts.
+Machines and catalog UIs can read [`catalog.json`](catalog.json) for normalized skill metadata, resource paths, and deterministic SHA-256 package digests. Release tooling can read [`release-manifest.json`](release-manifest.json) to bind those packages, eval definitions, example workspaces, reference packs, the generated quality summary, and the exact latest reports, raw responses, and routing corpora by SHA-256. The validation suite fails if any generated view drifts.
 
 New here? Follow the [ten-minute quickstart](QUICKSTART.md).
 

@@ -12,6 +12,7 @@ All notable project changes are documented here. The project uses semantic versi
 - Self-contained blind routing packets with installed metadata, plus computed reports that keep expected and excluded labels hidden until scoring.
 - A drift-checked machine-readable quality summary for catalog, coverage, and current evidence counts.
 - A generated machine-readable skill catalog with interface metadata, resource inventory, and deterministic package digests.
+- A schema-versioned deterministic release manifest binding skill packages, eval definitions, examples, reference packs, quality artifacts, and current raw evidence by SHA-256.
 - A validated RelayFox end-to-end fictional workspace for positioning, outbound, transcript, qualification, process, pipeline, forecast, customer-outcome, and learning workflows.
 - A vendor-neutral CRM handoff pack with CSV templates, transformation governance, currency policy, and a matching JSON Schema.
 - A vendor-neutral evidence and action ledger pack with matching CSV and JSON contracts for portable claim and commitment status.
@@ -34,7 +35,8 @@ All notable project changes are documented here. The project uses semantic versi
 ### Validation
 
 - One dependency-free command now runs unit tests, supply-chain scanning, skill/package checks, eval and routing validation, behavioral-report validation, example validation, and reference-pack validation.
-- The current recorded Codex lineage has 21 latest behavioral results passing; earlier partial and failed runs remain available as regression history.
+- A reviewed quality policy enforces zero current partials or failures and zero uncovered behavioral definitions, so new definitions cannot ship without current evidence.
+- The current recorded Codex lineage has all 37 behavioral definitions passing: 25 isolated skill cases and 12 cross-skill journeys. Earlier partial and failed runs remain available as regression history.
 - The latest recorded metadata-only routing run selected the exact minimal skill set for all 28 requests with zero excluded-neighbor selections; the earlier 25-, 26-, and 27-request runs remain available as history.
 
 ## 0.1.0
