@@ -39,6 +39,8 @@ A skill should:
 - Label operational control fields such as owners, dates, approvals, and buyer actions as confirmed, proposed, accepted, or unknown.
 - Prefer milestone dependencies to arbitrary dates, and do not assume named internal functions exist.
 
+Use the repository's [evidence and status contract](docs/evidence-contract.md) when adding labels, source fields, operational states, or handoffs.
+
 ## Pull Requests
 
 Keep pull requests focused. Explain the user problem, show an example input and output, and note how you tested the skill. Do not include a preferred eval answer beside a case; preserve clean forward testing. By contributing, you agree that your work is licensed under the MIT License.

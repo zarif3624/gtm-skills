@@ -7,6 +7,8 @@ Open-source sales and go-to-market skills for AI agents. Built for founders, sel
 
 Works with OpenAI Codex, Claude Code, Cursor, Windsurf, and other agents that support the [Agent Skills specification](https://agentskills.io).
 
+New here? Follow the [ten-minute quickstart](QUICKSTART.md).
+
 ## Why This Exists
 
 Sales is too large and too consequential to hide inside a general marketing prompt. A good GTM agent needs to understand the whole revenue path: who to target, why they might care, what evidence exists, how to run discovery, how to qualify a deal, and how to hand the customer over without losing context.
@@ -152,6 +154,8 @@ Every contribution should preserve these rules:
 6. Do not use sensitive personal data or manipulative tactics.
 7. Preserve buyer agency. A good outcome can be a clear no.
 8. Keep proposed owners, dates, approvals, and customer actions distinct from what is confirmed or accepted.
+
+The [evidence and status contract](docs/evidence-contract.md) defines the vocabulary and the handoff invariants behind these rules.
 
 ## Contributing
 

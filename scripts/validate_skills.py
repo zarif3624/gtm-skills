@@ -222,6 +222,7 @@ def validate_document_links(path: Path, repository_root: Path) -> list[str]:
 def validate_repository_docs() -> list[str]:
     documents = list(ROOT.glob("*.md"))
     documents.extend((ROOT / ".github").rglob("*.md"))
+    documents.extend((ROOT / "docs").rglob("*.md"))
     documents.extend((ROOT / "evals").glob("*.md"))
     documents.extend((ROOT / "examples").rglob("*.md"))
     documents.extend((ROOT / "reference-packs").rglob("*.md"))
