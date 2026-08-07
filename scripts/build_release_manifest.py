@@ -146,7 +146,7 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
         )
 
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_artifacts": {
             "catalog": {"path": "catalog.json", "sha256": sha256(catalog_path)},
             "quality_summary": {

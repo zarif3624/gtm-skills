@@ -129,6 +129,7 @@ class ReleaseManifestTests(unittest.TestCase):
             )
 
             result = MANIFEST.build_manifest(root)
+            self.assertEqual(result["schema_version"], 2)
             self.assertEqual(result["skill_packages"][0]["name"], "test-skill")
             self.assertEqual(len(result["current_evidence"]["behavioral"]), 1)
             self.assertEqual(
