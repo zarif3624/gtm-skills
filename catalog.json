@@ -103,7 +103,7 @@
         "assets/sales-process.md",
         "references/methods.md"
       ],
-      "package_sha256": "f56b5d5cf4b78b31a57c8ff62b69328dc5118d00a5b6e28b2508f6f63cb03488"
+      "package_sha256": "6ab6af18fa66941fb211656847a50bc99201de3598c6b9bd121bc06c873a6cf5"
     },
     {
       "name": "develop-positioning",
@@ -351,7 +351,7 @@
         "assets/pipeline-review.md",
         "references/review-rules.md"
       ],
-      "package_sha256": "85dae22c2949529494b5090790de259e421509c70a39b64d0bfca48620b914b5"
+      "package_sha256": "2773aa590e94b34edf90cbc0ee4d988cf67abea7a9fa5b3d2c2ae0a9114fd982"
     },
     {
       "name": "write-outbound",

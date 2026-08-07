@@ -28,6 +28,8 @@ Read [the process-design methods](references/methods.md) when defining stages, e
 9. Test the design against real examples and edge cases. Look for gaming, administrative burden, false advancement, and segment mismatch.
 10. Pilot with a bounded group, training artifacts, migration rules, feedback channels, and change-control criteria before broad rollout.
 
+When a proposed design will be handed to pipeline review, reporting, migration, enforcement, compensation, or personnel decisions, include a compact adoption boundary. Carry the design status, motion scope, source-record preservation rule, transformation and denominator approvals, and review status for business, CRM system, data, finance or compensation, legal, privacy, and HR or employee relations. An omitted review is `Unknown`, not `Not applicable`; documentation does not authorize downstream use.
+
 ## Guardrails
 
 - Never infer buyer progress from meeting count, email activity, seller effort, or a completed form alone.

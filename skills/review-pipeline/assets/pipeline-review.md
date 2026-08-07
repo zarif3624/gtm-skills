@@ -42,3 +42,11 @@
 | Record | Proposed change | Evidence | Approval requirement and status |
 | --- | --- | --- | --- |
 | | | | Proposed / Approved / Unknown |
+
+## Policy, Transformation, And Use Review
+
+Complete this section when proposed stages, mappings, migration, conversion definitions, compensation, enforcement, or personnel use are in scope. Omitted review areas remain `Unknown`.
+
+| Review area | Applicability | Owner status | Decision status | Blocked use or evidence needed |
+| --- | --- | --- | --- | --- |
+| Business / CRM system / Data / Finance or compensation / Legal / Privacy / HR or employee relations | Required / Not applicable / Unknown | Confirmed / Proposed / Unknown | Proposed / Approved / Rejected / Unknown | |

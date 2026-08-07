@@ -11,6 +11,8 @@ Turn pipeline data into a prioritized inspection and action list. Do not confuse
 
 Read `.agents/gtm-context.md` for stages, exit criteria, cycle, segment, and forecast definitions. Confirm the reporting date, currency, period, ownership, and whether the data is complete.
 
+If a stage redesign or policy is supplied, preserve its exact status and motion scope. A `Proposed`, `Accepted`, or motion-specific design is not live policy for another motion. Do not remove, restage, backfill, migrate, enforce, or report conversion against it until the applicable business and CRM authorities approve the mapping and use, the source data can support it, and downstream review boundaries are complete.
+
 Normalize fields before analysis. Preserve the raw values and report any transformations.
 
 ## Inspect
@@ -50,5 +52,6 @@ Use [the pipeline review template](assets/pipeline-review.md). Provide:
 - pipeline created and moved during the period when data supports it;
 - coaching questions, not scripted manager conclusions;
 - CRM cleanup list separated from selling actions.
+- a policy, transformation, and use review gate when proposed stages, mappings, migration, conversion definitions, compensation, enforcement, or personnel use are in scope; cover business, CRM system, data, finance or compensation, legal, privacy, and HR or employee relations as `Required`, `Not applicable`, or `Unknown` with owner and decision status.
 
 Do not silently overwrite CRM data. Propose corrections and show the evidence. Do not invent ownership or deadlines; prefer milestone-relative timing and label suggestions as `Proposed` or `Unknown`.
