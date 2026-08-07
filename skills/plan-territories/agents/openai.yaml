@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Territories"
+  short_description: "Design fair, evidence-based sales territories"
+  default_prompt: "Use $plan-territories to design and test a practical territory model."

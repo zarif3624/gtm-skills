@@ -25,6 +25,7 @@ This project is deliberately:
 | --- | --- | --- |
 | Foundation | [`gtm-context`](skills/gtm-context/) | Create the shared product, market, sales-motion, and evidence context |
 | Strategy | [`define-icp`](skills/define-icp/) | Define, test, and score an ideal customer profile |
+| Planning | [`plan-territories`](skills/plan-territories/) | Design fair, executable territories and capacity scenarios |
 | Targeting | [`research-account`](skills/research-account/) | Build a sourced account brief without inventing facts |
 | Targeting | [`plan-prospecting`](skills/plan-prospecting/) | Turn an ICP into a focused account and contact plan |
 | Outreach | [`write-outbound`](skills/write-outbound/) | Write responsible, relevant multichannel outreach |
@@ -47,7 +48,8 @@ This project is deliberately:
 ```text
 gtm-context
     |
-    +-- define-icp -- research-account -- plan-prospecting -- write-outbound
+    +-- define-icp -- plan-territories
+    |             `-- research-account -- plan-prospecting -- write-outbound
     |
     +-- prepare-discovery -- analyze-sales-call -- qualify-opportunity -- plan-deal
     |                                                                |-- handle-objections
@@ -67,6 +69,7 @@ gtm-context
 | --- | --- | --- |
 | Product docs and scattered sales knowledge | Shared, reusable background | `$gtm-context` |
 | Early customer evidence or a broad target market | A testable customer profile | `$define-icp` |
+| An account universe and coverage team | Territories, capacity, and assignment rules | `$plan-territories` |
 | A named account or upcoming first meeting | Evidence and a conversation plan | `$research-account`, then `$prepare-discovery` |
 | A transcript or call notes | Decisions, qualification changes, and coaching | `$analyze-sales-call`, then `$qualify-opportunity` |
 | A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
