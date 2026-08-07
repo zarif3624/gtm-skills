@@ -10,6 +10,7 @@ All notable project changes are documented here. The project uses semantic versi
 - One adversarial behavioral case per skill, nine cross-skill journey cases, and a contrastive routing corpus covering every skill.
 - Reproducible forward-test reports with raw responses, assertion evidence, critical-failure handling, lineage-aware retests, and historical result retention.
 - Blind routing packets and computed routing reports that keep expected and excluded skills hidden until scoring.
+- A drift-checked machine-readable quality summary for catalog, coverage, and current evidence counts.
 - A validated RelayFox end-to-end fictional workspace for transcript, qualification, pipeline, forecast, and learning workflows.
 - A vendor-neutral CRM handoff pack with CSV templates, transformation governance, currency policy, and a matching JSON Schema.
 - Ten-minute quickstart, evidence/status contract, compatibility evidence matrix, product roadmap, contribution templates, and expanded security policy.
@@ -30,8 +31,8 @@ All notable project changes are documented here. The project uses semantic versi
 ### Validation
 
 - One dependency-free command now runs unit tests, supply-chain scanning, skill/package checks, eval and routing validation, behavioral-report validation, example validation, and reference-pack validation.
-- The current recorded Codex lineage has five latest behavioral results passing; earlier partial and failed runs remain available as regression history.
-- The first recorded metadata-only routing run selected the exact minimal skill set for all 25 requests with zero excluded-neighbor selections.
+- The current recorded Codex lineage has six latest behavioral results passing; earlier partial and failed runs remain available as regression history.
+- The latest recorded metadata-only routing run selected the exact minimal skill set for all 26 requests with zero excluded-neighbor selections; the earlier 25-request run remains available as history.
 
 ## 0.1.0
 
