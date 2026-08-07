@@ -20,6 +20,12 @@
       "excluded_skills": ["plan-prospecting"]
     },
     {
+      "id": "develop-message-architecture",
+      "prompt": "Develop evidence-based positioning for one buyer audience with an alternative frame, message pillars, claim-proof mapping, language guardrails, and a validation test before channel copy.",
+      "expected_skills": ["develop-positioning"],
+      "excluded_skills": ["write-outbound"]
+    },
+    {
       "id": "rebalance-sales-territories",
       "prompt": "Redistribute 800 accounts across six sellers using workload, potential, continuity, and capacity scenarios.",
       "expected_skills": ["plan-territories"],

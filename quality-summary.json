@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "catalog": {
-    "skills": 24,
-    "isolated_cases": 24,
+    "skills": 25,
+    "isolated_cases": 25,
     "journey_cases": 10,
-    "current_routing_cases": 27,
+    "current_routing_cases": 28,
     "example_workspaces": 1,
     "reference_packs": 2
   },

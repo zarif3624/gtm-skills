@@ -106,6 +106,21 @@
       "package_sha256": "f56b5d5cf4b78b31a57c8ff62b69328dc5118d00a5b6e28b2508f6f63cb03488"
     },
     {
+      "name": "develop-positioning",
+      "description": "Develop, audit, or test B2B positioning and message architecture. Use for value propositions, category framing, audience-specific messaging, narrative pillars, proof mapping, competitive differentiation, website or sales-deck message briefs, or message experiments before writing channel copy without inventing customer outcomes, superiority, quotes, or market proof.",
+      "display_name": "Develop Positioning",
+      "short_description": "Build evidence-based message architecture",
+      "default_prompt": "Use $develop-positioning to build and test our positioning.",
+      "path": "skills/develop-positioning",
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/positioning-brief.md",
+        "references/methods.md"
+      ],
+      "package_sha256": "43f501ad40599a10696fe43be376500bc81fd3aabd779086ad99d24ad39488e3"
+    },
+    {
       "name": "forecast-sales",
       "description": "Create, inspect, or explain a B2B sales forecast using CRM opportunities, historical conversion, pipeline changes, seller calls, or scenario assumptions. Use for commit and best-case calls, monthly or quarterly forecasting, forecast risk, rollups, coverage, sensitivity analysis, or explaining a forecast to leadership.",
       "display_name": "Forecast Sales",

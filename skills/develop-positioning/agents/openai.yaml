@@ -1,0 +1,4 @@
+interface:
+  display_name: "Develop Positioning"
+  short_description: "Build evidence-based message architecture"
+  default_prompt: "Use $develop-positioning to build and test our positioning."

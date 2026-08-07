@@ -6,7 +6,7 @@ All notable project changes are documented here. The project uses semantic versi
 
 ### Added
 
-- Sales-call analysis, win/loss analysis, territory planning, sales-process design, negotiation preparation, strategic account planning, partner-channel planning, evidence-based sales coaching, customer-outcome review, and buyer business-case skills.
+- Sales-call analysis, win/loss analysis, positioning development, territory planning, sales-process design, negotiation preparation, strategic account planning, partner-channel planning, evidence-based sales coaching, customer-outcome review, and buyer business-case skills.
 - One adversarial behavioral case per skill, ten cross-skill journey cases, and a contrastive routing corpus covering every skill.
 - Reproducible forward-test reports with raw responses, assertion evidence, critical-failure handling, lineage-aware retests, and historical result retention.
 - Blind routing packets and computed routing reports that keep expected and excluded skills hidden until scoring.
