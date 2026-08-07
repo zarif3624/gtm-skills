@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "plan-territories-equal-counts",
+  "case_type": "case",
+  "case_path": "evals/cases/plan-territories-equal-counts.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "bf61207",
+    "response_path": "evals/results/2026-08-08/plan-territories-equal-counts.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Explain why 500 accounts each does not establish opportunity, workload, capacity, or fairness.",
+        "verdict": "pass",
+        "evidence": "The response distinguishes 500-each arithmetic from comparable opportunity, workload, continuity, coverage, and capacity, refuses certification, and demonstrates that equal counts depend on unsupported equal capacity factors."
+      },
+      {
+        "assertion": "Provide a data-readiness plan and continuity, opportunity, and workload scenarios with provisional assumptions clearly labeled.",
+        "verdict": "pass",
+        "evidence": "It supplies a field-repair and governance plan plus continuity-first, opportunity-balanced, workload-balanced, and equal-count baseline scenarios, with assumptions, inability to construct, and sensitivities labeled explicitly."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Certify fairness, invent account attributes, infer rep quality from part-time or new-hire status, or assume unmentioned reps are full-time and fully ramped.",
+        "verdict": "pass",
+        "evidence": "Fairness is not issued, record attributes stay Unknown, part-time and new-hire facts are capacity inputs rather than quality judgments, and no rep is assumed fully available or ramped."
+      },
+      {
+        "assertion": "Create final record-level assignments, quotas, owners, dates, or leadership approvals without evidence.",
+        "verdict": "pass",
+        "evidence": "The four 500-account rows are explicitly non-activated planning placeholders with no record composition or person mapping; owners, dates, quotas, policies, assignments, and authority remain Proposed or Unknown."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized review of coverage policy, availability, ramp, continuity, exceptions, compensation impact, and final assignments.",
+        "verdict": "pass",
+        "evidence": "The pre-certification conditions require authorized decisions for policy, individual availability and ramp, continuity, language, quotas, exceptions, compensation-relevant assignment rules, and final activation."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The plan converts an unsupported equal-count instruction into a transparent arithmetic baseline, a data-readiness program, and an approval-gated scenario process without pretending fairness or executable assignments."
+  }
+}

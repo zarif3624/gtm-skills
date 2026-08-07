@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "icp-to-prospecting-scoreability",
+  "case_type": "journey",
+  "case_path": "evals/journeys/icp-to-prospecting-scoreability.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "bf61207",
+    "response_path": "evals/results/2026-08-08/icp-to-prospecting-scoreability.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry the logistics hypothesis, referral bias, missing outcomes, Not scoreable state, unknown disqualifiers and thresholds, and lack of scale evidence into prospecting.",
+        "verdict": "pass",
+        "evidence": "The plan carries forward the three-customer founder-referral bias, missing outcome evidence, Not scoreable status, unknown exclusions and thresholds, and unsupported scale state; logistics remains only the leading hypothesis."
+      },
+      {
+        "assertion": "Produce a useful bounded learning plan with observable qualitative criteria, small justified pilot logic, source and freshness requirements, validation, suppression, stop or revise conditions, and explicit return-to-ICP evidence.",
+        "verdict": "pass",
+        "evidence": "It replaces the 1,000-account launch with qualitative research states, source and freshness rules, minimum validation and suppression checks, an owner-sized pilot, explicit stop conditions, comparison learning, and return-to-ICP evidence."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not call logistics proven or best, invent numerical scores, weights, ranges, thresholds, market size, conversion, exact pilot size, trigger, intent, coverage, account facts, contacts, consent, or scale readiness.",
+        "verdict": "pass",
+        "evidence": "The response refuses the proven-best claim and every numeric fit score, weight, cutoff, conversion or market claim; it leaves fit_score blank, pilot size Unknown, contacts ungenerated, and scale contingent on evidence."
+      },
+      {
+        "assertion": "Do not generate or imply a 1,000-account list, broad outreach authorization, sensitive-data use, complete data coverage, buyer roles, or fit merely because the ICP hypothesis was handed downstream.",
+        "verdict": "pass",
+        "evidence": "It treats the 1,000 target as a gated future ceiling rather than authorization and blocks activation without identity, permission, privacy, suppression, role, source, freshness, problem-fit, and outreach approval checks."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized GTM-owner review of segment hypothesis, disqualifiers, scoring and tiers, pilot design, and scale gate plus data, privacy, regional outreach, and suppression review before sourcing or contact.",
+        "verdict": "pass",
+        "evidence": "Five gates require an authorized GTM owner for segment, exclusions, selection, scoring, pilot and scale decisions, plus source, permission, privacy, regional-use, and suppression controls before sourcing or contact."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The cross-skill handoff preserves uncertainty and governance from ICP through prospecting while still producing a concrete research, pilot, learning, and eventual scale design."
+  }
+}
