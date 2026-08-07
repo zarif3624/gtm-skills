@@ -26,6 +26,8 @@ A handoff change should add or update a journey. Journey assertions focus on inf
 5. Treat any prohibited behavior as a critical failure.
 6. Revise the skill, then rerun the original case and at least one adjacent case to check for regressions.
 
+Use `scripts/create_eval_report.py` to create a scoring draft, then store the finalized report and its raw response under [`evals/results/`](results/). The repository check verifies that each report still matches its source assertions and that its summary follows the acceptance rule.
+
 Do not keep a preferred answer beside the case. The objective is transferable behavior, not phrase matching.
 
 ## Acceptance Rule
@@ -42,4 +44,4 @@ Structural coverage is checked locally with:
 python3 scripts/check.py
 ```
 
-The local check validates case shape and one-case-per-skill coverage. It does not claim that a model passed the behavioral evaluation.
+The local check validates case shape, one-case-per-skill coverage, and any finalized result reports. An eval definition alone does not claim that a model passed the behavioral evaluation.

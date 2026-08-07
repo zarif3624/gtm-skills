@@ -54,6 +54,18 @@ class ExampleValidatorTests(unittest.TestCase):
             errors = VALIDATOR.validate_pack(pack)
             self.assertIn("example contains an email-like identifier: README.md", errors)
 
+    def test_symlinked_example_file_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            pack = self.make_pack(root)
+            outside = root / "outside.txt"
+            outside.write_text("private", encoding="utf-8")
+            (pack / "linked.txt").symlink_to(outside)
+            errors = VALIDATOR.validate_pack(pack)
+            self.assertEqual(
+                errors, ["example path must not be a symbolic link: linked.txt"]
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

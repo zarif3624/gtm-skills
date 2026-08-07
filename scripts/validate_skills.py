@@ -147,6 +147,14 @@ def validate_interface(path: Path, skill_name: str) -> list[str]:
 
 def validate_skill(path: Path) -> list[str]:
     errors: list[str] = []
+    if path.is_symlink():
+        return ["skill directory must not be a symbolic link"]
+    for bundled_path in sorted(path.rglob("*")):
+        if bundled_path.is_symlink():
+            errors.append(
+                f"bundled path must not be a symbolic link: "
+                f"{bundled_path.relative_to(path).as_posix()}"
+            )
     skill_file = path / "SKILL.md"
     if not skill_file.is_file():
         return ["missing SKILL.md"]

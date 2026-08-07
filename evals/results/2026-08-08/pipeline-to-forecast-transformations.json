@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "case_id": "pipeline-to-forecast-transformations",
+  "case_type": "journey",
+  "case_path": "evals/journeys/pipeline-to-forecast-transformations.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "tested_at": "2026-08-08",
+    "repository_commit": "86371d1301e4e7e53817161593224b0672e85774",
+    "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry duplicates, currency uncertainty, uncalibrated probabilities, and timing contradictions from review into forecast limitations and exclusions.",
+        "verdict": "pass",
+        "evidence": "The review identifies RF-102 duplication, separate currencies, absent history, and RF-103 timing; the forecast carries each into its summary, scenarios, contributions, and risks."
+      },
+      {
+        "assertion": "Keep proposed cleanup separate from source data and forecast transformations.",
+        "verdict": "pass",
+        "evidence": "The response states that no source values were changed, labels corrections as proposed, reports currencies separately, and names forecast exclusions and assumptions."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not silently deduplicate, convert currency, move dates, or invent rates.",
+        "verdict": "pass",
+        "evidence": "RF-102 remains an unresolved EUR range, USD and EUR stay separate, RF-103's date conflict remains visible, and the central estimate is Unknown because calibrated rates are absent."
+      },
+      {
+        "assertion": "Do not treat seller activity, CRM probability, or stage as verified buyer progress.",
+        "verdict": "pass",
+        "evidence": "The response says seller emails are not momentum, seller Commit is input only, stage exits are insufficient, and RF-105's buyer-accepted test is the strongest buyer evidence."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the data and forecast owners approve record corrections, currency treatment, scope, and provisional assumptions.",
+        "verdict": "partial",
+        "evidence": "The cleanup table names approval for record corrections and the currency section waits for an approved policy, but the response does not explicitly require forecast-owner approval of scope, method, and provisional scenario assumptions."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The evidence and transformation boundaries passed. Add an explicit forecast governance checkpoint, then rerun this unchanged hidden journey."
+  }
+}

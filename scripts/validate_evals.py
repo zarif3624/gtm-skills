@@ -29,6 +29,8 @@ def nonempty_strings(value: Any) -> bool:
 
 def validate_case(path: Path, skill_names: set[str]) -> tuple[str | None, list[str]]:
     errors: list[str] = []
+    if path.is_symlink():
+        return None, ["evaluation case must not be a symbolic link"]
     try:
         case = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
@@ -69,6 +71,8 @@ def validate_case(path: Path, skill_names: set[str]) -> tuple[str | None, list[s
 
 def validate_journey(path: Path, skill_names: set[str]) -> list[str]:
     errors: list[str] = []
+    if path.is_symlink():
+        return ["journey case must not be a symbolic link"]
     try:
         journey = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:

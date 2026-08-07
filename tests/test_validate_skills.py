@@ -91,6 +91,19 @@ Produce a test artifact.
             errors = VALIDATOR.validate_skill(skill)
             self.assertIn("unreferenced bundled resource: assets/orphan.md", errors)
 
+    def test_symlinked_resource_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            skill = self.make_skill(root)
+            outside = root / "outside.md"
+            outside.write_text("private", encoding="utf-8")
+            linked = skill / "references" / "linked.md"
+            linked.symlink_to(outside)
+            errors = VALIDATOR.validate_skill(skill)
+            self.assertIn(
+                "bundled path must not be a symbolic link: references/linked.md", errors
+            )
+
     def test_default_prompt_must_name_skill(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             skill = self.make_skill(Path(temp))

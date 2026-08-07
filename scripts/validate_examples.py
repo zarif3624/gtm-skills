@@ -44,6 +44,11 @@ def validate_date(value: str, field: str, row_number: int) -> list[str]:
 
 def validate_pack(path: Path) -> list[str]:
     errors: list[str] = []
+    if path.is_symlink():
+        return ["example workspace must not be a symbolic link"]
+    symlinks = sorted(item.relative_to(path).as_posix() for item in path.rglob("*") if item.is_symlink())
+    if symlinks:
+        return [f"example path must not be a symbolic link: {item}" for item in symlinks]
     missing = sorted(REQUIRED_FILES - {item.name for item in path.iterdir() if item.is_file()})
     if missing:
         errors.append(f"missing required files: {', '.join(missing)}")

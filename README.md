@@ -153,9 +153,17 @@ Every contribution should preserve these rules:
 
 Contributions are welcome, especially from working sellers, founders, RevOps operators, and customer success teams. See [CONTRIBUTING.md](CONTRIBUTING.md) for the quality bar and validation steps.
 
+Run the full dependency-free quality suite with:
+
+```bash
+python3 scripts/check.py
+```
+
+The suite checks all 20 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, and the fictional example data. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+
 ## Roadmap
 
-The near-term priority is to make quality measurable: realistic eval cases, consistent evidence contracts, stronger validation, and tested handoffs between skills. Then the collection will expand into call analysis, win/loss, territory planning, commercial negotiation, enterprise account planning, and partner sales.
+The quality foundation and first workflow expansion are in place. The next priority is to publish reproducible compatibility results across agents, add opt-in CRM handoff packs, and measure whether a new user can reach a useful first artifact in under ten minutes.
 
 See the [full product roadmap](ROADMAP.md) for priorities, measures, and deliberate non-goals.
 

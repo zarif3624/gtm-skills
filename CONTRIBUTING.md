@@ -20,6 +20,8 @@ Thanks for helping make AI-assisted sales more useful and trustworthy.
 7. Add a fictional, adversarial case in `evals/cases/` that targets the most consequential failure mode.
 8. Run `python3 scripts/check.py`.
 
+For a substantial behavior change, follow the [forward-test protocol](evals/README.md) and add a finalized evidence report when the result should be published.
+
 ## Quality Bar
 
 A skill should:

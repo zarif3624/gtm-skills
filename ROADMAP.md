@@ -25,6 +25,12 @@ A user should be able to give an agent imperfect real-world GTM context and rece
 
 Targets are product goals, not claims about current performance. Publish measured results only after the evaluation harness can reproduce them.
 
+## Current Status — 2026-08-08
+
+The repository now has 20 focused skills, one isolated adversarial case per skill, seven cross-skill journey cases, a dependency-free validation suite, a validated fictional workspace, and a schema for reproducible forward-test reports. This establishes the quality foundation; it does not imply that every model or agent passes every behavioral case.
+
+The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
+
 ## Phase 1: Make Quality Testable
 
 - Strengthen structural, metadata, catalog, and resource validation.
