@@ -68,8 +68,8 @@ def validate_policy(policy: dict[str, Any], summary: dict[str, Any]) -> list[str
     errors: list[str] = []
     if set(policy) != {"schema_version", "minimums", "maximums"}:
         return ["quality policy must contain exactly schema_version, minimums, and maximums"]
-    if policy["schema_version"] != 1:
-        errors.append("quality policy schema_version must be 1")
+    if policy["schema_version"] != 2:
+        errors.append("quality policy schema_version must be 2")
     minimums = policy["minimums"]
     maximums = policy["maximums"]
     if not isinstance(minimums, dict) or set(minimums) != MINIMUM_FIELDS:

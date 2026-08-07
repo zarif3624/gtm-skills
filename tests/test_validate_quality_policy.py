@@ -35,7 +35,7 @@ def summary(passes: int = 3, partial: int = 0) -> dict[str, object]:
 
 def policy() -> dict[str, object]:
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "minimums": {
             "isolated_cases": 3,
             "journey_cases": 2,
