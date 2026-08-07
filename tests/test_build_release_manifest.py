@@ -44,6 +44,7 @@ class ReleaseManifestTests(unittest.TestCase):
                 encoding="utf-8",
             )
             (root / "quality-summary.json").write_text("{}\n", encoding="utf-8")
+            (root / "quality-policy.json").write_text("{}\n", encoding="utf-8")
             prior = behavior / "prior.json"
             prior.write_text(
                 json.dumps(
@@ -114,6 +115,7 @@ class ReleaseManifestTests(unittest.TestCase):
             self.assertEqual(
                 len(result["generated_artifacts"]["catalog"]["sha256"]), 64
             )
+            self.assertEqual(len(result["quality_policy"]["sha256"]), 64)
             self.assertEqual(
                 len(result["current_evidence"]["behavioral"][0]["response_sha256"]),
                 64,

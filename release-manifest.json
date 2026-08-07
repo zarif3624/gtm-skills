@@ -10,6 +10,10 @@
       "sha256": "4e8a1198c5ed9d614c2bef7e61a38127907d98d579bb01c7c39fa4c9bd78b1e0"
     }
   },
+  "quality_policy": {
+    "path": "quality-policy.json",
+    "sha256": "5e2564d8ac47a9cf19bba28b44f4ea3e4faf02cd2c8427703cc21825a2d310f3"
+  },
   "skill_packages": [
     {
       "name": "analyze-sales-call",

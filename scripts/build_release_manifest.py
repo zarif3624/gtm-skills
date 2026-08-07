@@ -56,6 +56,7 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
     root = root.resolve()
     catalog_path = root / "catalog.json"
     summary_path = root / "quality-summary.json"
+    policy_path = root / "quality-policy.json"
     catalog = load_json(catalog_path)
 
     behavior_paths = sorted((root / "evals" / "results").rglob("*.json"))
@@ -116,6 +117,10 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
                 "path": "quality-summary.json",
                 "sha256": sha256(summary_path),
             },
+        },
+        "quality_policy": {
+            "path": "quality-policy.json",
+            "sha256": sha256(policy_path),
         },
         "skill_packages": [
             {
