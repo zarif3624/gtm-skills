@@ -22,6 +22,15 @@ class ExampleValidatorTests(unittest.TestCase):
         (pack / "discovery-transcript.md").write_text(
             "[00:01] Seller: Hello.\n\n[00:05] Buyer: Hello.\n", encoding="utf-8"
         )
+        (pack / "positioning-brief.md").write_text(
+            "# Positioning\n\n**Artifact status:** Proposed\n\n## Language to hold\n",
+            encoding="utf-8",
+        )
+        (pack / "outbound-plan.md").write_text(
+            "# Outbound\n\n**Artifact status:** Proposed\n\n## Claim handoff\n\n"
+            "## Review before launch\n",
+            encoding="utf-8",
+        )
         header = ",".join(sorted(VALIDATOR.REQUIRED_PIPELINE_FIELDS))
         values = {
             "opportunity_id": "OP-1",

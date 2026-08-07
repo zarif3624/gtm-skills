@@ -7,6 +7,7 @@
 ## Product And Offer
 
 - **Verified:** RelayFox is a fictional workflow-approval product for operations teams.
+- **Verified:** RelayFox routes workflow approvals and records decision history.
 - **Verified:** The example offer includes a core subscription and optional implementation services.
 - **Unknown:** Typical contract value and implementation duration.
 - **Hypothesis:** Teams with frequent cross-functional approvals experience enough delay and rework to justify change.

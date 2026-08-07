@@ -8,6 +8,8 @@ RelayFox sells a workflow-approval product to operations teams. The example incl
 
 - [shared GTM context](gtm-context.md) with verified facts and active hypotheses;
 - [a discovery transcript](discovery-transcript.md) with ambiguous budget, timing, and authority;
+- [a proposed positioning brief](positioning-brief.md) that maps capability, audience hypotheses, proof gaps, and claims to hold;
+- [a proposed outbound plan](outbound-plan.md) that preserves those claim statuses through channel copy and launch review;
 - [a pipeline export](pipeline.csv) containing duplicates, mixed currency, stale dates, and contradictory milestones;
 - [a customer-outcomes snapshot](customer-outcomes.csv) that separates activity, adoption inputs, outcome evidence, support risk, and seller-generated expansion pressure.
 
@@ -18,6 +20,14 @@ Use $analyze-sales-call to analyze examples/relayfox/discovery-transcript.md wit
 ```
 
 Inspect whether the output keeps reported budget, authority, urgency, and proposed next steps distinct from verified facts and accepted actions.
+
+## Try The Positioning-To-Outbound Workflow
+
+```text
+Use $develop-positioning with examples/relayfox/gtm-context.md and examples/relayfox/discovery-transcript.md to create a proposed operations-leader message architecture. Then use $write-outbound to create a small message test without upgrading one buyer's statements into segment proof or reviving any held claim.
+```
+
+Compare the result with [the example positioning brief](positioning-brief.md) and [outbound plan](outbound-plan.md). Useful wording may differ. Inspect whether the same capabilities, hypotheses, limitations, approval states, held claims, and complete review boundary survive the handoff.
 
 ## Try The Management Workflow
 

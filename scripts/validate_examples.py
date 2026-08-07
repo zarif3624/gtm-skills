@@ -17,6 +17,8 @@ REQUIRED_FILES = {
     "README.md",
     "gtm-context.md",
     "discovery-transcript.md",
+    "positioning-brief.md",
+    "outbound-plan.md",
     "pipeline.csv",
     "customer-outcomes.csv",
 }
@@ -95,6 +97,18 @@ def validate_pack(path: Path) -> list[str]:
     transcript = (path / "discovery-transcript.md").read_text(encoding="utf-8")
     if len(TIMESTAMP_RE.findall(transcript)) < 2:
         errors.append("discovery-transcript.md must contain at least two timestamped turns")
+
+    positioning = (path / "positioning-brief.md").read_text(encoding="utf-8")
+    if "artifact status:** proposed" not in positioning.lower():
+        errors.append("positioning-brief.md must preserve proposed artifact status")
+    if "language to hold" not in positioning.lower():
+        errors.append("positioning-brief.md must identify unsupported claims to hold")
+
+    outbound = (path / "outbound-plan.md").read_text(encoding="utf-8")
+    if "artifact status:** proposed" not in outbound.lower():
+        errors.append("outbound-plan.md must preserve proposed artifact status")
+    if "claim handoff" not in outbound.lower() or "review before launch" not in outbound.lower():
+        errors.append("outbound-plan.md must include claim handoff and launch review")
 
     with (path / "pipeline.csv").open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
