@@ -27,7 +27,7 @@ Targets are product goals, not claims about current performance. Publish measure
 
 ## Current Status — 2026-08-08
 
-The repository now has 25 focused skills, one isolated adversarial case per skill, ten cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and reproducible behavioral and blind-routing reports. The latest recorded routing run selected the exact intended skill set for all 27 prompts in its frozen corpus, and seven current behavioral scenarios pass in the recorded Codex lineage. These are bounded results tied to their frozen corpus and tested commits, not a claim that every model, client, or untested behavior passes.
+The repository now has 25 focused skills, one isolated adversarial case per skill, eleven cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and reproducible behavioral and blind-routing reports. The latest recorded routing run selected the exact intended skill set for all 28 prompts in its frozen corpus, and nine current behavioral scenarios pass in the recorded Codex lineage. These are bounded results tied to their frozen corpus and tested commits, not a claim that every model, client, or untested behavior passes.
 
 The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
 

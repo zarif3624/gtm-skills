@@ -10,26 +10,26 @@
   },
   "evidence": {
     "behavioral": {
-      "reports_total": 13,
+      "reports_total": 15,
       "latest_total": 9,
       "latest_verdicts": {
-        "pass": 7,
-        "partial": 2,
+        "pass": 9,
+        "partial": 0,
         "fail": 0
       },
-      "historical_runs": 4
+      "historical_runs": 6
     },
     "routing": {
-      "reports_total": 3,
+      "reports_total": 4,
       "latest_total": 1,
       "latest_verdicts": {
         "pass": 1,
         "partial": 0,
         "fail": 0
       },
-      "historical_runs": 2,
+      "historical_runs": 3,
       "latest_case_counts": [
-        27
+        28
       ]
     }
   }

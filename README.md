@@ -155,7 +155,7 @@ Start with the artifact you need; `.agents/gtm-context.md` is helpful, not requi
 
 ## Worked Example
 
-Use the [RelayFox fictional workspace](examples/relayfox/) to try conversation analysis, qualification, pipeline review, forecasting, and win/loss learning with a coherent set of safe source files. The example deliberately contains ambiguity and dirty data so you can inspect whether evidence and unknowns survive each handoff.
+Use the [RelayFox fictional workspace](examples/relayfox/) to try positioning, outbound, conversation analysis, qualification, process design, pipeline review, forecasting, customer outcomes, and win/loss learning with a coherent set of safe source files. The example deliberately contains ambiguity and dirty data so you can inspect whether evidence, held claims, and unknowns survive each handoff.
 
 ## Bring Your Own CRM Export
 
@@ -200,7 +200,7 @@ The suite checks all 25 skill packages, their metadata and bundled resources, on
 
 ## Roadmap
 
-The quality foundation and first workflow expansion are in place. The next priority is to publish reproducible compatibility results across agents, add opt-in CRM handoff packs, and measure whether a new user can reach a useful first artifact in under ten minutes.
+The quality foundation and first workflow expansion are in place. The next priority is to publish reproducible compatibility results across additional agents and measure whether a new user can reach a useful first artifact in under ten minutes.
 
 See the [full product roadmap](ROADMAP.md) for priorities, measures, and deliberate non-goals.
 

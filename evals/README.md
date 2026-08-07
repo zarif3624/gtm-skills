@@ -30,7 +30,7 @@ A handoff change should add or update a journey. Journey assertions focus on inf
 
 Use `scripts/create_eval_report.py` to create a scoring draft, then store the finalized report and its raw response under [`evals/results/`](results/). The repository check verifies that each report still matches its source assertions and that its summary follows the acceptance rule.
 
-For routing, freeze the live corpus with `scripts/create_routing_snapshot.py`, generate a blind packet from that snapshot, save the client's exact JSON selection, and create a computed report with `scripts/create_routing_report.py`. Store responses and reports under [`evals/routing/results/`](routing/results/) and immutable corpora under `evals/routing/corpora/`. The packet excludes the expected and neighboring-skill labels; the report validator joins them back only after the run. A later corpus change cannot rewrite an earlier result.
+For routing, freeze the live corpus with `scripts/create_routing_snapshot.py`, generate a self-contained blind packet from that snapshot and the current installed-skill metadata, save the client's exact JSON selection, and create a computed report with `scripts/create_routing_report.py`. Store responses and reports under [`evals/routing/results/`](routing/results/) and immutable corpora under `evals/routing/corpora/`. The packet includes exact skill names and descriptions but excludes expected and neighboring-skill labels; the report validator joins those labels back only after the run. A later corpus change cannot rewrite an earlier result.
 
 Do not keep a preferred answer beside the case. The objective is transferable behavior, not phrase matching.
 
