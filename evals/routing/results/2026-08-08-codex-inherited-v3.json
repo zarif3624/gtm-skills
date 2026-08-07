@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "corpus_path": "evals/routing/corpora/2026-08-08-v3.json",
+  "supersedes": "evals/routing/results/2026-08-08-codex-inherited-v2.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "4a1f8fd",
+    "response_path": "evals/routing/results/2026-08-08-codex-inherited-v3.response.json"
+  },
+  "summary": {
+    "total_cases": 27,
+    "exact_matches": 27,
+    "expected_covered": 27,
+    "excluded_selected": 0,
+    "verdict": "pass"
+  }
+}
