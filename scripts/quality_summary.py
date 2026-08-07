@@ -64,9 +64,10 @@ def latest_reports(
 
 def build_summary(root: Path = ROOT) -> dict[str, Any]:
     routing = load_json(root / "evals" / "routing" / "cases.json")
-    definition_count = len(list((root / "evals" / "cases").glob("*.json"))) + len(
-        list((root / "evals" / "journeys").glob("*.json"))
+    definition_paths = sorted((root / "evals" / "cases").glob("*.json")) + sorted(
+        (root / "evals" / "journeys").glob("*.json")
     )
+    definition_ids = {load_json(path)["id"] for path in definition_paths}
     behavior_paths = sorted((root / "evals" / "results").rglob("*.json"))
     behavior_reports = {path.resolve(): load_json(path) for path in behavior_paths}
     routing_paths = sorted((root / "evals" / "routing" / "results").glob("*.json"))
@@ -94,9 +95,14 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
             current_routing.append(report)
     behavioral = evidence_summary(behavior_reports, root)
     behavioral["definition_coverage"] = {
-        "definitions_total": definition_count,
+        "definitions_total": len(definition_ids),
         "definitions_with_latest_result": len(behavior_with_result),
         "definitions_with_latest_pass": len(behavior_with_pass),
+        "definition_ids": sorted(definition_ids),
+        "latest_result_ids": sorted(behavior_with_result),
+        "latest_pass_ids": sorted(behavior_with_pass),
+        "latest_nonpass_ids": sorted(behavior_with_result - behavior_with_pass),
+        "missing_latest_result_ids": sorted(definition_ids - behavior_with_result),
     }
     routing_evidence = evidence_summary(
         routing_reports, root, include_case_counts=True

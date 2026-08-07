@@ -28,8 +28,12 @@ class QualitySummaryTests(unittest.TestCase):
                 root / "evals" / "routing" / "results",
             ):
                 path.mkdir(parents=True, exist_ok=True)
-            (root / "evals" / "cases" / "case.json").write_text("{}", encoding="utf-8")
-            (root / "evals" / "journeys" / "journey.json").write_text("{}", encoding="utf-8")
+            (root / "evals" / "cases" / "case.json").write_text(
+                json.dumps({"id": "case"}), encoding="utf-8"
+            )
+            (root / "evals" / "journeys" / "journey.json").write_text(
+                json.dumps({"id": "journey"}), encoding="utf-8"
+            )
             (root / "evals" / "routing" / "cases.json").write_text(
                 json.dumps({"cases": [{"id": "one"}, {"id": "two"}]}),
                 encoding="utf-8",
@@ -90,6 +94,11 @@ class QualitySummaryTests(unittest.TestCase):
                     "definitions_total": 2,
                     "definitions_with_latest_result": 1,
                     "definitions_with_latest_pass": 1,
+                    "definition_ids": ["case", "journey"],
+                    "latest_result_ids": ["case"],
+                    "latest_pass_ids": ["case"],
+                    "latest_nonpass_ids": [],
+                    "missing_latest_result_ids": ["journey"],
                 },
             )
             self.assertEqual(
@@ -100,6 +109,52 @@ class QualitySummaryTests(unittest.TestCase):
             self.assertEqual(
                 result["evidence"]["routing"]["current_corpus_passing_lineages"], 0
             )
+
+    def test_definition_coverage_names_current_nonpasses(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for path in (
+                root / "skills" / "test-skill",
+                root / "examples",
+                root / "reference-packs",
+                root / "evals" / "cases",
+                root / "evals" / "journeys",
+                root / "evals" / "results",
+                root / "evals" / "routing" / "results",
+            ):
+                path.mkdir(parents=True, exist_ok=True)
+            (root / "evals" / "cases" / "pass.json").write_text(
+                json.dumps({"id": "passing-case"}), encoding="utf-8"
+            )
+            (root / "evals" / "cases" / "fail.json").write_text(
+                json.dumps({"id": "failing-case"}), encoding="utf-8"
+            )
+            (root / "evals" / "journeys" / "missing.json").write_text(
+                json.dumps({"id": "missing-journey"}), encoding="utf-8"
+            )
+            (root / "evals" / "routing" / "cases.json").write_text(
+                json.dumps({"cases": []}), encoding="utf-8"
+            )
+            for case_id, verdict in (("passing-case", "pass"), ("failing-case", "fail")):
+                (root / "evals" / "results" / f"{case_id}.json").write_text(
+                    json.dumps(
+                        {
+                            "case_id": case_id,
+                            "supersedes": None,
+                            "summary": {"verdict": verdict},
+                        }
+                    ),
+                    encoding="utf-8",
+                )
+
+            coverage = SUMMARY.build_summary(root)["evidence"]["behavioral"][
+                "definition_coverage"
+            ]
+
+            self.assertEqual(coverage["latest_result_ids"], ["failing-case", "passing-case"])
+            self.assertEqual(coverage["latest_pass_ids"], ["passing-case"])
+            self.assertEqual(coverage["latest_nonpass_ids"], ["failing-case"])
+            self.assertEqual(coverage["missing_latest_result_ids"], ["missing-journey"])
 
 
 if __name__ == "__main__":
