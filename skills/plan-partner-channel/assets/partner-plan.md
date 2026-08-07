@@ -53,7 +53,7 @@
 
 ## Economics And Capacity
 
-| Scenario | Seller economics | Partner economics | Customer effect | Capacity assumption | Confidence |
+| Scenario | Seller economics | Partner economics | Customer effect | Capacity assumption | Evidence status |
 | --- | --- | --- | --- | --- | --- |
 | Downside | | | | | |
 | Base | | | | | |

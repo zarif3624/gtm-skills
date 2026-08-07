@@ -19,9 +19,9 @@
 
 ## Buying Group Hypotheses
 
-| Role | Likely concern | Evidence | Confidence |
+| Role | Likely concern | Evidence | Evidence status |
 | --- | --- | --- | --- |
-| | | | |
+| | | | Verified / Inferred / Hypothesis / Unknown |
 
 ## Problems And Value Hypotheses
 

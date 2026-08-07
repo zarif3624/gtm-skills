@@ -39,6 +39,6 @@
 
 ## CRM Cleanup
 
-| Record | Proposed change | Evidence | Approval needed |
+| Record | Proposed change | Evidence | Approval requirement and status |
 | --- | --- | --- | --- |
-| | | | |
+| | | | Proposed / Approved / Unknown |

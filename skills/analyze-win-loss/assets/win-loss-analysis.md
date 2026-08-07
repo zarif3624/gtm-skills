@@ -37,7 +37,7 @@
 
 ## Cohort Comparisons
 
-| Cohort | Population | Finding | Missingness | Confidence |
+| Cohort | Population | Finding | Missingness | Evidence strength and limitations |
 | --- | ---: | --- | ---: | --- |
 | | | | | |
 

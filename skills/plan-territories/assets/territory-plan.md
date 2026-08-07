@@ -3,17 +3,17 @@
 **As of:** YYYY-MM-DD
 **Planning period:**
 **Decision and scope:**
-**Policy owner:** Confirmed / Proposed / Unknown
+**Policy owner status:** Confirmed / Proposed / Unknown
 
 ## Definitions And Data Readiness
 
 | Item | Definition or source | Coverage | Freshness | Status |
 | --- | --- | ---: | --- | --- |
 | Eligible account universe | | | | Verified / Inferred / Unknown |
-| Assignment unit | | | | |
-| Opportunity signal | | | | |
-| Workload signal | | | | |
-| Role capacity | | | | |
+| Assignment unit | | | | Verified / Inferred / Unknown |
+| Opportunity signal | | | | Verified / Inferred / Unknown |
+| Workload signal | | | | Verified / Inferred / Unknown |
+| Role capacity | | | | Verified / Inferred / Unknown |
 
 ## Current State
 
@@ -25,7 +25,7 @@
 
 ## Assumptions
 
-| Assumption | Value or range | Source | Confidence | Sensitivity test |
+| Assumption | Value or range | Source and locator | Evidence status | Sensitivity test |
 | --- | --- | --- | --- | --- |
 | | | | | |
 
@@ -63,4 +63,4 @@
 
 | Measure | Baseline | Target or learning goal | Owner status | Review date status |
 | --- | --- | --- | --- | --- |
-| | Unknown | Proposed / Unknown | Proposed / Unknown | Proposed / Unknown |
+| | Unknown | Proposed / Unknown | Confirmed / Proposed / Unknown | Confirmed / Proposed / Unknown |

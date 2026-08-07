@@ -44,7 +44,7 @@
 
 ## Proof
 
-| Claim | Evidence | Source | Confidence |
+| Claim | Evidence | Source and locator | Evidence status |
 | --- | --- | --- | --- |
 | | | | Verified / Inferred / Unknown |
 

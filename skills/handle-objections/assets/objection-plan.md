@@ -21,9 +21,9 @@
 
 ## Proof And Approval
 
-| Needed item | Available? | Source | Authorized owner | Action |
+| Needed item | Available? | Source | Authorized owner status | Action |
 | --- | --- | --- | --- | --- |
-| | Yes / No / Unknown | | | |
+| | Yes / No / Unknown | | Confirmed / Proposed / Unknown | |
 
 ## Recommended Next Step
 

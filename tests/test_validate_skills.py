@@ -156,6 +156,28 @@ Produce a test artifact.
                 errors,
             )
 
+    def test_asset_confidence_column_requires_evidence_semantics(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            skill = self.make_skill(Path(temp))
+            asset = skill / "assets" / "plan.md"
+            asset.parent.mkdir()
+            asset.write_text(
+                "| Claim | Confidence |\n| --- | --- |\n", encoding="utf-8"
+            )
+            skill_file = skill / "SKILL.md"
+            skill_file.write_text(
+                skill_file.read_text(encoding="utf-8").replace(
+                    "Read [the guide]", "Use [the plan](assets/plan.md). Read [the guide]"
+                ),
+                encoding="utf-8",
+            )
+            errors = VALIDATOR.validate_skill(skill)
+            self.assertIn(
+                "ambiguous confidence column in assets/plan.md; use evidence status "
+                "or evidence strength and limitations",
+                errors,
+            )
+
     def test_repository_document_links_are_checked(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

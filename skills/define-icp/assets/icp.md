@@ -28,7 +28,7 @@
 
 ## Trigger Events
 
-| Observable event | Why it may matter | Source | Confidence |
+| Observable event | Why it may matter | Source and locator | Evidence status |
 | --- | --- | --- | --- |
 | | | | Verified / Inferred / Unknown |
 

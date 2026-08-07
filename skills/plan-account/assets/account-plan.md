@@ -25,9 +25,9 @@
 
 ## Relationship Map
 
-| Person or role | Entity scope | Buying or customer role | Access and owner | Action evidence | Status |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | Verified / Inferred / Unknown |
+| Person or role | Entity scope | Buying or customer role | Access evidence | Relationship owner status | Action evidence | Evidence status |
+| --- | --- | --- | --- | --- | --- | --- |
+| | | | | Confirmed / Proposed / Unknown | | Verified / Inferred / Unknown |
 
 ## Use Cases And Whitespace
 

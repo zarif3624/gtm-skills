@@ -23,6 +23,9 @@ BARE_LABELED_CONTROL_FIELD_RE = re.compile(
     r"^\s*[-*]\s+\*\*(Owner|Review date|Deadline|Approval):\*\*",
     re.IGNORECASE | re.MULTILINE,
 )
+AMBIGUOUS_CONFIDENCE_HEADER_RE = re.compile(
+    r"^\|[^\n]*\bConfidence\b[^\n]*\|\s*$", re.IGNORECASE | re.MULTILINE
+)
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str, list[str]]:
@@ -123,6 +126,11 @@ def validate_resources(path: Path, text: str) -> list[str]:
                     errors.append(
                         f"ambiguous {bare_label.group(1).lower()} label in {relative}; "
                         "name the field as a status"
+                    )
+                if AMBIGUOUS_CONFIDENCE_HEADER_RE.search(asset_text):
+                    errors.append(
+                        f"ambiguous confidence column in {relative}; use evidence status "
+                        "or evidence strength and limitations"
                     )
     return errors
 
