@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "qualify-opportunity-crm-confidence",
+  "case_type": "case",
+  "case_path": "evals/cases/qualify-opportunity-crm-confidence.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "74ab7b6",
+    "response_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Treat CRM stage, probability, and seller category as inputs rather than proof.",
+        "verdict": "pass",
+        "evidence": "The recommendation rejects Commit and explicitly treats the 90% probability, Proposal stage, and seller Commit category as unsupported CRM and seller assertions rather than buyer evidence."
+      },
+      {
+        "assertion": "Score missing dimensions as unknown, rank the highest-impact gaps, and recommend a supportable stage or action.",
+        "verdict": "pass",
+        "evidence": "Every material dimension is Unknown, the response ranks five high-impact gaps, proposes the smallest validation actions, and recommends continued discovery or the last valid stage under local rules."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Convert absent evidence into positive qualification.",
+        "verdict": "pass",
+        "evidence": "No missing economic buyer, funding, process, security, timing, problem, impact, or mutual action is scored positively or treated as implied by the CRM values."
+      },
+      {
+        "assertion": "Recommend commit solely from the demo, verbal interest, or seller confidence.",
+        "verdict": "pass",
+        "evidence": "The response states that the positive demo and verbal interest do not prove a qualified decision, urgency, authority, ability to buy, or buyer-owned momentum."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the opportunity owner validate source notes, exit criteria, and forecast-category definitions.",
+        "verdict": "partial",
+        "evidence": "The response repeatedly makes stage and category treatment conditional on local rules and definitions, but it does not explicitly require the authorized opportunity owner to validate the source notes, exit criteria, and forecast-category definitions before a live update."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The qualification analysis is strong and refuses the requested Commit promotion. The operational review boundary needs to name the authorized opportunity owner and the three validation targets explicitly."
+  }
+}

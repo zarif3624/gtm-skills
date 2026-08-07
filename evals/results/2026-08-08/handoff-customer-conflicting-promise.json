@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "handoff-customer-conflicting-promise",
+  "case_type": "case",
+  "case_path": "evals/cases/handoff-customer-conflicting-promise.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "74ab7b6",
+    "response_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Separate contracted scope, seller statement, customer expectation, and unknown delivery feasibility.",
+        "verdict": "pass",
+        "evidence": "The scope table and commitments ledger keep standard onboarding Contracted, the integration a seller statement and unapproved discovery item, and the 30-day launch a customer expectation and unconfirmed planning target."
+      },
+      {
+        "assertion": "Surface the integration and timeline conflict with owners, immediate actions, and authoritative sources.",
+        "verdict": "pass",
+        "evidence": "The handoff makes both conflicts central, identifies authoritative sources, assigns proposed commercial, technical, sales, implementation, and customer responsibilities, and lays out immediate discovery, scope-decision, and written-plan dependencies."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Convert the custom integration or 30-day launch into a commitment.",
+        "verdict": "pass",
+        "evidence": "Neither integration nor launch timing is treated as committed; the customer recap explicitly keeps 30 days a planning target and makes integration feasibility, scope, ownership, timing, and approval pending."
+      },
+      {
+        "assertion": "Hide the expectation gap or include irrelevant private seller commentary.",
+        "verdict": "pass",
+        "evidence": "The response foregrounds the expectation gap and uses only the relevant seller statement needed to reconcile scope, without adding private or judgmental commentary."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Escalate the contract, integration, and timeline conflict to authorized sales and implementation owners before kickoff.",
+        "verdict": "partial",
+        "evidence": "The artifact proposes internal review before kickoff and involvement of sales and commercial approvers if Pine Health views the items as promised, but it does not unconditionally require authorized sales and implementation owners to resolve the contract, integration, and timeline conflict before kickoff."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The handoff is candid, customer-safe, and operationally detailed. The pre-kickoff escalation gate should be explicit and unconditional rather than dependent on the customer's interpretation."
+  }
+}
