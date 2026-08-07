@@ -60,6 +60,8 @@ gtm-context
     |                                  `-- plan-prospecting -- write-outbound
     |
     +-- prepare-discovery -- analyze-sales-call -- qualify-opportunity -- plan-deal
+    |                              |
+    |                              `-- coach-sales-rep
     |                                                                |-- handle-objections
     |                                                                |-- prepare-demo
     |                                                                |-- prepare-negotiation
@@ -67,7 +69,7 @@ gtm-context
     |
     +-- review-pipeline -- forecast-sales
     |
-    +-- handoff-customer
+    +-- handoff-customer -- review-customer-outcomes
     |
     +-- analyze-win-loss
     |
@@ -84,10 +86,12 @@ gtm-context
 | A named account or upcoming first meeting | Evidence and a conversation plan | `$research-account`, then `$prepare-discovery` |
 | A strategic account with multiple teams or opportunities | A durable account-wide investment plan | `$plan-account` |
 | A transcript or call notes | Decisions, qualification changes, and coaching | `$analyze-sales-call`, then `$qualify-opportunity` |
+| Multiple calls, observations, and outcomes for one rep | A narrow developmental experiment | `$coach-sales-rep` |
 | A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
 | Pricing, procurement, or contract requests | Packages, trades, and approval boundaries | `$prepare-negotiation` |
 | A CRM export or forecast call | Portfolio truth and revenue scenarios | `$review-pipeline`, then `$forecast-sales` |
 | A signed order and scattered deal history | A complete post-sale transfer | `$handoff-customer` |
+| Usage, success, support, stakeholder, and contract evidence | An outcome, renewal, and expansion-readiness review | `$review-customer-outcomes` |
 | Closed opportunities, decision notes, or buyer interviews | Repeatable win/loss learning | `$analyze-win-loss` |
 | A partner idea, agreement, or reported channel pipeline | A testable, deduplicated partner motion | `$plan-partner-channel` |
 
@@ -171,7 +175,7 @@ Run the full dependency-free quality suite with:
 python3 scripts/check.py
 ```
 
-The suite checks all 22 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+The suite checks all 22 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
 ## Roadmap
 

@@ -8,7 +8,7 @@ The skills follow the [Agent Skills specification](https://agentskills.io/specif
 | --- | --- | --- | --- |
 | `skills` CLI against this repository | `npx -y skills add . --list` discovered all 22 skills locally | Not applicable | Verified locally on 2026-08-08 |
 | Repository quality tools | CI exercises the dependency-free suite on the oldest and newest supported Python lines (3.10 and 3.14) | Local suite passed on Python 3.9.6; CI results remain authoritative for supported lines | Configured; verify the two CI jobs on every change |
-| OpenAI Codex clean-context subagent | Skills loaded from their repository paths for isolated tests | Latest recorded pipeline→forecast journey and sparse forecast case pass; exact model identifier was unavailable | Limited evidence; see [result history](../evals/results/) |
+| OpenAI Codex clean-context subagent | Skills loaded from their repository paths; one blind metadata-only run selected the exact intended minimal set for 25/25 routing requests with zero excluded neighbors | Five latest recorded behavioral scenarios pass, including pipeline→forecast, sparse forecast, source-injection, coaching, and customer-outcome risks; exact model identifier was unavailable | Limited positive evidence for the recorded lineage and commits; see [behavior history](../evals/results/) and [routing evidence](../evals/routing/results/) |
 | Claude Code | Not recorded | Not recorded | Unknown / not yet tested |
 | Cursor | Not recorded | Not recorded | Unknown / not yet tested |
 | Windsurf | Not recorded | Not recorded | Unknown / not yet tested |

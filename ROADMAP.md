@@ -27,7 +27,7 @@ Targets are product goals, not claims about current performance. Publish measure
 
 ## Current Status — 2026-08-08
 
-The repository now has 22 focused skills, one isolated adversarial case per skill, eight cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and a schema for reproducible forward-test reports. This establishes the quality foundation; it does not imply that every model or agent passes every behavioral case.
+The repository now has 22 focused skills, one isolated adversarial case per skill, eight cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, and reproducible behavioral and blind-routing reports. The first recorded routing run selected the exact intended skill set for all 25 prompts, and five current behavioral scenarios pass in the recorded Codex lineage. These are bounded results, not a claim that every model, client, or untested behavior passes.
 
 The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
 
@@ -62,7 +62,7 @@ Every new skill must ship with UI metadata, at least one adversarial eval case, 
 - Publish tested end-to-end workflow examples using fictional data.
 - Add opt-in reference packs for common CRM field models and CSV handoffs.
 - Document import and export boundaries without making a CRM mandatory.
-- Test installation and behavior across multiple skills-compatible agents.
+- Test installation, routing, and behavior across multiple skills-compatible agents and stable model lineages.
 - Version releases and publish evidence-backed compatibility notes.
 
 ## Deliberate Non-Goals
