@@ -12,12 +12,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", ".venv", "node_modules", "__pycache__", ".pytest_cache"}
 TEXT_SUFFIXES = {".md", ".json", ".yaml", ".yml", ".py", ".csv", ".txt", ".toml"}
+SENSITIVE_TEXT_NAMES = {".env", ".npmrc", ".pypirc", ".netrc"}
+MAX_TEXT_BYTES = 1_000_000
 SECRET_PATTERNS = {
     "private key block": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     "AWS access key": re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
     "GitHub token": re.compile(r"\bgh[pousr]_[A-Za-z0-9]{36,255}\b"),
     "OpenAI-style secret": re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
     "Slack token": re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{20,}\b"),
+    "GitLab token": re.compile(r"\bglpat-[A-Za-z0-9_-]{20,}\b"),
+    "npm token": re.compile(r"\bnpm_[A-Za-z0-9]{36,}\b"),
+    "Google API key": re.compile(r"\bAIza[0-9A-Za-z_-]{35}\b"),
+    "Stripe secret": re.compile(r"\bsk_(?:live|test)_[A-Za-z0-9]{20,}\b"),
 }
 
 
@@ -41,12 +47,21 @@ def repository_paths(root: Path) -> tuple[list[Path], list[str]]:
             relative = path.relative_to(root).as_posix()
             if path.is_symlink():
                 errors.append(f"symbolic link is not allowed: {relative}")
-            elif path.suffix.lower() in TEXT_SUFFIXES:
+            elif (
+                path.suffix.lower() in TEXT_SUFFIXES
+                or name in SENSITIVE_TEXT_NAMES
+                or name.startswith(".env.")
+            ):
                 files.append(path)
     return files, errors
 
 
 def scan_text(path: Path, root: Path) -> list[str]:
+    if path.stat().st_size > MAX_TEXT_BYTES:
+        return [
+            f"text-like file exceeds {MAX_TEXT_BYTES} bytes: "
+            f"{path.relative_to(root).as_posix()}"
+        ]
     try:
         text = path.read_text(encoding="utf-8")
     except UnicodeDecodeError:

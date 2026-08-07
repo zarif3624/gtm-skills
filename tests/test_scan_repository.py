@@ -31,6 +31,28 @@ class RepositoryScannerTests(unittest.TestCase):
             self.assertEqual(errors, ["possible AWS access key: candidate.txt:1"])
             self.assertNotIn(candidate, errors[0])
 
+    def test_env_dotfile_is_scanned(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            candidate = "glpat-" + "A" * 24
+            (root / ".env").write_text(f"TOKEN={candidate}\n", encoding="utf-8")
+            count, errors = SCANNER.scan_repository(root)
+            self.assertEqual(count, 1)
+            self.assertEqual(errors, ["possible GitLab token: .env:1"])
+            self.assertNotIn(candidate, errors[0])
+
+    def test_oversized_text_file_fails_before_reading(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "large.txt").write_text(
+                "x" * (SCANNER.MAX_TEXT_BYTES + 1), encoding="utf-8"
+            )
+            _count, errors = SCANNER.scan_repository(root)
+            self.assertEqual(
+                errors,
+                [f"text-like file exceeds {SCANNER.MAX_TEXT_BYTES} bytes: large.txt"],
+            )
+
     def test_symlink_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
