@@ -92,7 +92,7 @@ class RoutingReportTests(unittest.TestCase):
         self.assertEqual(failed["excluded_selected"], 1)
 
     def make_repository(self, root: Path) -> Path:
-        corpus_path = root / "evals" / "routing" / "cases.json"
+        corpus_path = root / "evals" / "routing" / "corpora" / "test-v1.json"
         corpus_path.parent.mkdir(parents=True)
         corpus_path.write_text(json.dumps(corpus()), encoding="utf-8")
         for name in ("first-skill", "second-skill", "third-skill"):
@@ -103,7 +103,7 @@ class RoutingReportTests(unittest.TestCase):
         response_path.write_text(json.dumps(response()), encoding="utf-8")
         report = {
             "schema_version": 1,
-            "corpus_path": "evals/routing/cases.json",
+            "corpus_path": "evals/routing/corpora/test-v1.json",
             "supersedes": None,
             "run": {
                 "agent": "Test agent",

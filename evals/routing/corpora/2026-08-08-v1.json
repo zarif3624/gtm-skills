@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "build-shared-gtm-context",
+      "prompt": "Turn these scattered product, market, proof, and sales-motion notes into reusable project context for future GTM work.",
+      "expected_skills": ["gtm-context"],
+      "excluded_skills": ["define-icp"]
+    },
+    {
+      "id": "derive-testable-icp",
+      "prompt": "Analyze our small set of customers and losses to define a testable ideal customer profile with counterexamples and validation tests.",
+      "expected_skills": ["define-icp"],
+      "excluded_skills": ["plan-prospecting"]
+    },
+    {
+      "id": "rebalance-sales-territories",
+      "prompt": "Redistribute 800 accounts across six sellers using workload, potential, continuity, and capacity scenarios.",
+      "expected_skills": ["plan-territories"],
+      "excluded_skills": ["plan-account"]
+    },
+    {
+      "id": "research-named-account",
+      "prompt": "Research this named company before our first meeting, cite current public sources, and separate facts from hypotheses.",
+      "expected_skills": ["research-account"],
+      "excluded_skills": ["plan-account"]
+    },
+    {
+      "id": "build-strategic-account-plan",
+      "prompt": "Build a multi-year account strategy across this customer's business units, relationships, active opportunities, whitespace, and investment choices.",
+      "expected_skills": ["plan-account"],
+      "excluded_skills": ["research-account"]
+    },
+    {
+      "id": "prioritize-prospecting-list",
+      "prompt": "Turn our ICP and account list into a focused prospecting plan with account tiers, contact coverage, and learning goals.",
+      "expected_skills": ["plan-prospecting"],
+      "excluded_skills": ["write-outbound"]
+    },
+    {
+      "id": "write-responsible-outbound-sequence",
+      "prompt": "Write a four-touch email and LinkedIn sequence using only these approved account signals and proof points.",
+      "expected_skills": ["write-outbound"],
+      "excluded_skills": ["plan-prospecting"]
+    },
+    {
+      "id": "prepare-first-discovery-call",
+      "prompt": "Prepare hypotheses, questions, an agenda, and a next-step plan for tomorrow's first discovery call.",
+      "expected_skills": ["prepare-discovery"],
+      "excluded_skills": ["analyze-sales-call"]
+    },
+    {
+      "id": "analyze-completed-sales-call",
+      "prompt": "Analyze this timestamped call transcript for evidence, decisions, objections, commitments, next steps, and coaching.",
+      "expected_skills": ["analyze-sales-call"],
+      "excluded_skills": ["prepare-discovery"]
+    },
+    {
+      "id": "assess-opportunity-qualification",
+      "prompt": "Assess whether this live opportunity is qualified from the evidence, contradictions, and missing decision information.",
+      "expected_skills": ["qualify-opportunity"],
+      "excluded_skills": ["plan-deal"]
+    },
+    {
+      "id": "build-rep-coaching-plan",
+      "prompt": "Use these calls, manager observations, and deal outcomes to choose one evidence-based behavior experiment for the rep's next coaching cycle.",
+      "expected_skills": ["coach-sales-rep"],
+      "excluded_skills": ["analyze-sales-call"]
+    },
+    {
+      "id": "plan-complex-deal",
+      "prompt": "Build a strategy for this complex active deal covering stakeholders, competition, risks, proof, and prioritized actions.",
+      "expected_skills": ["plan-deal"],
+      "excluded_skills": ["qualify-opportunity"]
+    },
+    {
+      "id": "respond-to-product-objection",
+      "prompt": "The buyer says they do not trust our integration. Diagnose the concern and prepare honest response options and questions.",
+      "expected_skills": ["handle-objections"],
+      "excluded_skills": ["prepare-negotiation"]
+    },
+    {
+      "id": "design-buyer-specific-demo",
+      "prompt": "Design a 35-minute demo around this buyer's outcomes, workflow, proof needs, and unresolved limitations.",
+      "expected_skills": ["prepare-demo"],
+      "excluded_skills": ["prepare-discovery"]
+    },
+    {
+      "id": "prepare-commercial-negotiation",
+      "prompt": "Prepare packages, trades, approval boundaries, and a concession sequence for an upcoming pricing and contract negotiation.",
+      "expected_skills": ["prepare-negotiation"],
+      "excluded_skills": ["handle-objections"]
+    },
+    {
+      "id": "draft-mutual-decision-plan",
+      "prompt": "Draft a buyer-editable mutual action plan with decision milestones, dependencies, acceptance status, and valid no-go outcomes.",
+      "expected_skills": ["create-mutual-action-plan"],
+      "excluded_skills": ["plan-deal"]
+    },
+    {
+      "id": "review-pipeline-portfolio",
+      "prompt": "Review this CRM export for data issues, deal risk, buyer momentum, concentration, and management priorities.",
+      "expected_skills": ["review-pipeline"],
+      "excluded_skills": ["forecast-sales"]
+    },
+    {
+      "id": "forecast-revenue-scenarios",
+      "prompt": "Build an auditable quarterly revenue forecast with downside, expected, and upside scenarios from this pipeline and history.",
+      "expected_skills": ["forecast-sales"],
+      "excluded_skills": ["review-pipeline"]
+    },
+    {
+      "id": "handoff-signed-customer",
+      "prompt": "Turn the signed order, discovery notes, promises, risks, and implementation dependencies into a customer-success handoff.",
+      "expected_skills": ["handoff-customer"],
+      "excluded_skills": ["plan-account"]
+    },
+    {
+      "id": "review-customer-value-and-renewal",
+      "prompt": "Review this customer's success plan, usage, support history, stakeholder feedback, and contract evidence for outcomes and renewal readiness.",
+      "expected_skills": ["review-customer-outcomes"],
+      "excluded_skills": ["handoff-customer"]
+    },
+    {
+      "id": "analyze-win-loss-patterns",
+      "prompt": "Analyze these closed wins, losses, no-decisions, seller reason codes, and buyer interviews for supportable patterns and learning tests.",
+      "expected_skills": ["analyze-win-loss"],
+      "excluded_skills": ["qualify-opportunity"]
+    },
+    {
+      "id": "design-partner-channel-motion",
+      "prompt": "Design a testable referral and co-sell motion with attribution, economics, customer permission, stages, and stop rules.",
+      "expected_skills": ["plan-partner-channel"],
+      "excluded_skills": ["plan-prospecting"]
+    },
+    {
+      "id": "call-analysis-to-qualification",
+      "prompt": "Analyze this completed discovery transcript, then update the opportunity qualification without promoting seller claims into buyer evidence.",
+      "expected_skills": ["analyze-sales-call", "qualify-opportunity"],
+      "excluded_skills": ["prepare-discovery"]
+    },
+    {
+      "id": "pipeline-review-to-forecast",
+      "prompt": "Review this dirty pipeline snapshot first, then forecast the quarter without losing exclusions or data contradictions.",
+      "expected_skills": ["review-pipeline", "forecast-sales"],
+      "excluded_skills": ["plan-territories"]
+    },
+    {
+      "id": "account-research-to-discovery",
+      "prompt": "Research this named account from public sources, then prepare a first-call discovery plan that keeps hypotheses unverified.",
+      "expected_skills": ["research-account", "prepare-discovery"],
+      "excluded_skills": ["plan-account"]
+    }
+  ]
+}

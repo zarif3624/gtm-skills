@@ -94,8 +94,9 @@ def validate_report(path: Path, root: Path = ROOT) -> list[str]:
     errors.extend(path_errors)
     corpus = None
     if corpus_path:
-        if corpus_path != (root / "evals" / "routing" / "cases.json").resolve():
-            errors.append("corpus_path must be evals/routing/cases.json")
+        corpora = (root / "evals" / "routing" / "corpora").resolve()
+        if corpus_path.parent != corpora:
+            errors.append("corpus_path must point directly into evals/routing/corpora")
         corpus, corpus_errors = load_json(corpus_path)
         errors.extend(f"corpus {error}" for error in corpus_errors)
 

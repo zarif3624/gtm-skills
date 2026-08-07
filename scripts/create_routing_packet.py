@@ -11,7 +11,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS = ROOT / "evals" / "routing" / "cases.json"
+DEFAULT_CORPUS = ROOT / "evals" / "routing" / "cases.json"
 
 
 def render_packet(corpus: dict[str, Any]) -> str:
@@ -31,10 +31,13 @@ def render_packet(corpus: dict[str, Any]) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--corpus", type=Path, default=DEFAULT_CORPUS, help="routing corpus to blind"
+    )
     parser.add_argument("--output", type=Path, help="write the packet instead of stdout")
     args = parser.parse_args(argv)
     try:
-        corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
+        corpus = json.loads(args.corpus.read_text(encoding="utf-8"))
         packet = render_packet(corpus)
     except (OSError, json.JSONDecodeError, KeyError, TypeError) as error:
         print(f"FAIL {error}", file=sys.stderr)

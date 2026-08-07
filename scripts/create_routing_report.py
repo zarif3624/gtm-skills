@@ -13,7 +13,6 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS_PATH = ROOT / "evals" / "routing" / "cases.json"
 
 
 def current_commit() -> str:
@@ -57,13 +56,14 @@ def calculate_summary(corpus: dict[str, Any], response: dict[str, Any]) -> dict[
 
 
 def build_report(
-    corpus: dict[str, Any], *, agent: str, model: str, lineage: str, tested_at: str,
-    repository_commit: str, response_path: str, supersedes: str | None = None
+    corpus: dict[str, Any], *, corpus_path: str, agent: str, model: str,
+    lineage: str, tested_at: str, repository_commit: str, response_path: str,
+    supersedes: str | None = None
 ) -> dict[str, Any]:
     response = json.loads((ROOT / response_path).read_text(encoding="utf-8"))
     return {
         "schema_version": 1,
-        "corpus_path": "evals/routing/cases.json",
+        "corpus_path": corpus_path,
         "supersedes": supersedes,
         "run": {
             "agent": agent,
@@ -82,6 +82,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--agent", required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument("--lineage", required=True)
+    parser.add_argument(
+        "--corpus", type=Path, required=True,
+        help="repository-relative immutable corpus snapshot",
+    )
     parser.add_argument("--response", required=True)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--supersedes")
@@ -89,18 +93,27 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--commit", default=current_commit())
     args = parser.parse_args(argv)
     try:
-        corpus = json.loads(CORPUS_PATH.read_text(encoding="utf-8"))
+        corpus_path = (ROOT / args.corpus).resolve()
+        if corpus_path.parent != (ROOT / "evals" / "routing" / "corpora").resolve():
+            raise ValueError("--corpus must point directly into evals/routing/corpora")
+        response_path = (ROOT / args.response).resolve()
+        if not response_path.is_relative_to(
+            (ROOT / "evals" / "routing" / "results").resolve()
+        ):
+            raise ValueError("--response must stay under evals/routing/results")
+        corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
         report = build_report(
             corpus,
+            corpus_path=corpus_path.relative_to(ROOT).as_posix(),
             agent=args.agent,
             model=args.model,
             lineage=args.lineage,
             tested_at=args.tested_at,
             repository_commit=args.commit,
-            response_path=args.response,
+            response_path=response_path.relative_to(ROOT).as_posix(),
             supersedes=args.supersedes,
         )
-    except (OSError, json.JSONDecodeError, KeyError, TypeError) as error:
+    except (OSError, ValueError, json.JSONDecodeError, KeyError, TypeError) as error:
         print(f"FAIL {error}", file=sys.stderr)
         return 1
     args.output.parent.mkdir(parents=True, exist_ok=True)
