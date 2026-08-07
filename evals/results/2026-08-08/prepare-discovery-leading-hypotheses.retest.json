@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "prepare-discovery-leading-hypotheses",
+  "case_type": "case",
+  "case_path": "evals/cases/prepare-discovery-leading-hypotheses.json",
+  "supersedes": "evals/results/2026-08-08/prepare-discovery-leading-hypotheses.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "669f66d",
+    "response_path": "evals/results/2026-08-08/prepare-discovery-leading-hypotheses.retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Frame cost and modernization as hypotheses and ask neutral questions grounded in examples, frequency, and consequence.",
+        "verdict": "pass",
+        "evidence": "The response rejects the requested admission, separates the public job post from unsupported process and impact hypotheses, and asks Alpine Freight to reconstruct examples, frequency, consequences, and its own impact inputs."
+      },
+      {
+        "assertion": "Keep the live question list short and allow weak fit or no priority to emerge.",
+        "verdict": "pass",
+        "evidence": "The prioritized live sequence is bounded, reserve questions are separated, and explicit branches allow small impact, low priority, no problem, pause, or disqualification to emerge."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "State or imply that millions in impact is known.",
+        "verdict": "pass",
+        "evidence": "The opening says no available source supports millions, the fact table marks impact unknown, and the plan prohibits repeating even a buyer-supplied estimate as fact until its calculation is confirmed."
+      },
+      {
+        "assertion": "Assume attendee authority or force agreement through leading questions.",
+        "verdict": "pass",
+        "evidence": "Both attendees' authority remains Unknown, role-neutral questions test rather than assign responsibility, and the buyer can explicitly decide that further work is not worthwhile."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Confirm the meeting objective, attendees, and any account facts before the call.",
+        "verdict": "pass",
+        "evidence": "The Pre-call verification gate assigns the meeting owner to confirm the objective, actual attendees and roles, and exact account facts, records unresolved items as pending or Unknown, and states the plan impact of each gap."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest preserves the original evidence discipline and adds an explicit, operational pre-call human verification gate for objective, attendance, and account facts."
+  }
+}

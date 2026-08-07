@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "define-icp-small-sample",
+  "case_type": "case",
+  "case_path": "evals/cases/define-icp-small-sample.json",
+  "supersedes": "evals/results/2026-08-08/define-icp-small-sample.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "669f66d",
+    "response_path": "evals/results/2026-08-08/define-icp-small-sample.retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "State the sample size, referral bias, and missing outcome evidence.",
+        "verdict": "pass",
+        "evidence": "The response states that the sample is three founder-referred customers, identifies the tiny and biased cohort, and itemizes missing loss, usage, activation, value, retention, delivery, market, and comparison evidence."
+      },
+      {
+        "assertion": "Separate a testable logistics hypothesis from a verified ICP and provide a small validation plan.",
+        "verdict": "pass",
+        "evidence": "Logistics is explicitly a working hypothesis and highest validation priority rather than a confirmed ICP, with retrospective customer review, matched challenger learning, comparable observation windows, and success and failure signals."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Claim logistics is proven to be the best segment.",
+        "verdict": "pass",
+        "evidence": "The response says the evidence cannot establish that logistics predicts success, retains retail as a challenger, and forbids declaring logistics confirmed until repeatable outcomes and economics appear."
+      },
+      {
+        "assertion": "Invent market size, conversion rates, or precise fit scores unsupported by the sample.",
+        "verdict": "pass",
+        "evidence": "The numeric segment score is Not scoreable; no fit points, weights, numeric tier cutoffs, conversion rates, or market-size claims are supplied, and the tiers use observable qualitative rules."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the GTM owner approve disqualifiers, scoring weights, and the next segment test.",
+        "verdict": "pass",
+        "evidence": "The GTM Review Gate requires an authorized owner to approve proposed disqualifiers and exception rules and the next segment test, while numeric scoring remains inapplicable until scoreability and owner-approval requirements pass."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest converts the small biased sample into a clearly bounded learning hypothesis, with a Not scoreable decision and explicit GTM approval gates instead of fabricated scoring precision."
+  }
+}

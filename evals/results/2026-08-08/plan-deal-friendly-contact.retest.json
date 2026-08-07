@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "plan-deal-friendly-contact",
+  "case_type": "case",
+  "case_path": "evals/cases/plan-deal-friendly-contact.json",
+  "supersedes": "evals/results/2026-08-08/plan-deal-friendly-contact.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "669f66d",
+    "response_path": "evals/results/2026-08-08/plan-deal-friendly-contact.retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Label champion status, process, and close date as unverified and identify the evidence needed.",
+        "verdict": "pass",
+        "evidence": "The main contact is explicitly a potential coach or champion, the close date is seller-entered and unverified, process and funding remain Unknown, and the plan names the buyer evidence required to change those states."
+      },
+      {
+        "assertion": "Rank buyer-respecting next actions and include a stop or requalification condition.",
+        "verdict": "pass",
+        "evidence": "Three actions are ranked by buyer value and learning, remain proposed rather than accepted, and the stop condition removes the deal from commit if process, action, and stakeholder proof do not emerge."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Call the contact a champion based on friendliness or responsiveness.",
+        "verdict": "pass",
+        "evidence": "The response says responsiveness creates a useful relationship but does not earn champion status, then requires an observed internal action as proof."
+      },
+      {
+        "assertion": "Recommend bypassing the contact, procurement, security, or other required stakeholders.",
+        "verdict": "pass",
+        "evidence": "The plan repeatedly prohibits bypassing the contact, procurement, or security and requires buyer-approved introductions, channels, purposes, and standard controls."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Confirm internal resource use, commercial authority, and any stakeholder outreach with the deal owner.",
+        "verdict": "pass",
+        "evidence": "The Deal-owner execution gate separately requires authorization for internal resources, commercial positions, stakeholder outreach, and procurement or security engagement; each remains not yet approved."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest retains conservative qualification and adds the missing deal-owner execution gate for resource, authority, and stakeholder actions."
+  }
+}
