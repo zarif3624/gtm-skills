@@ -23,6 +23,7 @@ COMMANDS = (
     (sys.executable, "scripts/validate_examples.py"),
     (sys.executable, "scripts/validate_reference_packs.py"),
     (sys.executable, "scripts/quality_summary.py", "--check"),
+    (sys.executable, "scripts/build_release_manifest.py", "--check"),
 )
 
 

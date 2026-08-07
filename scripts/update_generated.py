@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 COMMANDS = (
     (sys.executable, "scripts/build_catalog.py", "--write"),
     (sys.executable, "scripts/quality_summary.py", "--write"),
+    (sys.executable, "scripts/build_release_manifest.py", "--write"),
 )
 
 

@@ -6,7 +6,7 @@ A release is a reviewed compatibility statement, not just a tag.
 
 1. Choose the version and move relevant `Unreleased` entries in [CHANGELOG.md](CHANGELOG.md) under that version and date.
 2. Confirm the working tree contains only intended release changes.
-3. Run `python3 scripts/update_generated.py`, review the catalog metadata, package digests, and evidence counts, then commit the generated changes.
+3. Run `python3 scripts/update_generated.py`, review the catalog metadata, package digests, evidence counts, and release manifest, then commit the generated changes.
 4. Run `python3 scripts/check.py`.
 5. Run `DISABLE_TELEMETRY=1 npx -y skills add . --list` and confirm every catalog skill is discovered.
 6. Run current routing and behavioral cases for each client/model lineage whose compatibility will be claimed.
@@ -16,7 +16,7 @@ A release is a reviewed compatibility statement, not just a tag.
 ## Review
 
 - Confirm the README skill count, catalog, quickstart, reference packs, and local links.
-- Confirm `catalog.json` package digests and `quality-summary.json` evidence counts, behavioral definition coverage, and current-corpus routing coverage were generated from the release commit.
+- Confirm `release-manifest.json` binds the current `catalog.json` package digests to `quality-summary.json`, behavioral definition coverage, current-corpus routing coverage, and latest report paths.
 - Confirm each new or materially changed skill has an adversarial case and a clean-context forward test.
 - Confirm current results are distinguishable from historical failures.
 - Confirm no legal, security, compliance, model, or cross-client claim exceeds the recorded evidence.

@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "generated_artifacts": {
+    "catalog": {
+      "path": "catalog.json",
+      "sha256": "f35244b09a79f651386e1fafed9effd1d51a1194fec993e106842ea1649ea179"
+    },
+    "quality_summary": {
+      "path": "quality-summary.json",
+      "sha256": "96147e3d836fcfc87acbead72bc5094f661c4a313486f466dc8002cde3495886"
+    }
+  },
+  "skill_packages": [
+    {
+      "name": "analyze-sales-call",
+      "path": "skills/analyze-sales-call",
+      "package_sha256": "5e280086936e2584321fd9a4dc273b31feea539a6bedbf5b03dcb7ea280757fe"
+    },
+    {
+      "name": "analyze-win-loss",
+      "path": "skills/analyze-win-loss",
+      "package_sha256": "0e80e16cb38c4ba5fddee0931a749974c2e23f9b0e205aa9416fb42faa8dadcc"
+    },
+    {
+      "name": "build-business-case",
+      "path": "skills/build-business-case",
+      "package_sha256": "eefdc86de00bab70f530bc2b0437cc108997e996e1645210abe5f8b8ba7a776b"
+    },
+    {
+      "name": "coach-sales-rep",
+      "path": "skills/coach-sales-rep",
+      "package_sha256": "f37132ef3c663895b2f77fa98b5640b4d25942276d312aa05c8f264378a994d9"
+    },
+    {
+      "name": "create-mutual-action-plan",
+      "path": "skills/create-mutual-action-plan",
+      "package_sha256": "be0180b8b0f326a5aa2876fa266a2de7aee495828a1c499d5baa2f89ea7f7baa"
+    },
+    {
+      "name": "define-icp",
+      "path": "skills/define-icp",
+      "package_sha256": "75ead790195caefeb52a41208a439514c56664a49b655dc434b009dc0dca67d2"
+    },
+    {
+      "name": "design-sales-process",
+      "path": "skills/design-sales-process",
+      "package_sha256": "f56b5d5cf4b78b31a57c8ff62b69328dc5118d00a5b6e28b2508f6f63cb03488"
+    },
+    {
+      "name": "develop-positioning",
+      "path": "skills/develop-positioning",
+      "package_sha256": "9d55f49408fc5ac12f574faad74c83ff4b2207f8271b2ea33b25b877de6c3e5c"
+    },
+    {
+      "name": "forecast-sales",
+      "path": "skills/forecast-sales",
+      "package_sha256": "328a2f63b6feefa91b8537f57a744a3c37635131e40ef2b0be9a46d27ee304ea"
+    },
+    {
+      "name": "gtm-context",
+      "path": "skills/gtm-context",
+      "package_sha256": "d7993eb6f571f9174b6f824aec28051fd4467228f727c845ac73195df5501d73"
+    },
+    {
+      "name": "handle-objections",
+      "path": "skills/handle-objections",
+      "package_sha256": "9caa1400b7173b6d0f5ef4481e79a42d826478cef26a9f7b8385fb906eb8b0a3"
+    },
+    {
+      "name": "handoff-customer",
+      "path": "skills/handoff-customer",
+      "package_sha256": "90e40efe1d9bc08fa086afd0af8620d9d7ffae6c8f0614426fcbae5ce67d0061"
+    },
+    {
+      "name": "plan-account",
+      "path": "skills/plan-account",
+      "package_sha256": "fc56876c077a37104264f9c3c95a692a7112191539c990c9a04d75a6f352b237"
+    },
+    {
+      "name": "plan-deal",
+      "path": "skills/plan-deal",
+      "package_sha256": "fd585365e87f71edb7197143defd75031c2deb9d05d5df5c2ec32fc5c9b5aaca"
+    },
+    {
+      "name": "plan-partner-channel",
+      "path": "skills/plan-partner-channel",
+      "package_sha256": "9a044f2f8a886fc6e5e6371c77fa276784ce69b21d34356655367359fb0beb92"
+    },
+    {
+      "name": "plan-prospecting",
+      "path": "skills/plan-prospecting",
+      "package_sha256": "093e06c95593f02525e2e3935da4fe40e9b286107dd5c6979634d2a85ea718b8"
+    },
+    {
+      "name": "plan-territories",
+      "path": "skills/plan-territories",
+      "package_sha256": "f716b96e72581a996a78158b8842ed5fcaca007601ccb60a52da57b0ffdfe73b"
+    },
+    {
+      "name": "prepare-demo",
+      "path": "skills/prepare-demo",
+      "package_sha256": "f64a29aa262d09973b7a43bbd82f4dbed90b8d2e433e6cdf5223a3d5d2c4e818"
+    },
+    {
+      "name": "prepare-discovery",
+      "path": "skills/prepare-discovery",
+      "package_sha256": "845316e098223d085078f3da0adc555a57230cea13e9179145e344e7c31952f4"
+    },
+    {
+      "name": "prepare-negotiation",
+      "path": "skills/prepare-negotiation",
+      "package_sha256": "8038b4b620232509823594e7f773d88f2dcf74a43e1f9ed57b4954fc8c61dcdb"
+    },
+    {
+      "name": "qualify-opportunity",
+      "path": "skills/qualify-opportunity",
+      "package_sha256": "e9d38d89700da9b821505d87ea0f563d67433854631f05bfc96d9f77b637011d"
+    },
+    {
+      "name": "research-account",
+      "path": "skills/research-account",
+      "package_sha256": "694bdb7ecd2e1dd9d412ad489c2288fe75f505204e77ffa43f0eb4d8a71775e2"
+    },
+    {
+      "name": "review-customer-outcomes",
+      "path": "skills/review-customer-outcomes",
+      "package_sha256": "99698cc279ae0636aefc195134eb32adb76caede7c8037bf658f1d56ecea9d2c"
+    },
+    {
+      "name": "review-pipeline",
+      "path": "skills/review-pipeline",
+      "package_sha256": "85dae22c2949529494b5090790de259e421509c70a39b64d0bfca48620b914b5"
+    },
+    {
+      "name": "write-outbound",
+      "path": "skills/write-outbound",
+      "package_sha256": "9352e136dbfd82652f8f22ea6b1511f5ead8f14991ed0579f3c12552d48d87a0"
+    }
+  ],
+  "current_evidence": {
+    "behavioral": [
+      {
+        "case_id": "build-business-case-invented-roi",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "5ae4552",
+        "report_path": "evals/results/2026-08-08/build-business-case-invented-roi.retest.json",
+        "response_path": "evals/results/2026-08-08/build-business-case-invented-roi.retest.response.md"
+      },
+      {
+        "case_id": "coach-sales-rep-single-call-trait",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "8026625e30ff0d6ef6e1cac4ad538bb9ceb9e235",
+        "report_path": "evals/results/2026-08-08/coach-sales-rep-single-call-trait.json",
+        "response_path": "evals/results/2026-08-08/coach-sales-rep-single-call-trait.response.md"
+      },
+      {
+        "case_id": "design-sales-process-generic-benchmarks",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "4a1f8fd",
+        "report_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.json",
+        "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.response.md"
+      },
+      {
+        "case_id": "develop-positioning-unsupported-superlatives",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "f5d0b84",
+        "report_path": "evals/results/2026-08-08/develop-positioning-unsupported-superlatives.retest.json",
+        "response_path": "evals/results/2026-08-08/develop-positioning-unsupported-superlatives.retest.response.md"
+      },
+      {
+        "case_id": "forecast-sales-arbitrary-probability",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "aeedfdf760ab5dd7f52f3f0423ca264e92550dd8",
+        "report_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.json",
+        "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.response.md"
+      },
+      {
+        "case_id": "handoff-customer-conflicting-promise",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "0e11517",
+        "report_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.retest.json",
+        "response_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.retest.response.md"
+      },
+      {
+        "case_id": "pipeline-to-forecast-transformations",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "d7067bc40b2d57b03c46f4f58bcc9c64b7b5f7af",
+        "report_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.json",
+        "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.response.md"
+      },
+      {
+        "case_id": "positioning-to-outbound-claims",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "f5d0b84",
+        "report_path": "evals/results/2026-08-08/positioning-to-outbound-claims.retest.json",
+        "response_path": "evals/results/2026-08-08/positioning-to-outbound-claims.retest.response.md"
+      },
+      {
+        "case_id": "prepare-demo-roadmap-feature",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "partial",
+        "repository_commit": "0e11517",
+        "report_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.json",
+        "response_path": "evals/results/2026-08-08/prepare-demo-roadmap-feature.response.md"
+      },
+      {
+        "case_id": "prepare-negotiation-unauthorized-terms",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "74ab7b6",
+        "report_path": "evals/results/2026-08-08/prepare-negotiation-unauthorized-terms.json",
+        "response_path": "evals/results/2026-08-08/prepare-negotiation-unauthorized-terms.response.md"
+      },
+      {
+        "case_id": "qualify-opportunity-crm-confidence",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "0e11517",
+        "report_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.json",
+        "response_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.response.md"
+      },
+      {
+        "case_id": "review-customer-outcomes-usage-value",
+        "case_type": "case",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "8a23b985464542a1d74206b362bd5b685e32f344",
+        "report_path": "evals/results/2026-08-08/review-customer-outcomes-usage-value.json",
+        "response_path": "evals/results/2026-08-08/review-customer-outcomes-usage-value.response.md"
+      },
+      {
+        "case_id": "source-injection-to-outbound",
+        "case_type": "journey",
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "repository_commit": "c578a69bf86c94ff5d3759cb134bb8df75bc94ba",
+        "report_path": "evals/results/2026-08-08/source-injection-to-outbound.json",
+        "response_path": "evals/results/2026-08-08/source-injection-to-outbound.response.md"
+      }
+    ],
+    "routing": [
+      {
+        "lineage": "codex-inherited",
+        "verdict": "pass",
+        "total_cases": 28,
+        "exact_matches": 28,
+        "repository_commit": "f5d0b84",
+        "corpus_path": "evals/routing/corpora/2026-08-08-v4.json",
+        "report_path": "evals/routing/results/2026-08-08-codex-inherited-v4.json",
+        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v4.response.json"
+      }
+    ]
+  }
+}

@@ -10,18 +10,18 @@
   },
   "evidence": {
     "behavioral": {
-      "reports_total": 18,
-      "latest_total": 12,
+      "reports_total": 21,
+      "latest_total": 13,
       "latest_verdicts": {
-        "pass": 10,
-        "partial": 2,
+        "pass": 12,
+        "partial": 1,
         "fail": 0
       },
-      "historical_runs": 6,
+      "historical_runs": 8,
       "definition_coverage": {
         "definitions_total": 36,
-        "definitions_with_latest_result": 12,
-        "definitions_with_latest_pass": 10
+        "definitions_with_latest_result": 13,
+        "definitions_with_latest_pass": 12
       }
     },
     "routing": {
