@@ -122,6 +122,25 @@ Produce a test artifact.
                 errors,
             )
 
+    def test_asset_control_labels_require_status(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            skill = self.make_skill(Path(temp))
+            asset = skill / "assets" / "plan.md"
+            asset.parent.mkdir()
+            asset.write_text("- **Owner:**\n", encoding="utf-8")
+            skill_file = skill / "SKILL.md"
+            skill_file.write_text(
+                skill_file.read_text(encoding="utf-8").replace(
+                    "Read [the guide]", "Use [the plan](assets/plan.md). Read [the guide]"
+                ),
+                encoding="utf-8",
+            )
+            errors = VALIDATOR.validate_skill(skill)
+            self.assertIn(
+                "ambiguous owner label in assets/plan.md; name the field as a status",
+                errors,
+            )
+
     def test_repository_document_links_are_checked(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

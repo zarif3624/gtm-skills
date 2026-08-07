@@ -34,6 +34,8 @@ A skill should:
 - Include edge cases, stop conditions, and human-review points where risk is meaningful.
 - Stay tool-agnostic unless the skill is explicitly for one system.
 - Include matching `agents/openai.yaml` metadata whose default prompt explicitly names the skill.
+- Label operational control fields such as owners, dates, approvals, and buyer actions as confirmed, proposed, accepted, or unknown.
+- Prefer milestone dependencies to arbitrary dates, and do not assume named internal functions exist.
 
 ## Pull Requests
 

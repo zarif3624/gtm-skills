@@ -132,6 +132,10 @@ You can also invoke a skill directly, such as `$prepare-discovery` or `$review-p
 
 Start with the artifact you need; `.agents/gtm-context.md` is helpful, not required. When it is missing, each skill should use the evidence you provide, label consequential gaps, and continue. Create it with `$gtm-context` when you want consistent background across repeated workflows.
 
+## Worked Example
+
+Use the [RelayFox fictional workspace](examples/relayfox/) to try conversation analysis, qualification, pipeline review, forecasting, and win/loss learning with a coherent set of safe source files. The example deliberately contains ambiguity and dirty data so you can inspect whether evidence and unknowns survive each handoff.
+
 ## Trust Standard
 
 Every contribution should preserve these rules:
@@ -143,6 +147,7 @@ Every contribution should preserve these rules:
 5. Never claim legal or regulatory compliance; surface applicable consent, privacy, and outreach requirements for human review.
 6. Do not use sensitive personal data or manipulative tactics.
 7. Preserve buyer agency. A good outcome can be a clear no.
+8. Keep proposed owners, dates, approvals, and customer actions distinct from what is confirmed or accepted.
 
 ## Contributing
 

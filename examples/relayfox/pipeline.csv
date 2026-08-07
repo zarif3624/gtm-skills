@@ -1,0 +1,8 @@
+opportunity_id,account_name,stage,amount,currency,close_date,last_buyer_action,next_step,next_step_owner,next_step_date,forecast_category,notes
+RF-101,Alder Manufacturing,Discovery,120000,USD,2026-09-30,2026-08-07,Send validation outline,Alex,2026-08-10,Pipeline,"Budget, authority, security requirements, and September timing remain unknown"
+RF-102,Beacon Transit,Validation,95000,EUR,2026-09-15,2026-07-20,Confirm technical review,Morgan,2026-08-01,Best Case,"Currency conversion policy absent; next-step date is past"
+RF-102,Beacon Transit,Proposal,105000,EUR,2026-09-15,2026-07-20,Confirm technical review,Morgan,2026-08-01,Commit,"Duplicate ID with conflicting stage and amount"
+RF-103,Cascade Foods,Proposal,210000,USD,2026-08-31,2026-07-28,Complete security review,Unknown,2026-09-10,Commit,"Required security milestone occurs after entered close date"
+RF-104,Driftwood Energy,Discovery,80000,USD,2026-10-31,,Schedule stakeholder call,Alex,,Pipeline,"Twelve seller emails recorded; no meaningful buyer action supplied"
+RF-105,Elm Logistics,Validation,150000,USD,2026-09-30,2026-08-05,Run buyer-approved workflow test,Jamie,2026-08-20,Best Case,"Buyer accepted test scope; funding and decision process remain unknown"
+RF-106,Fairview Labs,Closed Lost,70000,USD,2026-07-31,2026-06-15,,,,Closed,"Seller selected Price; no buyer interview or decision artifact"

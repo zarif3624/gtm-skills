@@ -19,6 +19,10 @@ OPENAI_FIELD_RE = re.compile(r'^  ([a-z_]+): "([^"]*)"$')
 RESOURCE_DIRS = ("assets", "references", "scripts")
 REQUIRED_INTERFACE_FIELDS = {"display_name", "short_description", "default_prompt"}
 BARE_CONTROL_FIELD_RE = re.compile(r"\|\s*(Owner|Date|Deadline|Approval)\s*\|", re.IGNORECASE)
+BARE_LABELED_CONTROL_FIELD_RE = re.compile(
+    r"^\s*[-*]\s+\*\*(Owner|Review date|Deadline|Approval):\*\*",
+    re.IGNORECASE | re.MULTILINE,
+)
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str, list[str]]:
@@ -114,6 +118,12 @@ def validate_resources(path: Path, text: str) -> list[str]:
                         f"ambiguous {bare_field.group(1).lower()} field in {relative}; "
                         "include confirmed, proposed, accepted, or unknown status"
                     )
+                bare_label = BARE_LABELED_CONTROL_FIELD_RE.search(asset_text)
+                if bare_label:
+                    errors.append(
+                        f"ambiguous {bare_label.group(1).lower()} label in {relative}; "
+                        "name the field as a status"
+                    )
     return errors
 
 
@@ -205,6 +215,7 @@ def validate_repository_docs() -> list[str]:
     documents = list(ROOT.glob("*.md"))
     documents.extend((ROOT / ".github").rglob("*.md"))
     documents.extend((ROOT / "evals").glob("*.md"))
+    documents.extend((ROOT / "examples").rglob("*.md"))
     errors: list[str] = []
     for document in sorted(set(documents)):
         errors.extend(validate_document_links(document, ROOT))

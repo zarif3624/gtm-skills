@@ -13,6 +13,7 @@ COMMANDS = (
     (sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"),
     (sys.executable, "scripts/validate_skills.py"),
     (sys.executable, "scripts/validate_evals.py"),
+    (sys.executable, "scripts/validate_examples.py"),
 )
 
 

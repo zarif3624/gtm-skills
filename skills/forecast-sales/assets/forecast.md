@@ -49,6 +49,6 @@
 ## Snapshot For Backtesting
 
 - **Assumptions recorded:**
-- **Owner:**
-- **Review date:**
+- **Owner status:** Confirmed / Proposed / Unknown
+- **Review timing status:** Confirmed / Proposed / Unknown
 - **Actual outcome:** Pending

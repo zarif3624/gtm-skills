@@ -28,8 +28,8 @@
 ## Recommended Next Step
 
 - **Action:**
-- **Owner:**
-- **Date:**
+- **Owner status:** Confirmed / Proposed / Unknown
+- **Timing status:** Accepted / Proposed / Unknown
 - **Requalification signal:**
 
 ## CRM Note

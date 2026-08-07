@@ -40,4 +40,4 @@
 - **One variable:**
 - **Success measure:**
 - **Guardrail measure:**
-- **Review date:**
+- **Review timing status:** Confirmed / Proposed / Unknown
