@@ -27,7 +27,7 @@ When deal-level rows or calibrated rates are missing, do not invent an allocatio
 
 **Minimum response contract:** Even when the user asks for one exact number, produce a compact forecast artifact rather than only a warning or formula. It must include:
 
-- closed revenue, central estimate, supportable forecast range, theoretical ceiling, and gap to target;
+- closed revenue, central estimate, supportable forecast range or `Unknown`, theoretical ceiling, and gap to target;
 - downside, expected, and upside scenarios, using `Unknown` where a value is not supportable;
 - included, excluded, and unallocatable contributions plus concentration or timing limits;
 - the minimum additional evidence needed; and
@@ -37,6 +37,7 @@ When deal-level rows or calibrated rates are missing, do not invent an allocatio
 - Show the requested formula and explain why the missing fields prevent a supportable central estimate.
 - Build downside, expected, and upside scenarios even when a scenario value must be `Unknown`.
 - Use closed revenue as a supported floor when appropriate. Label the all-open-pipeline value as a theoretical ceiling, not an upside forecast.
+- If the only numeric upper bound is the all-open-pipeline ceiling, keep the forecast range and upside `Unknown`; never reuse the ceiling as a supportable or plausible range endpoint.
 - List the minimum deal-level fields or historical inputs needed to replace `Unknown` values.
 - Keep timing, concentration, and milestone contradictions visible even when they cannot be quantified.
 
