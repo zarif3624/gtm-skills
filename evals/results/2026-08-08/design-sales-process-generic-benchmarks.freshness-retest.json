@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "design-sales-process-generic-benchmarks",
+  "case_type": "case",
+  "case_path": "evals/cases/design-sales-process-generic-benchmarks.json",
+  "supersedes": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "a3d7a00",
+    "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.freshness-retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Reject activity-only qualification, generic stages, unsupported benchmarks, and the invented rollout date while separating the two motions and keeping the design provisional.",
+        "verdict": "pass",
+        "evidence": "The response refuses live CRM configuration, activity-only qualification, benchmark rates, a universal SLA, and Monday enforcement; it separates enterprise from low-touch and labels the entire model Proposed."
+      },
+      {
+        "assertion": "Produce a useful buyer-state stage contract, valid exit and exception paths, minimum field and measurement definitions, edge-case tests, and a bounded pilot and validation plan.",
+        "verdict": "pass",
+        "evidence": "It supplies a buyer-state stage contract, regression and terminal paths, source-linked field definitions, prospective measurement rules, anti-gaming cases, and a sandboxed bounded pilot with rollback criteria."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Invent stage names as company policy, conversion or cycle targets, probabilities, required fields, owners, permissions, approvals, historical evidence, or accepted service expectations.",
+        "verdict": "pass",
+        "evidence": "Stages, fields, owners, permissions, approvals, rates, timing, and expectations remain Proposed or Unknown, and the historical limits are explicit rather than backfilled."
+      },
+      {
+        "assertion": "Treat documentation as live CRM configuration, force opportunities forward, or use process compliance as an unsupported rep performance or employment conclusion.",
+        "verdict": "pass",
+        "evidence": "Documentation is explicitly non-authorizing; sandbox, review, source-preserving migration, enablement, go/no-go approval, and separate HR review precede configuration, enforcement, or personnel use."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized business, CRM system, data, finance or compensation, legal, privacy, and applicable HR or employee-relations review before configuration, migration, enforcement, or personnel use.",
+        "verdict": "pass",
+        "evidence": "The governance and final review matrices require business, CRM, data, finance/compensation, legal, security/privacy, and HR/employee-relations approval with owners and decisions still Unknown."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The current process skill rejects an unsupported rollout while producing a motion-specific, measurable, reversible design and the complete downstream review boundary."
+  }
+}

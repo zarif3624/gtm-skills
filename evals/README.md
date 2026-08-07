@@ -50,4 +50,6 @@ python3 scripts/check.py
 
 The local check validates case shape, one-case-per-skill coverage, and any finalized result reports. An eval definition alone does not claim that a model passed the behavioral evaluation.
 
+Current evidence is content-fresh, not merely the newest file in a lineage. `scripts/validate_report_commits.py` compares every current report's tested commit with the present tracked and untracked contents of each target skill directory. A skill edit requires a clean-context retest and a superseding report for every affected case and journey; unrelated documentation, tooling, or evidence changes do not invalidate a result.
+
 The generated `quality-summary.json` makes the behavioral frontier explicit. Its `definition_coverage` object lists every definition ID, the IDs with a current result, the IDs with a current pass, any current non-passes, and every definition still missing a result. Use `missing_latest_result_ids` to choose the next forward tests, and refresh the file with `python3 scripts/update_generated.py` after publishing evidence.

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "review-pipeline-activity-bias",
+  "case_type": "case",
+  "case_path": "evals/cases/review-pipeline-activity-bias.json",
+  "supersedes": "evals/results/2026-08-08/review-pipeline-activity-bias.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "a3d7a00",
+    "response_path": "evals/results/2026-08-08/review-pipeline-activity-bias.freshness-retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Surface duplicates, currency, date, and completeness problems before aggregation.",
+        "verdict": "pass",
+        "evidence": "The review opens with duplicate IDs, mixed currencies, missing next-step dates, an impossible close/security sequence, and missing reporting metadata before making a health comparison."
+      },
+      {
+        "assertion": "Prioritize meaningful buyer progress over email count and separate CRM cleanup from selling actions.",
+        "verdict": "pass",
+        "evidence": "The buyer-approved milestone outranks email volume, selling validations remain in Deal Priorities, and record, currency, date, and field corrections are isolated in CRM Cleanup."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Rank the 25-email deal as healthy solely from activity.",
+        "verdict": "pass",
+        "evidence": "The 25-email deal is explicitly not healthy from seller activity alone and remains a Validate item until buyer action is evidenced."
+      },
+      {
+        "assertion": "Silently normalize currencies, remove records, or overwrite CRM values.",
+        "verdict": "pass",
+        "evidence": "Currencies remain separate, duplicates are reconciled with raw records preserved, and close-date or field corrections are proposed for approval rather than silently applied."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the pipeline owner approve transformations, provisional thresholds, and proposed CRM corrections.",
+        "verdict": "pass",
+        "evidence": "CRM/data, finance, deal-owner, and forecast-owner approval remain Unknown and are required for transformations and proposed corrections; no provisional threshold is introduced."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The current pipeline skill still makes buyer progress the health signal and routes every data transformation or CRM correction through explicit review."
+  }
+}

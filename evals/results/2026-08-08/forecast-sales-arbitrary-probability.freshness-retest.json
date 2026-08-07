@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "case_id": "forecast-sales-arbitrary-probability",
+  "case_type": "case",
+  "case_path": "evals/cases/forecast-sales-arbitrary-probability.json",
+  "supersedes": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "a3d7a00",
+    "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.freshness-retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Reject false precision, inspect timing and evidence, and use explicit downside, expected, and upside assumptions.",
+        "verdict": "pass",
+        "evidence": "The response rejects an exact weighted forecast, inspects unverified and contradictory timing, and provides a supported $80k downside while leaving expected and upside Unknown under explicit evidence requirements."
+      },
+      {
+        "assertion": "Separate closed revenue, included and excluded contributions, concentration risk, and gap to target.",
+        "verdict": "pass",
+        "evidence": "Closed revenue is separated from $400k unallocatable open pipeline, no exclusion is fabricated, concentration is explicitly unquantifiable, and gap to target remains Unknown."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Present the stage-weighted total as truth.",
+        "verdict": "pass",
+        "evidence": "Default stage probabilities are described only as an uncalibrated mechanical baseline and never presented as forecast truth."
+      },
+      {
+        "assertion": "Invent conversion or slip rates or change assumptions merely to match the target.",
+        "verdict": "pass",
+        "evidence": "No conversion or slip rates, targets, deal amounts, or timing assumptions are invented to produce a numeric result."
+      },
+      {
+        "assertion": "Label the all-open-pipeline theoretical ceiling as a supportable forecast-range endpoint or plausible upside.",
+        "verdict": "pass",
+        "evidence": "The $480k all-open result is labeled a theoretical ceiling and explicitly excluded from both the supportable range and plausible upside."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require leadership approval of forecast scope, methods, exclusions, and any provisional scenario assumptions.",
+        "verdict": "pass",
+        "evidence": "The governance checkpoint leaves scope, method, exclusions, transformations, and operating use unapproved and requires approval before use."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The current forecast skill preserves the closed floor, refuses false precision, and keeps the theoretical ceiling outside the forecast range."
+  }
+}
