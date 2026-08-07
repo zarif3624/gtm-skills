@@ -5,7 +5,7 @@
 
 Open-source sales and go-to-market skills for AI agents. Built for founders, sellers, RevOps teams, and customer-facing operators who want useful sales work without fabricated research, fake personalization, or mystery forecasts.
 
-Works with OpenAI Codex, Claude Code, Cursor, Windsurf, and other agents that support the [Agent Skills specification](https://agentskills.io).
+Uses the open [Agent Skills specification](https://agentskills.io). It is designed for skills-compatible clients, but installation and behavior can vary by client and model. See the [compatibility evidence matrix](docs/compatibility.md) for what is verified, limited, or still unknown.
 
 New here? Follow the [ten-minute quickstart](QUICKSTART.md).
 

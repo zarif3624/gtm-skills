@@ -31,6 +31,8 @@ The repository now has 20 focused skills, one isolated adversarial case per skil
 
 The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
 
+Current compatibility claims and unknowns are tracked in the [compatibility evidence matrix](docs/compatibility.md).
+
 ## Phase 1: Make Quality Testable
 
 - Strengthen structural, metadata, catalog, and resource validation.
