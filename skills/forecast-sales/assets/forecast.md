@@ -41,6 +41,16 @@
 
 -
 
+## Governance Checkpoint
+
+| Decision | Decision status | Evidence or rationale | Approver status |
+| --- | --- | --- | --- |
+| Forecast scope and period | Approved / Proposed / Unknown | | Confirmed / Proposed / Unknown |
+| Currency treatment | Approved / Proposed / Unknown | | Confirmed / Proposed / Unknown |
+| Method and scenario assumptions | Approved / Proposed / Unknown | | Confirmed / Proposed / Unknown |
+| Exclusions and transformations | Approved / Proposed / Unknown | | Confirmed / Proposed / Unknown |
+| Use for an operating decision | Approved / Proposed / Unknown | | Confirmed / Proposed / Unknown |
+
 ## Actions
 
 - **Improve the outcome:**

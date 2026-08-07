@@ -43,6 +43,7 @@ Use the simplest method supported by the data. Read [forecast methods](reference
 5. Identify concentration, slip, and timing risk.
 6. Reconcile the forecast with the target without changing assumptions to close the gap.
 7. Record assumptions so the forecast can be compared with the eventual outcome.
+8. Surface who must approve scope, currency treatment, method, exclusions, and provisional scenario assumptions before the forecast is used for an operating decision.
 
 ## Output
 
@@ -56,6 +57,7 @@ Use [the forecast template](assets/forecast.md). Provide:
 - gap to target;
 - top risks and sensitivities;
 - data-quality limitations;
+- governance decisions and approver status;
 - actions that improve outcomes separated from actions that improve forecast accuracy.
 
-Never present a stage-weighted total as precise truth. Never infer missing historical rates. Use ranges when uncertainty is material, and use `Unknown` when even a supportable range is not available.
+Never present a stage-weighted total as precise truth. Never infer missing historical rates. Use ranges when uncertainty is material, and use `Unknown` when even a supportable range is not available. Do not imply that forecast scope, transformations, or provisional assumptions are approved; label each decision and approver as approved, proposed, or unknown.
