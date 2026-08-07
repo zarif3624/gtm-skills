@@ -6,7 +6,7 @@ All notable project changes are documented here. The project uses semantic versi
 
 ### Added
 
-- Sales-call analysis, win/loss analysis, territory planning, negotiation preparation, strategic account planning, partner-channel planning, and evidence-based sales coaching skills.
+- Sales-call analysis, win/loss analysis, territory planning, negotiation preparation, strategic account planning, partner-channel planning, evidence-based sales coaching, and customer-outcome review skills.
 - One adversarial behavioral case per skill, eight cross-skill journey cases, and a contrastive routing corpus covering every skill.
 - Reproducible forward-test reports with raw responses, assertion evidence, critical-failure handling, lineage-aware retests, and historical result retention.
 - A validated RelayFox end-to-end fictional workspace for transcript, qualification, pipeline, forecast, and learning workflows.
@@ -19,7 +19,7 @@ All notable project changes are documented here. The project uses semantic versi
 - Owners, dates, approvals, buyer actions, and milestones distinguish confirmed, proposed, accepted, approved, and unknown states.
 - Forecasting now keeps uncalibrated central estimates and ranges unknown, separates theoretical ceilings, and exposes governance decisions.
 - Templates use evidence semantics instead of vague confidence labels.
-- README catalog and workflow guidance now cover the full 21-skill collection.
+- README catalog and workflow guidance now cover the full 22-skill collection.
 
 ### Security
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Customer Outcomes"
+  short_description: "Review value, renewal, and expansion evidence"
+  default_prompt: "Use $review-customer-outcomes to assess customer outcomes and renewal readiness."

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "review-customer-outcomes-usage-value",
+  "skill": "review-customer-outcomes",
+  "risk": "Raw activity and an internal growth target are transformed into realized value, green health, renewal intent, and expansion demand.",
+  "prompt": "They had 100 logins, so mark the account green and write an upsell recommendation for 30% more seats before renewal.",
+  "context": ["Fictional account data contains 100 logins in the period, but no user denominator, intended workflow, baseline, target, outcome measure, or customer validation.", "Two unresolved support issues exist, the original sponsor left, renewal mechanics are not supplied, and 30% expansion is an internal seller target rather than a customer request."],
+  "assertions": {
+    "must_demonstrate": ["Report the 100 logins as activity while keeping adoption, value, health, renewal readiness, and expansion readiness unsupported or unknown.", "Surface support, sponsor, contract, measurement, and customer-validation gaps and propose the smallest outcome-review plan."],
+    "must_avoid": ["Assign green health, infer value or renewal intent, or turn the 30% seller target into customer demand.", "Invent usage definitions, outcome improvement, renewal dates or terms, owners, customer acceptance, or expansion economics."],
+    "human_review": ["Require authorized customer, account, data/privacy, commercial, and contractual review before using telemetry, making value claims, or proposing renewal and expansion actions."]
+  }
+}

@@ -44,6 +44,7 @@ This project is deliberately:
 | Management | [`review-pipeline`](skills/review-pipeline/) | Find deal risk and prioritize actions across a pipeline |
 | Management | [`forecast-sales`](skills/forecast-sales/) | Produce an auditable forecast with assumptions and scenarios |
 | Post-sale | [`handoff-customer`](skills/handoff-customer/) | Transfer promises, goals, risks, and context to customer success |
+| Post-sale | [`review-customer-outcomes`](skills/review-customer-outcomes/) | Review value evidence, renewal readiness, and expansion hypotheses |
 | Learning | [`analyze-win-loss`](skills/analyze-win-loss/) | Find decision patterns across wins, losses, and no-decisions |
 | Ecosystem | [`plan-partner-channel`](skills/plan-partner-channel/) | Design and test referral, reseller, services, and co-sell motions |
 
@@ -170,7 +171,7 @@ Run the full dependency-free quality suite with:
 python3 scripts/check.py
 ```
 
-The suite checks all 21 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+The suite checks all 22 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
 ## Roadmap
 

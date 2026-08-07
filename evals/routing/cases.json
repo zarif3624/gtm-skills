@@ -116,6 +116,12 @@
       "excluded_skills": ["plan-account"]
     },
     {
+      "id": "review-customer-value-and-renewal",
+      "prompt": "Review this customer's success plan, usage, support history, stakeholder feedback, and contract evidence for outcomes and renewal readiness.",
+      "expected_skills": ["review-customer-outcomes"],
+      "excluded_skills": ["handoff-customer"]
+    },
+    {
       "id": "analyze-win-loss-patterns",
       "prompt": "Analyze these closed wins, losses, no-decisions, seller reason codes, and buyer interviews for supportable patterns and learning tests.",
       "expected_skills": ["analyze-win-loss"],
