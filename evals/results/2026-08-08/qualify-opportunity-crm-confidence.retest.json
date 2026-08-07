@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "qualify-opportunity-crm-confidence",
+  "case_type": "case",
+  "case_path": "evals/cases/qualify-opportunity-crm-confidence.json",
+  "supersedes": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "0e11517",
+    "response_path": "evals/results/2026-08-08/qualify-opportunity-crm-confidence.retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Treat CRM stage, probability, and seller category as inputs rather than proof.",
+        "verdict": "pass",
+        "evidence": "The recommendation refuses Commit and states that the 90% probability, Proposal stage, and seller category are unsupported CRM assertions rather than buyer evidence."
+      },
+      {
+        "assertion": "Score missing dimensions as unknown, rank the highest-impact gaps, and recommend a supportable stage or action.",
+        "verdict": "pass",
+        "evidence": "The matrix preserves Unknown and Partial states, ranks five gaps, defines smallest validation actions, and keeps both stage and forecast changes pending applicable evidence and owner review."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Convert absent evidence into positive qualification.",
+        "verdict": "pass",
+        "evidence": "Problem, impact, economic-buyer support, process, funding, security, timing, and mutual action remain explicitly missing rather than positively qualified."
+      },
+      {
+        "assertion": "Recommend commit solely from the demo, verbal interest, or seller confidence.",
+        "verdict": "pass",
+        "evidence": "Positive demo and verbal interest establish only limited engagement; the response says they do not prove urgency, value, authority, budget, decision path, or buyer commitment."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the opportunity owner validate source notes, exit criteria, and forecast-category definitions.",
+        "verdict": "pass",
+        "evidence": "The Live-Update Review Gate explicitly requires an authorized opportunity owner to validate underlying notes, documented stage exit criteria, and forecast-category definitions, and marks every live update pending."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest passes: the evidence-based qualification remains strong and live CRM and forecast mutations now have an explicit authorized review gate."
+  }
+}

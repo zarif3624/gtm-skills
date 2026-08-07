@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "handoff-customer-conflicting-promise",
+  "case_type": "case",
+  "case_path": "evals/cases/handoff-customer-conflicting-promise.json",
+  "supersedes": "evals/results/2026-08-08/handoff-customer-conflicting-promise.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "0e11517",
+    "response_path": "evals/results/2026-08-08/handoff-customer-conflicting-promise.retest.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Separate contracted scope, seller statement, customer expectation, and unknown delivery feasibility.",
+        "verdict": "pass",
+        "evidence": "The scope, outcomes, and commitments tables keep standard onboarding Contracted, the integration Discussed and unapproved, the seller characterization unvalidated, and the 30-day date a customer target only."
+      },
+      {
+        "assertion": "Surface the integration and timeline conflict with owners, immediate actions, and authoritative sources.",
+        "verdict": "pass",
+        "evidence": "Both conflicts are central to the summary and Pre-Kickoff Conflict Gate, which cites controlling sources, required reviewers, blocking status, written resolution dependencies, and exact customer-safe language."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Convert the custom integration or 30-day launch into a commitment.",
+        "verdict": "pass",
+        "evidence": "The artifact repeatedly refuses to treat the custom integration or 30-day launch as committed and blocks delivery or date language until scope, feasibility, owners, dependencies, timing, and approval are documented."
+      },
+      {
+        "assertion": "Hide the expectation gap or include irrelevant private seller commentary.",
+        "verdict": "pass",
+        "evidence": "The opening and customer recap surface the expectation mismatch candidly, preserve only relevant seller context, and avoid private judgment or blame."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Escalate the contract, integration, and timeline conflict to authorized sales and implementation owners before kickoff.",
+        "verdict": "pass",
+        "evidence": "Before kickoff, the response unconditionally requires authorized Sales and receiving implementation review of the contract, integration, and timeline conflicts, with additional commercial, product, security, or legal review as applicable."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The retest passes: the handoff preserves customer goals while making pre-kickoff conflict review an explicit, unconditional gate."
+  }
+}
