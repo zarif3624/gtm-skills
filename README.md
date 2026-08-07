@@ -165,6 +165,10 @@ Use the [generic CRM handoff pack](reference-packs/generic-crm/) to map pipeline
 
 Use the [evidence and action ledger pack](reference-packs/evidence-ledger/) when claims, actions, approvals, or commitments need to move between agents, spreadsheets, CRMs, and internal tools. Its matching CSV and JSON contracts keep evidence, source lineage, transformations, buyer acceptance, approval, and completion on separate axes.
 
+## Exchange Shared Context
+
+Use the [structured GTM context pack](reference-packs/structured-gtm-context/) as an optional machine-readable companion to `.agents/gtm-context.md`. Its closed JSON contract preserves document version, scoped claims, buyer-role hypotheses, proof, guardrails, ownership, approval, access classification, and source restrictions without making a CRM or agent runtime mandatory.
+
 ## Trust Standard
 
 Every contribution should preserve these rules:

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "document_version": "v1",
+  "document_status": "Unknown",
+  "as_of_date": null,
+  "product": [],
+  "market": [],
+  "buying_group": [],
+  "gtm_motion": [],
+  "proof": [],
+  "alternatives": [],
+  "sales_process": [],
+  "guardrails": [],
+  "governance": {
+    "context_owner_id": null,
+    "owner_status": "Unknown",
+    "approval_status": "Unknown",
+    "access_classification": null,
+    "source_restrictions": [],
+    "notes": null
+  }
+}

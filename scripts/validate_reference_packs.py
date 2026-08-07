@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKS = ROOT / "reference-packs"
 GENERIC = PACKS / "generic-crm"
 EVIDENCE = PACKS / "evidence-ledger"
+STRUCTURED_CONTEXT = PACKS / "structured-gtm-context"
 OPPORTUNITY_FIELDS = (
     "record_id", "opportunity_id", "account_id", "account_name", "opportunity_name",
     "opportunity_owner_id", "stage", "stage_entered_at", "forecast_category", "amount",
@@ -45,6 +46,16 @@ EVIDENCE_REQUIRED_FILES = {
     "README.md", "evidence-ledger-template.csv", "evidence-record.schema.json",
     "action-ledger-template.csv", "action-record.schema.json", "status-vocabulary.md",
 }
+CONTEXT_FIELDS = (
+    "schema_version", "document_version", "document_status", "as_of_date", "product",
+    "market", "buying_group", "gtm_motion", "proof", "alternatives", "sales_process",
+    "guardrails", "governance",
+)
+CONTEXT_GOVERNANCE_FIELDS = (
+    "context_owner_id", "owner_status", "approval_status", "access_classification",
+    "source_restrictions", "notes",
+)
+CONTEXT_REQUIRED_FILES = {"README.md", "gtm-context-template.json", "gtm-context.schema.json"}
 
 
 def read_csv_header(path: Path) -> tuple[tuple[str, ...], list[list[str]]]:
@@ -187,10 +198,72 @@ def validate_evidence_pack(path: Path = EVIDENCE) -> list[str]:
     return errors
 
 
+def validate_context_pack(path: Path = STRUCTURED_CONTEXT) -> list[str]:
+    if not path.is_dir():
+        return ["structured-gtm-context reference pack is missing"]
+    symlinks = sorted(
+        item.relative_to(path).as_posix() for item in path.rglob("*") if item.is_symlink()
+    )
+    if symlinks:
+        return [f"reference-pack path must not be a symbolic link: {item}" for item in symlinks]
+    present = {item.name for item in path.iterdir() if item.is_file()}
+    missing = sorted(CONTEXT_REQUIRED_FILES - present)
+    if missing:
+        return [f"missing required files: {', '.join(missing)}"]
+
+    errors: list[str] = []
+    try:
+        schema = json.loads((path / "gtm-context.schema.json").read_text(encoding="utf-8"))
+        template = json.loads((path / "gtm-context-template.json").read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        return [f"invalid structured context JSON: {error}"]
+    if not isinstance(schema, dict) or not isinstance(template, dict):
+        return ["structured context schema and template must contain JSON objects"]
+    if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
+        errors.append("structured context schema must use JSON Schema draft 2020-12")
+    if schema.get("type") != "object" or schema.get("additionalProperties") is not False:
+        errors.append("structured context schema must define a closed root object")
+    properties = schema.get("properties")
+    if not isinstance(properties, dict) or tuple(properties) != CONTEXT_FIELDS:
+        errors.append("structured context schema properties must match the template contract")
+    required = schema.get("required")
+    if not isinstance(required, list) or tuple(required) != CONTEXT_FIELDS:
+        errors.append("structured context schema must require every root field")
+    definitions = schema.get("$defs")
+    if not isinstance(definitions, dict) or set(definitions) != {"claim", "buying_role", "governance"}:
+        errors.append("structured context schema must define claim, buying_role, and governance")
+    else:
+        for name in ("claim", "buying_role", "governance"):
+            definition = definitions[name]
+            if not isinstance(definition, dict) or definition.get("additionalProperties") is not False:
+                errors.append(f"structured context {name} must define a closed object")
+        claim_properties = definitions["claim"].get("properties", {})
+        statuses = claim_properties.get("evidence_status", {}).get("enum")
+        if statuses != ["Verified", "Reported", "Inferred", "Hypothesis", "Unknown", "Contradicted"]:
+            errors.append("structured context claim evidence vocabulary has drifted")
+
+    if tuple(template) != CONTEXT_FIELDS:
+        errors.append("structured context template fields must match the schema contract")
+    if template.get("schema_version") != 1 or template.get("document_status") != "Unknown":
+        errors.append("structured context template must start at schema 1 with Unknown status")
+    for field in ("product", "market", "buying_group", "gtm_motion", "proof", "alternatives", "sales_process", "guardrails"):
+        if template.get(field) != []:
+            errors.append(f"structured context template {field} must start empty")
+    governance = template.get("governance")
+    if not isinstance(governance, dict) or tuple(governance) != CONTEXT_GOVERNANCE_FIELDS:
+        errors.append("structured context governance fields must match the contract")
+    readme = (path / "README.md").read_text(encoding="utf-8")
+    for phrase in ("repetition or import success does not verify a claim", "access classification", "does not establish truth"):
+        if phrase not in readme:
+            errors.append(f"structured context README is missing required guidance: {phrase}")
+    return errors
+
+
 def main() -> int:
     packs = (
         ("evidence-ledger", validate_evidence_pack()),
         ("generic-crm", validate_generic_pack()),
+        ("structured-gtm-context", validate_context_pack()),
     )
     failures = 0
     for name, errors in packs:

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zarif3624/gtm-skills/reference-packs/structured-gtm-context/gtm-context.schema.json",
+  "title": "Portable GTM Context",
+  "description": "A versioned, evidence-aware interchange contract for shared GTM context.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document_version",
+    "document_status",
+    "as_of_date",
+    "product",
+    "market",
+    "buying_group",
+    "gtm_motion",
+    "proof",
+    "alternatives",
+    "sales_process",
+    "guardrails",
+    "governance"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "document_version": {"type": "string", "pattern": "^v[1-9][0-9]*$"},
+    "document_status": {"enum": ["Proposed", "Approved", "Unknown"]},
+    "as_of_date": {"type": ["string", "null"], "format": "date"},
+    "product": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "market": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "buying_group": {"type": "array", "items": {"$ref": "#/$defs/buying_role"}},
+    "gtm_motion": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "proof": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "alternatives": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "sales_process": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "guardrails": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "governance": {"$ref": "#/$defs/governance"}
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "statement", "evidence_status", "approval_status"],
+      "properties": {
+        "claim_id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "evidence_status": {"enum": ["Verified", "Reported", "Inferred", "Hypothesis", "Unknown", "Contradicted"]},
+        "source_locator": {"type": ["string", "null"]},
+        "source_date": {"type": ["string", "null"], "format": "date"},
+        "scope": {"type": ["string", "null"]},
+        "limitation": {"type": ["string", "null"]},
+        "approval_status": {"enum": ["Approved", "Proposed", "Rejected", "Unknown"]},
+        "access_classification": {"type": ["string", "null"]}
+      }
+    },
+    "buying_role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role_id", "role", "evidence_status", "approval_status"],
+      "properties": {
+        "role_id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "typical_titles": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "desired_outcome": {"type": ["string", "null"]},
+        "risk_or_objection": {"type": ["string", "null"]},
+        "evidence_status": {"enum": ["Verified", "Reported", "Inferred", "Hypothesis", "Unknown", "Contradicted"]},
+        "source_locator": {"type": ["string", "null"]},
+        "source_date": {"type": ["string", "null"], "format": "date"},
+        "scope": {"type": ["string", "null"]},
+        "approval_status": {"enum": ["Approved", "Proposed", "Rejected", "Unknown"]}
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["context_owner_id", "owner_status", "approval_status", "access_classification", "source_restrictions", "notes"],
+      "properties": {
+        "context_owner_id": {"type": ["string", "null"]},
+        "owner_status": {"enum": ["Confirmed", "Proposed", "Unknown"]},
+        "approval_status": {"enum": ["Approved", "Proposed", "Rejected", "Unknown"]},
+        "access_classification": {"type": ["string", "null"]},
+        "source_restrictions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "notes": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

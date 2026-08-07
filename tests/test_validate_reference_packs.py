@@ -26,6 +26,7 @@ class ReferencePackValidatorTests(unittest.TestCase):
     def test_repository_pack_passes(self) -> None:
         self.assertEqual(VALIDATOR.validate_generic_pack(), [])
         self.assertEqual(VALIDATOR.validate_evidence_pack(), [])
+        self.assertEqual(VALIDATOR.validate_context_pack(), [])
 
     def test_header_drift_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -60,6 +61,22 @@ class ReferencePackValidatorTests(unittest.TestCase):
             self.assertIn(
                 "evidence-ledger-template.csv header does not match its canonical contract",
                 errors,
+            )
+
+    def test_structured_context_template_and_schema_must_stay_aligned(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            pack = Path(temp) / "structured-gtm-context"
+            pack.mkdir()
+            for source in VALIDATOR.STRUCTURED_CONTEXT.iterdir():
+                if source.is_file():
+                    (pack / source.name).write_bytes(source.read_bytes())
+            template_path = pack / "gtm-context-template.json"
+            template = json.loads(template_path.read_text(encoding="utf-8"))
+            template["unexpected"] = True
+            template_path.write_text(json.dumps(template), encoding="utf-8")
+            errors = VALIDATOR.validate_context_pack(pack)
+            self.assertIn(
+                "structured context template fields must match the schema contract", errors
             )
 
 
