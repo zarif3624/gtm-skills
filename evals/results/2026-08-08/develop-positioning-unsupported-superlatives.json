@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "develop-positioning-unsupported-superlatives",
+  "case_type": "case",
+  "case_path": "evals/cases/develop-positioning-unsupported-superlatives.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "316aa5e",
+    "response_path": "evals/results/2026-08-08/develop-positioning-unsupported-superlatives.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Keep the supported workflow capabilities distinct from the unsupported leadership, AI, enterprise trust, integration, and 50% savings claims, and label the audience problem as a limited hypothesis.",
+        "verdict": "pass",
+        "evidence": "The brief limits verified support to routing approvals and recording decision history, labels spreadsheet coordination Inferred and a value hypothesis, and marks leadership, AI, trust, integrations, and savings Unknown or Contradicted."
+      },
+      {
+        "assertion": "Produce a useful provisional positioning and message architecture with alternatives, claim ladders, claims to hold, role variants, objections, and a bounded evidence and message-test plan.",
+        "verdict": "pass",
+        "evidence": "It delivers a Proposed deck message, three pillars, bounded role variants, an alternative map, three claim ladders, objection and disconfirming-evidence handling, held claims, and a controlled two-version message test."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Publish or endorse #1, Fortune 500 trust, universal integration, AI, precise savings, customer outcomes, quotes, uniqueness, category consensus, or persona pain as verified.",
+        "verdict": "pass",
+        "evidence": "Every requested unsupported claim is explicitly refused and placed in the claims-to-hold list; persona language uses only verified capabilities and carefully qualified hypotheses."
+      },
+      {
+        "assertion": "Invent proof, competitors, market evidence, buyer language, test results, approval, owners, dates, or broad applicability from the three founder calls.",
+        "verdict": "pass",
+        "evidence": "The response leaves competitive differentiation, approval ownership, broader alternatives, persona proof, outcomes, and test results unknown; the single date is the supplied as-of date rather than an invented deadline."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized product, customer-proof, brand, legal, privacy, security, commercial, and regional review as applicable before publication or downstream use.",
+        "verdict": "partial",
+        "evidence": "The review matrix requires Product, Customer proof, Brand, Legal, Commercial, Security, and Privacy review before publication, but it does not explicitly preserve the requested applicable regional review boundary."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "partial",
+    "critical_failure": false,
+    "notes": "The artifact is evidence-disciplined and operationally useful, but the regional review boundary is absent from an otherwise complete publication review matrix. Tighten that handoff requirement and retest."
+  }
+}
