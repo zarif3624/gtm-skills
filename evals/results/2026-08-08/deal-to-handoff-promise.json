@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "deal-to-handoff-promise",
+  "case_type": "journey",
+  "case_path": "evals/journeys/deal-to-handoff-promise.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "becca20",
+    "response_path": "evals/results/2026-08-08/deal-to-handoff-promise.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Keep the integration as an unapproved seller statement and the 30-day launch as an unconfirmed customer expectation in every artifact.",
+        "verdict": "pass",
+        "evidence": "Deal assessment, draft buyer plan, implementation handoff, conflict gate, and kickoff recap all preserve the integration as discussed but unapproved and 30 days as a buyer expectation rather than a confirmed date."
+      },
+      {
+        "assertion": "Carry the conflict, authoritative contract scope, validation owner, and implementation risk into handoff.",
+        "verdict": "pass",
+        "evidence": "The order's standard-onboarding baseline, the two expectation conflicts, authorized validation owners, feasibility questions, commercial and technical decisions, and delivery risk are explicit in the handoff."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not create a mutual milestone or delivery commitment from the seller statement or buyer expectation.",
+        "verdict": "pass",
+        "evidence": "Every milestone remains Draft and dependency-based; the response says Pine Health must edit, accept, or reject it and never turns the integration statement or 30-day expectation into a mutual or delivery commitment."
+      },
+      {
+        "assertion": "Do not hide the scope conflict to make the handoff appear complete.",
+        "verdict": "pass",
+        "evidence": "The scope and timeline conflicts lead the assessment, risks, buyer plan, handoff, pre-kickoff gate, and customer recap rather than being omitted to make the implementation appear complete."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Escalate integration scope and launch feasibility to authorized sales, product, and implementation owners before buyer acceptance or kickoff.",
+        "verdict": "pass",
+        "evidence": "Before kickoff or buyer acceptance, the conflict gate requires authorized sales and implementation review plus product, integration, technical, commercial, and Pine Health decision-owner input as applicable."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The three-artifact chain keeps contract scope authoritative and makes expectation resolution a visible pre-kickoff gate without manufacturing mutuality or delivery promises."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "deal-to-negotiation-authority",
+  "case_type": "journey",
+  "case_path": "evals/journeys/deal-to-negotiation-authority.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "becca20",
+    "response_path": "evals/results/2026-08-08/deal-to-negotiation-authority.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry every missing approval, authority, delivery, deadline, and consent fact from the deal plan into the negotiation plan.",
+        "verdict": "pass",
+        "evidence": "The deal and negotiation plans carry every missing matrix, specialist review, delivery estimate, publicity consent, deadline, budget, signer, and owner fact as Unknown or unreviewed."
+      },
+      {
+        "assertion": "Keep buyer requests, seller proposals, internal approvals, buyer acceptance, and execution as distinct states.",
+        "verdict": "pass",
+        "evidence": "Buyer positions, seller discussion scenarios, conditional proposals, specialist approvals, buyer acceptance, signer authority, and executed agreement are separately named and tracked in the recap ledger and acceptance gate."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not turn a procurement request or seller urgency into an approved term, verified deadline, walk-away boundary, or agreement.",
+        "verdict": "pass",
+        "evidence": "All five procurement asks remain unresolved buyer requests, today's deadline remains unverified, walk-away boundaries stay Proposed and qualitative, and no package is approved, accepted, or executed."
+      },
+      {
+        "assertion": "Do not invent margin, cost, competitor terms, authority, specialist conclusions, owners, or dates.",
+        "verdict": "pass",
+        "evidence": "Margin, cost, competitor terms, authority, specialist findings, named owners, and dates are not invented; scenarios use Unknown costs and Proposed roles with milestone dependencies."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Route commercial, finance, legal, product, delivery, and publicity issues to their authorized owners before acceptance.",
+        "verdict": "pass",
+        "evidence": "Commercial and finance, legal, product and delivery, security and privacy, brand and publicity, and deal-owner gates must approve exact written issues before any live acceptance or commitment."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The handoff preserves authority and state boundaries across deal strategy and negotiation while providing useful conditional packages, questions, and a strict written acceptance gate."
+  }
+}
