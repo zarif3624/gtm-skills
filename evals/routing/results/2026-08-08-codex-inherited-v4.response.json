@@ -1,0 +1,144 @@
+{
+  "selections": [
+    {
+      "id": "build-shared-gtm-context",
+      "selected_skills": ["gtm-context"],
+      "rationale": "Creates reusable shared GTM context from scattered product, market, proof, and sales-motion notes."
+    },
+    {
+      "id": "design-evidence-based-sales-process",
+      "selected_skills": ["design-sales-process"],
+      "rationale": "Covers stages, evidence gates, recycling, CRM rules, governance, measurement, and rollout."
+    },
+    {
+      "id": "derive-testable-icp",
+      "selected_skills": ["define-icp"],
+      "rationale": "Defines and validates an ICP from customer and loss evidence, including counterexamples."
+    },
+    {
+      "id": "develop-message-architecture",
+      "selected_skills": ["develop-positioning"],
+      "rationale": "Builds audience-specific positioning, message pillars, proof mapping, guardrails, and tests before copy."
+    },
+    {
+      "id": "rebalance-sales-territories",
+      "selected_skills": ["plan-territories"],
+      "rationale": "Handles account redistribution using workload, potential, continuity, capacity, and scenario analysis."
+    },
+    {
+      "id": "research-named-account",
+      "selected_skills": ["research-account"],
+      "rationale": "Produces a sourced account brief that distinguishes public facts from sales hypotheses."
+    },
+    {
+      "id": "build-strategic-account-plan",
+      "selected_skills": ["plan-account"],
+      "rationale": "Covers multi-year strategy across business units, relationships, opportunities, whitespace, and investment."
+    },
+    {
+      "id": "prioritize-prospecting-list",
+      "selected_skills": ["plan-prospecting"],
+      "rationale": "Turns an ICP and account list into tiers, contact coverage, priorities, and learning goals."
+    },
+    {
+      "id": "write-responsible-outbound-sequence",
+      "selected_skills": ["write-outbound"],
+      "rationale": "Writes evidence-based multichannel outbound using approved signals and proof points."
+    },
+    {
+      "id": "prepare-first-discovery-call",
+      "selected_skills": ["prepare-discovery"],
+      "rationale": "Prepares first-call hypotheses, questions, agenda, listening targets, and next steps."
+    },
+    {
+      "id": "analyze-completed-sales-call",
+      "selected_skills": ["analyze-sales-call"],
+      "rationale": "Extracts transcript evidence, decisions, objections, commitments, next steps, and coaching observations."
+    },
+    {
+      "id": "assess-opportunity-qualification",
+      "selected_skills": ["qualify-opportunity"],
+      "rationale": "Assesses qualification from evidence, contradictions, and missing decision information."
+    },
+    {
+      "id": "build-rep-coaching-plan",
+      "selected_skills": ["coach-sales-rep"],
+      "rationale": "Uses repeated evidence to choose a focused behavior experiment for a coaching cycle."
+    },
+    {
+      "id": "plan-complex-deal",
+      "selected_skills": ["plan-deal"],
+      "rationale": "Builds an active-deal strategy spanning stakeholders, competition, risks, proof, and actions."
+    },
+    {
+      "id": "respond-to-product-objection",
+      "selected_skills": ["handle-objections"],
+      "rationale": "Diagnoses a trust objection and prepares honest responses, questions, and next steps."
+    },
+    {
+      "id": "design-buyer-specific-demo",
+      "selected_skills": ["prepare-demo"],
+      "rationale": "Plans a tailored demo around buyer outcomes, workflow, proof needs, and limitations."
+    },
+    {
+      "id": "build-buyer-business-case",
+      "selected_skills": ["build-business-case"],
+      "rationale": "Builds a buyer-facing status-quo comparison with sourced assumptions, costs, scenarios, sensitivity, and break-even."
+    },
+    {
+      "id": "prepare-commercial-negotiation",
+      "selected_skills": ["prepare-negotiation"],
+      "rationale": "Prepares packages, give-get trades, approval limits, and concession sequencing for commercial negotiation."
+    },
+    {
+      "id": "draft-mutual-decision-plan",
+      "selected_skills": ["create-mutual-action-plan"],
+      "rationale": "Creates a buyer-editable plan with shared milestones, dependencies, acceptance, and valid no-go outcomes."
+    },
+    {
+      "id": "review-pipeline-portfolio",
+      "selected_skills": ["review-pipeline"],
+      "rationale": "Inspects CRM pipeline quality, deal risk, momentum, concentration, and management priorities."
+    },
+    {
+      "id": "forecast-revenue-scenarios",
+      "selected_skills": ["forecast-sales"],
+      "rationale": "Creates an auditable quarterly forecast with downside, expected, and upside scenarios."
+    },
+    {
+      "id": "handoff-signed-customer",
+      "selected_skills": ["handoff-customer"],
+      "rationale": "Transfers signed scope, discovery, promises, risks, and implementation dependencies to customer success."
+    },
+    {
+      "id": "review-customer-value-and-renewal",
+      "selected_skills": ["review-customer-outcomes"],
+      "rationale": "Reviews outcome, adoption, support, stakeholder, contract, and renewal-readiness evidence."
+    },
+    {
+      "id": "analyze-win-loss-patterns",
+      "selected_skills": ["analyze-win-loss"],
+      "rationale": "Analyzes wins, losses, no-decisions, seller codes, and buyer evidence for supportable patterns and tests."
+    },
+    {
+      "id": "design-partner-channel-motion",
+      "selected_skills": ["plan-partner-channel"],
+      "rationale": "Designs a testable referral and co-sell motion including attribution, economics, stages, permissions, and stop rules."
+    },
+    {
+      "id": "call-analysis-to-qualification",
+      "selected_skills": ["analyze-sales-call", "qualify-opportunity"],
+      "rationale": "First extracts transcript evidence, then updates qualification while preserving evidence quality."
+    },
+    {
+      "id": "pipeline-review-to-forecast",
+      "selected_skills": ["review-pipeline", "forecast-sales"],
+      "rationale": "First cleans and inspects pipeline truth, then forecasts while retaining exclusions and contradictions."
+    },
+    {
+      "id": "account-research-to-discovery",
+      "selected_skills": ["research-account", "prepare-discovery"],
+      "rationale": "Researches current account facts, then turns them into explicitly unverified first-call hypotheses and questions."
+    }
+  ]
+}
