@@ -60,13 +60,23 @@ def response(second_selection: list[str] | None = None) -> dict[str, object]:
     }
 
 
+def skill_metadata() -> list[dict[str, str]]:
+    return [
+        {"name": "first-skill", "description": "Complete the first kind of job."},
+        {"name": "second-skill", "description": "Complete the second kind of job."},
+        {"name": "third-skill", "description": "Complete a neighboring job."},
+    ]
+
+
 class RoutingReportTests(unittest.TestCase):
-    def test_packet_hides_expected_and_excluded_labels(self) -> None:
-        packet = PACKET.render_packet(corpus())
+    def test_packet_contains_metadata_but_hides_scoring_labels(self) -> None:
+        packet = PACKET.render_packet(corpus(), skill_metadata())
         self.assertIn("Complete the first job.", packet)
         self.assertNotIn("expected_skills", packet)
         self.assertNotIn("excluded_skills", packet)
-        self.assertNotIn("first-skill", packet)
+        self.assertIn("### first-skill", packet)
+        self.assertIn("Complete the first kind of job.", packet)
+        self.assertIn("use exact names", packet)
 
     def test_exact_selection_passes(self) -> None:
         self.assertEqual(
