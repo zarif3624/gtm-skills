@@ -120,4 +120,4 @@ Contributions are welcome, especially from working sellers, founders, RevOps ope
 
 [MIT](LICENSE). Use, adapt, and contribute back.
 
-Built by [Zarif](https://github.com/zarif3624), creator of [Zarif Automates](https://zarif-automates-site.vercel.app).
+Built by [Zarif](https://github.com/zarif3624), creator of [Zarif Automates](https://zarifautomates.com).
