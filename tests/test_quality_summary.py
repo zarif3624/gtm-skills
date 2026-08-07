@@ -51,7 +51,12 @@ class QualitySummaryTests(unittest.TestCase):
             )
             routing = root / "evals" / "routing" / "results" / "route.json"
             routing.write_text(
-                json.dumps({"supersedes": None, "summary": {"verdict": "partial"}}),
+                json.dumps(
+                    {
+                        "supersedes": None,
+                        "summary": {"verdict": "partial", "total_cases": 2},
+                    }
+                ),
                 encoding="utf-8",
             )
 
@@ -75,6 +80,7 @@ class QualitySummaryTests(unittest.TestCase):
             self.assertEqual(
                 result["evidence"]["routing"]["latest_verdicts"]["partial"], 1
             )
+            self.assertEqual(result["evidence"]["routing"]["latest_case_counts"], [2])
 
 
 if __name__ == "__main__":

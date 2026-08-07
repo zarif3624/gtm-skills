@@ -27,7 +27,7 @@ def count_directories(path: Path) -> int:
 
 
 def evidence_summary(
-    reports: dict[Path, dict[str, Any]], root: Path
+    reports: dict[Path, dict[str, Any]], root: Path, *, include_case_counts: bool = False
 ) -> dict[str, Any]:
     superseded = {
         (root / report["supersedes"]).resolve()
@@ -38,12 +38,17 @@ def evidence_summary(
     counts = {verdict: 0 for verdict in VERDICTS}
     for report in latest:
         counts[report["summary"]["verdict"]] += 1
-    return {
+    summary = {
         "reports_total": len(reports),
         "latest_total": len(latest),
         "latest_verdicts": counts,
         "historical_runs": len(reports) - len(latest),
     }
+    if include_case_counts:
+        summary["latest_case_counts"] = sorted(
+            {report["summary"]["total_cases"] for report in latest}
+        )
+    return summary
 
 
 def build_summary(root: Path = ROOT) -> dict[str, Any]:
@@ -68,7 +73,9 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
         },
         "evidence": {
             "behavioral": evidence_summary(behavior_reports, root),
-            "routing": evidence_summary(routing_reports, root),
+            "routing": evidence_summary(
+                routing_reports, root, include_case_counts=True
+            ),
         },
     }
 

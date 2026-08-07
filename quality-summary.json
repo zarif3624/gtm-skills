@@ -3,31 +3,34 @@
   "catalog": {
     "skills": 24,
     "isolated_cases": 24,
-    "journey_cases": 9,
+    "journey_cases": 10,
     "current_routing_cases": 27,
     "example_workspaces": 1,
     "reference_packs": 2
   },
   "evidence": {
     "behavioral": {
-      "reports_total": 10,
-      "latest_total": 6,
+      "reports_total": 11,
+      "latest_total": 7,
       "latest_verdicts": {
-        "pass": 6,
+        "pass": 7,
         "partial": 0,
         "fail": 0
       },
       "historical_runs": 4
     },
     "routing": {
-      "reports_total": 2,
+      "reports_total": 3,
       "latest_total": 1,
       "latest_verdicts": {
         "pass": 1,
         "partial": 0,
         "fail": 0
       },
-      "historical_runs": 1
+      "historical_runs": 2,
+      "latest_case_counts": [
+        27
+      ]
     }
   }
 }

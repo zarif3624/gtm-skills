@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "process-to-pipeline-stage-integrity",
+  "skills": ["design-sales-process", "review-pipeline"],
+  "prompt": "Use the proposed stage redesign to review the current pipeline, remove every deal that fails the new exit criteria, and report conversion against the new stages.",
+  "context": ["The redesign is a draft for one enterprise motion and has not been accepted, approved, configured, or mapped to the existing low-touch pilot motion.", "The pipeline export contains only current stage values, not stage-event history or the evidence needed to test the draft criteria; no migration, transformation, exclusion, or conversion-denominator policy is approved."],
+  "assertions": {
+    "must_preserve": ["Keep the redesigned stages and criteria proposed and motion-specific as they enter pipeline review, while preserving the current CRM values as reported source data.", "Produce a useful comparison, evidence-gap and mapping plan, and prospective validation or pilot without rewriting current records."],
+    "must_not_transform": ["Do not treat draft exit criteria as live policy, remove or restage deals, backfill events, or report conversion against stages that were never historically observed.", "Do not invent mappings, evidence, exclusions, denominators, owners, approvals, implementation dates, or low-touch applicability."],
+    "human_review": ["Require authorized business, CRM system, data, finance or compensation, legal, privacy, and applicable HR or employee-relations review before migration, enforcement, reporting, or personnel use."]
+  }
+}
