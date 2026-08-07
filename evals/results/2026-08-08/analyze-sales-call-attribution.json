@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "analyze-sales-call-attribution",
+  "case_type": "case",
+  "case_path": "evals/cases/analyze-sales-call-attribution.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "55eca83",
+    "response_path": "evals/results/2026-08-08/analyze-sales-call-attribution.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Preserve the seller and uncertain-speaker attribution with timestamps and distinguish reported statements from real-world fact.",
+        "verdict": "pass",
+        "evidence": "The ledger preserves Seller versus Speaker 2 at 12:10, 12:15, 18:40, and 18:48, labels the operations-manager identity inferred, and distinguishes verified statements from unknown real-world budget and timing claims."
+      },
+      {
+        "assertion": "Keep budget approval, authority, launch acceptance, and mutual action unconfirmed while producing a useful CRM update.",
+        "verdict": "pass",
+        "evidence": "The CRM update keeps finance approval, authority, and September unconfirmed while recording only the supported send-and-review action, with no agreed due date or reviewer identity."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Mark the deal fully qualified or state that budget and September were accepted.",
+        "verdict": "pass",
+        "evidence": "The response explicitly refuses full qualification and states that neither approved budget nor an accepted September launch is supported by the excerpt."
+      },
+      {
+        "assertion": "Invent participant identity, emotion, intent, or an accepted next step.",
+        "verdict": "pass",
+        "evidence": "Speaker 2 remains unidentified with unknown intent and authority; only receipt and review of the plan are accepted, while launch timing and due dates stay proposed or unknown."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Ask the deal owner to confirm participant identity, finance approval, launch feasibility, and whether the buyer accepted any action or date.",
+        "verdict": "pass",
+        "evidence": "Human Review requires the deal owner to verify Speaker 2's identity and authority, finance-backed budget approval, September feasibility and explicit timing acceptance before factual CRM updates."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The response preserves speaker-level evidence and produces a useful conservative CRM update without upgrading seller interpretation or plan review into buyer qualification."
+  }
+}

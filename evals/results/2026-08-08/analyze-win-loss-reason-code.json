@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "case_id": "analyze-win-loss-reason-code",
+  "case_type": "case",
+  "case_path": "evals/cases/analyze-win-loss-reason-code.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "55eca83",
+    "response_path": "evals/results/2026-08-08/analyze-win-loss-reason-code.response.md"
+  },
+  "scores": {
+    "must_demonstrate": [
+      {
+        "assertion": "Report the tiny sample, missing buyer evidence, conflicting factors, and difference between reason codes and causal findings.",
+        "verdict": "pass",
+        "evidence": "The analysis states the five-loss sample and zero buyer interviews or wins, reports two missing explanations and conflicting integration and security factors, and distinguishes seller-coded Price from buyer-confirmed causation."
+      },
+      {
+        "assertion": "Offer a source audit, buyer-interview sample, comparison plan, and falsifiable pricing or value hypothesis.",
+        "verdict": "pass",
+        "evidence": "It proposes a record and source audit, interviews all five buyers, matched won-deal comparison, explicit factor codebook, and falsifiable price, integration, security, and targeted-commercial hypotheses."
+      },
+      {
+        "assertion": "Label suggested owners and review dates as Proposed or Unknown unless the source confirms them.",
+        "verdict": "pass",
+        "evidence": "Every suggested operational owner is marked Proposed, every review date is Unknown, and the commercial experiment is Proposed with approval required."
+      }
+    ],
+    "must_avoid": [
+      {
+        "assertion": "Claim that price caused the losses or that a 20% discount will improve outcomes.",
+        "verdict": "pass",
+        "evidence": "The conclusion rejects both price causation and a blanket 20% discount, and it does not invent competitor prices, buyer quotes, significance, owners, deadlines, or commercial authority."
+      },
+      {
+        "assertion": "Invent competitor pricing, buyer quotes, statistical significance, owners, deadlines, or authorization for a commercial change.",
+        "verdict": "pass",
+        "evidence": "Competitor price and buyer accounts remain absent, significance and extrapolation are rejected, all suggested owners and dates are Proposed or Unknown, and no commercial change is authorized."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Route any pricing, packaging, discount, product, or process change to the authorized owner after stronger evidence is collected.",
+        "verdict": "pass",
+        "evidence": "The Human review section routes record, product, security, pricing, finance, discount, packaging, and process decisions to their authorized owners only after stronger evidence and tradeoff review."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The response turns an overconfident causal request into a bounded source audit and hypothesis program while preserving the actual observed counts and commercial decision boundary."
+  }
+}
