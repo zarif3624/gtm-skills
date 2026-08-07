@@ -11,6 +11,7 @@ All notable project changes are documented here. The project uses semantic versi
 - Reproducible forward-test reports with raw responses, assertion evidence, critical-failure handling, lineage-aware retests, and historical result retention.
 - Blind routing packets and computed routing reports that keep expected and excluded skills hidden until scoring.
 - A drift-checked machine-readable quality summary for catalog, coverage, and current evidence counts.
+- A generated machine-readable skill catalog with interface metadata, resource inventory, and deterministic package digests.
 - A validated RelayFox end-to-end fictional workspace for transcript, qualification, pipeline, forecast, and learning workflows.
 - A vendor-neutral CRM handoff pack with CSV templates, transformation governance, currency policy, and a matching JSON Schema.
 - A vendor-neutral evidence and action ledger pack with matching CSV and JSON contracts for portable claim and commitment status.

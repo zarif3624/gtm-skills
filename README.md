@@ -7,6 +7,8 @@ Open-source sales and go-to-market skills for AI agents. Built for founders, sel
 
 Uses the open [Agent Skills specification](https://agentskills.io). It is designed for skills-compatible clients, but installation and behavior can vary by client and model. See the [compatibility evidence matrix](docs/compatibility.md) for what is verified, limited, or still unknown.
 
+Machines and catalog UIs can read [`catalog.json`](catalog.json) for normalized skill metadata, resource paths, and deterministic SHA-256 package digests. The validation suite fails if it drifts from the skill packages.
+
 New here? Follow the [ten-minute quickstart](QUICKSTART.md).
 
 ## Why This Exists
