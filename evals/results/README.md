@@ -2,7 +2,14 @@
 
 This directory stores reproducible, finalized forward-test evidence. Keep raw model responses in a run-specific subdirectory and keep their scored JSON reports beside them. Use only fictional or safely redacted inputs.
 
-Create a draft after running a case in a clean agent session:
+First create a blind packet and run it in a clean agent session:
+
+```bash
+python3 scripts/create_eval_packet.py forecast-sales-arbitrary-probability \
+  --output /tmp/forecast-sales-forward-test.md
+```
+
+Create a scoring draft only after saving the exact response:
 
 ```bash
 python3 scripts/create_eval_report.py forecast-sales-arbitrary-probability \

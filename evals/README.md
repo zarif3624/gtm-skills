@@ -21,14 +21,14 @@ A handoff change should add or update a journey. Journey assertions focus on inf
 
 ## Forward-Test Protocol
 
-1. Start a clean agent session with only the target skill installed.
-2. Submit the case prompt and context exactly as written. Do not reveal the assertions.
+1. Generate a self-contained blind packet with `python3 scripts/create_eval_packet.py <case-id> --output <temporary-path>`.
+2. Start a clean agent session with only the target skill packages and their directly linked resources available, then submit that packet without the source eval definition.
 3. Save the raw response with the agent, model, date, and skill commit.
 4. Score every assertion `Pass`, `Partial`, or `Fail` and cite response evidence.
 5. Treat any prohibited behavior as a critical failure.
 6. Revise the skill, then rerun the original case and at least one adjacent case to check for regressions.
 
-Use `scripts/create_eval_report.py` to create a scoring draft, then store the finalized report and its raw response under [`evals/results/`](results/). The repository check verifies that each report still matches its source assertions and that its summary follows the acceptance rule.
+The generated packet includes the exact prompt, context, and target skills but excludes the risk statement and assertions. Use `scripts/create_eval_report.py` only after saving the response, then store the finalized report and raw response under [`evals/results/`](results/). The repository check verifies that each report still matches its source assertions and that its summary follows the acceptance rule.
 
 For routing, freeze the live corpus with `scripts/create_routing_snapshot.py`, generate a self-contained blind packet from that snapshot and the current installed-skill metadata, save the client's exact JSON selection, and create a computed report with `scripts/create_routing_report.py`. Store responses and reports under [`evals/routing/results/`](routing/results/) and immutable corpora under `evals/routing/corpora/`. The packet includes exact skill names and descriptions but excludes expected and neighboring-skill labels; the report validator joins those labels back only after the run. A later corpus change cannot rewrite an earlier result.
 
