@@ -16,6 +16,7 @@ Qualification is an evidence audit, not a form-filling exercise. The goal is to 
 5. Distinguish buyer statements from seller assumptions and CRM defaults.
 6. Identify the smallest next action that can validate the highest-impact gap.
 7. Recommend `Advance`, `Continue discovery`, `Hold`, or `Disqualify`, with reasons.
+8. Before any live stage or forecast update, require the authorized opportunity owner to validate the cited source notes, applicable exit criteria, and forecast-category definitions. If an owner or definition is unavailable, keep the proposed update pending rather than treating omission as approval.
 
 Read [the framework map](references/frameworks.md) when translating MEDDPICC, SPICED, or BANT.
 
@@ -45,5 +46,6 @@ Use [the qualification template](assets/qualification-assessment.md). Provide:
 5. next questions or actions with confirmed or proposed owner and timing status;
 6. stage recommendation based on explicit exit criteria;
 7. concise CRM update that does not overstate certainty.
+8. live-update review gate naming opportunity-owner status, source-note validation, exit-criteria source, forecast-category source, and update status.
 
 Never convert absent evidence into a positive score. A buyer's willingness to meet is not proof of urgency, authority, or a funded decision. Do not invent owners or deadlines; prefer a validation dependency and label suggestions as `Proposed` or `Unknown`.

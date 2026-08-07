@@ -20,7 +20,7 @@ Read `.agents/gtm-context.md`, contract or order scope, final proposal, discover
 5. Map stakeholders, roles, communication preferences, and decision history.
 6. Capture implementation prerequisites, integrations, security, data, change-management, and adoption risks.
 7. Identify immediate actions. Preserve confirmed owners and dates; label suggested responsibility and timing as proposed or unknown.
-8. Ask the receiving owner to confirm gaps before the customer kickoff.
+8. Before customer kickoff, route every conflict among contract, proposal, seller statement, and customer expectation to authorized sales and receiving implementation owners. Require a written resolution or an explicitly open, customer-safe validation plan; unknown owners or unresolved feasibility block commitment language.
 
 Use [the handoff template](assets/customer-handoff.md).
 
@@ -30,7 +30,7 @@ Use [the handoff template](assets/customer-handoff.md).
 - Never omit a material limitation, unresolved objection, or known implementation risk.
 - Do not expose irrelevant call transcripts, private seller commentary, or sensitive personal data.
 - Do not ask the customer to repeat information already captured unless validation is necessary.
-- Escalate conflicts between the contract, proposal, and verbal expectations.
+- Escalate conflicts between the contract, proposal, and verbal expectations to authorized sales and receiving implementation owners before kickoff, regardless of whether the customer already considers the item promised.
 - Do not assume the receiving function, implementation owner, first-30-day dates, or kickoff commitments. Prefer milestone-relative sequencing until owners accept timing.
 
 ## Source Safety
@@ -49,4 +49,5 @@ Provide:
 - implementation prerequisites and risks;
 - first 30-day milestones;
 - open questions with owners;
+- pre-kickoff conflict gate listing each contract, integration, timeline, or expectation conflict, required authorized reviewers, owner status, resolution status, and the language permitted at kickoff;
 - customer-facing kickoff recap stripped of internal-only commentary.

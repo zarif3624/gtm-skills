@@ -175,7 +175,7 @@
         "agents/openai.yaml",
         "assets/customer-handoff.md"
       ],
-      "package_sha256": "02feca41c2ea3eaa6706c9490095de8ba9a1d4cfa9a4fa2976ef4ffaedf962af"
+      "package_sha256": "90e40efe1d9bc08fa086afd0af8620d9d7ffae6c8f0614426fcbae5ce67d0061"
     },
     {
       "name": "plan-account",
@@ -307,7 +307,7 @@
         "assets/qualification-assessment.md",
         "references/frameworks.md"
       ],
-      "package_sha256": "717f887d17ae33275f828e0af49f3b206203f6fc3b773bcaa64de1eaf01e373a"
+      "package_sha256": "e9d38d89700da9b821505d87ea0f563d67433854631f05bfc96d9f77b637011d"
     },
     {
       "name": "research-account",

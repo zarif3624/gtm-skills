@@ -37,3 +37,11 @@
 ## CRM Update
 
 [Concise factual update that preserves uncertainty.]
+
+## Live-Update Review Gate
+
+| Review | Source or definition | Owner status | Validation status | Update status |
+| --- | --- | --- | --- | --- |
+| Source notes | | Confirmed / Proposed / Unknown | Verified / Pending / Unknown | Proposed / Approved / Rejected / Unknown |
+| Stage exit criteria | | Confirmed / Proposed / Unknown | Verified / Pending / Unknown | Proposed / Approved / Rejected / Unknown |
+| Forecast-category definition | | Confirmed / Proposed / Unknown | Verified / Pending / Unknown | Proposed / Approved / Rejected / Unknown |

@@ -49,3 +49,9 @@
 ## Open Questions
 
 -
+
+## Pre-Kickoff Conflict Gate
+
+| Conflict | Authoritative sources | Required authorized reviewers | Owner status | Resolution status | Permitted kickoff language |
+| --- | --- | --- | --- | --- | --- |
+| Contract / Proposal / Seller statement / Customer expectation | | Sales and receiving implementation; add Commercial / Product / Legal / Security as applicable | Confirmed / Proposed / Unknown | Resolved / Open with validation plan / Blocked / Unknown | |
