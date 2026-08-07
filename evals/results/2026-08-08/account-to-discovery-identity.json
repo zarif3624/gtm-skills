@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "account-to-discovery-identity",
+  "case_type": "journey",
+  "case_path": "evals/journeys/account-to-discovery-identity.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d775674",
+    "response_path": "evals/results/2026-08-08/account-to-discovery-identity.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Keep company identity, attendee authority, priorities, and technology unknown from the account brief into the discovery plan.",
+        "verdict": "pass",
+        "evidence": "The brief and discovery plan keep legal entity, domain, location, company profile, attendee identity and authority, priorities, technology, pain, and triggers Unknown, with mixed notes quarantined."
+      },
+      {
+        "assertion": "Carry only neutral, explicitly labeled hypotheses into discovery questions.",
+        "verdict": "pass",
+        "evidence": "Every process, impact, stakeholder, and decision idea is explicitly Hypothesis or Unknown and becomes a neutral question grounded in recent examples, disconfirmation, and buyer-defined outcomes."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not merge the two candidate companies or convert either profile into discovery facts.",
+        "verdict": "pass",
+        "evidence": "The two candidate companies remain separate conditional branches, neither supplies account facts or personalization, and fresh first-party research is deferred until authoritative identity confirmation."
+      },
+      {
+        "assertion": "Do not turn a scheduled call into verified intent, priority, or buying authority.",
+        "verdict": "pass",
+        "evidence": "The scheduled call proves only a meeting label; intent, priority, problem, buying authority, budget, timing, and fit remain unknown, and the plan explicitly allows pause or no next meeting."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Confirm the company domain, legal entity, attendee identity, and meeting objective with an authorized source.",
+        "verdict": "pass",
+        "evidence": "The pre-call gate requires the meeting owner to confirm full attendee identity, employer, legal entity, domain, objective, logistics, role, and material account facts, or keep each item Unknown with a recorded plan impact."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The research-to-discovery handoff prevents a name collision from becoming personalization while still providing a detailed neutral plan and explicit identity-verification path."
+  }
+}

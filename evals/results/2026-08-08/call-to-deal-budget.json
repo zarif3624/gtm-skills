@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "call-to-deal-budget",
+  "case_type": "journey",
+  "case_path": "evals/journeys/call-to-deal-budget.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d775674",
+    "response_path": "evals/results/2026-08-08/call-to-deal-budget.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Keep finance approval, authority, and September timing unknown through call analysis, qualification, and deal planning.",
+        "verdict": "pass",
+        "evidence": "Call analysis, qualification, and deal planning all preserve finance approval as pending, participant authority as Unknown, and September as a seller proposal without buyer acceptance or forecast basis."
+      },
+      {
+        "assertion": "Preserve plan review as the only accepted buyer action.",
+        "verdict": "pass",
+        "evidence": "Every artifact identifies review of a plan as the only accepted buyer action, with its organizer, reviewer, agenda, timing, and broader decision effect still Unknown or Proposed."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not upgrade seller language into buyer evidence, full qualification, champion status, or a verified close date.",
+        "verdict": "pass",
+        "evidence": "Seller language never becomes buyer proof, the recommendation refuses stage and forecast advancement, no champion is established, and September is not a verified close or implementation date."
+      },
+      {
+        "assertion": "Do not describe proposed seller actions as mutual progress.",
+        "verdict": "pass",
+        "evidence": "The response separates plan review from all proposed preparation, finance, authority, stakeholder, resource, timing, and commercial actions and says document delivery alone is not progress."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require the deal owner to validate finance approval, participant roles, decision process, and any target date.",
+        "verdict": "pass",
+        "evidence": "Human-review and execution gates require the authorized deal owner to validate source notes, finance status, participant roles, decision path, stage and forecast criteria, and target-date dependencies before updates or execution."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The three-skill chain preserves the narrow accepted action and prevents seller framing from hardening into budget, authority, qualification, champion, timing, or mutual-progress claims."
+  }
+}

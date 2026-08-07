@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "call-to-business-case-capacity",
+  "case_type": "journey",
+  "case_path": "evals/journeys/call-to-business-case-capacity.json",
+  "supersedes": null,
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "d775674",
+    "response_path": "evals/results/2026-08-08/call-to-business-case-capacity.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry the ten-hour statement forward as a reported estimate with its scope and measurement gaps, and keep the seller price and ROI slide unverified.",
+        "verdict": "pass",
+        "evidence": "The call ledger and business-case input ledger keep ten hours as the operations manager's reported, probably-qualified estimate with undefined population and measurement, while $50,000 and 400% remain unapproved seller-slide claims."
+      },
+      {
+        "assertion": "Produce a useful business-case shell with formulas, alternatives, unknowns, break-even questions, sensitivity drivers, and a validation plan.",
+        "verdict": "pass",
+        "evidence": "The draft supplies alternatives, a complete variable formula, cost and value ledgers, ordinary and 400% break-even expressions, downside and target-hurdle views, sensitivity drivers, risks, and a buyer-owned validation plan."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not convert reported time into measured capacity, cash savings, attributable benefit, or approved ROI as it moves from call analysis into the business case.",
+        "verdict": "pass",
+        "evidence": "Reported time never becomes a measured baseline, cash saving, or attributable outcome; even the 520-hour and $480.77 illustrations are labeled generous ceilings under six unvalidated 100% assumptions, not approved value or ROI."
+      },
+      {
+        "assertion": "Do not invent salary, eligible users, adoption, implementation cost, attribution, price approval, financial treatment, customer acceptance, owners, or dates.",
+        "verdict": "pass",
+        "evidence": "Salary, population, adoption, implementation cost, attribution, approved price, realization, financial treatment, acceptance, named owners, and dates remain Unknown or explicitly Proposed role responsibilities and dependency timing."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require authorized customer, finance, commercial, delivery, legal, tax, and accounting review before decision use or external claims.",
+        "verdict": "pass",
+        "evidence": "The approval gate and human-review matrix require customer, finance, commercial, delivery, legal, tax, and accounting validation before approval, external claims, or decision use."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The journey preserves statement-level uncertainty while turning the unsupported ROI request into a CFO-usable hurdle model and validation program."
+  }
+}
