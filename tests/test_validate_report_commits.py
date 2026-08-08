@@ -68,7 +68,10 @@ class ReportCommitTests(unittest.TestCase):
         skill.mkdir(parents=True)
         case.mkdir(parents=True)
         results.mkdir(parents=True)
-        (skill / "SKILL.md").write_text("# Test\n", encoding="utf-8")
+        (skill / "SKILL.md").write_text(
+            '---\nname: test-skill\ndescription: "Use when testing evidence."\n---\n\n# Test\n',
+            encoding="utf-8",
+        )
         (case / "test-case.json").write_text(
             '{"id":"test-case","skill":"test-skill"}\n', encoding="utf-8"
         )
@@ -171,6 +174,87 @@ class ReportCommitTests(unittest.TestCase):
             count, errors = COMMITS.validate_current_behavioral_freshness(root)
             self.assertEqual(count, 1)
             self.assertEqual(errors, [])
+
+    def make_routing_repository(self, root: Path) -> str:
+        subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+        subprocess.run(
+            ["git", "config", "user.email", "test.invalid@example.invalid"],
+            cwd=root,
+            check=True,
+        )
+        subprocess.run(
+            ["git", "config", "user.name", "Test Runner"], cwd=root, check=True
+        )
+        skill = root / "skills" / "test-skill"
+        corpus = root / "evals" / "routing" / "corpora" / "current.json"
+        results = root / "evals" / "routing" / "results"
+        skill.mkdir(parents=True)
+        corpus.parent.mkdir(parents=True)
+        results.mkdir(parents=True)
+        (skill / "SKILL.md").write_text(
+            '---\nname: test-skill\ndescription: "Use when testing routing."\n---\n\n# Body\n',
+            encoding="utf-8",
+        )
+        corpus.write_text('{"schema_version":1,"cases":[]}\n', encoding="utf-8")
+        subprocess.run(["git", "add", "."], cwd=root, check=True)
+        subprocess.run(["git", "commit", "-qm", "routing inputs"], cwd=root, check=True)
+        commit = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        report = (
+            '{"corpus_path":"evals/routing/corpora/current.json",'
+            '"supersedes":null,'
+            f'"run":{{"repository_commit":"{commit}"}}}}\n'
+        )
+        (results / "current.json").write_text(report, encoding="utf-8")
+        return commit
+
+    def test_current_routing_report_matches_corpus_and_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            self.make_routing_repository(root)
+            count, errors = COMMITS.validate_current_routing_freshness(root)
+            self.assertEqual(count, 1)
+            self.assertEqual(errors, [])
+
+    def test_routing_body_only_change_stays_fresh(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            self.make_routing_repository(root)
+            (root / "skills" / "test-skill" / "SKILL.md").write_text(
+                '---\nname: test-skill\ndescription: "Use when testing routing."\n---\n\n# Changed body\n',
+                encoding="utf-8",
+            )
+            _, errors = COMMITS.validate_current_routing_freshness(root)
+            self.assertEqual(errors, [])
+
+    def test_routing_description_change_makes_report_stale(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            self.make_routing_repository(root)
+            (root / "skills" / "test-skill" / "SKILL.md").write_text(
+                '---\nname: test-skill\ndescription: "Changed routing trigger."\n---\n\n# Body\n',
+                encoding="utf-8",
+            )
+            _, errors = COMMITS.validate_current_routing_freshness(root)
+            self.assertEqual(len(errors), 1)
+            self.assertIn("names or descriptions differ", errors[0])
+
+    def test_routing_corpus_change_makes_report_stale(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            self.make_routing_repository(root)
+            (root / "evals" / "routing" / "corpora" / "current.json").write_text(
+                '{"schema_version":1,"cases":[{"id":"changed"}]}\n',
+                encoding="utf-8",
+            )
+            _, errors = COMMITS.validate_current_routing_freshness(root)
+            self.assertEqual(len(errors), 1)
+            self.assertIn("corpora/current.json differs", errors[0])
 
 
 if __name__ == "__main__":

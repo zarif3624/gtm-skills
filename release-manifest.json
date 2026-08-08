@@ -7,7 +7,7 @@
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "d8ab6abc610387ddd933e8a52bdee5578e37f867fba848cbc2d76fb6a3e876e5"
+      "sha256": "241a3a98a25c0426f18e3f7dcaac3a84a6f97937a14f12443096a056a29157ef"
     }
   },
   "quality_policy": {
@@ -595,13 +595,13 @@
         "verdict": "pass",
         "total_cases": 28,
         "exact_matches": 28,
-        "repository_commit": "f5d0b84",
+        "repository_commit": "133ad40",
         "corpus_path": "evals/routing/corpora/2026-08-08-v4.json",
         "corpus_sha256": "6d1ec06bb24c487bb0a9bfc9fd6e6fab4376bfbca4038bb1864bd0003b94b47d",
-        "report_path": "evals/routing/results/2026-08-08-codex-inherited-v4.json",
-        "report_sha256": "6e1e507072af713fbdf1df88530239d155d4077039672d269b762d9120a9c466",
-        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v4.response.json",
-        "response_sha256": "f0b8ca20a782257ffb61daea438461f2ea24a26392158b2099cf35d2b7666e12"
+        "report_path": "evals/routing/results/2026-08-08-codex-inherited-v5.json",
+        "report_sha256": "8f59e3dafe582a3303c11d036436c0e2df122e6f44148d3fbc1b45b739fbde7b",
+        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v5.response.json",
+        "response_sha256": "8ae11ae27b0fb40a42cd27f8deff4aea9518e8634af3280c2dad83670b6db8a4"
       }
     ]
   }

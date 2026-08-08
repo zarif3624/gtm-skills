@@ -11,6 +11,11 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from validate_skills import parse_frontmatter
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -144,6 +149,102 @@ def validate_current_behavioral_freshness(root: Path = ROOT) -> tuple[int, list[
     return len(current), errors
 
 
+def current_routing_reports(root: Path) -> list[tuple[Path, dict[str, Any]]]:
+    paths = sorted((root / "evals" / "routing" / "results").glob("*.json"))
+    reports = [
+        (path.resolve(), load_json(path))
+        for path in paths
+        if not path.name.endswith(".response.json")
+    ]
+    superseded = {
+        (root / report["supersedes"]).resolve()
+        for _, report in reports
+        if report.get("supersedes")
+    }
+    return [(path, report) for path, report in reports if path not in superseded]
+
+
+def current_routing_metadata(root: Path) -> list[tuple[str, str]]:
+    metadata: list[tuple[str, str]] = []
+    for path in sorted((root / "skills").glob("*/SKILL.md")):
+        frontmatter, _body, errors = parse_frontmatter(path.read_text(encoding="utf-8"))
+        if errors:
+            raise ValueError(f"{path.relative_to(root)}: {'; '.join(errors)}")
+        metadata.append((frontmatter["name"], frontmatter["description"]))
+    return metadata
+
+
+def routing_metadata_at_commit(commit: str, root: Path) -> list[tuple[str, str]]:
+    listed = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", commit, "--", "skills"],
+        cwd=root,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if listed.returncode:
+        raise OSError(listed.stderr.strip() or "git ls-tree failed")
+    paths = sorted(
+        item
+        for item in listed.stdout.splitlines()
+        if item.startswith("skills/") and item.count("/") == 2 and item.endswith("/SKILL.md")
+    )
+    metadata: list[tuple[str, str]] = []
+    for path in paths:
+        shown = subprocess.run(
+            ["git", "show", f"{commit}:{path}"],
+            cwd=root,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if shown.returncode:
+            raise OSError(shown.stderr.strip() or f"git show failed for {path}")
+        frontmatter, _body, errors = parse_frontmatter(shown.stdout)
+        if errors:
+            raise ValueError(f"{path} at {commit}: {'; '.join(errors)}")
+        metadata.append((frontmatter["name"], frontmatter["description"]))
+    return metadata
+
+
+def validate_current_routing_freshness(root: Path = ROOT) -> tuple[int, list[str]]:
+    """Bind each current routing report to its corpus and installed routing metadata."""
+    root = root.resolve()
+    errors: list[str] = []
+    current = current_routing_reports(root)
+    try:
+        present_metadata = current_routing_metadata(root)
+    except (OSError, ValueError, KeyError) as error:
+        return len(current), [f"cannot read current routing metadata: {error}"]
+    metadata_cache: dict[str, list[tuple[str, str]]] = {}
+    for path, report in current:
+        try:
+            commit = report["run"]["repository_commit"]
+            corpus_path = report["corpus_path"]
+            if commit not in metadata_cache:
+                metadata_cache[commit] = routing_metadata_at_commit(commit, root)
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            errors.append(f"{path.relative_to(root)} cannot resolve routing inputs: {error}")
+            continue
+        corpus_changed, corpus_error = repository_path_changed(commit, corpus_path, root)
+        if corpus_error:
+            errors.append(
+                f"{path.relative_to(root)} cannot compare {corpus_path} at {commit}: "
+                f"{corpus_error}"
+            )
+        elif corpus_changed:
+            errors.append(
+                f"{path.relative_to(root)} is stale: {corpus_path} differs from tested "
+                f"commit {commit}"
+            )
+        if metadata_cache[commit] != present_metadata:
+            errors.append(
+                f"{path.relative_to(root)} is stale: installed skill names or descriptions "
+                f"differ from tested commit {commit}"
+            )
+    return len(current), errors
+
+
 def validate_report_commits(root: Path = ROOT) -> tuple[int, list[str]]:
     errors: list[str] = []
     checked: dict[str, str | None] = {}
@@ -170,10 +271,11 @@ def main() -> int:
     try:
         count, errors = validate_report_commits()
         current_count, freshness_errors = validate_current_behavioral_freshness()
+        routing_count, routing_freshness_errors = validate_current_routing_freshness()
     except OSError as error:
         print(f"FAIL cannot inspect Git history: {error}")
         return 1
-    for error in errors + freshness_errors:
+    for error in errors + freshness_errors + routing_freshness_errors:
         print(f"FAIL {error}")
     print(f"\nVerified {count} unique evaluation commits; {len(errors)} invalid references.")
     print(
@@ -181,7 +283,11 @@ def main() -> int:
         f"and skill content; "
         f"{len(freshness_errors)} stale."
     )
-    return 1 if errors or freshness_errors else 0
+    print(
+        f"Verified {routing_count} current routing reports against frozen corpora and "
+        f"installed metadata; {len(routing_freshness_errors)} stale."
+    )
+    return 1 if errors or freshness_errors or routing_freshness_errors else 0
 
 
 if __name__ == "__main__":

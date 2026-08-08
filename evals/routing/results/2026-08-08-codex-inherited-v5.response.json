@@ -1,0 +1,144 @@
+{
+  "selections": [
+    {
+      "id": "build-shared-gtm-context",
+      "selected_skills": ["gtm-context"],
+      "rationale": "This request is specifically about consolidating product, market, proof, and sales-motion notes into reusable GTM context."
+    },
+    {
+      "id": "design-evidence-based-sales-process",
+      "selected_skills": ["design-sales-process"],
+      "rationale": "The requested stages, evidence gates, CRM rules, governance, measurement, and rollout are all sales-process design work."
+    },
+    {
+      "id": "derive-testable-icp",
+      "selected_skills": ["define-icp"],
+      "rationale": "The goal is to derive and validate an ideal customer profile, including counterexamples and tests."
+    },
+    {
+      "id": "develop-message-architecture",
+      "selected_skills": ["develop-positioning"],
+      "rationale": "The request centers on positioning, message pillars, claim-proof mapping, guardrails, and pre-copy validation."
+    },
+    {
+      "id": "rebalance-sales-territories",
+      "selected_skills": ["plan-territories"],
+      "rationale": "Redistributing accounts across sellers using workload, potential, continuity, and capacity is territory planning."
+    },
+    {
+      "id": "research-named-account",
+      "selected_skills": ["research-account"],
+      "rationale": "The request requires a current, sourced account brief that distinguishes facts from hypotheses."
+    },
+    {
+      "id": "build-strategic-account-plan",
+      "selected_skills": ["plan-account"],
+      "rationale": "A multi-year strategy across business units, relationships, opportunities, whitespace, and investment is strategic account planning."
+    },
+    {
+      "id": "prioritize-prospecting-list",
+      "selected_skills": ["plan-prospecting"],
+      "rationale": "The request turns an ICP and account list into tiers, contact coverage, and prospecting learning goals."
+    },
+    {
+      "id": "write-responsible-outbound-sequence",
+      "selected_skills": ["write-outbound"],
+      "rationale": "Creating an evidence-constrained email and LinkedIn sequence is responsible outbound writing."
+    },
+    {
+      "id": "prepare-first-discovery-call",
+      "selected_skills": ["prepare-discovery"],
+      "rationale": "Hypotheses, questions, an agenda, and a useful next-step plan are the core outputs of discovery preparation."
+    },
+    {
+      "id": "analyze-completed-sales-call",
+      "selected_skills": ["analyze-sales-call"],
+      "rationale": "The input is a completed timestamped call transcript and the requested outputs are call evidence, decisions, objections, commitments, next steps, and coaching."
+    },
+    {
+      "id": "assess-opportunity-qualification",
+      "selected_skills": ["qualify-opportunity"],
+      "rationale": "The request is to assess live-opportunity qualification from evidence, contradictions, and missing decision information."
+    },
+    {
+      "id": "build-rep-coaching-plan",
+      "selected_skills": ["coach-sales-rep"],
+      "rationale": "Choosing an evidence-based behavior experiment from calls, observations, and outcomes is sales-rep coaching."
+    },
+    {
+      "id": "plan-complex-deal",
+      "selected_skills": ["plan-deal"],
+      "rationale": "Stakeholders, competition, risks, proof, and prioritized actions for an active complex opportunity belong in a deal plan."
+    },
+    {
+      "id": "respond-to-product-objection",
+      "selected_skills": ["handle-objections"],
+      "rationale": "The task is to diagnose a trust objection and prepare honest responses, questions, and next steps."
+    },
+    {
+      "id": "design-buyer-specific-demo",
+      "selected_skills": ["prepare-demo"],
+      "rationale": "Designing a time-boxed demonstration around buyer outcomes, workflow, proof needs, and limitations is demo preparation."
+    },
+    {
+      "id": "build-buyer-business-case",
+      "selected_skills": ["build-business-case"],
+      "rationale": "The requested comparison, sourced assumptions, total costs, scenarios, sensitivity, and break-even analysis form a buyer-facing business case."
+    },
+    {
+      "id": "prepare-commercial-negotiation",
+      "selected_skills": ["prepare-negotiation"],
+      "rationale": "Packages, trades, approval boundaries, and concession sequencing are commercial-negotiation preparation."
+    },
+    {
+      "id": "draft-mutual-decision-plan",
+      "selected_skills": ["create-mutual-action-plan"],
+      "rationale": "A buyer-editable plan of shared decision milestones, dependencies, acceptance status, and no-go outcomes is a mutual action plan."
+    },
+    {
+      "id": "review-pipeline-portfolio",
+      "selected_skills": ["review-pipeline"],
+      "rationale": "Inspecting a CRM portfolio for data quality, deal risk, momentum, concentration, and management priorities is pipeline review."
+    },
+    {
+      "id": "forecast-revenue-scenarios",
+      "selected_skills": ["forecast-sales"],
+      "rationale": "Building an auditable quarterly downside, expected, and upside forecast from pipeline and history is sales forecasting."
+    },
+    {
+      "id": "handoff-signed-customer",
+      "selected_skills": ["handoff-customer"],
+      "rationale": "Transferring the signed scope, discovery, promises, risks, and dependencies to customer success is a post-sale handoff."
+    },
+    {
+      "id": "review-customer-value-and-renewal",
+      "selected_skills": ["review-customer-outcomes"],
+      "rationale": "Reviewing success, usage, support, stakeholder, and contract evidence for outcomes and renewal readiness is customer-outcomes review."
+    },
+    {
+      "id": "analyze-win-loss-patterns",
+      "selected_skills": ["analyze-win-loss"],
+      "rationale": "The request asks for supportable patterns and learning tests across wins, losses, no-decisions, reason codes, and buyer interviews."
+    },
+    {
+      "id": "design-partner-channel-motion",
+      "selected_skills": ["plan-partner-channel"],
+      "rationale": "Designing a testable referral and co-sell program with economics, attribution, stages, permission, and stop rules is partner-channel planning."
+    },
+    {
+      "id": "call-analysis-to-qualification",
+      "selected_skills": ["analyze-sales-call", "qualify-opportunity"],
+      "rationale": "The workflow explicitly requires transcript analysis first and then a qualification update grounded in that evidence."
+    },
+    {
+      "id": "pipeline-review-to-forecast",
+      "selected_skills": ["review-pipeline", "forecast-sales"],
+      "rationale": "The dirty pipeline must first be reviewed and reconciled, then used to produce the quarterly forecast."
+    },
+    {
+      "id": "account-research-to-discovery",
+      "selected_skills": ["research-account", "prepare-discovery"],
+      "rationale": "The workflow explicitly combines sourced account research with a first-call discovery plan that preserves hypotheses as unverified."
+    }
+  ]
+}
