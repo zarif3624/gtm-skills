@@ -45,6 +45,8 @@ All notable project changes are documented here. The project uses semantic versi
 - The routing corpus now contains 38 requests: one isolated route for every skill plus multi-skill routing for all twelve tested journeys. The prior exact 28-request run and earlier 25-, 26-, and 27-request runs remain available as history.
 - Evaluation validation now fails when a journey's ordered skill topology has no matching blind-routing request.
 - The corrected expanded blind run selects the exact minimal set for 38/38 requests with zero excluded-neighbor selections; the initial 37/38 failure is retained as corpus-design history.
+- A dependency-free copied-install comparator verifies the exact directory set and byte content of every installed skill package; all 25 packages and 92 files pass the recorded local audit.
+- Evaluation, routing, policy, and structured-context validators now reject JSON booleans where integer schema versions, counters, or thresholds are required.
 
 ## 0.1.0
 
