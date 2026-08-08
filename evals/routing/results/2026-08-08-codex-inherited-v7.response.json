@@ -1,0 +1,194 @@
+{
+  "selections": [
+    {
+      "id": "build-shared-gtm-context",
+      "selected_skills": ["gtm-context"],
+      "rationale": "This skill turns scattered GTM inputs into reusable shared project context."
+    },
+    {
+      "id": "design-evidence-based-sales-process",
+      "selected_skills": ["design-sales-process"],
+      "rationale": "This skill covers stages, evidence gates, CRM rules, governance, measurement, and rollout."
+    },
+    {
+      "id": "derive-testable-icp",
+      "selected_skills": ["define-icp"],
+      "rationale": "This skill defines a testable ICP from customer evidence, counterexamples, and fit criteria."
+    },
+    {
+      "id": "develop-message-architecture",
+      "selected_skills": ["develop-positioning"],
+      "rationale": "This skill develops evidence-based positioning, message pillars, proof mapping, guardrails, and tests."
+    },
+    {
+      "id": "rebalance-sales-territories",
+      "selected_skills": ["plan-territories"],
+      "rationale": "This skill handles account redistribution using workload, potential, continuity, and capacity scenarios."
+    },
+    {
+      "id": "research-named-account",
+      "selected_skills": ["research-account"],
+      "rationale": "This skill produces a sourced account brief while distinguishing facts from hypotheses."
+    },
+    {
+      "id": "build-strategic-account-plan",
+      "selected_skills": ["plan-account"],
+      "rationale": "This skill covers multi-year account strategy across units, relationships, opportunities, whitespace, and investment."
+    },
+    {
+      "id": "prioritize-prospecting-list",
+      "selected_skills": ["plan-prospecting"],
+      "rationale": "This skill turns an ICP and account list into tiers, contact coverage, and prospecting learning goals."
+    },
+    {
+      "id": "write-responsible-outbound-sequence",
+      "selected_skills": ["write-outbound"],
+      "rationale": "This skill writes responsible multichannel outbound sequences using approved evidence and proof."
+    },
+    {
+      "id": "prepare-first-discovery-call",
+      "selected_skills": ["prepare-discovery"],
+      "rationale": "This skill prepares discovery hypotheses, questions, agenda, listening targets, and next steps."
+    },
+    {
+      "id": "analyze-completed-sales-call",
+      "selected_skills": ["analyze-sales-call"],
+      "rationale": "This skill extracts transcript evidence, decisions, objections, commitments, actions, and coaching observations."
+    },
+    {
+      "id": "assess-opportunity-qualification",
+      "selected_skills": ["qualify-opportunity"],
+      "rationale": "This skill assesses qualification from available evidence, contradictions, and missing decision information."
+    },
+    {
+      "id": "build-rep-coaching-plan",
+      "selected_skills": ["coach-sales-rep"],
+      "rationale": "This skill builds an evidence-based coaching experiment from calls, observations, and deal outcomes."
+    },
+    {
+      "id": "plan-complex-deal",
+      "selected_skills": ["plan-deal"],
+      "rationale": "This skill develops strategy for an active complex opportunity, including stakeholders, competition, risks, proof, and actions."
+    },
+    {
+      "id": "respond-to-product-objection",
+      "selected_skills": ["handle-objections"],
+      "rationale": "This skill diagnoses trust and integration concerns and prepares honest responses, questions, and next steps."
+    },
+    {
+      "id": "design-buyer-specific-demo",
+      "selected_skills": ["prepare-demo"],
+      "rationale": "This skill designs a buyer-specific demo around outcomes, workflow, proof needs, and limitations."
+    },
+    {
+      "id": "build-buyer-business-case",
+      "selected_skills": ["build-business-case"],
+      "rationale": "This skill builds a buyer-facing status-quo comparison with sourced assumptions, costs, scenarios, sensitivity, and break-even."
+    },
+    {
+      "id": "prepare-commercial-negotiation",
+      "selected_skills": ["prepare-negotiation"],
+      "rationale": "This skill prepares packages, give-get trades, approval limits, and concession sequencing."
+    },
+    {
+      "id": "draft-mutual-decision-plan",
+      "selected_skills": ["create-mutual-action-plan"],
+      "rationale": "This skill creates a buyer-editable plan with shared milestones, dependencies, status, and valid no-go outcomes."
+    },
+    {
+      "id": "review-pipeline-portfolio",
+      "selected_skills": ["review-pipeline"],
+      "rationale": "This skill reviews CRM pipeline quality, deal risk, buyer momentum, concentration, and management priorities."
+    },
+    {
+      "id": "forecast-revenue-scenarios",
+      "selected_skills": ["forecast-sales"],
+      "rationale": "This skill creates an auditable scenario forecast from pipeline and historical evidence."
+    },
+    {
+      "id": "handoff-signed-customer",
+      "selected_skills": ["handoff-customer"],
+      "rationale": "This skill transfers signed scope, discovery, promises, risks, and implementation dependencies to customer success."
+    },
+    {
+      "id": "review-customer-value-and-renewal",
+      "selected_skills": ["review-customer-outcomes"],
+      "rationale": "This skill reviews outcome, adoption, support, stakeholder, contract, risk, and renewal evidence."
+    },
+    {
+      "id": "analyze-win-loss-patterns",
+      "selected_skills": ["analyze-win-loss"],
+      "rationale": "This skill analyzes wins, losses, no-decisions, seller codes, and buyer evidence for supportable patterns and tests."
+    },
+    {
+      "id": "design-partner-channel-motion",
+      "selected_skills": ["plan-partner-channel"],
+      "rationale": "This skill designs testable referral and co-sell motions with economics, attribution, stages, permissions, and stop rules."
+    },
+    {
+      "id": "call-analysis-to-qualification",
+      "selected_skills": ["analyze-sales-call", "qualify-opportunity"],
+      "rationale": "Call analysis first establishes transcript evidence, then qualification updates the opportunity without elevating seller claims."
+    },
+    {
+      "id": "pipeline-review-to-forecast",
+      "selected_skills": ["review-pipeline", "forecast-sales"],
+      "rationale": "Pipeline review establishes exclusions and contradictions before the forecast builds quarterly scenarios."
+    },
+    {
+      "id": "account-research-to-discovery",
+      "selected_skills": ["research-account", "prepare-discovery"],
+      "rationale": "Account research establishes sourced facts and hypotheses, then discovery preparation turns them into a first-call plan."
+    },
+    {
+      "id": "call-analysis-to-business-case",
+      "selected_skills": ["analyze-sales-call", "build-business-case"],
+      "rationale": "Call analysis extracts the buyer's stated metrics, then business-case work models them as unverified assumptions pending validation."
+    },
+    {
+      "id": "call-analysis-to-qualification-and-deal-plan",
+      "selected_skills": ["analyze-sales-call", "qualify-opportunity", "plan-deal"],
+      "rationale": "Call evidence feeds qualification first and then an evidence-grounded revision of the active deal strategy."
+    },
+    {
+      "id": "deal-plan-to-mutual-plan-and-customer-handoff",
+      "selected_skills": ["create-mutual-action-plan", "handoff-customer"],
+      "rationale": "The existing deal strategy and signed order feed a buyer-editable mutual plan and a customer handoff; no new deal plan is requested."
+    },
+    {
+      "id": "deal-plan-to-negotiation",
+      "selected_skills": ["plan-deal", "prepare-negotiation"],
+      "rationale": "The deal strategy must be updated before its evidence informs packages, trades, boundaries, and walk-away conditions."
+    },
+    {
+      "id": "icp-to-prospecting-plan",
+      "selected_skills": ["define-icp", "plan-prospecting"],
+      "rationale": "A testable ICP is derived first, then only its scoreable criteria drive prospecting prioritization."
+    },
+    {
+      "id": "partner-plan-to-pipeline-forecast",
+      "selected_skills": ["plan-partner-channel", "review-pipeline", "forecast-sales"],
+      "rationale": "The partner motion is designed first, its claimed opportunities are reconciled against canonical pipeline, and the forecast is then updated without duplicate attribution."
+    },
+    {
+      "id": "positioning-to-outbound-copy",
+      "selected_skills": ["develop-positioning", "write-outbound"],
+      "rationale": "Evidence-based positioning establishes approved claims and proof before they are adapted into audience-relevant outbound copy."
+    },
+    {
+      "id": "sales-process-to-pipeline-review",
+      "selected_skills": ["design-sales-process", "review-pipeline"],
+      "rationale": "Sales-process design proposes buyer-state stages and governance, while pipeline review assesses current records without assuming the draft policy is live."
+    },
+    {
+      "id": "account-research-to-account-plan",
+      "selected_skills": ["research-account", "plan-account"],
+      "rationale": "Sourced account research feeds expansion planning while unverified divisions, relationships, and use cases remain hypotheses."
+    },
+    {
+      "id": "source-safe-research-to-outbound",
+      "selected_skills": ["research-account", "write-outbound"],
+      "rationale": "Account research separates sourced facts from untrusted embedded instructions, then outbound uses only supported evidence and authorized claims."
+    }
+  ]
+}

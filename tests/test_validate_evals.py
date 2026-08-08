@@ -137,6 +137,31 @@ class EvalValidatorTests(unittest.TestCase):
             )
             self.assertIn("cases[1] expects and excludes: first-skill", errors)
 
+    def test_every_journey_topology_requires_a_routing_case(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            journey_path = root / "test-journey.json"
+            journey_path.write_text(json.dumps(valid_journey()), encoding="utf-8")
+            routing_path = root / "routing.json"
+            routing = valid_routing()
+            routing_path.write_text(json.dumps(routing), encoding="utf-8")
+            self.assertEqual(
+                VALIDATOR.uncovered_journey_routes([journey_path], routing_path),
+                ["test-journey"],
+            )
+            routing["cases"].append(
+                {
+                    "id": "run-journey",
+                    "prompt": "Complete both workflows.",
+                    "expected_skills": ["first-skill", "second-skill"],
+                    "excluded_skills": ["third-skill"],
+                }
+            )
+            routing_path.write_text(json.dumps(routing), encoding="utf-8")
+            self.assertEqual(
+                VALIDATOR.uncovered_journey_routes([journey_path], routing_path), []
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

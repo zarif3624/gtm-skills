@@ -43,6 +43,7 @@ All notable project changes are documented here. The project uses semantic versi
 - The repository scanner rejects executable and compiled payloads outside ignored runtime caches.
 - The current recorded Codex lineage has all 37 behavioral definitions passing: 25 isolated skill cases and 12 cross-skill journeys. Earlier partial and failed runs remain available as regression history.
 - The routing corpus now contains 38 requests: one isolated route for every skill plus multi-skill routing for all twelve tested journeys. The prior exact 28-request run and earlier 25-, 26-, and 27-request runs remain available as history.
+- Evaluation validation now fails when a journey's ordered skill topology has no matching blind-routing request.
 
 ## 0.1.0
 

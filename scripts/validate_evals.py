@@ -170,6 +170,22 @@ def validate_routing(path: Path, skill_names: set[str]) -> tuple[set[str], list[
     return covered, errors
 
 
+def uncovered_journey_routes(journey_paths: list[Path], routing_path: Path) -> list[str]:
+    """Name journeys whose ordered skill topology has no routing request."""
+    corpus = json.loads(routing_path.read_text(encoding="utf-8"))
+    routed = {
+        tuple(case["expected_skills"])
+        for case in corpus["cases"]
+        if isinstance(case, dict) and isinstance(case.get("expected_skills"), list)
+    }
+    missing: list[str] = []
+    for path in journey_paths:
+        journey = json.loads(path.read_text(encoding="utf-8"))
+        if tuple(journey["skills"]) not in routed:
+            missing.append(journey["id"])
+    return sorted(missing)
+
+
 def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     repository_errors: list[str] = []
     if not CASES.is_dir():
@@ -195,6 +211,7 @@ def run_validation() -> tuple[dict[str, list[str]], list[str]]:
     if missing:
         repository_errors.append(f"skills without a valid eval case: {', '.join(missing)}")
 
+    journey_files: list[Path] = []
     if not JOURNEYS.is_dir():
         repository_errors.append("evals/journeys directory is missing")
     else:
@@ -215,6 +232,13 @@ def run_validation() -> tuple[dict[str, list[str]], list[str]]:
             repository_errors.append(
                 f"skills without a routing case: {', '.join(missing_routing)}"
             )
+        if not routing_errors and journey_files:
+            uncovered_journeys = uncovered_journey_routes(journey_files, ROUTING)
+            if uncovered_journeys:
+                repository_errors.append(
+                    "journeys without matching ordered routing coverage: "
+                    + ", ".join(uncovered_journeys)
+                )
     return results, repository_errors
 
 
