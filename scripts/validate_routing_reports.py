@@ -89,7 +89,7 @@ def validate_report(path: Path, root: Path = ROOT) -> list[str]:
         return errors
     if set(report) != REPORT_FIELDS:
         errors.append(f"report fields must be exactly: {', '.join(sorted(REPORT_FIELDS))}")
-    if report.get("schema_version") != 1:
+    if type(report.get("schema_version")) is not int or report["schema_version"] != 1:
         errors.append("schema_version must be 1")
     corpus_path, path_errors = resolve_path(report.get("corpus_path"), "corpus_path", root)
     errors.extend(path_errors)

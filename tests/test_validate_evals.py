@@ -78,6 +78,32 @@ class EvalValidatorTests(unittest.TestCase):
             self.assertEqual(skill, "test-skill")
             self.assertEqual(errors, [])
 
+    def test_boolean_schema_version_fails_all_definition_types(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            case = valid_case()
+            case["schema_version"] = True
+            _skill, case_errors = VALIDATOR.validate_case(
+                self.write_case(root, case), {"test-skill"}
+            )
+            journey = valid_journey()
+            journey["schema_version"] = True
+            journey_path = root / "test-journey.json"
+            journey_path.write_text(json.dumps(journey), encoding="utf-8")
+            journey_errors = VALIDATOR.validate_journey(
+                journey_path, {"first-skill", "second-skill"}
+            )
+            routing = valid_routing()
+            routing["schema_version"] = True
+            routing_path = root / "routing.json"
+            routing_path.write_text(json.dumps(routing), encoding="utf-8")
+            _covered, routing_errors = VALIDATOR.validate_routing(
+                routing_path, {"first-skill", "second-skill"}
+            )
+            self.assertIn("schema_version must be 1", case_errors)
+            self.assertIn("schema_version must be 1", journey_errors)
+            self.assertIn("schema_version must be 1", routing_errors)
+
     def test_unknown_skill_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             path = self.write_case(Path(temp), valid_case())

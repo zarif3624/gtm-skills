@@ -66,6 +66,17 @@ class EvalReportValidatorTests(unittest.TestCase):
             report = self.make_report(root)
             self.assertEqual(VALIDATOR.validate_report(report, root), [])
 
+    def test_boolean_schema_version_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report = self.make_report(root)
+            value = json.loads(report.read_text(encoding="utf-8"))
+            value["schema_version"] = True
+            report.write_text(json.dumps(value), encoding="utf-8")
+            self.assertIn(
+                "schema_version must be 1", VALIDATOR.validate_report(report, root)
+            )
+
     def test_unscored_draft_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

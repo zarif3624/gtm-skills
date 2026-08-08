@@ -50,7 +50,7 @@ def validate_case(path: Path, skill_names: set[str]) -> tuple[str | None, list[s
     elif case_id != path.stem:
         errors.append("id must match the case filename")
 
-    if case.get("schema_version") != 1:
+    if type(case.get("schema_version")) is not int or case["schema_version"] != 1:
         errors.append("schema_version must be 1")
     skill = case.get("skill")
     if skill not in skill_names:
@@ -90,7 +90,7 @@ def validate_journey(path: Path, skill_names: set[str]) -> list[str]:
         errors.append("id must use lowercase letters, digits, and hyphens")
     elif journey_id != path.stem:
         errors.append("id must match the journey filename")
-    if journey.get("schema_version") != 1:
+    if type(journey.get("schema_version")) is not int or journey["schema_version"] != 1:
         errors.append("schema_version must be 1")
 
     skills = journey.get("skills")
@@ -132,7 +132,7 @@ def validate_routing(path: Path, skill_names: set[str]) -> tuple[set[str], list[
     errors: list[str] = []
     if set(corpus) != ROUTING_TOP_FIELDS:
         errors.append(f"routing fields must be exactly: {', '.join(sorted(ROUTING_TOP_FIELDS))}")
-    if corpus.get("schema_version") != 1:
+    if type(corpus.get("schema_version")) is not int or corpus["schema_version"] != 1:
         errors.append("schema_version must be 1")
     cases = corpus.get("cases")
     if not isinstance(cases, list) or not cases:

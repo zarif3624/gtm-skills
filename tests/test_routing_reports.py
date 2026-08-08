@@ -135,6 +135,18 @@ class RoutingReportTests(unittest.TestCase):
             report_path = self.make_repository(root)
             self.assertEqual(VALIDATOR.validate_report(report_path, root), [])
 
+    def test_boolean_schema_version_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report_path = self.make_repository(root)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            report["schema_version"] = True
+            report_path.write_text(json.dumps(report), encoding="utf-8")
+            self.assertIn(
+                "schema_version must be 1",
+                VALIDATOR.validate_report(report_path, root),
+            )
+
     def test_tampered_summary_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

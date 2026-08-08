@@ -83,7 +83,7 @@ def validate_report(path: Path, root: Path = ROOT) -> list[str]:
         return errors
     if set(report) != TOP_LEVEL_FIELDS:
         errors.append(f"report fields must be exactly: {', '.join(sorted(TOP_LEVEL_FIELDS))}")
-    if report.get("schema_version") != 1:
+    if type(report.get("schema_version")) is not int or report["schema_version"] != 1:
         errors.append("schema_version must be 1")
 
     case_path, path_errors = resolve_repository_path(report.get("case_path"), "case_path", root)
