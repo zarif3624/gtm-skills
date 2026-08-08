@@ -49,6 +49,18 @@ class ReleaseManifestTests(unittest.TestCase):
             (cache / "check.cpython-310.pyc").write_bytes(b"generated")
             self.assertEqual(MANIFEST.directory_sha256(asset, root), initial)
 
+    def test_directory_digest_rejects_symlink_inside_python_cache(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            asset = root / "scripts"
+            cache = asset / "__pycache__"
+            cache.mkdir(parents=True)
+            target = root / "outside.txt"
+            target.write_text("outside\n", encoding="utf-8")
+            (cache / "hidden.pyc").symlink_to(target)
+            with self.assertRaisesRegex(ValueError, "must not be a symbolic link"):
+                MANIFEST.directory_sha256(asset, root)
+
     def test_manifest_indexes_packages_and_only_latest_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

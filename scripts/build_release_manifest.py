@@ -36,10 +36,10 @@ def directory_sha256(path: Path, root: Path) -> str:
     digest = hashlib.sha256()
     for item in sorted(path.rglob("*")):
         relative_path = item.relative_to(path)
-        if "__pycache__" in relative_path.parts or item.suffix in {".pyc", ".pyo"}:
-            continue
         if item.is_symlink():
             raise ValueError(f"release asset must not be a symbolic link: {item}")
+        if "__pycache__" in relative_path.parts or item.suffix in {".pyc", ".pyo"}:
+            continue
         if not item.is_file():
             continue
         relative = relative_path.as_posix().encode("utf-8")
