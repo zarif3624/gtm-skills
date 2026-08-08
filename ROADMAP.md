@@ -75,10 +75,22 @@ Every new skill must ship with UI metadata, at least one adversarial eval case, 
 
 ## Near-Term Definition Of Done
 
-The quality foundation is complete when:
+The quality foundation reached this definition of done on 2026-08-08:
 
 - all current skills pass structural and metadata validation;
 - all current skills have a realistic eval case with explicit failure traps;
 - continuous integration runs validator unit tests, skill validation, and eval validation;
 - contributors can reproduce the checks with one documented command;
 - the README explains how to get a useful result with or without shared GTM context.
+
+## Next Measurable Milestones
+
+| Milestone | Exit evidence |
+| --- | --- |
+| Cross-client routing portability | Run the same frozen 28-request blind corpus in at least two additional skills-compatible clients; publish exact identifiers, raw selections, limitations, and computed reports |
+| Cross-client behavioral portability | Run a representative risk-weighted subset of isolated cases and journeys in each claimed client/model lineage; retain failures and publish superseding retests |
+| Stable machine contracts | Publish versioned schemas for generated catalog, quality, policy, manifest, behavioral-report, and routing-report formats; validate example instances dependency-free |
+| Release candidate | Freeze a semantic version, verify installation from the exact candidate commit, pass Python 3.10 and 3.14 CI, and review the deterministic manifest and compatibility matrix |
+| User usefulness evidence | Observe new users completing the quickstart and record time-to-first-artifact, failure points, and artifact-review feedback without collecting unnecessary customer data |
+
+No milestone should become a compatibility claim until its raw evidence is committed and its tested inputs remain content-fresh.
