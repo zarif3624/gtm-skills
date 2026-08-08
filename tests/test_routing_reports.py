@@ -157,6 +157,18 @@ class RoutingReportTests(unittest.TestCase):
             errors = VALIDATOR.validate_report(report_path, root)
             self.assertTrue(any("summary must match computed" in error for error in errors))
 
+    def test_boolean_summary_counter_fails_even_when_equal_to_zero(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report_path = self.make_repository(root)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            report["summary"]["excluded_selected"] = False
+            report_path.write_text(json.dumps(report), encoding="utf-8")
+            self.assertIn(
+                "summary.excluded_selected must be a non-negative integer",
+                VALIDATOR.validate_report(report_path, root),
+            )
+
     def test_new_corpus_can_supersede_prior_in_same_lineage(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

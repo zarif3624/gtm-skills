@@ -144,6 +144,17 @@ def validate_report(path: Path, root: Path = ROOT) -> list[str]:
     summary = report.get("summary")
     if not isinstance(summary, dict) or set(summary) != SUMMARY_FIELDS:
         errors.append(f"summary must contain exactly: {', '.join(sorted(SUMMARY_FIELDS))}")
+    else:
+        for field in (
+            "total_cases",
+            "exact_matches",
+            "expected_covered",
+            "excluded_selected",
+        ):
+            if type(summary[field]) is not int or summary[field] < 0:
+                errors.append(f"summary.{field} must be a non-negative integer")
+        if summary["verdict"] not in {"pass", "partial", "fail"}:
+            errors.append("summary.verdict must be pass, partial, or fail")
     if corpus and response:
         skill_names = {item.name for item in (root / "skills").iterdir() if item.is_dir()}
         errors.extend(validate_response(response, corpus, skill_names))
