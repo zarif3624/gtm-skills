@@ -1,0 +1,37 @@
+# GTM Skills for AI Agents
+
+> 25 open-source, evidence-first sales and go-to-market skills for AI agents, covering the full B2B revenue path: shared GTM context, ICP definition, positioning, territory planning, account research, account planning, prospecting, outbound, discovery preparation, sales-call analysis, rep coaching, opportunity qualification, deal planning, objection handling, demo preparation, business cases, negotiation preparation, mutual action plans, pipeline review, forecasting, customer handoff, customer-outcome review, win/loss analysis, and partner-channel planning. Uses the open Agent Skills specification (agentskills.io). MIT licensed.
+
+Core principles: never invent account facts, contacts, quotes, budgets, timelines, or customer proof; label claims Verified, Inferred, or Unknown; cite external research with source and access date; treat CRM fields as inputs, not truth; preserve buyer agency.
+
+Install: `npx skills add zarif3624/gtm-skills`
+
+## Docs
+
+- [README](README.md): overview, skill table, install, trust standard
+- [Quickstart](QUICKSTART.md): ten-minute path to a first useful artifact
+- [Prompt cookbook](docs/prompt-cookbook.md): one copy-paste prompt per skill
+- [Playbooks](docs/playbooks/README.md): role-based skill sequences for founders, AEs, SDRs, and RevOps leaders
+- [Output gallery](docs/gallery.md): illustrative artifact excerpts from the fictional example workspace
+- [Evidence contract](docs/evidence-contract.md): shared vocabulary for claims, status, and handoff invariants
+- [Architecture](docs/architecture.md): repository structure and change-impact guide
+- [Compatibility matrix](docs/compatibility.md): verified, limited, and unknown client/model behavior
+
+## Skills
+
+- [Skill catalog](catalog.json): normalized metadata and SHA-256 package digests for all 25 skills
+- [Skills directory](skills/): one directory per skill with SKILL.md, references, and templates
+
+## Examples
+
+- [RelayFox workspace](examples/relayfox/README.md): fictional end-to-end GTM workspace with deliberately dirty data
+- [Generic CRM handoff pack](reference-packs/generic-crm/): CSV templates and JSON Schema for safe pipeline mapping
+- [Evidence ledger pack](reference-packs/evidence-ledger/): cross-tool claim and action provenance contracts
+- [Structured GTM context pack](reference-packs/structured-gtm-context/): machine-readable shared-context contract
+
+## Optional
+
+- [Roadmap](ROADMAP.md): north star, measures, phases, non-goals
+- [Contributing](CONTRIBUTING.md): quality bar and validation workflow
+- [Evaluation guide](evals/README.md): behavioral and routing evaluation protocol
+- [Changelog](CHANGELOG.md): release history

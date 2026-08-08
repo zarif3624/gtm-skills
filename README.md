@@ -2,30 +2,42 @@
 
 [![Validate skills](https://github.com/zarif3624/gtm-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zarif3624/gtm-skills/actions/workflows/validate.yml)
 [![skills.sh](https://skills.sh/b/zarif3624/gtm-skills)](https://skills.sh/zarif3624/gtm-skills)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Open-source sales and go-to-market skills for AI agents. Built for founders, sellers, RevOps teams, and customer-facing operators who want useful sales work without fabricated research, fake personalization, or mystery forecasts.
+**25 open-source sales skills that make AI agents do real GTM work — without inventing facts, faking personalization, or producing forecasts nobody can defend.**
 
-Uses the open [Agent Skills specification](https://agentskills.io). It is designed for skills-compatible clients, but installation and behavior can vary by client and model. See the [compatibility evidence matrix](docs/compatibility.md) for what is verified, limited, or still unknown.
+```bash
+npx skills add zarif3624/gtm-skills
+```
 
-Machines and catalog UIs can read [`catalog.json`](catalog.json) for normalized skill metadata, resource paths, and deterministic SHA-256 package digests. Release tooling can read [`release-manifest.json`](release-manifest.json) to bind those packages, eval definitions, example workspaces, reference packs, quality scripts and tests, the pinned validation workflow, the generated quality summary, and the exact latest reports, raw responses, and routing corpora by SHA-256. The validation suite fails if any generated view drifts.
+Built for founders, AEs, SDRs, and RevOps leaders. Works with skills-compatible agents like Claude Code and Codex, on your own files and CRM exports — no vendor lock-in, no platform to buy.
 
-New here? Follow the [ten-minute quickstart](QUICKSTART.md).
+**→ [See what the output looks like](docs/gallery.md) · [Steal a prompt](docs/prompt-cookbook.md) · [Find your playbook](docs/playbooks/README.md) · [Ten-minute quickstart](QUICKSTART.md)**
 
-Maintaining or extending the repository? Start with the [architecture and change-impact guide](docs/architecture.md), then use the [contribution workflow](CONTRIBUTING.md).
+## The Problem With AI Sales Agents
 
-## Why This Exists
+Ask a general-purpose AI to "research this account" and it will confidently hand you a funding round that never happened. Ask it to forecast and it will produce a precise number backed by nothing. That output looks like work, reads like work, and detonates the first time a buyer, a CFO, or a board member checks it.
 
-Sales is too large and too consequential to hide inside a general marketing prompt. A good GTM agent needs to understand the whole revenue path: who to target, why they might care, what evidence exists, how to run discovery, how to qualify a deal, and how to hand the customer over without losing context.
+These skills take the opposite bet: **an artifact you can defend beats an artifact that merely looks finished.**
 
-This project is deliberately:
+- **Evidence-first** — facts, inferences, and unknowns stay separate. Always.
+- **Buyer-aware** — workflows optimize for a sound buying decision, not pressure. A clear no is a good outcome.
+- **Operational** — every skill produces an artifact a team actually uses: briefs, plans, reviews, forecasts, handoffs.
+- **Composable** — one shared GTM context connects all 25 skills across the whole revenue path.
+- **Tested** — every skill ships with adversarial evals designed to catch fabrication, and CI fails on drift.
 
-- **Evidence-first**: facts, inferences, and unknowns stay separate.
-- **Buyer-aware**: workflows optimize for a sound buying decision, not pressure.
-- **Operational**: every skill produces artifacts a team can use in real work.
-- **Composable**: a shared GTM context connects the skills without making them dependent on one agent or CRM.
-- **Curated**: a focused collection with consistent quality beats hundreds of shallow prompts.
+## Start With Your Role
 
-## Skills
+| You are | Your first week | Playbook |
+| --- | --- | --- |
+| Founder doing founder-led sales | Context → ICP → research → discovery → call analysis | [Founder playbook](docs/playbooks/founder.md) |
+| AE carrying a quota | Research → discovery → deal loop → business case → close plan | [AE playbook](docs/playbooks/account-executive.md) |
+| SDR building pipeline | Prospecting plan → account research → outbound that survives scrutiny | [SDR playbook](docs/playbooks/sdr.md) |
+| RevOps or sales leader | Pipeline truth → forecast → process → territories → win/loss | [RevOps playbook](docs/playbooks/revops-leader.md) |
+
+Or grab a single copy-paste prompt from the [prompt cookbook](docs/prompt-cookbook.md) — one per skill.
+
+## The Skills
 
 | Stage | Skill | Use it for |
 | --- | --- | --- |
@@ -59,57 +71,52 @@ This project is deliberately:
 
 `gtm-context` creates `.agents/gtm-context.md`, the shared source of truth. Every other skill reads it when available and asks only for task-specific gaps.
 
-```text
-gtm-context
-    |
-    +-- Operating system
-    |   `-- design-sales-process --> review-pipeline --> forecast-sales
-    |
-    +-- Market and coverage
-    |   `-- define-icp --> develop-positioning --> plan-territories --> research-account --> plan-account
-    |                                                   `--> plan-prospecting --> write-outbound
-    |
-    +-- Opportunity execution
-    |   `-- prepare-discovery --> analyze-sales-call --> qualify-opportunity --> plan-deal
-    |                                  |                                      |-- handle-objections
-    |                                  `-- coach-sales-rep                     |-- prepare-demo
-    |                                                                         |   `-- build-business-case
-    |                                                                         |-- prepare-negotiation
-    |                                                                         `-- create-mutual-action-plan
-    |
-    +-- Post-sale
-    |   `-- handoff-customer --> review-customer-outcomes
-    |
-    +-- Learning
-    |   `-- analyze-win-loss
-    |
-    `-- Ecosystem
-        `-- plan-partner-channel
+```mermaid
+flowchart LR
+    GC[gtm-context]
+
+    subgraph OS[Operating system]
+        DSP[design-sales-process] --> RP[review-pipeline] --> FS[forecast-sales]
+    end
+
+    subgraph MC[Market and coverage]
+        ICP[define-icp] --> POS[develop-positioning] --> TER[plan-territories] --> RA[research-account] --> PA[plan-account]
+        TER --> PP[plan-prospecting] --> WO[write-outbound]
+    end
+
+    subgraph OE[Opportunity execution]
+        PD[prepare-discovery] --> ASC[analyze-sales-call] --> QO[qualify-opportunity] --> PDL[plan-deal]
+        ASC --> CSR[coach-sales-rep]
+        PDL --> HO[handle-objections]
+        PDL --> DEMO[prepare-demo] --> BBC[build-business-case]
+        PDL --> PN[prepare-negotiation]
+        PDL --> MAP[create-mutual-action-plan]
+    end
+
+    subgraph PS[Post-sale and learning]
+        HC[handoff-customer] --> RCO[review-customer-outcomes]
+        AWL[analyze-win-loss]
+        PPC[plan-partner-channel]
+    end
+
+    GC --> OS
+    GC --> MC
+    GC --> OE
+    GC --> PS
 ```
 
-## Choose A Starting Point
+## Why Not Just Prompt ChatGPT?
 
-| What you have | What you need | Start with |
+| | A raw prompt | These skills |
 | --- | --- | --- |
-| Product docs and scattered sales knowledge | Shared, reusable background | `$gtm-context` |
-| Inconsistent stages, fields, or handoffs | A buyer-state sales process and rollout plan | `$design-sales-process` |
-| Early customer evidence or a broad target market | A testable customer profile | `$define-icp` |
-| Buyer evidence, product facts, and unclear messaging | A testable positioning and message architecture | `$develop-positioning` |
-| An account universe and coverage team | Territories, capacity, and assignment rules | `$plan-territories` |
-| A named account or upcoming first meeting | Evidence and a conversation plan | `$research-account`, then `$prepare-discovery` |
-| A strategic account with multiple teams or opportunities | A durable account-wide investment plan | `$plan-account` |
-| A transcript or call notes | Decisions, qualification changes, and coaching | `$analyze-sales-call`, then `$qualify-opportunity` |
-| Multiple calls, observations, and outcomes for one rep | A narrow developmental experiment | `$coach-sales-rep` |
-| A complex active opportunity | Risks, stakeholder strategy, and actions | `$plan-deal` |
-| Outcome evidence, cost inputs, and an investment decision | An inspectable value model or budget case | `$build-business-case` |
-| Pricing, procurement, or contract requests | Packages, trades, and approval boundaries | `$prepare-negotiation` |
-| A CRM export or forecast call | Portfolio truth and revenue scenarios | `$review-pipeline`, then `$forecast-sales` |
-| A signed order and scattered deal history | A complete post-sale transfer | `$handoff-customer` |
-| Usage, success, support, stakeholder, and contract evidence | An outcome, renewal, and expansion-readiness review | `$review-customer-outcomes` |
-| Closed opportunities, decision notes, or buyer interviews | Repeatable win/loss learning | `$analyze-win-loss` |
-| A partner idea, agreement, or reported channel pipeline | A testable, deduplicated partner motion | `$plan-partner-channel` |
+| Account facts | Fills gaps with confident guesses | Cites sources with access dates; marks the rest **Unknown** |
+| Personalization | "I noticed you're passionate about..." | Every personalized line traces to a verified fact |
+| Qualification | Restates seller optimism as analysis | Separates **Verified**, **Inferred**, and **Unknown** per dimension |
+| Forecasting | One precise, indefensible number | Scenarios with stated, challengeable assumptions |
+| Dirty CRM data | Silently "fixes" duplicates and currencies | Surfaces every contradiction; never edits the source |
+| Consistency | Different result every session | Shared context, tested behavior, adversarial evals in CI |
 
-Skills accept partial information. Give the agent the strongest source material you have and the decision or artifact you need; the skill should label important gaps and continue.
+See the difference on real (fictional) dirty data in the [output gallery](docs/gallery.md).
 
 ## Install
 
@@ -138,6 +145,8 @@ git clone https://github.com/zarif3624/gtm-skills.git
 cp -R gtm-skills/skills/* .agents/skills/
 ```
 
+Uses the open [Agent Skills specification](https://agentskills.io). Installation and behavior can vary by client and model — the [compatibility evidence matrix](docs/compatibility.md) tracks what is verified, limited, or still unknown.
+
 ## Try It
 
 Once installed, ask naturally:
@@ -153,23 +162,17 @@ Build an inspectable buyer business case without inventing ROI inputs.
 
 You can also invoke a skill directly, such as `$prepare-discovery` or `$review-pipeline`.
 
-Start with the artifact you need; `.agents/gtm-context.md` is helpful, not required. When it is missing, each skill should use the evidence you provide, label consequential gaps, and continue. Create it with `$gtm-context` when you want consistent background across repeated workflows.
+Start with the artifact you need; `.agents/gtm-context.md` is helpful, not required. When it is missing, each skill should use the evidence you provide, label consequential gaps, and continue. Skills accept partial information — give the agent the strongest source material you have, and the skill labels important gaps and keeps going.
 
 ## Worked Example
 
-Use the [RelayFox fictional workspace](examples/relayfox/) to try positioning, outbound, conversation analysis, qualification, process design, pipeline review, forecasting, customer outcomes, and win/loss learning with a coherent set of safe source files. The example deliberately contains ambiguity and dirty data so you can inspect whether evidence, held claims, and unknowns survive each handoff.
+Use the [RelayFox fictional workspace](examples/relayfox/) to try positioning, outbound, conversation analysis, qualification, process design, pipeline review, forecasting, customer outcomes, and win/loss learning with a coherent set of safe source files. The example deliberately contains ambiguity and dirty data so you can inspect whether evidence, held claims, and unknowns survive each handoff. The [output gallery](docs/gallery.md) shows what correct results look like.
 
-## Bring Your Own CRM Export
+## Bring Your Own Data
 
-Use the [generic CRM handoff pack](reference-packs/generic-crm/) to map pipeline data without silently changing source records. It includes CSV templates, lineage and status fields, a dated currency-policy template, and a matching JSON Schema for structured integrations. No CRM vendor is required.
-
-## Preserve Evidence Across Tools
-
-Use the [evidence and action ledger pack](reference-packs/evidence-ledger/) when claims, actions, approvals, or commitments need to move between agents, spreadsheets, CRMs, and internal tools. Its matching CSV and JSON contracts keep evidence, source lineage, transformations, buyer acceptance, approval, and completion on separate axes.
-
-## Exchange Shared Context
-
-Use the [structured GTM context pack](reference-packs/structured-gtm-context/) as an optional machine-readable companion to `.agents/gtm-context.md`. Its closed JSON contract preserves document version, scoped claims, buyer-role hypotheses, proof, guardrails, ownership, approval, access classification, and source restrictions without making a CRM or agent runtime mandatory.
+- **CRM exports** — the [generic CRM handoff pack](reference-packs/generic-crm/) maps pipeline data without silently changing source records: CSV templates, lineage and status fields, a dated currency-policy template, and a matching JSON Schema. No CRM vendor required.
+- **Cross-tool evidence** — the [evidence and action ledger pack](reference-packs/evidence-ledger/) keeps claims, approvals, and commitments intact as they move between agents, spreadsheets, CRMs, and internal tools.
+- **Structured context** — the [structured GTM context pack](reference-packs/structured-gtm-context/) is a machine-readable companion to `.agents/gtm-context.md` with a closed JSON contract.
 
 ## Trust Standard
 
@@ -186,13 +189,11 @@ Every contribution should preserve these rules:
 
 The [evidence and status contract](docs/evidence-contract.md) defines the vocabulary and the handoff invariants behind these rules.
 
+## Quality, Verified In CI
+
+This is not a prompt dump. Machines and catalog UIs can read [`catalog.json`](catalog.json) for normalized skill metadata and deterministic SHA-256 package digests; [`release-manifest.json`](release-manifest.json) binds packages, evals, examples, reference packs, and reports by hash, and the validation suite fails if any generated view drifts.
+
 Current catalog, evaluation counts, behavioral definition coverage, and current-corpus routing coverage are published in [`quality-summary.json`](quality-summary.json). Reviewed minimums and zero-regression limits live in [`quality-policy.json`](quality-policy.json), so refreshing generated counts cannot silently make a loss of passing coverage acceptable.
-
-## Contributing
-
-Contributions are welcome, especially from working sellers, founders, RevOps operators, and customer success teams. See [CONTRIBUTING.md](CONTRIBUTING.md) for the quality bar and validation steps.
-
-For security concerns and the project threat model, see [SECURITY.md](SECURITY.md).
 
 Run the full dependency-free quality suite with:
 
@@ -200,17 +201,29 @@ Run the full dependency-free quality suite with:
 python3 scripts/check.py
 ```
 
-After changing a skill, eval definition, result, example, or reference pack, refresh committed metadata with `python3 scripts/update_generated.py` before running the suite.
+After changing a skill, eval definition, result, example, or reference pack, refresh committed metadata with `python3 scripts/update_generated.py` before running the suite. The suite checks all 25 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
 
-The suite checks all 25 skill packages, their metadata and bundled resources, one adversarial case per skill, cross-skill journey cases, finalized behavioral and blind-routing reports, the fictional example data, and operational reference packs. See the [evaluation guide](evals/README.md) for clean-context forward testing and evidence scoring.
+## Spread It
+
+If these skills saved you a bad forecast, a burned account, or an afternoon of CRM archaeology:
+
+- **Star the repo** — it is how other GTM people find it.
+- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
+- **Show your artifact** — post what a skill produced (with your data redacted) in [Discussions](https://github.com/zarif3624/gtm-skills/discussions). Real outputs from real workflows are the best possible contribution to the compatibility evidence.
+
+## Contributing
+
+Contributions are welcome, especially from working sellers, founders, RevOps operators, and customer success teams. See [CONTRIBUTING.md](CONTRIBUTING.md) for the quality bar and validation steps. War stories make great eval cases: if an AI sales tool ever burned you with a fabricated fact, that failure mode belongs in the adversarial suite.
+
+For security concerns and the project threat model, see [SECURITY.md](SECURITY.md).
+
+Maintaining or extending the repository? Start with the [architecture and change-impact guide](docs/architecture.md).
 
 ## Roadmap
 
 The quality foundation and first workflow expansion are in place. The next priority is to publish reproducible compatibility results across additional agents and measure whether a new user can reach a useful first artifact in under ten minutes.
 
-See the [full product roadmap](ROADMAP.md) for priorities, measures, and deliberate non-goals.
-
-Release history and the evidence-gated publication checklist are in [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md).
+See the [full product roadmap](ROADMAP.md) for priorities, measures, and deliberate non-goals. Release history and the evidence-gated publication checklist are in [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md).
 
 ## License
 
