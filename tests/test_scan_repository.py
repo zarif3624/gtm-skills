@@ -93,6 +93,19 @@ class RepositoryScannerTests(unittest.TestCase):
                 ["executable file mode is not allowed: payload.py"],
             )
 
+    def test_duplicate_json_key_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "ambiguous.json").write_text(
+                '{"status":"Unknown","status":"Verified"}\n', encoding="utf-8"
+            )
+            count, errors = SCANNER.scan_repository(root)
+            self.assertEqual(count, 1)
+            self.assertEqual(
+                errors,
+                ["duplicate JSON object key 'status': ambiguous.json"],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import sys
@@ -26,6 +27,19 @@ SECRET_PATTERNS = {
     "Google API key": re.compile(r"\bAIza[0-9A-Za-z_-]{35}\b"),
     "Stripe secret": re.compile(r"\bsk_(?:live|test)_[A-Za-z0-9]{20,}\b"),
 }
+
+
+class DuplicateJsonKey(ValueError):
+    pass
+
+
+def reject_duplicate_keys(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    value: dict[str, object] = {}
+    for key, item in pairs:
+        if key in value:
+            raise DuplicateJsonKey(key)
+        value[key] = item
+    return value
 
 
 def repository_paths(root: Path) -> tuple[list[Path], list[str]]:
@@ -72,6 +86,16 @@ def scan_text(path: Path, root: Path) -> list[str]:
     except UnicodeDecodeError:
         return [f"text-like file is not valid UTF-8: {path.relative_to(root).as_posix()}"]
     errors: list[str] = []
+    if path.suffix.lower() == ".json":
+        try:
+            json.loads(text, object_pairs_hook=reject_duplicate_keys)
+        except DuplicateJsonKey as error:
+            errors.append(
+                f"duplicate JSON object key {error.args[0]!r}: "
+                f"{path.relative_to(root).as_posix()}"
+            )
+        except json.JSONDecodeError:
+            pass
     for label, pattern in SECRET_PATTERNS.items():
         for match in pattern.finditer(text):
             line = text.count("\n", 0, match.start()) + 1
