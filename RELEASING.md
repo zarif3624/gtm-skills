@@ -18,7 +18,7 @@ A release is a reviewed compatibility statement, not just a tag.
 - Confirm the README skill count, catalog, quickstart, reference packs, and local links.
 - Confirm `release-manifest.json` binds the current `catalog.json` package digests to `quality-summary.json`, `quality-policy.json`, behavioral definition coverage, current-corpus routing coverage, eval definitions, example workspaces, reference packs, and SHA-256 digests for the latest reports, raw responses, and routing corpora.
 - Confirm each new or materially changed skill has an adversarial case and a clean-context forward test.
-- Confirm the evidence-freshness check finds no current report whose target skill content changed after its tested commit.
+- Confirm the evidence-freshness check finds no current report whose evaluation definition or target skill content changed after its tested commit.
 - Confirm current results are distinguishable from historical failures.
 - Confirm `quality-policy.json` still expresses the intended release floor; lowering a threshold requires explicit review and rationale.
 - Confirm no legal, security, compliance, model, or cross-client claim exceeds the recorded evidence.

@@ -74,9 +74,10 @@ def report_skills(report: dict[str, Any], root: Path) -> list[str]:
     return skills
 
 
-def skill_content_changed(commit: str, skill: str, root: Path) -> tuple[bool, str | None]:
-    """Compare a tested skill directory with the current tracked and untracked tree."""
-    relative = f"skills/{skill}"
+def repository_path_changed(
+    commit: str, relative: str, root: Path
+) -> tuple[bool, str | None]:
+    """Compare a tested path with the current tracked and untracked tree."""
     compared = subprocess.run(
         ["git", "diff", "--quiet", commit, "--", relative],
         cwd=root,
@@ -98,6 +99,10 @@ def skill_content_changed(commit: str, skill: str, root: Path) -> tuple[bool, st
     return compared.returncode == 1 or bool(untracked.stdout.strip()), None
 
 
+def skill_content_changed(commit: str, skill: str, root: Path) -> tuple[bool, str | None]:
+    return repository_path_changed(commit, f"skills/{skill}", root)
+
+
 def validate_current_behavioral_freshness(root: Path = ROOT) -> tuple[int, list[str]]:
     """Require each current report to test the present contents of every target skill."""
     root = root.resolve()
@@ -106,10 +111,24 @@ def validate_current_behavioral_freshness(root: Path = ROOT) -> tuple[int, list[
     for path, report in current:
         try:
             commit = report["run"]["repository_commit"]
+            case_path = report["case_path"]
             skills = report_skills(report, root)
         except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as error:
             errors.append(f"{path.relative_to(root)} cannot resolve tested skills: {error}")
             continue
+        definition_changed, definition_error = repository_path_changed(
+            commit, case_path, root
+        )
+        if definition_error:
+            errors.append(
+                f"{path.relative_to(root)} cannot compare {case_path} at {commit}: "
+                f"{definition_error}"
+            )
+        elif definition_changed:
+            errors.append(
+                f"{path.relative_to(root)} is stale: {case_path} differs from tested "
+                f"commit {commit}"
+            )
         for skill in skills:
             changed, comparison_error = skill_content_changed(commit, skill, root)
             if comparison_error:
@@ -158,7 +177,8 @@ def main() -> int:
         print(f"FAIL {error}")
     print(f"\nVerified {count} unique evaluation commits; {len(errors)} invalid references.")
     print(
-        f"Verified {current_count} current behavioral reports against present skill content; "
+        f"Verified {current_count} current behavioral reports against present definitions "
+        f"and skill content; "
         f"{len(freshness_errors)} stale."
     )
     return 1 if errors or freshness_errors else 0

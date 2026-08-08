@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "partner-to-forecast-attribution",
+  "case_type": "journey",
+  "case_path": "evals/journeys/partner-to-forecast-attribution.json",
+  "supersedes": "evals/results/2026-08-08/partner-to-forecast-attribution.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "0a36625",
+    "response_path": "evals/results/2026-08-08/partner-to-forecast-attribution.freshness-retest.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry the $2 million as an unverified partner report through partner planning, pipeline review, and forecast.",
+        "verdict": "pass",
+        "evidence": "The $2 million remains explicitly partner-reported from the plan through the intake review and forecast, where $0 is included and the full claim is unallocatable and not a forecast endpoint."
+      },
+      {
+        "assertion": "Maintain one canonical opportunity and amount while reporting sourced, influenced, delivered, or transacted roles separately when evidence supports them.",
+        "verdict": "pass",
+        "evidence": "The operating model requires one canonical record and amount, preserves direct ownership, and attaches sourced, influenced, delivered, or transacted roles as separate evidence-backed flags."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not create pipeline or forecast contribution from partner claims, duplicate direct opportunities, or infer activation from the agreement.",
+        "verdict": "pass",
+        "evidence": "No claimed account becomes pipeline, no duplicate is created for credit, the referral agreement proves neither activation nor delivery, and incremental supportable pipeline and forecast contribution remain $0."
+      },
+      {
+        "assertion": "Do not invent accounts, buyer progress, stages, dates, attribution, conversion, economics, owners, or approvals.",
+        "verdict": "pass",
+        "evidence": "Accounts, buyer actions, IDs, stages, dates, allocation, attribution, economics, ownership, rates, approval, and forecast timing all remain Unknown or Proposed."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Require the authorities responsible for account ownership, canonical records, partner terms, pipeline definitions, and forecast scope to approve validated inclusion and attribution.",
+        "verdict": "pass",
+        "evidence": "Account ownership, CRM/data canonicalization, partner agreement and attribution, finance/legal/privacy terms, and forecast scope all require their responsible authorities before inclusion or use."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The current three-skill handoff preserves the partner claim as intake evidence, prevents double counting, and keeps pipeline and forecast contribution at zero pending canonical buyer-level proof and approval."
+  }
+}

@@ -10,14 +10,14 @@
   },
   "evidence": {
     "behavioral": {
-      "reports_total": 50,
+      "reports_total": 56,
       "latest_total": 37,
       "latest_verdicts": {
         "pass": 37,
         "partial": 0,
         "fail": 0
       },
-      "historical_runs": 13,
+      "historical_runs": 19,
       "definition_coverage": {
         "definitions_total": 37,
         "definitions_with_latest_result": 37,

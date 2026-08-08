@@ -36,7 +36,7 @@ All notable project changes are documented here. The project uses semantic versi
 
 - One dependency-free command now runs unit tests, supply-chain scanning, skill/package checks, eval and routing validation, behavioral-report validation, example validation, and reference-pack validation.
 - A reviewed quality policy enforces zero current partials or failures and zero uncovered behavioral definitions, so new definitions cannot ship without current evidence.
-- Current behavioral evidence is now rejected when any target skill directory differs from the report's tested commit, including untracked resources.
+- Current behavioral evidence is now rejected when its evaluation definition or any target skill directory differs from the report's tested commit, including untracked resources.
 - The current recorded Codex lineage has all 37 behavioral definitions passing: 25 isolated skill cases and 12 cross-skill journeys. Earlier partial and failed runs remain available as regression history.
 - The latest recorded metadata-only routing run selected the exact minimal skill set for all 28 requests with zero excluded-neighbor selections; the earlier 25-, 26-, and 27-request runs remain available as history.
 

@@ -7,7 +7,7 @@
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "9c1e7600a75f03e0284750851b70b84e303856894b163dfc6e969bd9b74caf90"
+      "sha256": "d8ab6abc610387ddd933e8a52bdee5578e37f867fba848cbc2d76fb6a3e876e5"
     }
   },
   "quality_policy": {
@@ -307,11 +307,11 @@
         "case_type": "case",
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "repository_commit": "4a1f8fd",
-        "report_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.json",
-        "report_sha256": "e8a5c6e5b6e341e91eb494aa5106a437a62dafd317838822ef6f74b2936e1f50",
-        "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.response.md",
-        "response_sha256": "115ff0c6af518cfccc5fb6c9b39fe649cff123351cb877d8c7ed7e5d35b7286a"
+        "repository_commit": "a3d7a00",
+        "report_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.freshness-retest.json",
+        "report_sha256": "0eedaebe0772bb79b302c888c16e97b05fa84a210c444e30edc3e07a36775ce0",
+        "response_path": "evals/results/2026-08-08/design-sales-process-generic-benchmarks.freshness-retest.response.md",
+        "response_sha256": "0c71a0fbaf5d5dc6abf331d47dc301bb028360665c13ffe782e329f3fac0c55c"
       },
       {
         "case_id": "develop-positioning-unsupported-superlatives",
@@ -329,11 +329,11 @@
         "case_type": "case",
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "repository_commit": "aeedfdf760ab5dd7f52f3f0423ca264e92550dd8",
-        "report_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.json",
-        "report_sha256": "fee54d6c9f24274dc63311ca928423254dd012a49892c80ef01e96261c5f4ac0",
-        "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.ceiling-retest.response.md",
-        "response_sha256": "80bebd062d8e821fba48caf0926a418f89e7c448e8a54cdb5ba94e089fba8ce0"
+        "repository_commit": "a3d7a00",
+        "report_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.freshness-retest.json",
+        "report_sha256": "5506e18a822616f6fe2416bee4b8877d174bcd4911a7290ac0025c321a9ee4a4",
+        "response_path": "evals/results/2026-08-08/forecast-sales-arbitrary-probability.freshness-retest.response.md",
+        "response_sha256": "f7e67649563906c1ce9af8ffab617c2df66231c793aeba6702d67684602c3815"
       },
       {
         "case_id": "gtm-context-aspirations",
@@ -384,22 +384,22 @@
         "case_type": "journey",
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "repository_commit": "d602ca5",
-        "report_path": "evals/results/2026-08-08/partner-to-forecast-attribution.json",
-        "report_sha256": "db861df2d8cd8bac0dbc2205a907c3274a64b3e64d671ab77482f3550defd98f",
-        "response_path": "evals/results/2026-08-08/partner-to-forecast-attribution.response.md",
-        "response_sha256": "cbac821822c662cfee56fb6bbd887949b4c0f8852c7aa4bea4b256b494182175"
+        "repository_commit": "0a36625",
+        "report_path": "evals/results/2026-08-08/partner-to-forecast-attribution.freshness-retest.json",
+        "report_sha256": "f22b2bf6dcda9bbbb8af196b54690974d629ab9361743b623485f7c953e60d88",
+        "response_path": "evals/results/2026-08-08/partner-to-forecast-attribution.freshness-retest.response.md",
+        "response_sha256": "851f536f68acbcb488605f9de98c75538dba7c2240766c44b64db015f1367e99"
       },
       {
         "case_id": "pipeline-to-forecast-transformations",
         "case_type": "journey",
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "repository_commit": "d7067bc40b2d57b03c46f4f58bcc9c64b7b5f7af",
-        "report_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.json",
-        "report_sha256": "73377e9043a43bcc27d4da0a15e26e0d6d0cc13f0fd3d041c8a52dad5aaf980a",
-        "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.response.md",
-        "response_sha256": "8097f660b73f8e59904a2877fb0b42fd7a7e829c79ba3d5d0dd3bb453f73163b"
+        "repository_commit": "0a36625",
+        "report_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.freshness-retest.json",
+        "report_sha256": "98f129d939169ab50ebb363b522216a4d15eb0dfab8c664064a1201b1d76e36b",
+        "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.freshness-retest.response.md",
+        "response_sha256": "615c9f56bbd72499ef2a23edea37c4e9f873463b162702c157ce00028ec67aa1"
       },
       {
         "case_id": "plan-account-expansion-assumptions",
@@ -560,22 +560,22 @@
         "case_type": "case",
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "repository_commit": "d8aa721",
-        "report_path": "evals/results/2026-08-08/review-pipeline-activity-bias.json",
-        "report_sha256": "da187e84ac8a85907969e2d33509682e0c87e9da220cdcc50e978c16ea1b1418",
-        "response_path": "evals/results/2026-08-08/review-pipeline-activity-bias.response.md",
-        "response_sha256": "98467ff49e7e40563d07147d398f91cd7bf361183b4c701fd7600b574cd4ef31"
+        "repository_commit": "a3d7a00",
+        "report_path": "evals/results/2026-08-08/review-pipeline-activity-bias.freshness-retest.json",
+        "report_sha256": "829a0c0681b68135ed5202ae51732ce877dade926828eb09b8937f52b4e82847",
+        "response_path": "evals/results/2026-08-08/review-pipeline-activity-bias.freshness-retest.response.md",
+        "response_sha256": "553d4381d3e2ba347aa13e194615ff58151bae1725fa9044c610262b2395cec4"
       },
       {
         "case_id": "source-injection-to-outbound",
         "case_type": "journey",
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "repository_commit": "c578a69bf86c94ff5d3759cb134bb8df75bc94ba",
-        "report_path": "evals/results/2026-08-08/source-injection-to-outbound.json",
-        "report_sha256": "6bbf530978424f1168a956ea76559d92913181fb208159af152077478562d0ce",
-        "response_path": "evals/results/2026-08-08/source-injection-to-outbound.response.md",
-        "response_sha256": "960e2f79c488840a46630dd8f2c38027924d71392451d0be819cf1f9ea4ac057"
+        "repository_commit": "0a36625",
+        "report_path": "evals/results/2026-08-08/source-injection-to-outbound.freshness-retest.json",
+        "report_sha256": "7a13795c6f8c0cb15e5cb3c2c70929d84fdb5165811994627f078e4dc499aad8",
+        "response_path": "evals/results/2026-08-08/source-injection-to-outbound.freshness-retest.response.md",
+        "response_sha256": "fb9cfaffdb8ed1616900c8b056d7015b58b64659b2e56fbe3921d09c6e820914"
       },
       {
         "case_id": "write-outbound-fabricated-referral",

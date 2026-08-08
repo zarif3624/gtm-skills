@@ -119,12 +119,57 @@ class ReportCommitTests(unittest.TestCase):
             self.assertEqual(len(errors), 1)
             self.assertIn("is stale", errors[0])
 
+    def test_definition_change_makes_current_report_stale(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            self.make_behavioral_repository(root)
+            (root / "evals" / "cases" / "test-case.json").write_text(
+                '{"id":"test-case","skill":"test-skill","prompt":"Changed"}\n',
+                encoding="utf-8",
+            )
+            _, errors = COMMITS.validate_current_behavioral_freshness(root)
+            self.assertEqual(len(errors), 1)
+            self.assertIn("evals/cases/test-case.json differs", errors[0])
+
     def test_unrelated_change_does_not_stale_skill_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             self.make_behavioral_repository(root)
             (root / "README.md").write_text("unrelated\n", encoding="utf-8")
             _, errors = COMMITS.validate_current_behavioral_freshness(root)
+            self.assertEqual(errors, [])
+
+    def test_fresh_successor_replaces_stale_prior_report(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            self.make_behavioral_repository(root)
+            (root / "skills" / "test-skill" / "SKILL.md").write_text(
+                "# Changed\n", encoding="utf-8"
+            )
+            subprocess.run(
+                ["git", "add", "skills/test-skill/SKILL.md"], cwd=root, check=True
+            )
+            subprocess.run(
+                ["git", "commit", "-qm", "change skill"], cwd=root, check=True
+            )
+            commit = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=root,
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout.strip()
+            successor = (
+                '{"case_id":"test-case","case_type":"case",'
+                '"case_path":"evals/cases/test-case.json",'
+                '"supersedes":"evals/results/test-case.json",'
+                f'"run":{{"repository_commit":"{commit}"}}}}\n'
+            )
+            (root / "evals" / "results" / "test-case.retest.json").write_text(
+                successor, encoding="utf-8"
+            )
+            count, errors = COMMITS.validate_current_behavioral_freshness(root)
+            self.assertEqual(count, 1)
             self.assertEqual(errors, [])
 
 

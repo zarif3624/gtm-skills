@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "case_id": "pipeline-to-forecast-transformations",
+  "case_type": "journey",
+  "case_path": "evals/journeys/pipeline-to-forecast-transformations.json",
+  "supersedes": "evals/results/2026-08-08/pipeline-to-forecast-transformations.retest.json",
+  "run": {
+    "agent": "Codex clean-context subagent",
+    "model": "Inherited Codex model; exact identifier unavailable",
+    "lineage": "codex-inherited",
+    "tested_at": "2026-08-08",
+    "repository_commit": "0a36625",
+    "response_path": "evals/results/2026-08-08/pipeline-to-forecast-transformations.freshness-retest.response.md"
+  },
+  "scores": {
+    "must_preserve": [
+      {
+        "assertion": "Carry duplicates, currency uncertainty, uncalibrated probabilities, and timing contradictions from review into forecast limitations and exclusions.",
+        "verdict": "pass",
+        "evidence": "Duplicate conflicts, native-currency separation, uncalibrated defaults, missing buyer next steps, and the security/close contradiction all appear in the review log and remain explicit forecast limitations and exclusions."
+      },
+      {
+        "assertion": "Keep proposed cleanup separate from source data and forecast transformations.",
+        "verdict": "pass",
+        "evidence": "The raw rows are preserved, every cleanup or canonicalization rule is Proposed, and the forecast separately lists excluded and unallocatable categories without changing source records."
+      }
+    ],
+    "must_not_transform": [
+      {
+        "assertion": "Do not silently deduplicate, convert currency, move dates, or invent rates.",
+        "verdict": "pass",
+        "evidence": "No numeric deduplication, FX conversion, close-date edit, or invented conversion/slip rate is performed; all resulting values remain Unknown where the export is insufficient."
+      },
+      {
+        "assertion": "Do not treat seller activity, CRM probability, or stage as verified buyer progress.",
+        "verdict": "pass",
+        "evidence": "Default probability and stage are rejected as verified progress, while missing buyer-owned next steps prevent expected contributions despite CRM fields or seller activity."
+      }
+    ],
+    "human_review": [
+      {
+        "assertion": "Have the data and forecast owners approve record corrections, currency treatment, scope, and provisional assumptions.",
+        "verdict": "pass",
+        "evidence": "CRM/data and finance/business or forecast owners must approve duplicate rules, currency treatment, scope, method, assumptions, exclusions, and operating use before the framework becomes an approved forecast."
+      }
+    ]
+  },
+  "summary": {
+    "verdict": "pass",
+    "critical_failure": false,
+    "notes": "The current review-to-forecast handoff carries every source defect forward, separates proposed cleanup from transformations, and refuses an unsupported numeric forecast."
+  }
+}

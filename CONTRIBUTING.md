@@ -48,4 +48,4 @@ Keep pull requests focused. Explain the user problem, show an example input and 
 
 Generated catalog, quality-summary, and release-manifest changes must accompany the source change that caused them. Do not edit their counts, metadata, or hashes by hand.
 
-The full check also compares every current behavioral report's tested commit with the present contents of its target skill directories. If a skill changes, forward-test and supersede every affected current case and journey report; unrelated repository changes do not invalidate the evidence.
+The full check also compares every current behavioral report's tested commit with the present evaluation definition and target skill directories. If a definition or skill changes, forward-test and supersede every affected current case and journey report; unrelated repository changes do not invalidate the evidence.
