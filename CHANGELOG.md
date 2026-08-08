@@ -30,7 +30,7 @@ All notable project changes are documented here. The project uses semantic versi
 
 ### Security
 
-- Repository checks reject symbolic links, escaped or orphaned resources, broken documentation links, common live-credential shapes, and unsafe example identifiers.
+- Repository checks reject symbolic links, executable file modes, compiled payloads, duplicate JSON object keys, escaped or orphaned resources, broken documentation links, common live-credential shapes, and unsafe example identifiers.
 - Source instructions in webpages, CRM fields, transcripts, and quoted material are treated as untrusted data across every portable skill.
 
 ### Validation
