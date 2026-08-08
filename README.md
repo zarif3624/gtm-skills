@@ -11,6 +11,8 @@ Machines and catalog UIs can read [`catalog.json`](catalog.json) for normalized 
 
 New here? Follow the [ten-minute quickstart](QUICKSTART.md).
 
+Maintaining or extending the repository? Start with the [architecture and change-impact guide](docs/architecture.md), then use the [contribution workflow](CONTRIBUTING.md).
+
 ## Why This Exists
 
 Sales is too large and too consequential to hide inside a general marketing prompt. A good GTM agent needs to understand the whole revenue path: who to target, why they might care, what evidence exists, how to run discovery, how to qualify a deal, and how to hand the customer over without losing context.

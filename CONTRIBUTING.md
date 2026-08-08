@@ -2,6 +2,8 @@
 
 Thanks for helping make AI-assisted sales more useful and trustworthy.
 
+Read the [architecture and change-impact guide](docs/architecture.md) before changing shared contracts, evaluation evidence, routing metadata, or release tooling.
+
 ## Before You Start
 
 - Open an issue for a new skill or a substantial workflow change.

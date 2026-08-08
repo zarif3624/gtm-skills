@@ -16,6 +16,7 @@ All notable project changes are documented here. The project uses semantic versi
 - A validated RelayFox end-to-end fictional workspace for positioning, outbound, transcript, qualification, process, pipeline, forecast, customer-outcome, and learning workflows.
 - A vendor-neutral CRM handoff pack with CSV templates, transformation governance, currency policy, and a matching JSON Schema.
 - A vendor-neutral evidence and action ledger pack with matching CSV and JSON contracts for portable claim and commitment status.
+- An architecture and change-impact guide connecting packages, shared context, forward tests, routing, freshness, generated views, and release evidence.
 - A vendor-neutral structured GTM context pack with a closed JSON contract for portable claims, buyer roles, proof, governance, and source restrictions.
 - Ten-minute quickstart, evidence/status contract, compatibility evidence matrix, product roadmap, contribution templates, and expanded security policy.
 
