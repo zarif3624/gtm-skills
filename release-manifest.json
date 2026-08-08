@@ -181,11 +181,11 @@
     "quality_tooling": {
       "scripts": {
         "path": "scripts",
-        "tree_sha256": "f510d06ed1ffb2dc0deb9eaffe3c9fc44955543a17910513f179cae0f8dae265"
+        "tree_sha256": "5c66232690707acd9b714dcb784db3aa802d2e88741cf4b6bc8160061bfc8dfc"
       },
       "tests": {
         "path": "tests",
-        "tree_sha256": "7b971473527d7077b0b694e0ac7b9db7bf964308a9a1720467bdd6e2662e3a25"
+        "tree_sha256": "09414f4f673b0e1e16324e0f8c7216ae1f04708592917a5473721f7b665ee7ce"
       },
       "validation_workflow": {
         "path": ".github/workflows/validate.yml",

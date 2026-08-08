@@ -48,6 +48,8 @@ def repository_paths(root: Path) -> tuple[list[Path], list[str]]:
             relative = path.relative_to(root).as_posix()
             if path.is_symlink():
                 errors.append(f"symbolic link is not allowed: {relative}")
+            elif os.access(path, os.X_OK):
+                errors.append(f"executable file mode is not allowed: {relative}")
             elif path.suffix.lower() in FORBIDDEN_BINARY_SUFFIXES:
                 errors.append(f"executable or compiled artifact is not allowed: {relative}")
             elif (

@@ -81,6 +81,18 @@ class RepositoryScannerTests(unittest.TestCase):
                 ["executable or compiled artifact is not allowed: payload.pyc"],
             )
 
+    def test_executable_text_file_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            payload = root / "payload.py"
+            payload.write_text("print('unexpected')\n", encoding="utf-8")
+            payload.chmod(0o755)
+            _count, errors = SCANNER.scan_repository(root)
+            self.assertEqual(
+                errors,
+                ["executable file mode is not allowed: payload.py"],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
