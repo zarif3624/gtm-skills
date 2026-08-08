@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", ".venv", "node_modules", "__pycache__", ".pytest_cache"}
 TEXT_SUFFIXES = {".md", ".json", ".yaml", ".yml", ".py", ".csv", ".txt", ".toml"}
+FORBIDDEN_BINARY_SUFFIXES = {".pyc", ".pyo", ".so", ".dylib", ".dll", ".exe", ".class"}
 SENSITIVE_TEXT_NAMES = {".env", ".npmrc", ".pypirc", ".netrc"}
 MAX_TEXT_BYTES = 1_000_000
 SECRET_PATTERNS = {
@@ -47,6 +48,8 @@ def repository_paths(root: Path) -> tuple[list[Path], list[str]]:
             relative = path.relative_to(root).as_posix()
             if path.is_symlink():
                 errors.append(f"symbolic link is not allowed: {relative}")
+            elif path.suffix.lower() in FORBIDDEN_BINARY_SUFFIXES:
+                errors.append(f"executable or compiled artifact is not allowed: {relative}")
             elif (
                 path.suffix.lower() in TEXT_SUFFIXES
                 or name in SENSITIVE_TEXT_NAMES

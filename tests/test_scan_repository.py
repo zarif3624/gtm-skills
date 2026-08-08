@@ -71,6 +71,16 @@ class RepositoryScannerTests(unittest.TestCase):
             _count, errors = SCANNER.scan_repository(root)
             self.assertIn("symbolic link is not allowed: node_modules", errors)
 
+    def test_compiled_artifact_outside_cache_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "payload.pyc").write_bytes(b"compiled")
+            _count, errors = SCANNER.scan_repository(root)
+            self.assertEqual(
+                errors,
+                ["executable or compiled artifact is not allowed: payload.pyc"],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

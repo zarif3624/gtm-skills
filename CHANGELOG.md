@@ -40,6 +40,7 @@ All notable project changes are documented here. The project uses semantic versi
 - Current behavioral evidence is now rejected when its evaluation definition or any target skill directory differs from the report's tested commit, including untracked resources.
 - Current routing evidence is now rejected when its frozen corpus or installed skill names and descriptions differ from the tested commit.
 - Quality-tooling digests ignore interpreter cache artifacts, keeping release evidence stable across clean Python 3.9 and 3.10 validation runs.
+- The repository scanner rejects executable and compiled payloads outside ignored runtime caches.
 - The current recorded Codex lineage has all 37 behavioral definitions passing: 25 isolated skill cases and 12 cross-skill journeys. Earlier partial and failed runs remain available as regression history.
 - The latest recorded metadata-only routing run selected the exact minimal skill set for all 28 requests with zero excluded-neighbor selections; the earlier 25-, 26-, and 27-request runs remain available as history.
 
