@@ -35,11 +35,14 @@ def directory_sha256(path: Path, root: Path) -> str:
         raise ValueError(f"release asset directory does not exist: {unresolved}")
     digest = hashlib.sha256()
     for item in sorted(path.rglob("*")):
+        relative_path = item.relative_to(path)
+        if "__pycache__" in relative_path.parts or item.suffix in {".pyc", ".pyo"}:
+            continue
         if item.is_symlink():
             raise ValueError(f"release asset must not be a symbolic link: {item}")
         if not item.is_file():
             continue
-        relative = item.relative_to(path).as_posix().encode("utf-8")
+        relative = relative_path.as_posix().encode("utf-8")
         digest.update(relative)
         digest.update(b"\0")
         digest.update(item.read_bytes())

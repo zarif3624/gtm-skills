@@ -7,7 +7,7 @@ The skills follow the [Agent Skills specification](https://agentskills.io/specif
 | Client or path | Discovery / installation evidence | Behavioral evidence | Current status |
 | --- | --- | --- | --- |
 | `skills` CLI against this repository | `npx -y skills add . --list` discovered all 25 skills locally | Not applicable | Verified locally on 2026-08-08 |
-| Repository quality tools | CI exercises the dependency-free suite on the oldest and newest supported Python lines (3.10 and 3.14) | Local suite passed on Python 3.9.6; CI results remain authoritative for supported lines | Configured; verify the two CI jobs on every change |
+| Repository quality tools | CI exercises the dependency-free suite on the oldest and newest supported Python lines (3.10 and 3.14) | Local suite passed on Python 3.9.6 and Python 3.10.0; CI results remain authoritative for Python 3.14 | Configured; verify the two CI jobs on every change |
 | OpenAI Codex clean-context subagent | The latest self-contained blind packet exposed only installed names and descriptions; the evaluator selected the exact intended minimal set for 28/28 routing requests with zero excluded neighbors | All 37 current behavioral definitions pass: 25 isolated skill cases and 12 cross-skill journeys spanning the full catalog and its tested handoffs; exact model identifier was unavailable | Limited positive evidence for the recorded lineage and commits; see [behavior history](../evals/results/) and [routing evidence](../evals/routing/results/) |
 | Claude Code | Not recorded | Not recorded | Unknown / not yet tested |
 | Cursor | Not recorded | Not recorded | Unknown / not yet tested |

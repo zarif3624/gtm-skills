@@ -37,6 +37,18 @@ class ReleaseManifestTests(unittest.TestCase):
             self.assertNotEqual(initial, changed_content)
             self.assertNotEqual(changed_content, changed_path)
 
+    def test_directory_digest_ignores_python_cache_artifacts(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            asset = root / "scripts"
+            asset.mkdir()
+            (asset / "check.py").write_text("print('ok')\n", encoding="utf-8")
+            initial = MANIFEST.directory_sha256(asset, root)
+            cache = asset / "__pycache__"
+            cache.mkdir()
+            (cache / "check.cpython-310.pyc").write_bytes(b"generated")
+            self.assertEqual(MANIFEST.directory_sha256(asset, root), initial)
+
     def test_manifest_indexes_packages_and_only_latest_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
