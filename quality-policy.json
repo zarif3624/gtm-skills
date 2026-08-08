@@ -3,7 +3,7 @@
   "minimums": {
     "isolated_cases": 25,
     "journey_cases": 12,
-    "current_routing_cases": 28,
+    "current_routing_cases": 38,
     "behavioral_definitions_with_latest_result": 37,
     "behavioral_definitions_with_latest_pass": 37,
     "current_corpus_passing_lineages": 1

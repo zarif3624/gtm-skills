@@ -27,7 +27,7 @@ Targets are product goals, not claims about current performance. Publish measure
 
 ## Current Status — 2026-08-08
 
-The repository now has 25 focused skills, one isolated adversarial case per skill, twelve cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, three portable reference packs, and reproducible behavioral and blind-routing reports. The latest recorded routing run selected the exact intended skill set for all 28 prompts in its frozen corpus, and all 37 current behavioral definitions pass in the recorded Codex lineage. These are bounded results tied to their frozen corpus and tested commits, not a claim that every model, client, or untested behavior passes.
+The repository now has 25 focused skills, one isolated adversarial case per skill, twelve cross-skill journey cases, a contrastive routing corpus, a dependency-free validation suite, a validated fictional workspace, three portable reference packs, and reproducible behavioral and blind-routing reports. The current routing corpus contains 38 prompts spanning every skill and all twelve tested cross-skill journeys, and all 37 current behavioral definitions pass in the recorded Codex lineage. These are bounded results tied to their frozen corpora and tested commits, not a claim that every model, client, or untested behavior passes.
 
 The current product frontier is measured portability: run the same hidden cases across skills-compatible agents, publish raw-response evidence and scored reports, then use observed failures to prioritize skill changes.
 
@@ -87,7 +87,7 @@ The quality foundation reached this definition of done on 2026-08-08:
 
 | Milestone | Exit evidence |
 | --- | --- |
-| Cross-client routing portability | Run the same frozen 28-request blind corpus in at least two additional skills-compatible clients; publish exact identifiers, raw selections, limitations, and computed reports |
+| Cross-client routing portability | Run the same frozen 38-request blind corpus in at least two additional skills-compatible clients; publish exact identifiers, raw selections, limitations, and computed reports |
 | Cross-client behavioral portability | Run a representative risk-weighted subset of isolated cases and journeys in each claimed client/model lineage; retain failures and publish superseding retests |
 | Stable machine contracts | Publish versioned schemas for generated catalog, quality, policy, manifest, behavioral-report, and routing-report formats; validate example instances dependency-free |
 | Release candidate | Freeze a semantic version, verify installation from the exact candidate commit, pass Python 3.10 and 3.14 CI, and review the deterministic manifest and compatibility matrix |

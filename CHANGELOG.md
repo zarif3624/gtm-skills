@@ -42,7 +42,7 @@ All notable project changes are documented here. The project uses semantic versi
 - Quality-tooling digests ignore interpreter cache artifacts, keeping release evidence stable across clean Python 3.9 and 3.10 validation runs.
 - The repository scanner rejects executable and compiled payloads outside ignored runtime caches.
 - The current recorded Codex lineage has all 37 behavioral definitions passing: 25 isolated skill cases and 12 cross-skill journeys. Earlier partial and failed runs remain available as regression history.
-- The latest recorded metadata-only routing run selected the exact minimal skill set for all 28 requests with zero excluded-neighbor selections; the earlier 25-, 26-, and 27-request runs remain available as history.
+- The routing corpus now contains 38 requests: one isolated route for every skill plus multi-skill routing for all twelve tested journeys. The prior exact 28-request run and earlier 25-, 26-, and 27-request runs remain available as history.
 
 ## 0.1.0
 
