@@ -9,9 +9,10 @@ A release is a reviewed compatibility statement, not just a tag.
 3. Run `python3 scripts/update_generated.py`, review the catalog metadata, package digests, evidence counts, and release manifest, then commit the generated changes.
 4. Run `python3 scripts/check.py`.
 5. Run `DISABLE_TELEMETRY=1 npx -y skills add . --list` and confirm every catalog skill is discovered.
-6. Run current routing and behavioral cases for each client/model lineage whose compatibility will be claimed.
-7. Update the [compatibility evidence matrix](docs/compatibility.md) with versions, commits, and limitations.
-8. Inspect raw evaluation responses for confidential or personal data before publishing.
+6. In a disposable Git project, use `--copy` to install at least one skill with both `assets/` and `references/`; confirm every source package file arrived unchanged.
+7. Run current routing and behavioral cases for each client/model lineage whose compatibility will be claimed.
+8. Update the [compatibility evidence matrix](docs/compatibility.md) with versions, commits, and limitations.
+9. Inspect raw evaluation responses for confidential or personal data before publishing.
 
 ## Review
 
