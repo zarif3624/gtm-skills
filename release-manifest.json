@@ -7,12 +7,12 @@
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "241a3a98a25c0426f18e3f7dcaac3a84a6f97937a14f12443096a056a29157ef"
+      "sha256": "093010c9a01bafca9bd5e0d6519d1e7e56bc8e397deb8ff0c62b1a79e7b892d3"
     }
   },
   "quality_policy": {
     "path": "quality-policy.json",
-    "sha256": "6b1d0fbc5d00bc90d040947a20bf85e047d31ca4cfe56f80e5da21cb3d44f8d6"
+    "sha256": "24babce7f55d268cf5263e4a14b0064203e2a87267dc79f6386f65abe452ddb9"
   },
   "skill_packages": [
     {
@@ -181,11 +181,11 @@
     "quality_tooling": {
       "scripts": {
         "path": "scripts",
-        "tree_sha256": "2ec9f3b95f984c9ca174c95bdc9ffb3c0d52cddaba6382d4109f0f6383d5dd76"
+        "tree_sha256": "f67c039fb48e41562320201be655772e5acf69834610893212e9ac6c18e70d73"
       },
       "tests": {
         "path": "tests",
-        "tree_sha256": "18cf4c09eaf4e35d45725eed5bfe2dcafc0b726f401ddac4906b0d3f33e03008"
+        "tree_sha256": "47664ee5005040343468571cb36f0fbb4d7920e9a1f5a61d2bbfb1f919a5fabe"
       },
       "validation_workflow": {
         "path": ".github/workflows/validate.yml",
@@ -607,15 +607,15 @@
       {
         "lineage": "codex-inherited",
         "verdict": "pass",
-        "total_cases": 28,
-        "exact_matches": 28,
-        "repository_commit": "133ad40",
-        "corpus_path": "evals/routing/corpora/2026-08-08-v4.json",
-        "corpus_sha256": "6d1ec06bb24c487bb0a9bfc9fd6e6fab4376bfbca4038bb1864bd0003b94b47d",
-        "report_path": "evals/routing/results/2026-08-08-codex-inherited-v5.json",
-        "report_sha256": "8f59e3dafe582a3303c11d036436c0e2df122e6f44148d3fbc1b45b739fbde7b",
-        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v5.response.json",
-        "response_sha256": "8ae11ae27b0fb40a42cd27f8deff4aea9518e8634af3280c2dad83670b6db8a4"
+        "total_cases": 38,
+        "exact_matches": 38,
+        "repository_commit": "d38a533",
+        "corpus_path": "evals/routing/corpora/2026-08-08-v7.json",
+        "corpus_sha256": "4c6faeae8feb0b3424762a3c5bbc72fb0d4a1d2c087e2278a0dabcc5bd47b4ef",
+        "report_path": "evals/routing/results/2026-08-08-codex-inherited-v8.json",
+        "report_sha256": "d7d4681297edaeb8a9b8b2f494a6563e43e13540ef0c23ee666267f1a48cfe81",
+        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v8.response.json",
+        "response_sha256": "276bd20e97a803e8e12644a0602dd37d8925702b44c42dd8c52e81101e33c946"
       }
     ]
   }

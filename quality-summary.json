@@ -4,7 +4,7 @@
     "skills": 25,
     "isolated_cases": 25,
     "journey_cases": 12,
-    "current_routing_cases": 28,
+    "current_routing_cases": 38,
     "example_workspaces": 1,
     "reference_packs": 3
   },
@@ -144,16 +144,16 @@
       }
     },
     "routing": {
-      "reports_total": 5,
+      "reports_total": 7,
       "latest_total": 1,
       "latest_verdicts": {
         "pass": 1,
         "partial": 0,
         "fail": 0
       },
-      "historical_runs": 4,
+      "historical_runs": 6,
       "latest_case_counts": [
-        28
+        38
       ],
       "current_corpus_lineages": 1,
       "current_corpus_passing_lineages": 1
