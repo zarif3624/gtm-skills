@@ -13,23 +13,28 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "skills"
 
 
-def inventory(root: Path, label: str) -> tuple[dict[str, str], list[str]]:
+def inventory(root: Path, label: str) -> tuple[dict[str, str], set[str], list[str]]:
     errors: list[str] = []
     if not root.is_dir() or root.is_symlink():
-        return {}, [f"{label} root must be a real directory: {root}"]
+        return {}, set(), [f"{label} root must be a real directory: {root}"]
     files: dict[str, str] = {}
+    directories: set[str] = set()
     for path in sorted(root.rglob("*")):
         relative = path.relative_to(root).as_posix()
         if path.is_symlink():
             errors.append(f"{label} path must not be a symbolic link: {relative}")
+        elif path.is_dir():
+            directories.add(relative)
         elif path.is_file():
             files[relative] = hashlib.sha256(path.read_bytes()).hexdigest()
-    return files, errors
+    return files, directories, errors
 
 
 def compare(source: Path, installed: Path) -> tuple[int, int, list[str]]:
-    source_files, errors = inventory(source, "source")
-    installed_files, installed_errors = inventory(installed, "installed")
+    source_files, source_directories, errors = inventory(source, "source")
+    installed_files, installed_directories, installed_errors = inventory(
+        installed, "installed"
+    )
     errors.extend(installed_errors)
     source_paths = set(source_files)
     installed_paths = set(installed_files)
@@ -37,10 +42,14 @@ def compare(source: Path, installed: Path) -> tuple[int, int, list[str]]:
         errors.append(f"installed tree is missing: {path}")
     for path in sorted(installed_paths - source_paths):
         errors.append(f"installed tree has an extra file: {path}")
+    for path in sorted(source_directories - installed_directories):
+        errors.append(f"installed tree is missing a directory: {path}")
+    for path in sorted(installed_directories - source_directories):
+        errors.append(f"installed tree has an extra directory: {path}")
     for path in sorted(source_paths & installed_paths):
         if source_files[path] != installed_files[path]:
             errors.append(f"installed file differs from source: {path}")
-    skill_count = len({path.split("/", 1)[0] for path in source_paths})
+    skill_count = len({path.split("/", 1)[0] for path in source_directories})
     return skill_count, len(source_files), errors
 
 

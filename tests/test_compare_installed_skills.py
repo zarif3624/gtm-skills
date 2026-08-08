@@ -56,6 +56,15 @@ class InstalledSkillComparatorTests(unittest.TestCase):
             _skills, _files, errors = COMPARATOR.compare(source, installed)
             self.assertTrue(any("symbolic link" in error for error in errors))
 
+    def test_extra_empty_package_directory_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            source, installed = self.make_trees(Path(temp))
+            (installed / "empty-extra-skill").mkdir()
+            _skills, _files, errors = COMPARATOR.compare(source, installed)
+            self.assertIn(
+                "installed tree has an extra directory: empty-extra-skill", errors
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
