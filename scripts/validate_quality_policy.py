@@ -78,9 +78,9 @@ def validate_policy(policy: dict[str, Any], summary: dict[str, Any]) -> list[str
         errors.append("quality policy maximum fields do not match the contract")
     if errors:
         return errors
-    if any(not isinstance(value, int) or value < 0 for value in minimums.values()):
+    if any(type(value) is not int or value < 0 for value in minimums.values()):
         errors.append("quality policy minimums must be non-negative integers")
-    if any(not isinstance(value, int) or value < 0 for value in maximums.values()):
+    if any(type(value) is not int or value < 0 for value in maximums.values()):
         errors.append("quality policy maximums must be non-negative integers")
     if errors:
         return errors

@@ -74,6 +74,12 @@ class QualityPolicyTests(unittest.TestCase):
         errors = VALIDATOR.validate_policy(policy(), observed)
         self.assertTrue(any("missing_latest_result" in error for error in errors))
 
+    def test_boolean_threshold_is_not_accepted_as_an_integer(self) -> None:
+        reviewed = policy()
+        reviewed["minimums"]["isolated_cases"] = True
+        errors = VALIDATOR.validate_policy(reviewed, summary())
+        self.assertTrue(any("non-negative integers" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()
