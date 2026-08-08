@@ -12,7 +12,7 @@ All notable project changes are documented here. The project uses semantic versi
 - Self-contained blind routing packets with installed metadata, plus computed reports that keep expected and excluded labels hidden until scoring.
 - A drift-checked machine-readable quality summary for catalog, coverage, and current evidence counts.
 - A generated machine-readable skill catalog with interface metadata, resource inventory, and deterministic package digests.
-- A schema-versioned deterministic release manifest binding skill packages, eval definitions, examples, reference packs, quality artifacts, and current raw evidence by SHA-256.
+- A schema-versioned deterministic release manifest binding skill packages, eval definitions, examples, reference packs, quality scripts and tests, the pinned validation workflow, quality artifacts, and current raw evidence by SHA-256.
 - A validated RelayFox end-to-end fictional workspace for positioning, outbound, transcript, qualification, process, pipeline, forecast, customer-outcome, and learning workflows.
 - A vendor-neutral CRM handoff pack with CSV templates, transformation governance, currency policy, and a matching JSON Schema.
 - A vendor-neutral evidence and action ledger pack with matching CSV and JSON contracts for portable claim and commitment status.

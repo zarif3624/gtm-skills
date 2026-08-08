@@ -146,7 +146,7 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
         )
 
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "generated_artifacts": {
             "catalog": {"path": "catalog.json", "sha256": sha256(catalog_path)},
             "quality_summary": {
@@ -177,6 +177,26 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
             ],
             "example_workspaces": asset_directories(root, "examples"),
             "reference_packs": asset_directories(root, "reference-packs"),
+            "quality_tooling": {
+                "scripts": {
+                    "path": "scripts",
+                    "tree_sha256": directory_sha256(root / "scripts", root),
+                },
+                "tests": {
+                    "path": "tests",
+                    "tree_sha256": directory_sha256(root / "tests", root),
+                },
+                "validation_workflow": {
+                    "path": ".github/workflows/validate.yml",
+                    "sha256": sha256(
+                        repository_file(
+                            root,
+                            ".github/workflows/validate.yml",
+                            "validation workflow",
+                        )
+                    ),
+                },
+            },
         },
         "current_evidence": {"behavioral": behavior, "routing": routing},
     }

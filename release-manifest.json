@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "generated_artifacts": {
     "catalog": {
       "path": "catalog.json",
@@ -177,7 +177,21 @@
         "path": "reference-packs/structured-gtm-context",
         "tree_sha256": "818d69198818529fd2d6d527d6242473dcc0e358b77424a107c62f55e5fb958f"
       }
-    ]
+    ],
+    "quality_tooling": {
+      "scripts": {
+        "path": "scripts",
+        "tree_sha256": "b467893309fa92a528c23f5d1bb794e7a4b1e88d930485ddbbdd0f5919de00bf"
+      },
+      "tests": {
+        "path": "tests",
+        "tree_sha256": "f1ba70b3323331e2b4b25a215be8862f6524dca6f837efc24f62ad462b18cf77"
+      },
+      "validation_workflow": {
+        "path": ".github/workflows/validate.yml",
+        "sha256": "2d9bcad1439aad237e74cf0364fc29876d1a7d8fa7a799ef99adbc2f16c7764f"
+      }
+    }
   },
   "current_evidence": {
     "behavioral": [

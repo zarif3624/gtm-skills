@@ -49,9 +49,14 @@ class ReleaseManifestTests(unittest.TestCase):
                 root / "evals" / "journeys",
                 root / "examples" / "example-one",
                 root / "reference-packs" / "pack-one",
+                root / "scripts",
+                root / "tests",
             ):
                 path.mkdir(parents=True)
                 (path / "asset.txt").write_text("asset\n", encoding="utf-8")
+            workflow = root / ".github" / "workflows" / "validate.yml"
+            workflow.parent.mkdir(parents=True)
+            workflow.write_text("name: Validate\n", encoding="utf-8")
             (root / "catalog.json").write_text(
                 json.dumps(
                     {
@@ -129,7 +134,7 @@ class ReleaseManifestTests(unittest.TestCase):
             )
 
             result = MANIFEST.build_manifest(root)
-            self.assertEqual(result["schema_version"], 2)
+            self.assertEqual(result["schema_version"], 3)
             self.assertEqual(result["skill_packages"][0]["name"], "test-skill")
             self.assertEqual(len(result["current_evidence"]["behavioral"]), 1)
             self.assertEqual(
@@ -150,6 +155,22 @@ class ReleaseManifestTests(unittest.TestCase):
             self.assertEqual(
                 result["supporting_assets"]["reference_packs"][0]["name"],
                 "pack-one",
+            )
+            self.assertEqual(
+                len(
+                    result["supporting_assets"]["quality_tooling"]["scripts"][
+                        "tree_sha256"
+                    ]
+                ),
+                64,
+            )
+            self.assertEqual(
+                len(
+                    result["supporting_assets"]["quality_tooling"][
+                        "validation_workflow"
+                    ]["sha256"]
+                ),
+                64,
             )
             self.assertEqual(
                 len(result["current_evidence"]["behavioral"][0]["response_sha256"]),
