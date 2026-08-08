@@ -244,7 +244,11 @@ def validate_context_pack(path: Path = STRUCTURED_CONTEXT) -> list[str]:
 
     if tuple(template) != CONTEXT_FIELDS:
         errors.append("structured context template fields must match the schema contract")
-    if template.get("schema_version") != 1 or template.get("document_status") != "Unknown":
+    if (
+        type(template.get("schema_version")) is not int
+        or template["schema_version"] != 1
+        or template.get("document_status") != "Unknown"
+    ):
         errors.append("structured context template must start at schema 1 with Unknown status")
     for field in ("product", "market", "buying_group", "gtm_motion", "proof", "alternatives", "sales_process", "guardrails"):
         if template.get(field) != []:

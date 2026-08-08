@@ -79,6 +79,23 @@ class ReferencePackValidatorTests(unittest.TestCase):
                 "structured context template fields must match the schema contract", errors
             )
 
+    def test_structured_context_rejects_boolean_schema_version(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            pack = Path(temp) / "structured-gtm-context"
+            pack.mkdir()
+            for source in VALIDATOR.STRUCTURED_CONTEXT.iterdir():
+                if source.is_file():
+                    (pack / source.name).write_bytes(source.read_bytes())
+            template_path = pack / "gtm-context-template.json"
+            template = json.loads(template_path.read_text(encoding="utf-8"))
+            template["schema_version"] = True
+            template_path.write_text(json.dumps(template), encoding="utf-8")
+            errors = VALIDATOR.validate_context_pack(pack)
+            self.assertIn(
+                "structured context template must start at schema 1 with Unknown status",
+                errors,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
