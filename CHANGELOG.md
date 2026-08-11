@@ -4,8 +4,11 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.1 - 2026-08-11
+
 ### Added
 
+- A role-based Customer Success playbook connecting accountable sales handoff, outcome evidence, renewal review, and customer-validated expansion.
 - Sales-call analysis, win/loss analysis, positioning development, territory planning, sales-process design, negotiation preparation, strategic account planning, partner-channel planning, evidence-based sales coaching, customer-outcome review, and buyer business-case skills.
 - One adversarial behavioral case per skill, twelve cross-skill journey cases, and a contrastive routing corpus covering every skill.
 - Reproducible forward-test reports with raw responses, assertion evidence, critical-failure handling, lineage-aware retests, and historical result retention.

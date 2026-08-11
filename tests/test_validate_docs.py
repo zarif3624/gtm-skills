@@ -51,5 +51,31 @@ class DocumentationLinkTests(unittest.TestCase):
                 outside.unlink(missing_ok=True)
 
 
+class CustomerSuccessPlaybookTests(unittest.TestCase):
+    def test_customer_success_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("[Customer Success playbook](docs/playbooks/customer-success.md)", readme)
+        self.assertIn("[Customer Success playbook](customer-success.md)", index)
+
+    def test_customer_success_playbook_preserves_outcome_evidence_boundaries(self) -> None:
+        path = ROOT / "docs" / "playbooks" / "customer-success.md"
+        self.assertTrue(path.is_file(), "Customer Success playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$handoff-customer",
+            "$review-customer-outcomes",
+            "$plan-account",
+            "$build-business-case",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("Activity is not an outcome", playbook)
+        self.assertIn("customer-validated", playbook)
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()
