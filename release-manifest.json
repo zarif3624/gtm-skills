@@ -185,7 +185,7 @@
       },
       "tests": {
         "path": "tests",
-        "tree_sha256": "79200510628ab3a76b9a32a0697bac33dc02244650748845a253a928b4428997"
+        "tree_sha256": "6fb1c67bf426874c04c95b56ac60d193c529fbfa70553541b1b61bd1473872f8"
       },
       "validation_workflow": {
         "path": ".github/workflows/validate.yml",

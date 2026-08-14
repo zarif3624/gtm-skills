@@ -4,6 +4,20 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.2 - 2026-08-14
+
+### Added
+
+- A frontline sales manager playbook that sequences pipeline inspection, forecasting, buyer-evidence deal reviews, and developmental coaching into one weekly operating cadence.
+
+### Changed
+
+- Role-based discovery now gives sales managers a distinct path from RevOps system ownership and keeps CRM cleanup, selling actions, forecast assumptions, coaching evidence, and formal employment decisions separate.
+
+### Validation
+
+- Added regression coverage for playbook discovery, required skill handoffs, buyer-evidence language, proposed and unknown status handling, and the human-review boundary for consequential personnel decisions.
+
 ## 0.1.1 - 2026-08-11
 
 ### Added

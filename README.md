@@ -33,6 +33,7 @@ These skills take the opposite bet: **an artifact you can defend beats an artifa
 | Founder doing founder-led sales | Context → ICP → research → discovery → call analysis | [Founder playbook](docs/playbooks/founder.md) |
 | AE carrying a quota | Research → discovery → deal loop → business case → close plan | [AE playbook](docs/playbooks/account-executive.md) |
 | SDR building pipeline | Prospecting plan → account research → outbound that survives scrutiny | [SDR playbook](docs/playbooks/sdr.md) |
+| Frontline sales manager | Pipeline truth → forecast → deal review → developmental coaching | [Sales manager playbook](docs/playbooks/sales-manager.md) |
 | RevOps or sales leader | Pipeline truth → forecast → process → territories → win/loss | [RevOps playbook](docs/playbooks/revops-leader.md) |
 | Customer Success manager | Handoff → outcome baseline → renewal evidence → expansion validation | [Customer Success playbook](docs/playbooks/customer-success.md) |
 
@@ -209,7 +210,7 @@ After changing a skill, eval definition, result, example, or reference pack, ref
 If these skills saved you a bad forecast, a burned account, or an afternoon of CRM archaeology:
 
 - **Star the repo** — it is how other GTM people find it.
-- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), [Customer Success](docs/playbooks/customer-success.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
+- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), [sales manager](docs/playbooks/sales-manager.md), [Customer Success](docs/playbooks/customer-success.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
 - **Show your artifact** — post what a skill produced (with your data redacted) in [Discussions](https://github.com/zarif3624/gtm-skills/discussions). Real outputs from real workflows are the best possible contribution to the compatibility evidence.
 
 ## Contributing

@@ -77,5 +77,34 @@ class CustomerSuccessPlaybookTests(unittest.TestCase):
         self.assertIn("Unknown", playbook)
 
 
+class SalesManagerPlaybookTests(unittest.TestCase):
+    def test_sales_manager_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("[Sales manager playbook](docs/playbooks/sales-manager.md)", readme)
+        self.assertIn("[Sales manager playbook](sales-manager.md)", index)
+
+    def test_sales_manager_playbook_preserves_operating_boundaries(self) -> None:
+        path = ROOT / "docs" / "playbooks" / "sales-manager.md"
+        self.assertTrue(path.is_file(), "Sales manager playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$analyze-sales-call",
+            "$qualify-opportunity",
+            "$review-pipeline",
+            "$forecast-sales",
+            "$plan-deal",
+            "$coach-sales-rep",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("pipeline review before the forecast call", playbook)
+        self.assertIn("buyer evidence", playbook)
+        self.assertIn("formal employment", playbook)
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()

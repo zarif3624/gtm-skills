@@ -1,12 +1,13 @@
 # Playbooks
 
-Skill sequences for the five roles that use this project most. Each playbook is a first-week plan: which skills to install, what to feed them, what artifact to expect at each step, and where the evidence rules protect you.
+Skill sequences for the six roles that use this project most. Each playbook is a first-week plan: which skills to install, what to feed them, what artifact to expect at each step, and where the evidence rules protect you.
 
 | You are | Start here |
 | --- | --- |
 | A founder doing founder-led sales | [Founder playbook](founder.md) |
 | An account executive carrying a quota | [Account executive playbook](account-executive.md) |
 | An SDR or BDR building pipeline | [SDR playbook](sdr.md) |
+| A frontline sales manager running deals, forecast, and coaching | [Sales manager playbook](sales-manager.md) |
 | A RevOps or sales leader running the system | [RevOps leader playbook](revops-leader.md) |
 | A Customer Success manager owning adoption and renewal | [Customer Success playbook](customer-success.md) |
 
