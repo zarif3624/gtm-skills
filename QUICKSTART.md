@@ -2,7 +2,7 @@
 
 Start with the artifact you need. Shared GTM context improves repeated work, but it is not required for a first useful result.
 
-Prefer a role-based path? The [playbooks](docs/playbooks/README.md) give founders, AEs, SDRs, sales managers, Customer Success managers, and RevOps leaders a first-week skill sequence. In a hurry? Grab one prompt from the [prompt cookbook](docs/prompt-cookbook.md), or preview artifacts in the [output gallery](docs/gallery.md) before installing anything.
+Prefer a role-based path? The [playbooks](docs/playbooks/README.md) give founders, AEs, SDRs, sales engineers, sales managers, Customer Success managers, and RevOps leaders a first-week skill sequence. In a hurry? Grab one prompt from the [prompt cookbook](docs/prompt-cookbook.md), or preview artifacts in the [output gallery](docs/gallery.md) before installing anything.
 
 ## 1. Preview And Install
 

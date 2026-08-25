@@ -4,6 +4,20 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.3 - 2026-08-25
+
+### Added
+
+- A Sales Engineer and Solutions Consultant playbook that connects account research, technical discovery, call evidence, demos, objection handling, and buyer-owned validation into one technical evaluation workflow.
+
+### Changed
+
+- Role-based discovery now gives technical sellers a distinct path that keeps demos, pilots, mocks, roadmap items, security claims, and production proof separate while preserving buyer-owned proof criteria and human approval boundaries.
+
+### Validation
+
+- Added regression coverage for playbook discovery, required skill handoffs, technical-proof language, buyer ownership, security and roadmap boundaries, and Proposed and Unknown status handling.
+
 ## 0.1.2 - 2026-08-14
 
 ### Added

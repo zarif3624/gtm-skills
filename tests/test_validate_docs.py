@@ -106,5 +106,37 @@ class SalesManagerPlaybookTests(unittest.TestCase):
         self.assertIn("Unknown", playbook)
 
 
+class SalesEngineerPlaybookTests(unittest.TestCase):
+    def test_sales_engineer_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+        quickstart = (ROOT / "QUICKSTART.md").read_text(encoding="utf-8")
+
+        self.assertIn("[Sales engineer playbook](docs/playbooks/sales-engineer.md)", readme)
+        self.assertIn("[Sales engineer playbook](sales-engineer.md)", index)
+        self.assertIn("sales engineers", quickstart.lower())
+
+    def test_sales_engineer_playbook_preserves_technical_proof_boundaries(self) -> None:
+        path = ROOT / "docs" / "playbooks" / "sales-engineer.md"
+        self.assertTrue(path.is_file(), "Sales engineer playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$research-account",
+            "$prepare-discovery",
+            "$analyze-sales-call",
+            "$prepare-demo",
+            "$handle-objections",
+            "$create-mutual-action-plan",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("Demo evidence is not production proof", playbook)
+        self.assertIn("buyer-owned proof criteria", playbook)
+        self.assertIn("roadmap", playbook.lower())
+        self.assertIn("security", playbook.lower())
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()
