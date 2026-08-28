@@ -138,5 +138,38 @@ class SalesEngineerPlaybookTests(unittest.TestCase):
         self.assertIn("Unknown", playbook)
 
 
+class ProductMarketingPlaybookTests(unittest.TestCase):
+    def test_product_marketing_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+        quickstart = (ROOT / "QUICKSTART.md").read_text(encoding="utf-8")
+
+        self.assertIn("[Product marketing playbook](docs/playbooks/product-marketing.md)", readme)
+        self.assertIn("[Product marketing playbook](product-marketing.md)", index)
+        self.assertIn("product marketers", quickstart.lower())
+
+    def test_product_marketing_playbook_preserves_claim_evidence_boundaries(self) -> None:
+        path = ROOT / "docs" / "playbooks" / "product-marketing.md"
+        self.assertTrue(path.is_file(), "Product Marketing playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$gtm-context",
+            "$review-customer-outcomes",
+            "$analyze-win-loss",
+            "$define-icp",
+            "$develop-positioning",
+            "$build-business-case",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("Customer evidence is not publication permission", playbook)
+        self.assertIn("sample size", playbook.lower())
+        self.assertIn("customer permission", playbook.lower())
+        self.assertIn("legal", playbook.lower())
+        self.assertIn("Hypothesis", playbook)
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -4,6 +4,20 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.4 - 2026-08-28
+
+### Added
+
+- A Product Marketing playbook that connects customer outcomes, win/loss learning, ICP refinement, positioning, and buyer-inspectable value enablement into one evidence-preserving workflow.
+
+### Changed
+
+- Role-based discovery now gives product marketers a distinct path that keeps internal customer evidence, public proof, message-test signals, and approved external claims separate.
+
+### Validation
+
+- Added regression coverage for playbook discovery, required skill handoffs, sample-size limits, customer permission, claim review, and Hypothesis, Proposed, and Unknown status handling.
+
 ## 0.1.3 - 2026-08-25
 
 ### Added
