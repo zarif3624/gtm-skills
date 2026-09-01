@@ -10,7 +10,7 @@
 npx skills add zarif3624/gtm-skills
 ```
 
-Built for founders, AEs, SDRs, sales engineers, product marketers, Customer Success teams, and RevOps leaders. Works with skills-compatible agents like Claude Code and Codex, on your own files and CRM exports — no vendor lock-in, no platform to buy.
+Built for founders, AEs, SDRs, sales engineers, product marketers, Customer Success teams, partner and channel leaders, and RevOps leaders. Works with skills-compatible agents like Claude Code and Codex, on your own files and CRM exports — no vendor lock-in, no platform to buy.
 
 **→ [See what the output looks like](docs/gallery.md) · [Steal a prompt](docs/prompt-cookbook.md) · [Find your playbook](docs/playbooks/README.md) · [Ten-minute quickstart](QUICKSTART.md)**
 
@@ -38,6 +38,7 @@ These skills take the opposite bet: **an artifact you can defend beats an artifa
 | Frontline sales manager | Pipeline truth → forecast → deal review → developmental coaching | [Sales manager playbook](docs/playbooks/sales-manager.md) |
 | RevOps or sales leader | Pipeline truth → forecast → process → territories → win/loss | [RevOps playbook](docs/playbooks/revops-leader.md) |
 | Customer Success manager | Handoff → outcome baseline → renewal evidence → expansion validation | [Customer Success playbook](docs/playbooks/customer-success.md) |
+| Partner or channel leader | Customer thesis → partner pilot → activation → attributed pipeline → forecast | [Partner and channel leader playbook](docs/playbooks/partner-channel.md) |
 
 Or grab a single copy-paste prompt from the [prompt cookbook](docs/prompt-cookbook.md) — one per skill.
 
@@ -212,7 +213,7 @@ After changing a skill, eval definition, result, example, or reference pack, ref
 If these skills saved you a bad forecast, a burned account, or an afternoon of CRM archaeology:
 
 - **Star the repo** — it is how other GTM people find it.
-- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), [sales engineer](docs/playbooks/sales-engineer.md), [product marketing](docs/playbooks/product-marketing.md), [sales manager](docs/playbooks/sales-manager.md), [Customer Success](docs/playbooks/customer-success.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
+- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), [sales engineer](docs/playbooks/sales-engineer.md), [product marketing](docs/playbooks/product-marketing.md), [sales manager](docs/playbooks/sales-manager.md), [Customer Success](docs/playbooks/customer-success.md), [partner and channel leader](docs/playbooks/partner-channel.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
 - **Show your artifact** — post what a skill produced (with your data redacted) in [Discussions](https://github.com/zarif3624/gtm-skills/discussions). Real outputs from real workflows are the best possible contribution to the compatibility evidence.
 
 ## Contributing

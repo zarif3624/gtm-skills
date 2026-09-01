@@ -171,5 +171,46 @@ class ProductMarketingPlaybookTests(unittest.TestCase):
         self.assertIn("Unknown", playbook)
 
 
+class PartnerChannelPlaybookTests(unittest.TestCase):
+    def test_partner_channel_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+        quickstart = (ROOT / "QUICKSTART.md").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "[Partner and channel leader playbook](docs/playbooks/partner-channel.md)",
+            readme,
+        )
+        self.assertIn(
+            "[Partner and channel leader playbook](partner-channel.md)",
+            index,
+        )
+        self.assertIn("partner and channel leaders", quickstart.lower())
+
+    def test_partner_channel_playbook_preserves_attribution_and_authority_boundaries(
+        self,
+    ) -> None:
+        path = ROOT / "docs" / "playbooks" / "partner-channel.md"
+        self.assertTrue(path.is_file(), "Partner and channel leader playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$gtm-context",
+            "$define-icp",
+            "$plan-partner-channel",
+            "$research-account",
+            "$review-pipeline",
+            "$forecast-sales",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("A signed partner is not an activated partner", playbook)
+        self.assertIn("partner-reported pipeline is not forecast", playbook.lower())
+        self.assertIn("canonical opportunity", playbook.lower())
+        self.assertIn("double counting", playbook.lower())
+        self.assertIn("customer consent", playbook.lower())
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()

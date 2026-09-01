@@ -4,6 +4,20 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.5 - 2026-09-01
+
+### Added
+
+- A Partner and Channel Leader playbook that connects customer and ICP context, partner-motion design, candidate research, activation pilots, canonical pipeline inspection, and forecasting into one evidence-preserving workflow.
+
+### Changed
+
+- Role-based discovery now gives ecosystem leaders a distinct path that keeps partner lifecycle evidence, contribution attribution, customer-data authority, canonical opportunity value, and forecast evidence separate.
+
+### Validation
+
+- Added regression coverage for playbook discovery, required skill handoffs, activation evidence, canonical opportunity identity, double-counting prevention, customer consent, and Proposed and Unknown status handling.
+
 ## 0.1.4 - 2026-08-28
 
 ### Added

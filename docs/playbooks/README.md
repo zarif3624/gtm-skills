@@ -1,6 +1,6 @@
 # Playbooks
 
-Skill sequences for the eight roles that use this project most. Each playbook is a first-week plan: which skills to install, what to feed them, what artifact to expect at each step, and where the evidence rules protect you.
+Skill sequences for the nine roles that use this project most. Each playbook is a first-week plan: which skills to install, what to feed them, what artifact to expect at each step, and where the evidence rules protect you.
 
 | You are | Start here |
 | --- | --- |
@@ -12,6 +12,7 @@ Skill sequences for the eight roles that use this project most. Each playbook is
 | A frontline sales manager running deals, forecast, and coaching | [Sales manager playbook](sales-manager.md) |
 | A RevOps or sales leader running the system | [RevOps leader playbook](revops-leader.md) |
 | A Customer Success manager owning adoption and renewal | [Customer Success playbook](customer-success.md) |
+| A partner or channel leader building ecosystem revenue | [Partner and channel leader playbook](partner-channel.md) |
 
 Every playbook uses the same rules as the skills themselves: facts, inferences, and unknowns stay separate; nothing is fabricated to look complete. If a step produces an artifact full of `Unknown` labels, that is the system working — it is showing you what evidence to collect next, not failing to impress you.
 
