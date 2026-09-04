@@ -4,6 +4,20 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.6 - 2026-09-04
+
+### Added
+
+- A Revenue Enablement Leader playbook that connects call and win/loss evidence, approved positioning, demo practice, and behavior-based coaching into one measurable learning loop.
+
+### Changed
+
+- Role-based discovery now gives enablement leaders a distinct path that keeps training participation, observed behavior, buyer progress, and revenue outcomes separate.
+
+### Validation
+
+- Added regression coverage for playbook discovery, required skill handoffs, sample-size and customer-permission limits, layered measurement, and the human-review boundary for formal employment decisions.
+
 ## 0.1.5 - 2026-09-01
 
 ### Added

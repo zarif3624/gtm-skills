@@ -212,5 +212,45 @@ class PartnerChannelPlaybookTests(unittest.TestCase):
         self.assertIn("Unknown", playbook)
 
 
+class RevenueEnablementPlaybookTests(unittest.TestCase):
+    def test_revenue_enablement_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+        quickstart = (ROOT / "QUICKSTART.md").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "[Revenue Enablement leader playbook](docs/playbooks/revenue-enablement.md)",
+            readme,
+        )
+        self.assertIn(
+            "[Revenue Enablement leader playbook](revenue-enablement.md)",
+            index,
+        )
+        self.assertIn("revenue enablement leaders", quickstart.lower())
+
+    def test_revenue_enablement_playbook_preserves_learning_boundaries(self) -> None:
+        path = ROOT / "docs" / "playbooks" / "revenue-enablement.md"
+        self.assertTrue(path.is_file(), "Revenue Enablement leader playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$gtm-context",
+            "$analyze-sales-call",
+            "$analyze-win-loss",
+            "$develop-positioning",
+            "$prepare-demo",
+            "$coach-sales-rep",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("Training completion is not behavior change", playbook)
+        self.assertIn("Behavior change is not revenue impact", playbook)
+        self.assertIn("sample size", playbook.lower())
+        self.assertIn("customer permission", playbook.lower())
+        self.assertIn("formal employment", playbook.lower())
+        self.assertIn("Hypothesis", playbook)
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()

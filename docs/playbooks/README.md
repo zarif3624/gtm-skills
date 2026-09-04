@@ -1,6 +1,6 @@
 # Playbooks
 
-Skill sequences for the nine roles that use this project most. Each playbook is a first-week plan: which skills to install, what to feed them, what artifact to expect at each step, and where the evidence rules protect you.
+Skill sequences for the ten roles that use this project most. Each playbook is a first-week plan: which skills to install, what to feed them, what artifact to expect at each step, and where the evidence rules protect you.
 
 | You are | Start here |
 | --- | --- |
@@ -9,6 +9,7 @@ Skill sequences for the nine roles that use this project most. Each playbook is 
 | An SDR or BDR building pipeline | [SDR playbook](sdr.md) |
 | A sales engineer or solutions consultant proving technical fit | [Sales engineer playbook](sales-engineer.md) |
 | A product marketer turning market evidence into approved claims | [Product marketing playbook](product-marketing.md) |
+| A revenue enablement leader turning field evidence into measurable practice | [Revenue Enablement leader playbook](revenue-enablement.md) |
 | A frontline sales manager running deals, forecast, and coaching | [Sales manager playbook](sales-manager.md) |
 | A RevOps or sales leader running the system | [RevOps leader playbook](revops-leader.md) |
 | A Customer Success manager owning adoption and renewal | [Customer Success playbook](customer-success.md) |
