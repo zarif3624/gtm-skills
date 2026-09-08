@@ -252,5 +252,62 @@ class RevenueEnablementPlaybookTests(unittest.TestCase):
         self.assertIn("Unknown", playbook)
 
 
+class DemandGenerationPlaybookTests(unittest.TestCase):
+    def test_demand_generation_playbook_is_discoverable(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        index = (ROOT / "docs" / "playbooks" / "README.md").read_text(encoding="utf-8")
+        quickstart = (ROOT / "QUICKSTART.md").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "[Demand Generation leader playbook](docs/playbooks/demand-generation.md)",
+            readme,
+        )
+        self.assertIn(
+            "[Demand Generation leader playbook](demand-generation.md)",
+            index,
+        )
+        self.assertIn("demand generation leaders", quickstart.lower())
+
+    def test_demand_generation_playbook_preserves_funnel_and_attribution_boundaries(
+        self,
+    ) -> None:
+        path = ROOT / "docs" / "playbooks" / "demand-generation.md"
+        self.assertTrue(path.is_file(), "Demand Generation leader playbook is missing")
+        playbook = path.read_text(encoding="utf-8")
+
+        for skill in (
+            "$gtm-context",
+            "$define-icp",
+            "$develop-positioning",
+            "$plan-prospecting",
+            "$write-outbound",
+            "$review-pipeline",
+            "$analyze-win-loss",
+        ):
+            self.assertIn(skill, playbook)
+        self.assertIn("Engagement is not buyer progress", playbook)
+        self.assertIn("Attributed pipeline is not caused revenue", playbook)
+        self.assertIn("canonical opportunity", playbook.lower())
+        self.assertIn("denominator", playbook.lower())
+        self.assertIn("consent", playbook.lower())
+        self.assertIn("sample size", playbook.lower())
+        self.assertIn("Confirm consent, suppression, privacy", playbook)
+        approval_start = playbook.index("An authorized human must approve")
+        approval_paragraph = playbook[approval_start:].split("\n\n", 1)[0]
+        for action in (
+            "channel activation",
+            "data purchases",
+            "list uploads",
+            "live sends",
+            "CRM writes",
+            "scoring changes",
+            "public claims",
+        ):
+            self.assertIn(action, approval_paragraph)
+        self.assertIn("Hypothesis", playbook)
+        self.assertIn("Proposed", playbook)
+        self.assertIn("Unknown", playbook)
+
+
 if __name__ == "__main__":
     unittest.main()

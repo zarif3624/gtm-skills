@@ -10,7 +10,7 @@
 npx skills add zarif3624/gtm-skills
 ```
 
-Built for founders, AEs, SDRs, sales engineers, product marketers, revenue enablement leaders, Customer Success teams, partner and channel leaders, and RevOps leaders. Works with skills-compatible agents like Claude Code and Codex, on your own files and CRM exports — no vendor lock-in, no platform to buy.
+Built for founders, AEs, SDRs, sales engineers, product marketers, demand generation leaders, revenue enablement leaders, Customer Success teams, partner and channel leaders, and RevOps leaders. Works with skills-compatible agents like Claude Code and Codex, on your own files and CRM exports — no vendor lock-in, no platform to buy.
 
 **→ [See what the output looks like](docs/gallery.md) · [Steal a prompt](docs/prompt-cookbook.md) · [Find your playbook](docs/playbooks/README.md) · [Ten-minute quickstart](QUICKSTART.md)**
 
@@ -35,6 +35,7 @@ These skills take the opposite bet: **an artifact you can defend beats an artifa
 | SDR building pipeline | Prospecting plan → account research → outbound that survives scrutiny | [SDR playbook](docs/playbooks/sdr.md) |
 | Sales engineer or solutions consultant | Technical discovery → demo → objection proof → shared validation | [Sales engineer playbook](docs/playbooks/sales-engineer.md) |
 | Product marketer | Customer evidence → win/loss learning → ICP → positioning → value enablement | [Product marketing playbook](docs/playbooks/product-marketing.md) |
+| Demand Generation leader | ICP → approved message → audience pilot → pipeline inspection → outcome learning | [Demand Generation leader playbook](docs/playbooks/demand-generation.md) |
 | Revenue Enablement leader | Call evidence → win/loss learning → enablement asset → practice → measured behavior | [Revenue Enablement leader playbook](docs/playbooks/revenue-enablement.md) |
 | Frontline sales manager | Pipeline truth → forecast → deal review → developmental coaching | [Sales manager playbook](docs/playbooks/sales-manager.md) |
 | RevOps or sales leader | Pipeline truth → forecast → process → territories → win/loss | [RevOps playbook](docs/playbooks/revops-leader.md) |
@@ -214,7 +215,7 @@ After changing a skill, eval definition, result, example, or reference pack, ref
 If these skills saved you a bad forecast, a burned account, or an afternoon of CRM archaeology:
 
 - **Star the repo** — it is how other GTM people find it.
-- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), [sales engineer](docs/playbooks/sales-engineer.md), [product marketing](docs/playbooks/product-marketing.md), [Revenue Enablement leader](docs/playbooks/revenue-enablement.md), [sales manager](docs/playbooks/sales-manager.md), [Customer Success](docs/playbooks/customer-success.md), [partner and channel leader](docs/playbooks/partner-channel.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
+- **Share a playbook** — the [founder](docs/playbooks/founder.md), [AE](docs/playbooks/account-executive.md), [SDR](docs/playbooks/sdr.md), [sales engineer](docs/playbooks/sales-engineer.md), [product marketing](docs/playbooks/product-marketing.md), [Demand Generation leader](docs/playbooks/demand-generation.md), [Revenue Enablement leader](docs/playbooks/revenue-enablement.md), [sales manager](docs/playbooks/sales-manager.md), [Customer Success](docs/playbooks/customer-success.md), [partner and channel leader](docs/playbooks/partner-channel.md), and [RevOps](docs/playbooks/revops-leader.md) playbooks are built to be sent to a colleague as-is.
 - **Show your artifact** — post what a skill produced (with your data redacted) in [Discussions](https://github.com/zarif3624/gtm-skills/discussions). Real outputs from real workflows are the best possible contribution to the compatibility evidence.
 
 ## Contributing

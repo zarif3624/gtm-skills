@@ -4,6 +4,20 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.7 - 2026-09-08
+
+### Added
+
+- A Demand Generation Leader playbook that connects ICP, approved positioning, prospecting, responsible outbound, canonical pipeline inspection, and win/loss learning into one measurable acquisition loop.
+
+### Changed
+
+- Role-based discovery now gives demand generation leaders a distinct path that keeps delivery, engagement, conversations, buyer progress, attributed pipeline, and caused revenue separate.
+
+### Validation
+
+- Added regression coverage for playbook discovery, required skill handoffs, canonical opportunity identity, denominators, consent, sample-size limits, and attribution and human-approval boundaries.
+
 ## 0.1.6 - 2026-09-04
 
 ### Added
