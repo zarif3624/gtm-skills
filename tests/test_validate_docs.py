@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -307,6 +308,47 @@ class DemandGenerationPlaybookTests(unittest.TestCase):
         self.assertIn("Hypothesis", playbook)
         self.assertIn("Proposed", playbook)
         self.assertIn("Unknown", playbook)
+
+
+class CompatibilityEvidenceTests(unittest.TestCase):
+    def test_published_tag_portability_evidence_is_reproducible_and_bounded(self) -> None:
+        compatibility = (ROOT / "docs" / "compatibility.md").read_text(encoding="utf-8")
+
+        updated = re.search(r"\*\*Last updated:\*\* (\d{4}-\d{2}-\d{2})", compatibility)
+        self.assertIsNotNone(updated)
+        evidence_date = updated.group(1)
+        cli_row = next(line for line in compatibility.splitlines() if line.startswith("| Skills CLI"))
+        reference_row = next(
+            line for line in compatibility.splitlines() if line.startswith("| Official skills-ref")
+        )
+
+        for value in (
+            "Skills CLI `1.5.25`",
+            "`v0.1.7`",
+            "`e683fbb32ea4e8b68c702c1f274d6d6561c49d90`",
+            "25 packages and 92 files",
+            evidence_date,
+            "installation evidence only",
+        ):
+            self.assertIn(value, cli_row)
+        for value in (
+            "skills-ref `0.1.0`",
+            "https://github.com/agentskills/agentskills/tree/69ef37e9424c0a7ea9dd2293b559e43ec8176379/skills-ref",
+            "all 25 packages",
+            "Python 3.12.7",
+            "macOS 26.6.2 arm64",
+            evidence_date,
+            "Format validation does not establish behavioral compatibility",
+        ):
+            self.assertIn(value, reference_row)
+        for command in (
+            "npx -y skills@1.5.25 add zarif3624/gtm-skills@v0.1.7",
+            "git -C agentskills checkout 69ef37e9424c0a7ea9dd2293b559e43ec8176379",
+            'skills-ref validate "$skill"',
+            "click==8.5.0",
+            "strictyaml==1.7.3",
+        ):
+            self.assertIn(command, compatibility)
 
 
 if __name__ == "__main__":

@@ -4,6 +4,18 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+## 0.1.8 - 2026-09-11
+
+### Changed
+
+- Replaced the repository-local installation note with reproducible public-tag evidence from Skills CLI `1.5.25` and official skills-ref `0.1.0` pinned to upstream commit `69ef37e9424c0a7ea9dd2293b559e43ec8176379`.
+- The compatibility matrix now separates installation and format conformance from behavioral compatibility so validator passes cannot be presented as proof of model behavior.
+
+### Validation
+
+- Installed all 25 skills from public tag `v0.1.7` in a disposable Git project and matched all 25 packages and 92 files byte for byte.
+- Validated all 25 tagged packages with the official reference implementation on Python 3.12.
+
 ## 0.1.7 - 2026-09-08
 
 ### Added
