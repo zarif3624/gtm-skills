@@ -1,6 +1,6 @@
 ---
 name: prepare-demo
-description: "Plan a buyer-specific B2B product demonstration, technical validation, proof of concept, or demo follow-up. Use when deciding what to show, tailoring a demo to discovery, mapping features to outcomes, assigning presenters, preparing questions, or preventing generic feature tours."
+description: "Plan a buyer-specific B2B demo or technical validation. Use for the storyline, proof of concept, setup, or demo follow-up."
 ---
 
 # Prepare Demo

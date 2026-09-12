@@ -1,6 +1,6 @@
 ---
 name: gtm-context
-description: "Create or update the shared sales and go-to-market context used by other GTM skills. Use when starting work on a product, documenting the sales motion, defining buyers and value, capturing proof and competition, or when repeated sales tasks lack reliable background. Produces `.agents/gtm-context.md`."
+description: "Create or update shared GTM background in .agents/gtm-context.md. Use when documenting product, buyers, sales motion, and evidence for reuse."
 ---
 
 # GTM Context

@@ -1,6 +1,6 @@
 ---
 name: design-sales-process
-description: "Design, audit, or revise a B2B sales process and its CRM operating rules. Use for lifecycle and opportunity stages, entry and exit criteria, qualification gates, handoffs, recycling and disqualification paths, required fields, stage governance, service expectations, conversion measurement, or rollout plans without importing generic benchmarks as company truth."
+description: "Design or audit a B2B sales process. Use for stage definitions, exit criteria, CRM operating rules, handoffs, or process rollout."
 ---
 
 # Design Sales Process

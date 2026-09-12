@@ -1,6 +1,6 @@
 ---
 name: write-outbound
-description: "Write or improve responsible B2B outbound messages and sequences across email, LinkedIn, calls, or short-form channels. Use for cold outreach, follow-ups, referral requests, event follow-up, re-engagement, or sequence testing when relevance, evidence, consent, and clear next steps matter."
+description: "Draft or improve B2B outbound messages and sequences. Use for cold outreach, follow-ups, referrals, re-engagement, or copy variants."
 ---
 
 # Write Outbound

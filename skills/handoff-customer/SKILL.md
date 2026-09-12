@@ -1,6 +1,6 @@
 ---
 name: handoff-customer
-description: "Create a complete sales-to-customer-success, implementation, or account-management handoff. Use after a B2B deal closes or before kickoff when goals, promises, stakeholders, risks, commercial scope, implementation needs, and unresolved questions must transfer without making the customer repeat discovery."
+description: "Prepare a sales-to-CS, implementation, or account-management handoff. Use after closing or before kickoff to transfer scope and commitments."
 ---
 
 # Handoff Customer

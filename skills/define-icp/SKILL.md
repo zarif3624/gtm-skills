@@ -1,6 +1,6 @@
 ---
 name: define-icp
-description: "Define, refine, or score an ideal customer profile for B2B sales. Use when selecting segments, prioritizing accounts, testing founder-led sales assumptions, distinguishing ICP from personas, creating fit criteria, or diagnosing low conversion caused by broad targeting."
+description: "Define or refine a B2B ideal customer profile. Use to compare customer segments, establish fit criteria, or score accounts against them."
 ---
 
 # Define ICP

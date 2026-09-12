@@ -1,6 +1,6 @@
 ---
 name: forecast-sales
-description: "Create, inspect, or explain a B2B sales forecast using CRM opportunities, historical conversion, pipeline changes, seller calls, or scenario assumptions. Use for commit and best-case calls, monthly or quarterly forecasting, forecast risk, rollups, coverage, sensitivity analysis, or explaining a forecast to leadership."
+description: "Create or review a B2B revenue forecast. Use for period estimates, commit/best-case calls, rollups, or forecast scenarios and risk."
 ---
 
 # Forecast Sales

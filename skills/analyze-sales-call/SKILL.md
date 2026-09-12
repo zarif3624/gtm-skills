@@ -1,6 +1,6 @@
 ---
 name: analyze-sales-call
-description: "Analyze B2B sales-call transcripts, notes, or recordings that already have usable text. Use after discovery, demos, negotiations, deal reviews, or customer conversations to extract evidence, decisions, objections, qualification changes, next steps, CRM updates, follow-up inputs, and behavior-based coaching without inventing what participants said."
+description: "Analyze B2B sales transcripts or notes. Use for call recaps, evidence extraction, next steps, or feedback on a specific conversation."
 ---
 
 # Analyze Sales Call

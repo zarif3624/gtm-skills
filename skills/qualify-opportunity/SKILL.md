@@ -1,6 +1,6 @@
 ---
 name: qualify-opportunity
-description: "Assess or update B2B opportunity qualification from call notes, CRM data, emails, or seller observations. Use for MEDDPICC, SPICED, BANT, custom qualification, stage advancement, disqualification, deal inspection, or identifying the evidence needed before investing more resources."
+description: "Assess B2B opportunity qualification. Use for MEDDPICC, SPICED, BANT, evidence gaps, or an advance/hold/disqualify recommendation."
 ---
 
 # Qualify Opportunity

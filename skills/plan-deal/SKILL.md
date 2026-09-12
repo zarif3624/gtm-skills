@@ -1,6 +1,6 @@
 ---
 name: plan-deal
-description: "Create or update a strategy for a complex B2B sales opportunity. Use for deal reviews, account planning, stakeholder mapping, champion development, competitive strategy, stalled deals, executive alignment, resource decisions, or deciding the next best action for an active opportunity."
+description: "Plan strategy for one active B2B opportunity. Use for deal reviews, stakeholder strategy, stalled deals, or the next selling action."
 ---
 
 # Plan Deal

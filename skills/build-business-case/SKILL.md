@@ -1,6 +1,6 @@
 ---
 name: build-business-case
-description: "Build or review a buyer-facing B2B business case, value hypothesis, ROI or TCO model, budget justification, or investment memo. Use when connecting operational outcomes to economics, comparing status quo and solution alternatives, testing assumptions, calculating break-even or payback, and planning validation without inventing savings, attribution, prices, adoption, or financial approval."
+description: "Build or review a buyer-facing B2B business case. Use for ROI, TCO, payback, or budget justification with inspectable assumptions."
 ---
 
 # Build Business Case

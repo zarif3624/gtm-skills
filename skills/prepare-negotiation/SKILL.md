@@ -1,6 +1,6 @@
 ---
 name: prepare-negotiation
-description: "Prepare for B2B pricing, packaging, procurement, contract, renewal, expansion, or commercial negotiations. Use when planning offers, concessions, give-get trades, approval paths, alternatives, walk-away conditions, buyer questions, or negotiation roles without inventing authority, competitor terms, deadlines, legal positions, or customer commitments."
+description: "Prepare a B2B commercial negotiation. Use for offers, concessions, give-get trades, approval limits, or walk-away scenarios."
 ---
 
 # Prepare Negotiation

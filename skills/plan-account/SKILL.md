@@ -1,6 +1,6 @@
 ---
 name: plan-account
-description: "Create or update a strategic B2B account plan across business units, relationships, current footprint, active opportunities, whitespace, renewals, and long-term outcomes. Use for named or enterprise accounts, expansion planning, executive alignment, multi-threading, account reviews, ABM coordination, or deciding where to invest beyond one active deal."
+description: "Create a strategic B2B account plan. Use for relationships, footprint, whitespace, and investment across opportunities or business units."
 ---
 
 # Plan Account

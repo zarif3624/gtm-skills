@@ -3,7 +3,7 @@
   "skills": [
     {
       "name": "analyze-sales-call",
-      "description": "Analyze B2B sales-call transcripts, notes, or recordings that already have usable text. Use after discovery, demos, negotiations, deal reviews, or customer conversations to extract evidence, decisions, objections, qualification changes, next steps, CRM updates, follow-up inputs, and behavior-based coaching without inventing what participants said.",
+      "description": "Analyze B2B sales transcripts or notes. Use for call recaps, evidence extraction, next steps, or feedback on a specific conversation.",
       "display_name": "Analyze Sales Call",
       "short_description": "Analyze sales calls without inventing evidence",
       "default_prompt": "Use $analyze-sales-call to turn this sales call into evidence, decisions, and coaching.",
@@ -14,11 +14,11 @@
         "assets/call-analysis.md",
         "references/analysis-rules.md"
       ],
-      "package_sha256": "5e280086936e2584321fd9a4dc273b31feea539a6bedbf5b03dcb7ea280757fe"
+      "package_sha256": "a5f738a4f83b6c34413355baff18b457e3ea99009e1d01dffbadbfcdc3b83a48"
     },
     {
       "name": "analyze-win-loss",
-      "description": "Analyze individual or aggregate B2B wins, losses, no-decisions, and disqualifications using CRM records, buyer interviews, call notes, proposals, and deal history. Use for win/loss reviews, loss-reason audits, segment comparisons, product and messaging feedback, sales-process learning, or deciding which GTM hypotheses to test without turning seller opinion into buyer truth.",
+      "description": "Analyze B2B buying decisions. Use for win/loss reviews, no-decision analysis, or comparisons across closed opportunities.",
       "display_name": "Analyze Win Loss",
       "short_description": "Find evidence-backed win and loss patterns",
       "default_prompt": "Use $analyze-win-loss to analyze these outcomes and recommend what to test next.",
@@ -29,11 +29,11 @@
         "assets/win-loss-analysis.md",
         "references/methods.md"
       ],
-      "package_sha256": "0e80e16cb38c4ba5fddee0931a749974c2e23f9b0e205aa9416fb42faa8dadcc"
+      "package_sha256": "4616ea5ca245572eb5ebb71291403880b8f44a896c31b09c6a9b8a0b319446e7"
     },
     {
       "name": "build-business-case",
-      "description": "Build or review a buyer-facing B2B business case, value hypothesis, ROI or TCO model, budget justification, or investment memo. Use when connecting operational outcomes to economics, comparing status quo and solution alternatives, testing assumptions, calculating break-even or payback, and planning validation without inventing savings, attribution, prices, adoption, or financial approval.",
+      "description": "Build or review a buyer-facing B2B business case. Use for ROI, TCO, payback, or budget justification with inspectable assumptions.",
       "display_name": "Build Business Case",
       "short_description": "Model buyer value without invented ROI",
       "default_prompt": "Use $build-business-case to create an evidence-based buyer business case.",
@@ -44,11 +44,11 @@
         "assets/business-case.md",
         "references/methods.md"
       ],
-      "package_sha256": "eefdc86de00bab70f530bc2b0437cc108997e996e1645210abe5f8b8ba7a776b"
+      "package_sha256": "ee1441891717d652dcef7e26ba069d30a06ad17bf091aa6a1996c518f52f8042"
     },
     {
       "name": "coach-sales-rep",
-      "description": "Build an evidence-based B2B sales coaching plan from call recordings, transcripts, manager observations, deal outcomes, activity patterns, or prior coaching notes. Use for one-to-one preparation, skill development, call coaching, behavior experiments, progress reviews, or separating an isolated episode from a repeated performance pattern.",
+      "description": "Create a B2B sales coaching plan. Use for behavior development, practice experiments, or coaching progress reviews.",
       "display_name": "Coach Sales Rep",
       "short_description": "Build evidence-based sales coaching plans",
       "default_prompt": "Use $coach-sales-rep to build a focused evidence-based coaching plan.",
@@ -59,11 +59,11 @@
         "assets/coaching-plan.md",
         "references/coaching-method.md"
       ],
-      "package_sha256": "f37132ef3c663895b2f77fa98b5640b4d25942276d312aa05c8f264378a994d9"
+      "package_sha256": "9510a6c3e7923829ce07b728ec71f8a209272287f52062e6e02a43da5a525d4a"
     },
     {
       "name": "create-mutual-action-plan",
-      "description": "Create or revise a mutual action plan for a B2B buying process. Use when buyer and seller need shared milestones, owners, decision criteria, validation, security, legal, procurement, implementation, or target-date coordination without turning the plan into a seller-only closing checklist.",
+      "description": "Create or revise a B2B mutual action plan. Use for shared buyer/seller milestones, dependencies, owners, and decision timing.",
       "display_name": "Create Mutual Action Plan",
       "short_description": "Create a buyer-owned path to a decision",
       "default_prompt": "Use $create-mutual-action-plan to build a mutual action plan for this deal.",
@@ -73,11 +73,11 @@
         "agents/openai.yaml",
         "assets/mutual-action-plan.md"
       ],
-      "package_sha256": "be0180b8b0f326a5aa2876fa266a2de7aee495828a1c499d5baa2f89ea7f7baa"
+      "package_sha256": "778cf9c017be423c800f788c46f123f3b1b5f9204c79aa88f9bf9c793b371e3c"
     },
     {
       "name": "define-icp",
-      "description": "Define, refine, or score an ideal customer profile for B2B sales. Use when selecting segments, prioritizing accounts, testing founder-led sales assumptions, distinguishing ICP from personas, creating fit criteria, or diagnosing low conversion caused by broad targeting.",
+      "description": "Define or refine a B2B ideal customer profile. Use to compare customer segments, establish fit criteria, or score accounts against them.",
       "display_name": "Define ICP",
       "short_description": "Define and score an evidence-based ICP",
       "default_prompt": "Use $define-icp to define and score our ideal customer profile.",
@@ -88,11 +88,11 @@
         "assets/icp.md",
         "references/scoring.md"
       ],
-      "package_sha256": "03b33e70421b9ae9e801e52363d493a7d2b0d60002b896ef26f28987ad3b00fb"
+      "package_sha256": "ca1d937c0c7cd76d0379424fad8dc0f55ded764a7e74473987da071c8acfa853"
     },
     {
       "name": "design-sales-process",
-      "description": "Design, audit, or revise a B2B sales process and its CRM operating rules. Use for lifecycle and opportunity stages, entry and exit criteria, qualification gates, handoffs, recycling and disqualification paths, required fields, stage governance, service expectations, conversion measurement, or rollout plans without importing generic benchmarks as company truth.",
+      "description": "Design or audit a B2B sales process. Use for stage definitions, exit criteria, CRM operating rules, handoffs, or process rollout.",
       "display_name": "Design Sales Process",
       "short_description": "Design evidence-based stages and governance",
       "default_prompt": "Use $design-sales-process to design an evidence-based sales process.",
@@ -103,11 +103,11 @@
         "assets/sales-process.md",
         "references/methods.md"
       ],
-      "package_sha256": "6ab6af18fa66941fb211656847a50bc99201de3598c6b9bd121bc06c873a6cf5"
+      "package_sha256": "87046e3f572af9b9ea57326fc5809a8ccaba91def18b66313796c7fbf26bb53b"
     },
     {
       "name": "develop-positioning",
-      "description": "Develop, audit, or test B2B positioning and message architecture. Use for value propositions, category framing, audience-specific messaging, narrative pillars, proof mapping, competitive differentiation, website or sales-deck message briefs, or message experiments before writing channel copy without inventing customer outcomes, superiority, quotes, or market proof.",
+      "description": "Develop or test B2B positioning. Use for value propositions, differentiation, message pillars, or claim-proof maps before channel copy.",
       "display_name": "Develop Positioning",
       "short_description": "Build evidence-based message architecture",
       "default_prompt": "Use $develop-positioning to build and test our positioning.",
@@ -118,11 +118,11 @@
         "assets/positioning-brief.md",
         "references/methods.md"
       ],
-      "package_sha256": "9d55f49408fc5ac12f574faad74c83ff4b2207f8271b2ea33b25b877de6c3e5c"
+      "package_sha256": "08321a28480459bbf197edf829df9d7646fea26d29e62b193ddbf4636f3c2015"
     },
     {
       "name": "forecast-sales",
-      "description": "Create, inspect, or explain a B2B sales forecast using CRM opportunities, historical conversion, pipeline changes, seller calls, or scenario assumptions. Use for commit and best-case calls, monthly or quarterly forecasting, forecast risk, rollups, coverage, sensitivity analysis, or explaining a forecast to leadership.",
+      "description": "Create or review a B2B revenue forecast. Use for period estimates, commit/best-case calls, rollups, or forecast scenarios and risk.",
       "display_name": "Forecast Sales",
       "short_description": "Build an auditable sales forecast",
       "default_prompt": "Use $forecast-sales to create an evidence-based revenue forecast.",
@@ -133,11 +133,11 @@
         "assets/forecast.md",
         "references/methods.md"
       ],
-      "package_sha256": "328a2f63b6feefa91b8537f57a744a3c37635131e40ef2b0be9a46d27ee304ea"
+      "package_sha256": "5e80ac4c3c5ce1902b1d4699334a2bf60878b70cac329989fb406e24e2d947a9"
     },
     {
       "name": "gtm-context",
-      "description": "Create or update the shared sales and go-to-market context used by other GTM skills. Use when starting work on a product, documenting the sales motion, defining buyers and value, capturing proof and competition, or when repeated sales tasks lack reliable background. Produces `.agents/gtm-context.md`.",
+      "description": "Create or update shared GTM background in .agents/gtm-context.md. Use when documenting product, buyers, sales motion, and evidence for reuse.",
       "display_name": "GTM Context",
       "short_description": "Build the shared context for every sales workflow",
       "default_prompt": "Use $gtm-context to create our shared sales and GTM context.",
@@ -147,11 +147,11 @@
         "agents/openai.yaml",
         "assets/gtm-context-template.md"
       ],
-      "package_sha256": "d7993eb6f571f9174b6f824aec28051fd4467228f727c845ac73195df5501d73"
+      "package_sha256": "1b81137ca994635b21380586b6848e051d31edb45e0c9968c7a7a8276f450dfa"
     },
     {
       "name": "handle-objections",
-      "description": "Diagnose and prepare responses to B2B sales objections about price, priority, trust, competition, security, implementation, timing, procurement, or change. Use before or after a sales conversation when the goal is to understand the concern, answer honestly, and decide the right next step.",
+      "description": "Diagnose B2B sales objections and prepare honest responses. Use when a buyer concern needs clarification, an answer, or a next step.",
       "display_name": "Handle Objections",
       "short_description": "Diagnose and respond to sales objections",
       "default_prompt": "Use $handle-objections to prepare responses to these objections.",
@@ -161,11 +161,11 @@
         "agents/openai.yaml",
         "assets/objection-plan.md"
       ],
-      "package_sha256": "9caa1400b7173b6d0f5ef4481e79a42d826478cef26a9f7b8385fb906eb8b0a3"
+      "package_sha256": "fca427190e7dfe4c84a1faf09a91b36a962fc211d9f5c0ff58511570292eace2"
     },
     {
       "name": "handoff-customer",
-      "description": "Create a complete sales-to-customer-success, implementation, or account-management handoff. Use after a B2B deal closes or before kickoff when goals, promises, stakeholders, risks, commercial scope, implementation needs, and unresolved questions must transfer without making the customer repeat discovery.",
+      "description": "Prepare a sales-to-CS, implementation, or account-management handoff. Use after closing or before kickoff to transfer scope and commitments.",
       "display_name": "Handoff Customer",
       "short_description": "Transfer deal context into customer success",
       "default_prompt": "Use $handoff-customer to create a complete sales-to-success handoff.",
@@ -175,11 +175,11 @@
         "agents/openai.yaml",
         "assets/customer-handoff.md"
       ],
-      "package_sha256": "90e40efe1d9bc08fa086afd0af8620d9d7ffae6c8f0614426fcbae5ce67d0061"
+      "package_sha256": "2ec11391f64707c5f95eea602dcc59955e6002aee16388dba7fe9379a6b77852"
     },
     {
       "name": "plan-account",
-      "description": "Create or update a strategic B2B account plan across business units, relationships, current footprint, active opportunities, whitespace, renewals, and long-term outcomes. Use for named or enterprise accounts, expansion planning, executive alignment, multi-threading, account reviews, ABM coordination, or deciding where to invest beyond one active deal.",
+      "description": "Create a strategic B2B account plan. Use for relationships, footprint, whitespace, and investment across opportunities or business units.",
       "display_name": "Plan Account",
       "short_description": "Build evidence-based strategic account plans",
       "default_prompt": "Use $plan-account to build a strategic account plan from this evidence.",
@@ -190,11 +190,11 @@
         "assets/account-plan.md",
         "references/methods.md"
       ],
-      "package_sha256": "fc56876c077a37104264f9c3c95a692a7112191539c990c9a04d75a6f352b237"
+      "package_sha256": "7988aee35de5a930035d3ca16aa03af747a5ae177c24772ffdfecb95cfe9f5fd"
     },
     {
       "name": "plan-deal",
-      "description": "Create or update a strategy for a complex B2B sales opportunity. Use for deal reviews, account planning, stakeholder mapping, champion development, competitive strategy, stalled deals, executive alignment, resource decisions, or deciding the next best action for an active opportunity.",
+      "description": "Plan strategy for one active B2B opportunity. Use for deal reviews, stakeholder strategy, stalled deals, or the next selling action.",
       "display_name": "Plan Deal",
       "short_description": "Map stakeholders, risks, and next actions",
       "default_prompt": "Use $plan-deal to build a practical strategy for this deal.",
@@ -204,11 +204,11 @@
         "agents/openai.yaml",
         "assets/deal-plan.md"
       ],
-      "package_sha256": "e73427e71f6ba10b95f55336fc966b9bab8de6b8c8c91550825b11b9d1cda3b0"
+      "package_sha256": "c70e5497c8c7d726ecf1b216b7c6cc222cc3b61a8299739069b91e177286d257"
     },
     {
       "name": "plan-partner-channel",
-      "description": "Design, test, or improve B2B partner and channel motions including referral, reseller, distributor, services, technology, marketplace, and co-sell programs. Use for partner strategy, ideal partner profiles, recruitment, enablement, activation, economics, attribution, deal registration, conflict rules, pipeline reviews, or deciding whether a partner motion is viable.",
+      "description": "Design or review a B2B partner or channel motion. Use for recruitment, activation, co-selling, economics, attribution, or partner pilots.",
       "display_name": "Plan Partner Channel",
       "short_description": "Design evidence-based partner channel motions",
       "default_prompt": "Use $plan-partner-channel to design and test this partner or channel motion.",
@@ -219,11 +219,11 @@
         "assets/partner-plan.md",
         "references/methods.md"
       ],
-      "package_sha256": "9a044f2f8a886fc6e5e6371c77fa276784ce69b21d34356655367359fb0beb92"
+      "package_sha256": "b5b0481da487388ebbc9134bffe89d1c7a046b5f3c4b55d9a9f0bd3ba6d4cdea"
     },
     {
       "name": "plan-prospecting",
-      "description": "Create a B2B prospecting strategy, account list plan, or contact coverage model from an ICP. Use when building pipeline, prioritizing territories, selecting prospect data fields and sources, defining account tiers, or deciding who to contact and why before launching outbound.",
+      "description": "Plan B2B prospecting from an ICP. Use to choose target accounts, contact coverage, data sources, and a pilot before writing outreach.",
       "display_name": "Plan Prospecting",
       "short_description": "Build a focused prospecting plan and list",
       "default_prompt": "Use $plan-prospecting to build a focused prospecting plan.",
@@ -234,11 +234,11 @@
         "assets/prospect-list-schema.csv",
         "assets/prospecting-plan.md"
       ],
-      "package_sha256": "093e06c95593f02525e2e3935da4fe40e9b286107dd5c6979634d2a85ea718b8"
+      "package_sha256": "c96e2c8b2878fac4a29f65014d70d332158792bb7280f83f1ccd9280e3783747"
     },
     {
       "name": "plan-territories",
-      "description": "Design, rebalance, or inspect B2B sales territories and capacity using account, market, workload, coverage, quota, and rep-availability data. Use for annual or midyear territory planning, geographic or segment coverage, account assignment, book-size analysis, capacity scenarios, ramp planning, exception handling, or evaluating whether territories are fair and executable.",
+      "description": "Design or rebalance B2B sales territories. Use for account assignment, coverage, workload, capacity, or territory fairness scenarios.",
       "display_name": "Plan Territories",
       "short_description": "Design fair, evidence-based sales territories",
       "default_prompt": "Use $plan-territories to design and test a practical territory model.",
@@ -249,11 +249,11 @@
         "assets/territory-plan.md",
         "references/methods.md"
       ],
-      "package_sha256": "f716b96e72581a996a78158b8842ed5fcaca007601ccb60a52da57b0ffdfe73b"
+      "package_sha256": "5431ffa8e8a1356020859a8c0c051d7e2f9a8e72cfe263994b5a4cbdde5c2e1c"
     },
     {
       "name": "prepare-demo",
-      "description": "Plan a buyer-specific B2B product demonstration, technical validation, proof of concept, or demo follow-up. Use when deciding what to show, tailoring a demo to discovery, mapping features to outcomes, assigning presenters, preparing questions, or preventing generic feature tours.",
+      "description": "Plan a buyer-specific B2B demo or technical validation. Use for the storyline, proof of concept, setup, or demo follow-up.",
       "display_name": "Prepare Demo",
       "short_description": "Plan demos around buyer outcomes",
       "default_prompt": "Use $prepare-demo to plan a buyer-specific product demo.",
@@ -263,11 +263,11 @@
         "agents/openai.yaml",
         "assets/demo-plan.md"
       ],
-      "package_sha256": "3cc5a5350f50772127cf19088d4deef67fbefdcc391219c2a47122779d06db04"
+      "package_sha256": "c7fbcd85bef0f73d4a00a9be5a6805fa834f00d31baa5dd34ab224d55f54bd34"
     },
     {
       "name": "prepare-discovery",
-      "description": "Prepare for or structure a B2B sales discovery conversation. Use before first calls, technical discovery, executive discovery, expansion conversations, or follow-ups when the seller needs a call plan, hypotheses, questions, listening targets, and a useful next-step standard.",
+      "description": "Prepare a B2B discovery call. Use for an agenda, account hypotheses, prioritized questions, or a conversation plan.",
       "display_name": "Prepare Discovery",
       "short_description": "Prepare and structure sales discovery",
       "default_prompt": "Use $prepare-discovery to prepare for my next discovery call.",
@@ -277,11 +277,11 @@
         "agents/openai.yaml",
         "assets/discovery-plan.md"
       ],
-      "package_sha256": "201fc56dfdbaf6599268fba5594a1c5e175880fc305783cad21e263a328a26b1"
+      "package_sha256": "39d76ae89cf67ea5f4b3e5acd26399ac1181af90c2f463faf65ec8bdb444f60c"
     },
     {
       "name": "prepare-negotiation",
-      "description": "Prepare for B2B pricing, packaging, procurement, contract, renewal, expansion, or commercial negotiations. Use when planning offers, concessions, give-get trades, approval paths, alternatives, walk-away conditions, buyer questions, or negotiation roles without inventing authority, competitor terms, deadlines, legal positions, or customer commitments.",
+      "description": "Prepare a B2B commercial negotiation. Use for offers, concessions, give-get trades, approval limits, or walk-away scenarios.",
       "display_name": "Prepare Negotiation",
       "short_description": "Prepare evidence-based commercial negotiations",
       "default_prompt": "Use $prepare-negotiation to build a principled commercial negotiation plan.",
@@ -292,11 +292,11 @@
         "assets/negotiation-plan.md",
         "references/methods.md"
       ],
-      "package_sha256": "8038b4b620232509823594e7f773d88f2dcf74a43e1f9ed57b4954fc8c61dcdb"
+      "package_sha256": "75cc24ef9f6cff8a3e29411cc543df08c4f20e699b29791bff2a7586ff3ae634"
     },
     {
       "name": "qualify-opportunity",
-      "description": "Assess or update B2B opportunity qualification from call notes, CRM data, emails, or seller observations. Use for MEDDPICC, SPICED, BANT, custom qualification, stage advancement, disqualification, deal inspection, or identifying the evidence needed before investing more resources.",
+      "description": "Assess B2B opportunity qualification. Use for MEDDPICC, SPICED, BANT, evidence gaps, or an advance/hold/disqualify recommendation.",
       "display_name": "Qualify Opportunity",
       "short_description": "Qualify opportunities with useful evidence",
       "default_prompt": "Use $qualify-opportunity to assess this opportunity and its gaps.",
@@ -307,11 +307,11 @@
         "assets/qualification-assessment.md",
         "references/frameworks.md"
       ],
-      "package_sha256": "e9d38d89700da9b821505d87ea0f563d67433854631f05bfc96d9f77b637011d"
+      "package_sha256": "b6ed691fc30c5ce86049cb2ba5813a33693904073ee5e275fa47e358b2ed87dd"
     },
     {
       "name": "research-account",
-      "description": "Research a B2B account or prospect and create an evidence-backed sales brief. Use before outreach, discovery, demos, account planning, renewals, or executive meetings when company priorities, people, initiatives, technology, or trigger events need to be understood without fabricated personalization.",
+      "description": "Research a B2B company or prospect. Use when creating a sourced account brief about its priorities, people, initiatives, or technology.",
       "display_name": "Research Account",
       "short_description": "Research accounts without inventing facts",
       "default_prompt": "Use $research-account to prepare an evidence-backed account brief.",
@@ -321,11 +321,11 @@
         "agents/openai.yaml",
         "assets/account-brief.md"
       ],
-      "package_sha256": "694bdb7ecd2e1dd9d412ad489c2288fe75f505204e77ffa43f0eb4d8a71775e2"
+      "package_sha256": "e75ad754d853dd3dcf2019e7cab392b97859c678a708468fea74e9dfd2928f5e"
     },
     {
       "name": "review-customer-outcomes",
-      "description": "Review B2B customer outcomes, adoption evidence, obligations, risks, renewal readiness, and expansion hypotheses using success plans, contracts, usage data, support history, stakeholder feedback, or account notes. Use for customer reviews, QBR preparation, value realization, renewal planning, health-score audits, churn risk, or deciding whether an expansion conversation is supported.",
+      "description": "Review B2B customer value and renewal readiness. Use for QBRs, adoption versus outcomes, churn risks, or expansion hypotheses.",
       "display_name": "Review Customer Outcomes",
       "short_description": "Review value, renewal, and expansion evidence",
       "default_prompt": "Use $review-customer-outcomes to assess customer outcomes and renewal readiness.",
@@ -336,11 +336,11 @@
         "assets/outcome-review.md",
         "references/outcome-method.md"
       ],
-      "package_sha256": "99698cc279ae0636aefc195134eb32adb76caede7c8037bf658f1d56ecea9d2c"
+      "package_sha256": "046bbc1b9cce09fca7f2957407d79fc8f82239c1d2eb42caad0b985d53bca920"
     },
     {
       "name": "review-pipeline",
-      "description": "Review a B2B sales pipeline from CRM exports, spreadsheets, deal notes, or summaries. Use for weekly pipeline reviews, manager inspection, stale-deal analysis, stage hygiene, coverage analysis, rep prioritization, or finding the few actions most likely to improve pipeline truth and execution.",
+      "description": "Inspect a B2B sales pipeline. Use for deal hygiene, stage/age risks, concentration, coverage, or prioritizing selling actions.",
       "display_name": "Review Pipeline",
       "short_description": "Find risks and actions across the pipeline",
       "default_prompt": "Use $review-pipeline to review this pipeline and prioritize actions.",
@@ -351,11 +351,11 @@
         "assets/pipeline-review.md",
         "references/review-rules.md"
       ],
-      "package_sha256": "2773aa590e94b34edf90cbc0ee4d988cf67abea7a9fa5b3d2c2ae0a9114fd982"
+      "package_sha256": "276eba3e2934c8b6c8d7353d8bad1d22c1767bf4e3128c074347a87d8daaa6e4"
     },
     {
       "name": "write-outbound",
-      "description": "Write or improve responsible B2B outbound messages and sequences across email, LinkedIn, calls, or short-form channels. Use for cold outreach, follow-ups, referral requests, event follow-up, re-engagement, or sequence testing when relevance, evidence, consent, and clear next steps matter.",
+      "description": "Draft or improve B2B outbound messages and sequences. Use for cold outreach, follow-ups, referrals, re-engagement, or copy variants.",
       "display_name": "Write Outbound",
       "short_description": "Write relevant, responsible outbound sequences",
       "default_prompt": "Use $write-outbound to draft a relevant outbound sequence.",
@@ -366,7 +366,7 @@
         "assets/outbound-plan.md",
         "references/responsible-outbound.md"
       ],
-      "package_sha256": "9352e136dbfd82652f8f22ea6b1511f5ead8f14991ed0579f3c12552d48d87a0"
+      "package_sha256": "31729f998ca913c6977a1e550a9327c0d82a610be0898115407580ccaccd4d58"
     }
   ]
 }
