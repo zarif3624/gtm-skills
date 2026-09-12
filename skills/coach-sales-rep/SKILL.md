@@ -1,6 +1,6 @@
 ---
 name: coach-sales-rep
-description: "Build an evidence-based B2B sales coaching plan from call recordings, transcripts, manager observations, deal outcomes, activity patterns, or prior coaching notes. Use for one-to-one preparation, skill development, call coaching, behavior experiments, progress reviews, or separating an isolated episode from a repeated performance pattern."
+description: "Create a B2B sales coaching plan. Use for behavior development, practice experiments, or coaching progress reviews."
 ---
 
 # Coach Sales Rep

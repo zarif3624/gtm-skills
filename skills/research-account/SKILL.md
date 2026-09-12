@@ -1,6 +1,6 @@
 ---
 name: research-account
-description: "Research a B2B account or prospect and create an evidence-backed sales brief. Use before outreach, discovery, demos, account planning, renewals, or executive meetings when company priorities, people, initiatives, technology, or trigger events need to be understood without fabricated personalization."
+description: "Research a B2B company or prospect. Use when creating a sourced account brief about its priorities, people, initiatives, or technology."
 ---
 
 # Research Account

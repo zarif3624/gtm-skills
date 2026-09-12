@@ -1,6 +1,6 @@
 ---
 name: develop-positioning
-description: "Develop, audit, or test B2B positioning and message architecture. Use for value propositions, category framing, audience-specific messaging, narrative pillars, proof mapping, competitive differentiation, website or sales-deck message briefs, or message experiments before writing channel copy without inventing customer outcomes, superiority, quotes, or market proof."
+description: "Develop or test B2B positioning. Use for value propositions, differentiation, message pillars, or claim-proof maps before channel copy."
 ---
 
 # Develop Positioning

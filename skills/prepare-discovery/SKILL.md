@@ -1,6 +1,6 @@
 ---
 name: prepare-discovery
-description: "Prepare for or structure a B2B sales discovery conversation. Use before first calls, technical discovery, executive discovery, expansion conversations, or follow-ups when the seller needs a call plan, hypotheses, questions, listening targets, and a useful next-step standard."
+description: "Prepare a B2B discovery call. Use for an agenda, account hypotheses, prioritized questions, or a conversation plan."
 ---
 
 # Prepare Discovery

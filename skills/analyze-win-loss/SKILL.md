@@ -1,6 +1,6 @@
 ---
 name: analyze-win-loss
-description: "Analyze individual or aggregate B2B wins, losses, no-decisions, and disqualifications using CRM records, buyer interviews, call notes, proposals, and deal history. Use for win/loss reviews, loss-reason audits, segment comparisons, product and messaging feedback, sales-process learning, or deciding which GTM hypotheses to test without turning seller opinion into buyer truth."
+description: "Analyze B2B buying decisions. Use for win/loss reviews, no-decision analysis, or comparisons across closed opportunities."
 ---
 
 # Analyze Win Loss

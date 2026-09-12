@@ -1,6 +1,6 @@
 ---
 name: plan-territories
-description: "Design, rebalance, or inspect B2B sales territories and capacity using account, market, workload, coverage, quota, and rep-availability data. Use for annual or midyear territory planning, geographic or segment coverage, account assignment, book-size analysis, capacity scenarios, ramp planning, exception handling, or evaluating whether territories are fair and executable."
+description: "Design or rebalance B2B sales territories. Use for account assignment, coverage, workload, capacity, or territory fairness scenarios."
 ---
 
 # Plan Territories

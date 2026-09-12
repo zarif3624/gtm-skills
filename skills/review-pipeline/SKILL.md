@@ -1,6 +1,6 @@
 ---
 name: review-pipeline
-description: "Review a B2B sales pipeline from CRM exports, spreadsheets, deal notes, or summaries. Use for weekly pipeline reviews, manager inspection, stale-deal analysis, stage hygiene, coverage analysis, rep prioritization, or finding the few actions most likely to improve pipeline truth and execution."
+description: "Inspect a B2B sales pipeline. Use for deal hygiene, stage/age risks, concentration, coverage, or prioritizing selling actions."
 ---
 
 # Review Pipeline

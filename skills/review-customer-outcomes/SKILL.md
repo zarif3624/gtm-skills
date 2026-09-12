@@ -1,6 +1,6 @@
 ---
 name: review-customer-outcomes
-description: "Review B2B customer outcomes, adoption evidence, obligations, risks, renewal readiness, and expansion hypotheses using success plans, contracts, usage data, support history, stakeholder feedback, or account notes. Use for customer reviews, QBR preparation, value realization, renewal planning, health-score audits, churn risk, or deciding whether an expansion conversation is supported."
+description: "Review B2B customer value and renewal readiness. Use for QBRs, adoption versus outcomes, churn risks, or expansion hypotheses."
 ---
 
 # Review Customer Outcomes

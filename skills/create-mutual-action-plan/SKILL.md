@@ -1,6 +1,6 @@
 ---
 name: create-mutual-action-plan
-description: "Create or revise a mutual action plan for a B2B buying process. Use when buyer and seller need shared milestones, owners, decision criteria, validation, security, legal, procurement, implementation, or target-date coordination without turning the plan into a seller-only closing checklist."
+description: "Create or revise a B2B mutual action plan. Use for shared buyer/seller milestones, dependencies, owners, and decision timing."
 ---
 
 # Create Mutual Action Plan

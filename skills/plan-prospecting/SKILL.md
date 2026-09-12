@@ -1,6 +1,6 @@
 ---
 name: plan-prospecting
-description: "Create a B2B prospecting strategy, account list plan, or contact coverage model from an ICP. Use when building pipeline, prioritizing territories, selecting prospect data fields and sources, defining account tiers, or deciding who to contact and why before launching outbound."
+description: "Plan B2B prospecting from an ICP. Use to choose target accounts, contact coverage, data sources, and a pilot before writing outreach."
 ---
 
 # Plan Prospecting

@@ -1,6 +1,6 @@
 ---
 name: handle-objections
-description: "Diagnose and prepare responses to B2B sales objections about price, priority, trust, competition, security, implementation, timing, procurement, or change. Use before or after a sales conversation when the goal is to understand the concern, answer honestly, and decide the right next step."
+description: "Diagnose B2B sales objections and prepare honest responses. Use when a buyer concern needs clarification, an answer, or a next step."
 ---
 
 # Handle Objections

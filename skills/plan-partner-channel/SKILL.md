@@ -1,6 +1,6 @@
 ---
 name: plan-partner-channel
-description: "Design, test, or improve B2B partner and channel motions including referral, reseller, distributor, services, technology, marketplace, and co-sell programs. Use for partner strategy, ideal partner profiles, recruitment, enablement, activation, economics, attribution, deal registration, conflict rules, pipeline reviews, or deciding whether a partner motion is viable."
+description: "Design or review a B2B partner or channel motion. Use for recruitment, activation, co-selling, economics, attribution, or partner pilots."
 ---
 
 # Plan Partner Channel

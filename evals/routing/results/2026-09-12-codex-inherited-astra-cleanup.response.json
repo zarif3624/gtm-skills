@@ -1,0 +1,286 @@
+{
+  "selections": [
+    {
+      "id": "build-shared-gtm-context",
+      "selected_skills": [
+        "gtm-context"
+      ],
+      "rationale": "Create reusable shared GTM background from the supplied notes."
+    },
+    {
+      "id": "design-evidence-based-sales-process",
+      "selected_skills": [
+        "design-sales-process"
+      ],
+      "rationale": "Design stages, evidence requirements, CRM rules, governance, and rollout."
+    },
+    {
+      "id": "derive-testable-icp",
+      "selected_skills": [
+        "define-icp"
+      ],
+      "rationale": "Use customer outcomes to establish testable fit criteria and counterexamples."
+    },
+    {
+      "id": "develop-message-architecture",
+      "selected_skills": [
+        "develop-positioning"
+      ],
+      "rationale": "Develop positioning, message pillars, claim proof, and validation before copy."
+    },
+    {
+      "id": "rebalance-sales-territories",
+      "selected_skills": [
+        "plan-territories"
+      ],
+      "rationale": "Rebalance account assignments using workload, capacity, and continuity."
+    },
+    {
+      "id": "research-named-account",
+      "selected_skills": [
+        "research-account"
+      ],
+      "rationale": "Create a sourced company brief distinguishing facts from hypotheses."
+    },
+    {
+      "id": "build-strategic-account-plan",
+      "selected_skills": [
+        "plan-account"
+      ],
+      "rationale": "Plan relationships, whitespace, and investment across business units and opportunities."
+    },
+    {
+      "id": "prioritize-prospecting-list",
+      "selected_skills": [
+        "plan-prospecting"
+      ],
+      "rationale": "Prioritize accounts and contact coverage from an existing ICP."
+    },
+    {
+      "id": "write-responsible-outbound-sequence",
+      "selected_skills": [
+        "write-outbound"
+      ],
+      "rationale": "Draft outbound touches using supplied approved evidence."
+    },
+    {
+      "id": "prepare-first-discovery-call",
+      "selected_skills": [
+        "prepare-discovery"
+      ],
+      "rationale": "Prepare the first discovery agenda, hypotheses, questions, and next steps."
+    },
+    {
+      "id": "analyze-completed-sales-call",
+      "selected_skills": [
+        "analyze-sales-call"
+      ],
+      "rationale": "Extract evidence and commitments and give feedback on this specific conversation."
+    },
+    {
+      "id": "assess-opportunity-qualification",
+      "selected_skills": [
+        "qualify-opportunity"
+      ],
+      "rationale": "Assess qualification evidence, contradictions, and missing decision information."
+    },
+    {
+      "id": "build-rep-coaching-plan",
+      "selected_skills": [
+        "coach-sales-rep"
+      ],
+      "rationale": "Choose a behavior experiment for an ongoing coaching cycle."
+    },
+    {
+      "id": "plan-complex-deal",
+      "selected_skills": [
+        "plan-deal"
+      ],
+      "rationale": "Develop stakeholder and competitive strategy for one active opportunity."
+    },
+    {
+      "id": "respond-to-product-objection",
+      "selected_skills": [
+        "handle-objections"
+      ],
+      "rationale": "Diagnose the integration concern and prepare honest responses and questions."
+    },
+    {
+      "id": "design-buyer-specific-demo",
+      "selected_skills": [
+        "prepare-demo"
+      ],
+      "rationale": "Plan a demo around buyer outcomes, workflow, and proof requirements."
+    },
+    {
+      "id": "build-buyer-business-case",
+      "selected_skills": [
+        "build-business-case"
+      ],
+      "rationale": "Compare alternatives, costs, benefits, and sensitivity using inspectable assumptions."
+    },
+    {
+      "id": "prepare-commercial-negotiation",
+      "selected_skills": [
+        "prepare-negotiation"
+      ],
+      "rationale": "Prepare commercial packages, concessions, trades, and approval boundaries."
+    },
+    {
+      "id": "draft-mutual-decision-plan",
+      "selected_skills": [
+        "create-mutual-action-plan"
+      ],
+      "rationale": "Create shared decision milestones, dependencies, and acceptance conditions."
+    },
+    {
+      "id": "review-pipeline-portfolio",
+      "selected_skills": [
+        "review-pipeline"
+      ],
+      "rationale": "Inspect portfolio hygiene, momentum, risk, and management priorities."
+    },
+    {
+      "id": "forecast-revenue-scenarios",
+      "selected_skills": [
+        "forecast-sales"
+      ],
+      "rationale": "Estimate quarterly revenue with auditable scenarios."
+    },
+    {
+      "id": "handoff-signed-customer",
+      "selected_skills": [
+        "handoff-customer"
+      ],
+      "rationale": "Transfer signed scope, commitments, risks, and implementation dependencies."
+    },
+    {
+      "id": "review-customer-value-and-renewal",
+      "selected_skills": [
+        "review-customer-outcomes"
+      ],
+      "rationale": "Assess customer outcomes and renewal readiness from success and contract evidence."
+    },
+    {
+      "id": "analyze-win-loss-patterns",
+      "selected_skills": [
+        "analyze-win-loss"
+      ],
+      "rationale": "Analyze buying decision patterns across closed outcomes and interviews."
+    },
+    {
+      "id": "design-partner-channel-motion",
+      "selected_skills": [
+        "plan-partner-channel"
+      ],
+      "rationale": "Design referral and co-sell operations, economics, attribution, and pilot rules."
+    },
+    {
+      "id": "call-analysis-to-qualification",
+      "selected_skills": [
+        "analyze-sales-call",
+        "qualify-opportunity"
+      ],
+      "rationale": "Extract call evidence, then use it to update qualification."
+    },
+    {
+      "id": "pipeline-review-to-forecast",
+      "selected_skills": [
+        "review-pipeline",
+        "forecast-sales"
+      ],
+      "rationale": "Review and qualify pipeline data before forecasting revenue."
+    },
+    {
+      "id": "account-research-to-discovery",
+      "selected_skills": [
+        "research-account",
+        "prepare-discovery"
+      ],
+      "rationale": "Research the account, then prepare discovery using clearly labeled hypotheses."
+    },
+    {
+      "id": "call-analysis-to-business-case",
+      "selected_skills": [
+        "analyze-sales-call",
+        "build-business-case"
+      ],
+      "rationale": "Analyze call evidence, then build a business case with unverified metrics labeled."
+    },
+    {
+      "id": "call-analysis-to-qualification-and-deal-plan",
+      "selected_skills": [
+        "analyze-sales-call",
+        "qualify-opportunity",
+        "plan-deal"
+      ],
+      "rationale": "Analyze the conversation, assess qualification, and revise active deal strategy."
+    },
+    {
+      "id": "deal-plan-to-mutual-plan-and-customer-handoff",
+      "selected_skills": [
+        "plan-deal",
+        "create-mutual-action-plan",
+        "handoff-customer"
+      ],
+      "rationale": "Develop deal strategy, shared milestones, and the customer handoff while preserving conflicts."
+    },
+    {
+      "id": "deal-plan-to-negotiation",
+      "selected_skills": [
+        "plan-deal",
+        "prepare-negotiation"
+      ],
+      "rationale": "Update deal strategy and derive commercial negotiation packages and boundaries."
+    },
+    {
+      "id": "icp-to-prospecting-plan",
+      "selected_skills": [
+        "define-icp",
+        "plan-prospecting"
+      ],
+      "rationale": "Derive fit criteria, then prioritize prospecting using scoreable criteria."
+    },
+    {
+      "id": "partner-plan-to-pipeline-forecast",
+      "selected_skills": [
+        "plan-partner-channel",
+        "review-pipeline",
+        "forecast-sales"
+      ],
+      "rationale": "Design the channel motion, reconcile pipeline opportunities, and forecast without duplicate attribution."
+    },
+    {
+      "id": "positioning-to-outbound-copy",
+      "selected_skills": [
+        "develop-positioning",
+        "write-outbound"
+      ],
+      "rationale": "Develop supported positioning, then turn approved claims into outbound copy."
+    },
+    {
+      "id": "sales-process-to-pipeline-review",
+      "selected_skills": [
+        "design-sales-process",
+        "review-pipeline"
+      ],
+      "rationale": "Propose stages and governance, then inspect current pipeline under its actual policy."
+    },
+    {
+      "id": "account-research-to-account-plan",
+      "selected_skills": [
+        "research-account",
+        "plan-account"
+      ],
+      "rationale": "Research the customer, then build an expansion strategy with uncertain whitespace labeled."
+    },
+    {
+      "id": "source-safe-research-to-outbound",
+      "selected_skills": [
+        "research-account",
+        "write-outbound"
+      ],
+      "rationale": "Research supplied account material and draft outbound while rejecting embedded source instructions."
+    }
+  ]
+}
