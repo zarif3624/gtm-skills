@@ -7,7 +7,7 @@
     },
     "quality_summary": {
       "path": "quality-summary.json",
-      "sha256": "093010c9a01bafca9bd5e0d6519d1e7e56bc8e397deb8ff0c62b1a79e7b892d3"
+      "sha256": "a7f07cf879ec1af694a04f96f77ef2b94c39827c347f05ee3d08c0c0ba9a8aa3"
     }
   },
   "quality_policy": {
@@ -609,13 +609,13 @@
         "verdict": "pass",
         "total_cases": 38,
         "exact_matches": 38,
-        "repository_commit": "d38a533",
+        "repository_commit": "00363b81d343e402c180471e706dad90ed5e90a4",
         "corpus_path": "evals/routing/corpora/2026-08-08-v7.json",
         "corpus_sha256": "4c6faeae8feb0b3424762a3c5bbc72fb0d4a1d2c087e2278a0dabcc5bd47b4ef",
-        "report_path": "evals/routing/results/2026-08-08-codex-inherited-v8.json",
-        "report_sha256": "d7d4681297edaeb8a9b8b2f494a6563e43e13540ef0c23ee666267f1a48cfe81",
-        "response_path": "evals/routing/results/2026-08-08-codex-inherited-v8.response.json",
-        "response_sha256": "276bd20e97a803e8e12644a0602dd37d8925702b44c42dd8c52e81101e33c946"
+        "report_path": "evals/routing/results/2026-09-12-codex-inherited-astra-cleanup.json",
+        "report_sha256": "95e9fe5629bf447e084452cbe36d4bc9bd483567d33626f1a24be3e28619a20a",
+        "response_path": "evals/routing/results/2026-09-12-codex-inherited-astra-cleanup.response.json",
+        "response_sha256": "b8ebbd79fb635a1385d33fc6d42a361eed549a946a821102436d53b3af784359"
       }
     ]
   }
