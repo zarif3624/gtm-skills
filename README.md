@@ -125,6 +125,13 @@ flowchart LR
 
 See the difference on real (fictional) dirty data in the [output gallery](docs/gallery.md).
 
+## ChatGPT Plugin Candidate
+
+A skills-only directory candidate is being prepared with a portable manifest,
+reproducible ZIP builder, and chat-aware context handling. It is not published or
+verified in ChatGPT yet. See the [build and launch checklist](docs/chatgpt-plugin.md).
+Existing installation commands below continue to use the canonical skill packages.
+
 ## Install
 
 Preview the available skills:

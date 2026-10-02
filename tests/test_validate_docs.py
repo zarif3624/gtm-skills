@@ -316,7 +316,9 @@ class CompatibilityEvidenceTests(unittest.TestCase):
 
         updated = re.search(r"\*\*Last updated:\*\* (\d{4}-\d{2}-\d{2})", compatibility)
         self.assertIsNotNone(updated)
-        evidence_date = updated.group(1)
+        # New client rows must not rewrite dates of historical test evidence.
+        evidence_date = "2026-09-11"
+        self.assertGreaterEqual(updated.group(1), evidence_date)
         cli_row = next(line for line in compatibility.splitlines() if line.startswith("| Skills CLI"))
         reference_row = next(
             line for line in compatibility.splitlines() if line.startswith("| Official skills-ref")

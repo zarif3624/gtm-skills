@@ -4,6 +4,12 @@ All notable project changes are documented here. The project uses semantic versi
 
 ## Unreleased
 
+### Added
+
+- A skills-only ChatGPT plugin candidate with portable metadata, original SVG icons, a deterministic ZIP builder, integrity manifest, and explicit payload allowlist.
+- Build-time host-context adaptation for chat and project workspaces while preserving canonical Codex skill bytes and their existing evaluation lineage.
+- Package regression tests and an explicit client/portal validation checklist; no directory publication or ChatGPT compatibility claim.
+
 ## 0.1.8 - 2026-09-11
 
 ### Changed
