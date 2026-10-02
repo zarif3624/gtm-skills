@@ -16,6 +16,7 @@ COMMANDS = (
     (sys.executable, "scripts/validate_docs.py"),
     (sys.executable, "scripts/validate_skills.py"),
     (sys.executable, "scripts/build_catalog.py", "--check"),
+    (sys.executable, "scripts/build_plugin.py", "--check"),
     (sys.executable, "scripts/validate_evals.py"),
     (sys.executable, "scripts/validate_eval_reports.py"),
     (sys.executable, "scripts/validate_routing_reports.py"),

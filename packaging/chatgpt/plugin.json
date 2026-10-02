@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gtm-skills",
+  "version": "0.1.9-rc.1",
+  "description": "Evidence-first B2B sales and go-to-market workflows with reusable templates.",
+  "author": {
+    "name": "Zarif",
+    "url": "https://github.com/zarif3624"
+  },
+  "homepage": "https://github.com/zarif3624/gtm-skills",
+  "repository": "https://github.com/zarif3624/gtm-skills",
+  "license": "MIT",
+  "keywords": [
+    "sales",
+    "go-to-market",
+    "gtm",
+    "revenue",
+    "business"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "GTM Skills",
+        "shortDescription": "Evidence-first sales workflows",
+        "longDescription": "GTM Skills provides 25 reusable B2B sales and go-to-market workflows for founders, sales teams, customer success, and revenue leaders. Turn your product notes, call transcripts, and CRM exports into account briefs, discovery plans, qualification reviews, business cases, forecasts, and customer handoffs. Separate verified facts, inferences, and unknowns; preserve sources and mark proposed actions clearly. Shared GTM context is optional and can come from the conversation, an uploaded document, or a project file. This skills-only plugin does not connect to a CRM, send outreach, or provide live data by itself. Research and file operations depend on tools available in your host. Review consequential claims and actions before use.",
+        "developerName": "Zarif",
+        "category": "Productivity",
+        "capabilities": [
+          "Account research",
+          "Sales planning",
+          "Pipeline review",
+          "Revenue forecasting"
+        ],
+        "websiteURL": "https://github.com/zarif3624/gtm-skills",
+        "supportURL": "https://github.com/zarif3624/gtm-skills/issues",
+        "defaultPrompt": [
+          "Create our GTM context from these product notes.",
+          "Turn these call notes into a qualification assessment and next-step plan.",
+          "Review this pipeline export and flag risks, contradictions, and unknowns."
+        ],
+        "brandColor": "#176B53",
+        "brandColorDark": "#7ADBB5",
+        "composerIcon": "./assets/icon.svg",
+        "composerIconDark": "./assets/icon-dark.svg",
+        "logo": "./assets/icon.svg",
+        "logoDark": "./assets/icon-dark.svg"
+      },
+      "onboardingSkill": "./skills/gtm-context/SKILL.md",
+      "publication": {
+        "release_notes": "Initial skills-only directory candidate with 25 GTM workflows, host-aware context handling, reusable resources, and a reproducible package. Installation and runtime validation in ChatGPT are still required before publication."
+      }
+    }
+  }
+}

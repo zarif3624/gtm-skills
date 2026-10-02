@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">GTM Skills</title>
+  <rect width="512" height="512" rx="112" fill="white"/>
+  <path d="M132 176H380M132 256H312M132 336H248" stroke="#12382D" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="132" cy="176" r="31" fill="#176B53"/>
+  <circle cx="132" cy="256" r="31" fill="#176B53"/>
+  <circle cx="132" cy="336" r="31" fill="#176B53"/>
+  <path d="m318 337 29 29 56-64" fill="none" stroke="#176B53" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

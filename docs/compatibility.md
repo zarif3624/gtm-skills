@@ -2,7 +2,7 @@
 
 The skills follow the [Agent Skills specification](https://agentskills.io/specification), but format conformance does not guarantee identical routing or behavior across clients and models. This matrix reports only what has been exercised.
 
-**Last updated:** 2026-09-11
+**Last updated:** 2026-10-02
 
 | Client or path | Discovery / installation evidence | Behavioral evidence | Current status |
 | --- | --- | --- | --- |
@@ -10,6 +10,7 @@ The skills follow the [Agent Skills specification](https://agentskills.io/specif
 | Official skills-ref `0.1.0` | [`agentskills/agentskills` skills-ref](https://github.com/agentskills/agentskills/tree/69ef37e9424c0a7ea9dd2293b559e43ec8176379/skills-ref) at commit `69ef37e9424c0a7ea9dd2293b559e43ec8176379` validated all 25 packages from tag `v0.1.7` | Format validation does not establish behavioral compatibility | Verified on Python 3.12.7 and macOS 26.6.2 arm64 on 2026-09-11; reference-validator conformance only |
 | Repository quality tools | CI exercises the dependency-free suite on the oldest and newest supported Python lines (3.10 and 3.14) | Local suite passed on Python 3.9.6, 3.10.0, and 3.12.7; CI results remain authoritative for Python 3.14 | Configured; verify the two CI jobs on every change |
 | OpenAI Codex clean-context subagent | The latest self-contained blind packet exposed only installed names and descriptions; the evaluator selected the exact intended minimal set for 38/38 requests with zero excluded neighbors, covering every skill and all twelve journey topologies | All 37 current behavioral definitions pass: 25 isolated skill cases and 12 cross-skill journeys spanning the full catalog and its tested handoffs; exact model identifier was unavailable | Limited positive evidence for the recorded lineage, frozen corpora, and tested commits; see [behavior history](../evals/results/) and [routing evidence](../evals/routing/results/) |
+| ChatGPT portable plugin candidate | Local deterministic package validation; no ChatGPT installation recorded | Canonical Codex reports do not cover the generated host adapter; actual ChatGPT cases/journeys not yet run | Candidate only; see [separate launch gates](chatgpt-plugin.md) |
 | Claude Code | Not recorded | Not recorded | Unknown / not yet tested |
 | Cursor | Not recorded | Not recorded | Unknown / not yet tested |
 | Windsurf | Not recorded | Not recorded | Unknown / not yet tested |

@@ -170,6 +170,10 @@ def build_manifest(root: Path = ROOT) -> dict[str, Any]:
             for skill in catalog["skills"]
         ],
         "supporting_assets": {
+            **({"plugin_package_source": {
+                "path": "packaging/chatgpt",
+                "tree_sha256": directory_sha256(root / "packaging/chatgpt", root),
+            }} if (root / "packaging/chatgpt").is_dir() else {}),
             "evaluation_definitions": [
                 {
                     "name": name,

@@ -1,0 +1,8 @@
+## Host and shared-context compatibility
+
+Apply these host-aware meanings to workspace-path and save instructions below. Follow the user's explicit task and format choices when they differ from a default template or workflow suggestion.
+
+- Shared GTM context is optional. In a project workspace, use `.agents/gtm-context.md` when it exists and is readable. In a chat without that workspace, use a GTM context document the user attached or identified, or the relevant context already provided in the conversation. Do not claim to have read a path or attachment you cannot access.
+- When creating or updating context, use the bundled template. Save to `.agents/gtm-context.md` only when a writable project workspace is available and that destination fits the user's request. Otherwise return the complete context in the conversation, or provide a file using an available file tool. State what you actually created; never claim persistent storage or cross-chat memory without a successful save. Ask for the existing document only when needed to make an update safely.
+- Continue with partial evidence and consequential unknowns when context is absent. A missing local file is not a prerequisite failure. Use only available, authorized research and file tools; when live research is unavailable, work from supplied sources and mark unverified claims.
+- Other named GTM skills are optional handoffs. Use them when available and relevant; do not assume a particular invocation syntax or block the current deliverable because a sibling skill is unavailable. Drafting an artifact does not authorize sending outreach or changing source systems.

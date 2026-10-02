@@ -34,3 +34,10 @@ A release is a reviewed compatibility statement, not just a tag.
 5. Record any installation or behavior regression against the tagged commit.
 
 Do not rewrite a published tag. Correct a bad release with a new patch version and an explicit changelog entry.
+
+## ChatGPT Directory Candidate
+
+Follow the [plugin build and launch checklist](docs/chatgpt-plugin.md) for the
+separate adapted skills-only ZIP. Its own installation, behavioral checks, portal
+scans, and publisher authorization are required; a repository release does not
+publish a plugin to the directory.
